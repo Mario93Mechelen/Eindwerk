@@ -1,0 +1,525 @@
+@font-face {
+  font-family: 'Hammersmith';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Hammersmith'), url("../font/HammersmithOne.ttf") format('opentype');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Roboto'), url("../font/Roboto-Bold.ttf") format('opentype');
+}
+
+body {
+    background-image: url(../img/background_02e.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: Hammersmith;
+    position: relative;
+}
+
+#body_inner {
+    
+}
+
+header {
+    background-color: rgba(0,0,0,0.2);
+    height: 5em;
+}
+
+nav {
+    display: none;
+    padding: 1em;
+    margin: 3.5em 1em;
+    float: right;
+    width: 20em;
+}
+
+nav li a:link,
+nav li a:visited,
+nav li a:hover,
+nav li a:active {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    float: left;
+    width: 30%;
+    padding: 0.3em;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+nav li a:hover {
+    color: #DE3556;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    font-size: 1.2em;
+}
+
+#content{
+    position: relative:
+}
+
+#logo {
+    width: 7em;
+    background-repeat: none;
+    box-shadow: 0px 4px 5px #000000;
+    background-color: rgba(255,255,255,0.7);
+    
+}
+
+#logo_title {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1.5em;   
+    display: block;
+    width: 3em;
+    text-align: center;
+    padding: .5em 0em 0em .3em;
+    text-shadow: 0px 4px 5px #000000;
+}
+
+#logo_total {
+    position: absolute;
+    top: 1.5em;
+    left: 1.5em;
+    width: 8em;
+}
+
+.btn_link:link,
+.btn_link:visited,
+.btn_link:hover,
+.btn_link:active {
+    background-color: #000000;
+    border-radius: 0.4em;
+    box-sizing: border-box;
+    width: 8em;
+    height: 2.5em;
+    display: block;
+    cursor: pointer;
+    text-indent: -9999px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+#btn_apple {
+    background-image: url(../img/downl_btn_apple.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 6em;
+    right: 2em;
+}
+
+#btn_google {
+    background-image: url(../img/downl_btn_google.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    top: 9em;
+    right: 2em;
+}
+
+.demo_link:link,
+.demo_link:visited,
+.demo_link:hover,
+.demo_link:active {
+    background-color: #DE3556;
+    border-radius: 0.4em;
+    color: #ffffff;
+    box-sizing: border-box;
+    width: 8em;
+    height: 2.5em;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    padding: .8em;
+    cursor: pointer;
+    position: absolute;
+    top: 1.5em;
+    right: 2em;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.demo_link:hover {
+    background-color: #ffffff;
+    color: #DE3556;
+    border: 2px solid #DE3556;
+}
+
+#main_content {
+    height: 18em;
+    position: absolute;
+    top: 16.2em;
+    margin: 0em 1.5em 0em 1.5em;
+    height: auto;
+    overflow: hidden;
+}
+
+#right_visual {
+    height: 300px;
+    position: relative;
+    top: 0em;
+    right: -6em;
+    margin-left: -5em;
+    margin-bottom: 0.5em;
+    float: right;
+}
+
+#text_area {
+    background-color: rgba(255,255,255,0.6);
+    padding: 1em 0em 1em 1em;
+    margin-bottom: 2em;
+}
+
+h3 {
+    font-size: 1em;
+    line-height: 1.1em;
+    text-transform: uppercase;
+    padding: .5em;
+    color: #DE3556;
+}
+
+p {
+    font-size: 0.8em;
+    line-height: 1.2em;
+    padding: .5em;
+    color: #022247;
+}
+
+/* --- MEDIAQUERIES --- */
+
+
+/*  media query vanaf 420 pixels  */
+@media (min-width: 420px) {
+
+    header {
+    height: 8em;
+    }
+    
+    #logo {
+    width: 10em;
+    }
+
+    #logo_title {
+    font-size: 2em;
+    width: 3em;
+    padding: .5em 0em 0em 0.5em;
+    }
+
+    #logo_total {
+    top: 2.5em;
+    left: 2.5em;
+    width: 8em;
+    }
+    
+    #main_content {
+    height: 18em;
+    position: absolute;
+    top: 22em;
+    margin: 0em 2em 0em 2em;
+    height: auto;
+    overflow: hidden;
+    }
+
+    #right_visual {
+    height: 300px;
+    position: relative;
+    top: 0em;
+    right: 0em;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+    float: right;
+    }
+
+    #text_area {
+    padding: 1em 0em 1em 1em;
+    }
+    
+    h3 {
+    font-size: 1em;
+    line-height: 1.1em;
+    padding: .5em;
+    }
+
+    p {
+    font-size: 0.8em;
+    line-height: 1.2em;
+    padding: .5em;
+    }
+    
+    #btn_apple {
+    top: 10em;
+    right: 4em;
+    }
+
+    #btn_google {
+    top: 13em;
+    right: 4em;
+    }
+
+    .demo_link:link,
+    .demo_link:visited,
+    .demo_link:hover,
+    .demo_link:active {
+    width: 8em;
+    height: 2.5em;
+    padding: .8em;
+    top: 3em;
+    right: 4em;
+    }
+
+    
+}
+
+/*  media query vanaf 540 pixels  */
+@media (min-width: 540px) {
+
+    .btn_link:link,
+    .btn_link:visited,
+    .btn_link:hover,
+    .btn_link:active {
+    width: 8em;
+    height: 2.5em;
+    }
+
+    #btn_apple {
+    top: 10em;
+    right: 11em;
+    }
+
+    #btn_google {
+    top: 10em;
+    right: 2em;
+    }
+    
+    .demo_link:link,
+    .demo_link:visited,
+    .demo_link:hover,
+    .demo_link:active {
+    width: 17em;
+    height: 2.5em;
+    padding: .8em;
+    top: 3em;
+    right: 2em;
+    }
+    
+    #right_visual {
+    height: 440px;
+    }
+    
+    h3 {
+    font-size: 1.2em;
+    line-height: 1.1em;
+    padding: .5em;
+    }
+
+    p {
+    font-size: 1em;
+    line-height: 1.2em;
+    padding: .5em;
+    }
+
+}
+
+/*  media query vanaf 760 pixels  */
+@media (min-width: 760px) {
+
+    header {
+    height: 10em;
+    }
+    
+    nav {
+    display: block;
+    }
+    
+    #logo {
+    width: 12em;
+    }
+
+    #logo_title {
+    font-size: 2.5em;
+    width: 3em;
+    padding: .5em 0em 0em 0.35em;
+    }
+
+    #logo_total {
+    top: 3.5em;
+    left: 3.5em;
+    width: 8em;
+    }
+    
+    #main_content {
+    height: 18em;
+    position: absolute;
+    top: 12.5em;
+    margin: 0em 2em 0em 18em;
+    height: auto;
+    overflow: hidden;
+    }
+
+    #right_visual {
+    height: 440px;
+    position: relative;
+    top: 0em;
+    right: 0em;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+    float: right;
+    }
+
+    #text_area {
+    padding: 1.5em 0em 1.5em 1.5em;
+    }
+
+    h3 {
+    font-size: 1.2em;
+    line-height: 1.1em;
+    padding: .5em;
+    }
+
+    p {
+    font-size: 1em;
+    line-height: 1.2em;
+    padding: .5em;
+    }
+    
+    .btn_link:link,
+    .btn_link:visited,
+    .btn_link:hover,
+    .btn_link:active {
+    width: 12em;
+    height: 3.75em;
+    }
+
+    #btn_apple {
+    top: 28em;
+    left: 3em;
+    }
+
+    #btn_google {
+    top: 33em;
+    left: 3em;
+    }
+    
+    .demo_link:link,
+    .demo_link:visited,
+    .demo_link:hover,
+    .demo_link:active {
+    width: 12em;
+    height: 3.75em;
+    padding: 1.4em;
+    top: 38em;
+    left: 3em;
+    }
+    
+}
+
+/*  media query vanaf 1024 pixels  */
+@media (min-width: 1024px) {
+    
+    #main_content {
+    height: 18em;
+    position: absolute;
+    top: 12.5em;
+    margin: 0em 2em 0em 18em;
+    height: auto;
+    overflow: hidden;
+    }
+
+    #right_visual {
+    height: 520px;
+    position: relative;
+    top: 0em;
+    right: 0em;
+    margin-left: 1em;
+    margin-bottom: 0.5em;
+    float: right;
+    }
+    
+    h3 {
+    font-size: 1.4em;
+    line-height: 1.2em;
+    padding: .5em;
+    }
+
+    p {
+    font-size: 1.2em;
+    line-height: 1.4em;
+    padding: .5em;
+    }
+}
+
+/*  media query vanaf 1200 pixels  */
+@media (min-width: 1200px) {
+    
+    nav {
+    margin: 3.5em 10em;
+    }
+    
+    #logo_total, #btn_apple, #btn_google, 
+    .demo_link:link,
+    .demo_link:visited,
+    .demo_link:hover,
+    .demo_link:active {
+    left: 7.5em;
+    }
+    
+    
+    #main_content {
+    height: 24em;
+    position: absolute;
+    top: 12.5em;
+    margin: 0em 10em 0em 25em;
+    height: auto;
+    overflow: hidden;
+    }
+    
+    #right_visual {
+    height: 600px;
+    }
+}
+
+/*  media query vanaf 1400 pixels  */
+@media (min-width: 1400px) {
+    
+    nav {
+    margin: 3.5em 15em;
+    }
+    
+    #logo_total, #btn_apple, #btn_google, 
+    .demo_link:link,
+    .demo_link:visited,
+    .demo_link:hover,
+    .demo_link:active {
+    left: 12em;
+    }
+    
+    #main_content {
+    margin: 0em 12em 0em 35em;
+    height: auto;
+    overflow: hidden;
+    }
+}
+
+
+
