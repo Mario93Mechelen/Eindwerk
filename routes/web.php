@@ -13,7 +13,19 @@
 
 Route::get('/', function () {
     return view('login');
-});
+})->name('login');
 
 Route::get('/login/facebook','Auth\LoginController@redirectToProvider');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('logout', function(){
+    Illuminate\Support\Facades\Auth::logout();
+    return redirect('/');
+});
+
+
+Route::group(['middleware' => 'auth'], function()
+{
+    Route::get('/home', function() {
+        return view('home');
+    });
+});
