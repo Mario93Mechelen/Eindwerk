@@ -12,8 +12,14 @@ body {
     color: #000000;
 }
 
+#header_wrapper {
+    background-image: url("../img/header_bg_01_bw.jpg");
+    background-size: cover;
+}
+
 header {
     background-color: #618fec;
+    opacity: 0.8;
     width: 100%;
 }
 
@@ -183,6 +189,26 @@ li > a:active {
     font-size: 1.8em;
 }
 
+.chat_item {
+    padding: 20px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.chat_item_image {
+    width: 40px;
+    height: 40px;
+}
+
+.chat_item_name {
+    display: inline-block;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.chat_item_text {
+    padding-top: 10px;
+}
+
 @media (min-width: 420px) {
     .sidebar {
         margin: 20px auto;
@@ -229,6 +255,7 @@ li > a:active {
 
     .sidebar {
         order: -1;
+        margin-top: 85px;
     }
 
     .content {
