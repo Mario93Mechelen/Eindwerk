@@ -19,8 +19,10 @@ Route::get('/home', function() {
     return view('home');
 });
 
-Route::get('/login/facebook','Auth\LoginController@redirectToProvider');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
+Route::get('/login/facebook','Auth\LoginController@redirectToProviderFacebook');
+Route::get('/login/twitter','Auth\LoginController@redirectToProviderTwitter');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallbackFacebook');
+Route::get('login/twitter/callback', 'Auth\LoginController@handleProviderCallbackTwitter');
 Route::get('logout', function(){
     Illuminate\Support\Facades\Auth::logout();
     return redirect('/');

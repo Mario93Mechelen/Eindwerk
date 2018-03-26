@@ -41,13 +41,17 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
-    public function redirectToProvider(){
+    public function redirectToProviderFacebook(){
         return Socialite::driver('facebook')->scopes(['user_birthday'])->redirect();
     }
 
-    public function handleProviderCallback(){
+    public function redirectToProviderTwitter(){
+        return Socialite::driver('twitter')->redirect();
+    }
+
+    public function handleProviderCallbackFacebook(){
         $user = Socialite::driver('facebook')->fields(['languages', 'first_name', 'last_name', 'email', 'gender', 'birthday'])->user();
-        if(!User::where('email',$user->user["email"])->first()) {
+        if(!User::where('token',$user->token)->first()) {
             $appUser = new User();
             $appUser->first_name = $user->user["first_name"];
             $appUser->last_name = $user->user["last_name"];
@@ -57,7 +61,31 @@ class LoginController extends Controller
             $appUser->token = $user->token;
             $appUser->save();
         }else{
-            $appUser = User::where('email',$user->user["email"])->first();
+            $appUser = User::where('token',$user->token)->first();
+        }
+        Auth::login($appUser);
+        return redirect('/home');
+    }
+
+    public function handleProviderCallbackTwitter(){
+        $user = Socialite::driver('twitter')->user();
+        if(!User::where('token',$user->token)->first()) {
+            if(strpos($user->name,' ')) {
+                $indexSpace = strpos($user->name, ' ');
+                $length = strlen($user->name);
+                $first_name = substr($user->name,0,($indexSpace+1));
+                $last_name = substr($user->name,($indexSpace+1),$length);
+            }else{
+                $first_name = $user->name;
+                $last_name = $user->name;
+            }
+            $appUser = new User();
+            $appUser->first_name = $first_name;
+            $appUser->last_name = $last_name;
+            $appUser->token = $user->token;
+            $appUser->save();
+        }else{
+            $appUser = User::where('token',$user->token)->first();
         }
         Auth::login($appUser);
         return redirect('/home');
