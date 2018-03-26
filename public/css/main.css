@@ -12,6 +12,45 @@ body {
     color: #000000;
 }
 
+.main_logo {
+    display: block;
+    width: 400px;
+    margin: 40px auto 0px auto;
+}
+
+.login {
+    display: block;
+    width: 400px;
+    margin: 40px auto;
+}
+
+.social_login:link,
+.social_login:visited,
+.social_login:hover,
+.social_login:active
+{
+    display: block;
+    width: 400px;
+    height: 78px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: transparent;
+    margin-bottom: 20px;
+}
+
+
+.facebook_login {
+    background-image: url("../img/login_fb.jpg");
+}
+
+.twitter_login {
+    background-image: url("../img/login_tw.jpg");
+}
+
+.google_login {
+    background-image: url("../img/login_go.jpg");
+}
+
 #header_wrapper {
     background-image: url("../img/header_bg_01_bw.jpg");
     background-size: cover;
