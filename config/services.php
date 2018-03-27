@@ -38,13 +38,19 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),         // Your GitHub Client ID
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'), // Your GitHub Client Secret
-        'redirect' => 'http://homestead.test/login/facebook/callback',
+        'redirect' => env('FACEBOOK_REDIRECT_URI'),
     ],
 
     'twitter' => [
         'client_id' => env('TWITTER_KEY'),
         'client_secret' => env('TWITTER_SECRET'),
         'redirect' => env('TWITTER_REDIRECT_URI'),
+    ],
+
+    'google' => [
+        'client_id' => env('GOOGLE_KEY'),
+        'client_secret' => env('GOOGLE_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI'),
     ],
 
 ];

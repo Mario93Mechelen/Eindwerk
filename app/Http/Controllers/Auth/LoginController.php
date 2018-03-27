@@ -49,6 +49,10 @@ class LoginController extends Controller
         return Socialite::driver('twitter')->redirect();
     }
 
+    public function redirectToProviderGoogle(){
+        return Socialite::driver('google')->redirect();
+    }
+
     public function handleProviderCallbackFacebook(){
         $user = Socialite::driver('facebook')->fields(['languages', 'first_name', 'last_name', 'email', 'gender', 'birthday'])->user();
         if(!User::where('token',$user->token)->first()) {
@@ -89,5 +93,30 @@ class LoginController extends Controller
         }
         Auth::login($appUser);
         return redirect('/home');
+    }
+
+    public function handleProviderCallbackGoogle(){
+        $user = Socialite::driver('google')->user();
+        dd($user);
+        /*if(!User::where('token',$user->token)->first()) {
+            if(strpos($user->name,' ')) {
+                $indexSpace = strpos($user->name, ' ');
+                $length = strlen($user->name);
+                $first_name = substr($user->name,0,($indexSpace+1));
+                $last_name = substr($user->name,($indexSpace+1),$length);
+            }else{
+                $first_name = $user->name;
+                $last_name = $user->name;
+            }
+            $appUser = new User();
+            $appUser->first_name = $first_name;
+            $appUser->last_name = $last_name;
+            $appUser->token = $user->token;
+            $appUser->save();
+        }else{
+            $appUser = User::where('token',$user->token)->first();
+        }
+        Auth::login($appUser);
+        return redirect('/home');*/
     }
 }
