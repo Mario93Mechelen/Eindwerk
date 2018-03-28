@@ -41,6 +41,17 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function index()
+    {
+        return view('login');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/');
+    }
+
     public function redirectToProviderFacebook(){
         return Socialite::driver('facebook')->scopes(['user_birthday'])->redirect();
     }

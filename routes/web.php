@@ -11,13 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('login');
-})->name('login');
-
-Route::get('/home', function() {
-    return view('home');
-});
+Route::get('/', 'Auth\LoginController@index')->name('login');
 
 Route::get('/login/facebook','Auth\LoginController@redirectToProviderFacebook');
 Route::get('/login/twitter','Auth\LoginController@redirectToProviderTwitter');
@@ -25,15 +19,14 @@ Route::get('/login/google','Auth\LoginController@redirectToProviderGoogle');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallbackFacebook');
 Route::get('login/twitter/callback', 'Auth\LoginController@handleProviderCallbackTwitter');
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallbackGoogle');
-Route::get('logout', function(){
-    Illuminate\Support\Facades\Auth::logout();
-    return redirect('/');
-});
+Route::get('logout', 'Auth\LoginController@logout');
 
 
 Route::group(['middleware' => 'auth'], function()
 {
-    Route::get('/home', function() {
-        return view('home');
-    });
+    Route::get('/home', 'HomeController@index');
+
+    //Locations
+    Route::post('/location/getLocation','LocationController@getLocation');
+    Route::post('/location/store','LocationController@store');
 });
