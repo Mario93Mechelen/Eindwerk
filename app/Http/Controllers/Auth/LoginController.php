@@ -55,7 +55,7 @@ class LoginController extends Controller
 
     public function handleProviderCallbackFacebook(){
         $user = Socialite::driver('facebook')->fields(['languages', 'first_name', 'last_name', 'email', 'gender', 'birthday'])->user();
-        if(!User::where('email',$user->user["email"])->first()) {
+        if(!User::where('email',$user->user["email"])->where('social_type','facebook')->first()) {
             $appUser = new User();
             $appUser->first_name = $user->user["first_name"];
             $appUser->last_name = $user->user["last_name"];
@@ -63,9 +63,10 @@ class LoginController extends Controller
             $appUser->birthday = \Carbon\Carbon::parse($user->user["birthday"]);
             $appUser->email = $user->user["email"];
             $appUser->token = $user->token;
+            $appUser->social_type = 'facebook';
             $appUser->save();
         }else{
-            $appUser = User::where('email',$user->user["email"])->first();
+            $appUser = User::where('email',$user->user["email"])->where('social_type','facebook')->first();
         }
         Auth::login($appUser);
         return redirect('/home');
@@ -87,6 +88,7 @@ class LoginController extends Controller
             $appUser->first_name = $first_name;
             $appUser->last_name = $last_name;
             $appUser->token = $user->token;
+            $appUser->social_type = 'twitter';
             $appUser->save();
         }else{
             $appUser = User::where('token',$user->token)->first();

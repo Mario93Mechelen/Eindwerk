@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique()->nullable();
             $table->string('token');
             $table->string('password')->nullable();
+            $table->enum('social_type',['facebook','twitter','google']);
             $table->rememberToken();
             $table->timestamps();
         });
