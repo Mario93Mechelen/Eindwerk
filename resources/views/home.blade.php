@@ -22,10 +22,10 @@
                     <li class="nav_profile"><a href="#">profile</a></li>
                 </ul>
             </nav>
-
+			
             <div class="location">
-                <h1 class="location_city">{{$location->city}}</h1>
-                <div class="location_label" id="map" style="height:300px">current location</div>
+                <h1 class="location_city">{{$location ? $location->city : "no location found"}}</h1>
+                <div class="location_label">current location</div>
             </div>
     </header>
     </div>
