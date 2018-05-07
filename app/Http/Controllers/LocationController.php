@@ -72,26 +72,7 @@ class LocationController extends Controller
 
     public function checkDistances()
     {
-        $locations = Location::where('user_id','!=',Auth::user()->id)->get();
-        $myLocation = Location::where('user_id', Auth::user()->id)->first();
-        foreach($locations as $location) {
-            $lon1 = $myLocation->longitude;
-            $lat1 = $myLocation->latitude;
-            $lon2 = $location->longitude;
-            $lat2 = $location->latitude;
-            $theta = $lon1 - $lon2;
-            $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
-            $dist = acos($dist);
-            $dist = rad2deg($dist);
-            $miles = $dist * 60 * 1.1515;
 
-            $kms = ($miles * 1.609344);
-
-            if($kms <= 0.25){
-                //ladies and gents, we've got a crossing right here
-            }
-
-        }
     }
     /**
      * Display the specified resource.
