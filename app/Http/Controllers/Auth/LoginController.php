@@ -70,8 +70,8 @@ class LoginController extends Controller
             $appUser = new User();
             $appUser->first_name = $user->user["first_name"];
             $appUser->last_name = $user->user["last_name"];
-            $appUser->gender = $user->user["gender"] ? $user->user["gender"] : null;
-            $appUser->birthday = \Carbon\Carbon::parse($user->user["birthday"]);
+            $appUser->gender = isset($user->user["gender"]) ? $user->user["gender"] : null;
+            $appUser->birthday = isset($user->user["birthday"]) ? \Carbon\Carbon::parse($user->user["birthday"]) : null;
             $appUser->email = $user->user["email"];
             $appUser->token = $user->token;
             $appUser->social_type = 'facebook';
