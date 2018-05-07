@@ -1,18 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Semestr</title>
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
+@extends('layouts.master')
 
-    @include('includes.header')
-
+@section('content')
     <div class="main">
 
         <section class="content aroundme">
@@ -79,10 +67,9 @@
 
     </div>
 
-    <footer>
+    @endsection
 
-    </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+@section('scripts')
     <script>
         var longitude;
         var latitude;
@@ -160,5 +147,5 @@
     <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCMTFMU3WYZ1vlAuw2BGnuDgdsaIu5cdd0&callback=initMap">
     </script>
-</body>
-</html>
+
+    @endsection

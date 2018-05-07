@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use App\Location;
 
-class HomeController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
-        $location = Location::where('user_id',$user->id)->first();
-        return view('home.home', compact('user','location'));
+        return view('profile');
     }
 
     /**

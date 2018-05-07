@@ -973,7 +973,7 @@ module.exports = __webpack_require__(42);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
+ * partials Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 
@@ -1636,7 +1636,7 @@ if (token) {
   }
 
   /**
-   * A specialized version of `_.includes` for arrays without support for
+   * A specialized version of `_.partials` for arrays without support for
    * specifying an index to search from.
    *
    * @private
@@ -2662,7 +2662,7 @@ if (token) {
      * `escapeRegExp`, `every`, `find`, `findIndex`, `findKey`, `findLast`,
      * `findLastIndex`, `findLastKey`, `first`, `floor`, `forEach`, `forEachRight`,
      * `forIn`, `forInRight`, `forOwn`, `forOwnRight`, `get`, `gt`, `gte`, `has`,
-     * `hasIn`, `head`, `identity`, `includes`, `indexOf`, `inRange`, `invoke`,
+     * `hasIn`, `head`, `identity`, `partials`, `indexOf`, `inRange`, `invoke`,
      * `isArguments`, `isArray`, `isArrayBuffer`, `isArrayLike`, `isArrayLikeObject`,
      * `isBoolean`, `isBuffer`, `isDate`, `isElement`, `isEmpty`, `isEqual`,
      * `isEqualWith`, `isError`, `isFinite`, `isFunction`, `isInteger`, `isLength`,
@@ -7576,7 +7576,7 @@ if (token) {
     /**
      * This function is like
      * [`Object.keys`](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
-     * except that it includes inherited enumerable properties.
+     * except that it partials inherited enumerable properties.
      *
      * @private
      * @param {Object} object The object to query.
@@ -10465,16 +10465,16 @@ if (token) {
      * @returns {boolean} Returns `true` if `value` is found, else `false`.
      * @example
      *
-     * _.includes([1, 2, 3], 1);
+     * _.partials([1, 2, 3], 1);
      * // => true
      *
-     * _.includes([1, 2, 3], 1, 2);
+     * _.partials([1, 2, 3], 1, 2);
      * // => false
      *
-     * _.includes({ 'a': 1, 'b': 2 }, 1);
+     * _.partials({ 'a': 1, 'b': 2 }, 1);
      * // => true
      *
-     * _.includes('abcd', 'bc');
+     * _.partials('abcd', 'bc');
      * // => true
      */
     function includes(collection, value, fromIndex, guard) {
@@ -10698,7 +10698,7 @@ if (token) {
      * `_.reduce`, `_.reduceRight`, and `_.transform`.
      *
      * The guarded methods are:
-     * `assign`, `defaults`, `defaultsDeep`, `includes`, `merge`, `orderBy`,
+     * `assign`, `defaults`, `defaultsDeep`, `partials`, `merge`, `orderBy`,
      * and `sortBy`
      *
      * @static
@@ -30068,7 +30068,7 @@ if (typeof jQuery === 'undefined') {
     var width  = $tip[0].offsetWidth
     var height = $tip[0].offsetHeight
 
-    // manually read margins because getBoundingClientRect includes difference
+    // manually read margins because getBoundingClientRect partials difference
     var marginTop = parseInt($tip.css('margin-top'), 10)
     var marginLeft = parseInt($tip.css('margin-left'), 10)
 
