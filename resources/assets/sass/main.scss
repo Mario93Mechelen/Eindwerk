@@ -1,6 +1,13 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+@font-face {
+  font-family: Metropolis;
+  src: url('/fonts/Metropolis-Regular.otf');
+}
+
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
 // Import partials
 @import "reset";
@@ -8,6 +15,3 @@
 @import "mixins";
 @import "style";
 @import "header";
-
-// Bootstrap
-@import "~bootstrap-sass/assets/stylesheets/bootstrap";
