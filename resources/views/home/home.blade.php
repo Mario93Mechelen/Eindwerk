@@ -7,8 +7,11 @@
             <h2 class="content_title">Around me</h2>
 
             <!-- nu placeholders, later loopen we hier de users uit de omgeving uit en vullen we de juiste zaken in  -->
-            @if($user->myCrossings)
-                @foreach($user->myCrossings as $crossing)
+            @if($distance)
+                @foreach($distance as $d)
+                    @php
+                        $crossing = \App\User::where('id',$d['id'])->first();
+                    @endphp
                 <div class="aroundme_item main_item">
                     <img class="aroundme_item_image" src="{{$crossing->avatar}}">
                     <div class="aroundme_item_right aroundme_item_name">{{$crossing->first_name." ".$crossing->last_name}}</div>
@@ -17,6 +20,7 @@
                         <div class="aroundme_item_age">{{$crossing->birthday ? \Carbon\Carbon::parse($crossing->birthday)->diffInYears(\Carbon\Carbon::now())." years" : "unknown age"}}</div>
                         <div class="aroundme_item_country">{{$crossing->myLocation->city ? $crossing->myLocation->city : "no current location"}}</div>
                     </div>
+                    <p>{{$d['kms']}} kms away from you</p>
                     <div class="aroundme_item_right aroundme_item_intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
 
                 </div>

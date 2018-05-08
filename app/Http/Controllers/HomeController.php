@@ -17,7 +17,38 @@ class HomeController extends Controller
     {
         $user = Auth::user();
         $location = Location::where('user_id',$user->id)->first();
-        return view('home.home', compact('user','location'));
+        $locations = Location::where('user_id','!=', $user->id)->get();
+        if(!is_null($location) && !is_null($locations)) {
+            $i = 0;
+            $distance = [];
+            foreach ($locations as $l) {
+                $lon1 = $location->longitude;
+                $lat1 = $location->latitude;
+                $lon2 = $l->longitude;
+                $lat2 = $l->latitude;
+                $theta = $lon1 - $lon2;
+                $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+                $dist = acos($dist);
+                $dist = rad2deg($dist);
+                $miles = $dist * 60 * 1.1515;
+
+                $kms = ($miles * 1.609344);
+
+                $kms = number_format((float)$kms, 2, ',','');
+
+                $distance[$i] = ['id' => $l->user_id, 'kms' => $kms];
+                $i++;
+            }
+
+            foreach($distance as $key => $row){
+                $id[$key] = $row['id'];
+                $kmsArr[$key] = $row['kms'];
+            }
+
+            array_multisort($kmsArr, SORT_ASC,$distance);
+        }
+
+        return view('home.home', compact('user','location', 'distance'));
     }
 
     /**
