@@ -51,7 +51,8 @@ class ConversationController extends Controller
                 (array)$same_ids = array_intersect($myConvIDs, $userConvIDs);
                 if($same_ids){
                     //if we have a common conversation, this is our id
-                    $conversation_id = $same_ids[0];
+                    $reindexed = array_values($same_ids);
+                    $conversation_id = $reindexed;
                 }else{
                     //we both have conversations but not a common one
                     $conversation = new Conversation();
