@@ -7,6 +7,7 @@
             <h2 class="content_title">Around me</h2>
 
             <!-- nu placeholders, later loopen we hier de users uit de omgeving uit en vullen we de juiste zaken in  -->
+            {{dd($user->myCrossings)}}
             <div class="aroundme_item main_item">
                 <img class="aroundme_item_image" src="{{url('img/profile_pic_default.jpg')}}">
                 <div class="aroundme_item_right aroundme_item_name">Amber Heard</div>

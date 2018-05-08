@@ -58,7 +58,7 @@ class checkCrossings extends Command
 
                 if ($kms <= 0.25) {
                     //ladies and gents, we've got a crossing right here
-                    if(!Crossing::where('crosser_id', $location->user_id)->where('crossed_id', $otherLocation->user_id)->first() && !Crossing::where('crosser_id', $otherLocation->user_id)->where('crossed_id', $location->user_id)->first()) {
+                    if(!Crossing::where('crosser_id', $location->user_id)->where('crossed_id', $otherLocation->user_id)->first() || !Crossing::where('crosser_id', $otherLocation->user_id)->where('crossed_id', $location->user_id)->first()) {
                         $crossing = new Crossing();
                         $crossing->crosser_id = $location->user_id;
                         $crossing->crossed_id = $otherLocation->user_id;
