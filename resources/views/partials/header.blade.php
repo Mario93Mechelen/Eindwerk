@@ -12,7 +12,7 @@
 
         <div class="location">
             <h1 class="location_city">{{$location ? $location->city : "no location found"}}</h1>
-            <div class="location_label">current location</div>
+            <div class="location_label"><i class="fas fa-location-arrow"></i> current location</div>
         </div>
     </header>
 </div>
