@@ -7,7 +7,7 @@
             <h2 class="content_title">Around me</h2>
 
             <!-- nu placeholders, later loopen we hier de users uit de omgeving uit en vullen we de juiste zaken in  -->
-            @if(!is_null($distance))
+            @if(isset($distance))
                 @foreach($distance as $d)
                     @php
                         $crossing = \App\User::where('id',$d['id'])->first();
