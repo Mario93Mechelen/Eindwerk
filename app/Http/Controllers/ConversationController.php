@@ -41,21 +41,6 @@ class ConversationController extends Controller
     {
         $id = $request->id;
         $myId = Auth::user()->id;
-        /*
-        if(is_null(Conversation::where('user1',$id)->where('user2', $myId)->first())){
-            if(is_null(Conversation::where('user1',$myId)->where('user2', $id)->first())){
-                $conversation = new Conversation();
-                $conversation->user1 = $myId;
-                $conversation->user2 = $id;
-                $conversation->save();
-                $conversation_id = $conversation->id;
-            }else{
-                $conversation_id = Conversation::where('user1',$myId)->where('user2', $id)->first()->id;
-            }
-
-        }else{
-            $conversation_id = Conversation::where('user1',$id)->where('user2', $myId)->first()->id;
-        };*/
         $myConvIDs = Auth::user()->conversation()->pluck('conversation_id')->toArray();
         $userConvIDs = User::find($id)->conversation()->pluck('conversation_id')->toArray();
         //check if I have conversations
@@ -63,10 +48,10 @@ class ConversationController extends Controller
             //check if the user I clicked has conversations
             if($userConvIDs) {
                 //check if we have a common conversation
-                $same_ids = array_intersect($myConvIDs, $userConvIDs);
+                (array)$same_ids = array_intersect($myConvIDs, $userConvIDs);
                 if($same_ids){
                     //if we have a common conversation, this is our id
-                    $conversation_id = $same_ids;
+                    $conversation_id = $same_ids[0];
                 }else{
                     //we both have conversations but not a common one
                     $conversation = new Conversation();
@@ -91,7 +76,7 @@ class ConversationController extends Controller
             $conversation->users()->attach($myId);
             $conversation_id = $conversation->id;
         }
-        return response()->json(['code' => 200, 'conversation_id' => $conversation_id]);
+        return response()->json(['code' => 200, 'conversation_id' => $same_ids]);
     }
 
     /**
