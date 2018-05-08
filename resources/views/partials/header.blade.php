@@ -6,7 +6,7 @@
                 <li><a href="#" class="active">around me</a></li>
                 <li><a href="#">crossings</a></li>
                 <li><a href="#">settings</a></li>
-                <li class="nav_profile"><a href="#">profile</a></li>
+                <li class="nav_profile"><a href="#">{{$myUser->avatar}}</a></li>
             </ul>
         </nav>
 

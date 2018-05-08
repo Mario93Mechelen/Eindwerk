@@ -73,6 +73,7 @@ class LoginController extends Controller
             $appUser->gender = isset($user->user["gender"]) ? $user->user["gender"] : null;
             $appUser->birthday = isset($user->user["birthday"]) ? \Carbon\Carbon::parse($user->user["birthday"]) : null;
             $appUser->email = $user->user["email"];
+            $appUser->avatar = $user->avatar;
             $appUser->token = $user->token;
             $appUser->social_type = 'facebook';
             $appUser->save();

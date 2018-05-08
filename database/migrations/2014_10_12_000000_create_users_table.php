@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('gender')->nullable();
             $table->date('birthday')->nullable();
             $table->string('email')->unique()->nullable();
+            $table->string('avatar')->nullable();
             $table->string('token');
             $table->string('password')->nullable();
             $table->enum('social_type',['facebook','twitter','google']);
