@@ -37,4 +37,9 @@ class User extends Authenticatable
     {
         return $this->belongsToMany('App\User','crossings','crosser_id','crossed_id');
     }
+
+    public function myLocation()
+    {
+        return $this->hasOne('App\Location', 'user_id','id');
+    }
 }
