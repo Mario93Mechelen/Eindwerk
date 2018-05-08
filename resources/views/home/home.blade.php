@@ -12,7 +12,7 @@
                     @php
                         $crossing = \App\User::where('id',$d['id'])->first();
                     @endphp
-                <div class="aroundme_item main_item">
+                <div class="aroundme_item main_item" data-id="{{$crossing->id}}">
                     <img class="aroundme_item_image" src="{{$crossing->avatar}}">
                     <div class="aroundme_item_right aroundme_item_name">{{$crossing->first_name." ".$crossing->last_name}}</div>
                     <div class="aroundme_item_right aroundme_item_detail">
@@ -107,6 +107,32 @@
                 }
             });
         }
+    </script>
+    <script>
+        $('.aroundme_item').on('click', function(){
+            var id = $(this).data('id');
+            $.ajaxSetup({
+
+                headers: {
+
+                    'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                }
+
+            });
+            $.ajax({
+                method:"POST",
+                url:"{{URL::action('ConversationController@store')}}",
+                data:{
+                    'id': id,
+                }
+            }).done(function(response){
+                if(response.code==200) {
+                    console.log('conversation '+response.conversation_id+' created');
+                    window.location.replace('/conversation/'+response.conversation_id);
+                }
+            });
+        });
     </script>
 
     @endsection

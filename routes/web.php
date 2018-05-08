@@ -30,6 +30,12 @@ Route::group(['middleware' => 'auth'], function()
     //profile
     Route::get('/profile', 'ProfileController@index');
 
+    //conversation
+    Route::post('/conversation', 'ConversationController@store');
+    Route::get('/conversation/{conversation}', 'ConversationController@show');
+    Route::post('/conversation/{conversation}', 'ConversationController@addChatToConversation');
+
+
     //Locations
     Route::post('/location/getLocation','LocationController@getLocation');
     Route::post('/location/store','LocationController@store');
