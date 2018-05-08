@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Location', 'user_id','id');
     }
+
+    public function conversation()
+    {
+        return $this->belongsToMany('App\Conversation');
+    }
 }

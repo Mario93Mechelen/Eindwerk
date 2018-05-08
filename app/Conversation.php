@@ -12,4 +12,9 @@ class Conversation extends Model
     {
         return $this->hasMany('App\Chat');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
+    }
 }

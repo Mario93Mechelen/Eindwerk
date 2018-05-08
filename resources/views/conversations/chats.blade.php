@@ -19,10 +19,44 @@
             margin-left:10%;
             margin-top:50px;
         }
+        .chat-left{
+            height:50px;
+            width:50%;
+            background-color:blue;
+            color:white;
+            margin-left:10%;
+            margin-top:25px;
+            display:inline-block;
+            text-align:center;
+            line-height: 50px;
+        }
+
+        .chat-right{
+            height:50px;
+            width:50%;
+            background-color:grey;
+            color:white;
+            margin-left:40%;
+            margin-top:25px;
+            display:inline-block;
+            text-align:center;
+            line-height: 50px;
+        }
+        .chat-center{
+            height:50px;
+            width:50%;
+            background-color:grey;
+            color:white;
+            margin-left:25%;
+            margin-top:25px;
+            display:inline-block;
+            text-align:center;
+            line-height: 50px;
+        }
     </style>
     <div class="chat-screen">
         <div class="chats-view">
-            @if($conversation->chats)
+            @if(!$conversation->chats->isEmpty())
             @foreach($conversation->chats as $chat)
                 @if($chat->sender_id == $myUser->id)
                     <div class="chat-left">
@@ -51,6 +85,7 @@
     <script>
         $('.send-chat').on('click', function(){
            var text = $('#chat-input').val();
+           $('#chat-input').val('');
             $.ajaxSetup({
 
                 headers: {
@@ -87,7 +122,13 @@
 
         var channel = pusher.subscribe('chat'+'{{$conversation->id}}');
         channel.bind('new-chat', function(data) {
-            alert(data.data.chat);
+            $('.chat-center').remove();
+            if(data.data.sender_id == '{{\Illuminate\Support\Facades\Auth::user()->id}}'){
+                $('.chats-view').append('<div class="chat-left"><p>'+data.data.chat+'</p></div>');
+            }else{
+
+                $('.chats-view').append('<div class="chat-right"><p>'+data.data.chat+'</p></div>');
+            }
         });
     </script>
 @endsection

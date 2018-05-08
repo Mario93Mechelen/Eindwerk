@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConversationsTable extends Migration
+class CreateConversationUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,10 @@ class CreateConversationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('conversations', function (Blueprint $table) {
+        Schema::create('conversation_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable();
+            $table->integer('conversation_id');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateConversationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('conversations');
+        Schema::dropIfExists('conversation_user');
     }
 }
