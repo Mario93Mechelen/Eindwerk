@@ -7,39 +7,22 @@
             <h2 class="content_title">Around me</h2>
 
             <!-- nu placeholders, later loopen we hier de users uit de omgeving uit en vullen we de juiste zaken in  -->
-            <!-- variable $user beschikbaar, ook method $user->myCrossings -->
-            <div class="aroundme_item main_item">
-                <img class="aroundme_item_image" src="{{url('img/profile_pic_default.jpg')}}">
-                <div class="aroundme_item_right aroundme_item_name">Amber Heard</div>
-                <div class="aroundme_item_right aroundme_item_detail">
-                    <div class="aroundme_item_school">student at NYU</div>
-                    <div class="aroundme_item_age">27 years</div>
-                    <div class="aroundme_item_country">United Kingdom</div>
-                </div>
-                <div class="aroundme_item_right aroundme_item_intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
-            </div>
+            @if($user->myCrossings)
+                @foreach($user->myCrossings as $crossing)
+                <div class="aroundme_item main_item">
+                    <img class="aroundme_item_image" src="{{$crossing->avatar}}">
+                    <div class="aroundme_item_right aroundme_item_name">{{$crossing->first_name." ".$crossing->last_name}}</div>
+                    <div class="aroundme_item_right aroundme_item_detail">
+                        <div class="aroundme_item_school">student at NYU</div>
+                        <div class="aroundme_item_age">{{$crossing->birthday ? \Carbon\Carbon::parse($crossing->birthday)->diffInYears(\Carbon\Carbon::now())." years" : "unknown age"}}</div>
+                        <div class="aroundme_item_country">{{$crossing->myLocation->city ? $crossing->myLocation->city : "no current location"}}</div>
+                    </div>
+                    <div class="aroundme_item_right aroundme_item_intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
 
-            <div class="aroundme_item main_item">
-                <img class="aroundme_item_image" src="{{url('img/profile_pic_default.jpg')}}">
-                <div class="aroundme_item_right aroundme_item_name">Amber Heard</div>
-                <div class="aroundme_item_right aroundme_item_detail">
-                    <div class="aroundme_item_school">student at NYU</div>
-                    <div class="aroundme_item_age">27 years</div>
-                    <div class="aroundme_item_country">United Kingdom</div>
                 </div>
-                <div class="aroundme_item_right aroundme_item_intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
-            </div>
-
-            <div class="aroundme_item main_item">
-                <img class="aroundme_item_image" src="{{url('img/profile_pic_default.jpg')}}">
-                <div class="aroundme_item_right aroundme_item_name">Amber Heard</div>
-                <div class="aroundme_item_right aroundme_item_detail">
-                    <div class="aroundme_item_school">student at NYU</div>
-                    <div class="aroundme_item_age">27 years</div>
-                    <div class="aroundme_item_country">United Kingdom</div>
-                </div>
-                <div class="aroundme_item_right aroundme_item_intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
-            </div>
+                @endforeach
+            @else
+            @endif
 
         </section>
 
