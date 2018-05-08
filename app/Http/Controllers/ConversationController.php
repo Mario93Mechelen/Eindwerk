@@ -102,7 +102,12 @@ class ConversationController extends Controller
      */
     public function show(Conversation $conversation)
     {
-        return view('conversations.chats',compact('conversation'));
+        $users = $conversation->users;
+        if($users->contains(Auth::user())) {
+            return view('conversations.chats', compact('conversation'));
+        }else{
+            return redirect('/');
+        }
     }
 
     public function addChatToConversation(Request $request)
