@@ -77,7 +77,7 @@ class ConversationController extends Controller
             $conversation->users()->attach($myId);
             $conversation_id = $conversation->id;
         }
-        return response()->json(['code' => 200, 'conversation_id' => $same_ids]);
+        return response()->json(['code' => 200, 'conversation_id' => $conversation_id]);
     }
 
     /**
