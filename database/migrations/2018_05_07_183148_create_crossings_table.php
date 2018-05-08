@@ -17,6 +17,7 @@ class CreateCrossingsTable extends Migration
             $table->increments('id');
             $table->integer('crosser_id');
             $table->integer('crossed_id');
+            $table->boolean('contacted')->default(0);
             $table->timestamps();
         });
     }
