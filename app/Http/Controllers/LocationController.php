@@ -49,7 +49,8 @@ class LocationController extends Controller
         $longitude = $request->longitude;
         $latitude = $request->latitude;
         $client = new Client();
-        $res = $client->request('GET', 'http://maps.googleapis.com/maps/api/geocode/json?sensor=false&language=nl&latlng='.$latitude.','.$longitude);
+        $res = $client->request('GET','http://maps.googleapis.com/maps/api/geocode/json', ['query' => ['sensor' => 'false', 'language' => 'nl', 'latlng' => $latitude.','.$longitude]]);
+        //sensor=false&language=nl&latlng='.$latitude.','.$longitude
         $res = \GuzzleHttp\json_decode($res->getBody());
         if($res->results[0]) {
             $city = $res->results[0]->address_components[2]->long_name;
