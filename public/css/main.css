@@ -8504,8 +8504,10 @@ body {
   font-family: Metropolis, Arial, sans-serif;
   font-size: 14px;
   color: #000000;
+  overflow: hidden;
 }
 
+/*
 .main_logo {
   display: block;
   width: 400px;
@@ -8521,7 +8523,8 @@ body {
 .social_login:link,
 .social_login:visited,
 .social_login:hover,
-.social_login:active {
+.social_login:active
+{
   display: block;
   width: 400px;
   height: 78px;
@@ -8530,6 +8533,7 @@ body {
   color: transparent;
   margin-bottom: 20px;
 }
+
 
 .facebook_login {
   background-image: url("/img/login_fb.jpg");
@@ -8544,13 +8548,8 @@ body {
 }
 
 .main {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 .sidebar {
@@ -8564,21 +8563,14 @@ body {
 .aroundme_item {
   padding: 10px;
   height: 180px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  box-sizing: border-box;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .aroundme_item:hover {
-  background-color: #e2ebfe;
+  background-color: $hover-color;
   cursor: pointer;
 }
 
@@ -8591,8 +8583,7 @@ body {
 
 .aroundme_item_right {
   display: block;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: calc(100% - 20px - 160px);
 }
 
@@ -8603,11 +8594,8 @@ body {
 }
 
 .aroundme_item_detail {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
   font-size: 0.8em;
   height: 16px;
 }
@@ -8615,13 +8603,13 @@ body {
 .aroundme_item_detail > div {
   padding-right: 10px;
   opacity: 0.5;
-  border-right: 1px solid #000000;
+  border-right: 1px solid $black;
   margin-right: 10px;
 }
 
 .aroundme_item_detail > div:last-of-type {
   padding-right: 0px;
-  border-right: 0px solid #000000;
+  border-right: 0px solid $black;
   margin-right: 0px;
 }
 
@@ -8632,11 +8620,11 @@ body {
 }
 
 .sidebar {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border-radius: 10px;
-  -webkit-box-shadow: 0px 0px 40px -7px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 0px 40px -7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 0px 40px -7px rgba($black ,0.75);
+  -moz-box-shadow: 0px 0px 40px -7px rgba($black ,0.75);
+  box-shadow: 0px 0px 40px -7px rgba($black ,0.75);
   margin: 20px;
   padding: 0px;
   max-width: 400px;
@@ -8645,17 +8633,17 @@ body {
 .sidebar_title {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  background-color: #0048d9;
+  background-color: $primary-color;
   margin: 0px;
   padding: 15px;
-  color: #ffffff;
+  color: $white;
   font-weight: bold;
   font-size: 1.8em;
 }
 
 .chat_item {
   padding: 20px;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid $white;
 }
 
 .chat_item_image {
@@ -8680,6 +8668,7 @@ body {
 }
 
 @media (min-width: 760px) {
+
   .nav_profile {
     top: 10px;
     right: 50px;
@@ -8688,10 +8677,7 @@ body {
   nav ul {
     margin: 0px 50px;
     padding: 20px 0px;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     font-size: 1.2em;
   }
 
@@ -8709,26 +8695,25 @@ body {
 
   .location_label {
     font-weight: bold;
-    color: #0048d9;
+    color: $primary-color;
     font-size: 1.8em;
   }
 
   .main {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
+    flex-direction: row;
     max-width: 910px;
     margin: 0 auto;
   }
 
   .sidebar {
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
+    order: -1;
     margin-top: 85px;
   }
-}
+
+  .content {
+
+  }
+}*/
 
 /*
 
@@ -8736,13 +8721,85 @@ HEADER STYLING
 
  */
 
+header {
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+header a,
+header .navbar,
+header .navbar-brand {
+  background-color: transparent;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: #aaaaaa;
+}
+
+header .navbar {
+  min-width: 550px;
+}
+
+header .navbar-inverse .navbar-nav > .active > a,
+header .navbar-inverse .navbar-nav > .active > a:hover,
+header .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #333333;
+  background-color: transparent;
+}
+
+header .navbar-nav,
+header .navbar-header {
+  float: left;
+  margin: 0;
+}
+
+header .navbar li {
+  float: left;
+}
+
+header .navbar li a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+header .navbar-nav {
+  background-color: yellow;
+}
+
+header .nav_profile_link {
+  background-size: cover;
+  margin: 10px 15px;
+}
+
+/* width */
+
+header::-webkit-scrollbar {
+  width: 20px;
+}
+
+/* Track */
+
+header::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 5px grey;
+          box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+
+header::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 10px;
+}
+
+/*
 #header_wrapper {
   background-image: url("/img/header_bg_01_bw.jpg");
   background-size: cover;
 }
 
 header {
-  background-color: #618fec;
+  background-color: $header-color;
   opacity: 0.8;
   width: 100%;
 }
@@ -8750,15 +8807,10 @@ header {
 nav ul {
   margin: 0px 20px;
   padding: 20px 0px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
   font-size: 1.8em;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid $white;
 }
 
 nav ul li {
@@ -8770,7 +8822,7 @@ li > a:visited,
 li > a:hover,
 li > a:active {
   text-decoration: none;
-  color: #ffffff;
+  color: $white;
   position: relative;
   left: 0px;
   display: inline-block;
@@ -8780,7 +8832,7 @@ li > a:active {
 }
 
 .active {
-  background-color: #0048d9;
+  background-color: $primary-color;
 }
 
 .nav_profile {
@@ -8813,14 +8865,15 @@ li > a:active {
 
 .location_city {
   font-weight: bold;
-  color: #ffffff;
+  color: $white;
   font-size: 2.6em;
   margin-bottom: 0px;
 }
 
 .location_label {
   font-weight: bold;
-  color: #0048d9;
+  color: $primary-color;
   font-size: 1.2em;
 }
+*/
 
