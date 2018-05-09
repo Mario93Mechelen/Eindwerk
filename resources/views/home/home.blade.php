@@ -1,6 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
+    <style>
+        #header-wrapper{
+            background-image:none !important;
+        }
+    </style>
     <div class="main">
 
         <section class="content aroundme">
@@ -76,6 +81,27 @@
             storeLocation(latitude, longitude);
         }
 
+        function positionToMap(position) {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: position.coords.latitude, lng: position.coords.longitude},
+                zoom: 15,
+                zoomControl:false,
+                scaleControl:false,
+                mapTypeControl:false,
+                streetViewControl:false,
+                fullscreenControl:false
+
+            });
+        }
+
+        function initMap(){
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(positionToMap);
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                }
+        }
+
         getLocation();
         window.setInterval(getLocation, 300000);
 
@@ -134,5 +160,8 @@
             });
         });
     </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&callback=initMap"
+            async defer></script>
 
     @endsection

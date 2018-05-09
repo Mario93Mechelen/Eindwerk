@@ -1,4 +1,6 @@
 <div id="header_wrapper">
+
+    <div id="map" style="position:absolute !important; height:290px;width:100%;"></div>
     <header>
         <nav>
             <ul>
