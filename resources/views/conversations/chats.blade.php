@@ -52,6 +52,7 @@
             display:inline-block;
             text-align:center;
             line-height: 50px;
+            animation: opacity 0.5s ease-in-out;
         }
     </style>
     <div class="chat-screen">
@@ -96,15 +97,19 @@
         channel.bind('new-chat', function(data) {
             $('.chat-center').remove();
             if(data.data.sender_id == '{{\Illuminate\Support\Facades\Auth::user()->id}}'){
-                $('.chats-view').append('<div class="chat-left"><p>'+data.data.chat+'</p></div>');
+                var newdiv = '<div class="chat-left"><p>'+data.data.chat+'</p></div>';
+                $(newdiv).appendTo('.chats-view').hide().fadeIn(1000);
+                $(".chats-view").animate({ scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
             }else{
-
-                $('.chats-view').append('<div class="chat-right"><p>'+data.data.chat+'</p></div>');
+                var newdiv = '<div class="chat-right"><p>'+data.data.chat+'</p></div>';
+                $(newdiv).appendTo('.chats-view').hide().fadeIn(1000);
+                $(".chats-view").animate({ scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
             }
         });
     </script>
     <script>
         $(document).ready(function() {
+            $('.chats-view').scrollTop($('.chats-view')[0].scrollHeight);
             var input = "";
             $("#chat-input").emojioneArea({
 
