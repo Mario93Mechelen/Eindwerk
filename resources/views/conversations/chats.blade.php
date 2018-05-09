@@ -15,7 +15,7 @@
             background-color:white;
         }
         #chat-input{
-            width:70%;
+            width:70% !important;
             margin-left:10%;
             margin-top:50px;
         }
@@ -75,6 +75,7 @@
             @endif
         </div>
         <div class="chats-input">
+
             <textarea name="chat" id="chat-input" cols="30" rows="10"></textarea>
             <button class="send-chat">Verzenden</button>
         </div>
@@ -82,35 +83,6 @@
 @endsection
 
 @section('scripts')
-    <script>
-        $('.send-chat').on('click', function(){
-           var text = $('#chat-input').val();
-           $('#chat-input').val('');
-            $.ajaxSetup({
-
-                headers: {
-
-                    'X-CSRF-TOKEN': "{{csrf_token()}}",
-
-                }
-
-            });
-            $.ajax({
-                method:"POST",
-                url:"{{URL::action('ConversationController@addChatToConversation', $conversation)}}",
-                data:{
-                    'message': text,
-                    'sender_id': '{{$myUser->id}}',
-                    'receiver_id': 3,
-                    'id' : '{{$conversation->id}}'
-                }
-            }).done(function(response){
-                if(response.code==200) {
-                    console.log('message sent');
-                }
-            });
-        });
-    </script>
     <script>
         // Enable pusher logging - don't include this in production
         Pusher.logToConsole = true;
@@ -129,6 +101,65 @@
 
                 $('.chats-view').append('<div class="chat-right"><p>'+data.data.chat+'</p></div>');
             }
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            var input = "";
+            $("#chat-input").emojioneArea({
+
+                pickerPosition: "top",
+                tonesStyle: "bullet",
+                events: {
+                    keyup: function (editor, event) {
+                        input = this.getText();
+                        if(event.keyCode == 13){
+                            input = this.getText();
+                            saveChat(input);
+                            this.setText("");
+                        }
+                    },
+                    change: function(editor,event){
+                        input = this.getText();
+                    }
+                }
+            });
+
+            $('#emoji-face').click(function () {
+                $('.emojionearea-button').click()
+            });
+
+            $('.send-chat').on('click', function(){
+                saveChat(input);
+                $('.emojionearea-editor').html('');
+            })
+
+            function saveChat(input){
+                $.ajaxSetup({
+
+                    headers: {
+
+                        'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                    }
+
+                });
+                $.ajax({
+                    method:"POST",
+                    url:"{{URL::action('ConversationController@addChatToConversation', $conversation)}}",
+                    data:{
+                        'message': input,
+                        'sender_id': '{{$myUser->id}}',
+                        'receiver_id': 3,
+                        'id' : '{{$conversation->id}}'
+                    }
+                }).done(function(response){
+                    if(response.code==200) {
+                        console.log('message sent');
+                    }
+                })
+            }
+
         });
     </script>
 @endsection
