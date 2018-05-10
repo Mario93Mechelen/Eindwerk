@@ -1011,9 +1011,9 @@ window._ = __webpack_require__(12);
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(14);
+    window.$ = window.jQuery = __webpack_require__(14);
 
-  __webpack_require__(15);
+    __webpack_require__(15);
 } catch (e) {}
 
 /**
@@ -1035,9 +1035,9 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 var token = document.head.querySelector('meta[name="csrf-token"]');
 
 if (token) {
-  window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
+    window.axios.defaults.headers.common['X-CSRF-TOKEN'] = token.content;
 } else {
-  console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
+    console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
 
 /**
@@ -1051,10 +1051,17 @@ if (token) {
 //window.Pusher = require('pusher-js');
 
 window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
+<<<<<<< HEAD
+    broadcaster: 'pusher',
+    key: '219878673544c0fd8948',
+    cluster: 'eu',
+    encrypted: true
+=======
   broadcaster: 'pusher',
   key: '219878673544c0fd8948',
   cluster: 'eu',
   encrypted: true
+>>>>>>> af7eda0f6e6ddec874fe0e86af633729aa5a9c03
 });
 
 /***/ }),
@@ -43664,7 +43671,11 @@ exports._unrefActive = exports.active = function(item) {
 
 // setimmediate attaches itself to the global object
 __webpack_require__(38);
+<<<<<<< HEAD
+// On some exotic environments, it's not clear which object `setimmeidate` was
+=======
 // On some exotic environments, it's not clear which object `setimmediate` was
+>>>>>>> af7eda0f6e6ddec874fe0e86af633729aa5a9c03
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
 exports.setImmediate = (typeof self !== "undefined" && self.setImmediate) ||
