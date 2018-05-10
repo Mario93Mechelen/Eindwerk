@@ -3,7 +3,6 @@
 @section('content')
 
     <div class="main">
-
         <section class="content aroundme">
             <h2 class="content_title">Around me</h2>
 
@@ -14,7 +13,6 @@
                         $crossing = \App\User::where('id',$d['id'])->first();
                     @endphp
                 <div class="aroundme_item main_item" data-id="{{$crossing->id}}">
-                    <div class="online-circle" style="width: 10px;height: 10px;position: relative;border-radius: 100%;left: 30px;top: 15px;background-color:{{$crossing->isOnline() ? 'hotpink' : 'red'}}"></div>
                     <img class="aroundme_item_image" src="{{$crossing->avatar}}">
                     <div class="aroundme_item_right aroundme_item_name">{{$crossing->first_name." ".$crossing->last_name}}</div>
                     <div class="aroundme_item_right aroundme_item_detail">
@@ -121,7 +119,7 @@
                 }
             }).done(function(response){
                 if(response.code==200) {
-                    if(response.res.results[0]) {
+                    if(response.res != "no results found") {
                         console.log(response.res.results[0].address_components[2].long_name);
                         $('.location_city').html(response.res.results[0].address_components[2].long_name);
                     }else{

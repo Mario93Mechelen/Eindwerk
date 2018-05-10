@@ -52,13 +52,14 @@ class LocationController extends Controller
         $res = $client->request('GET','http://maps.googleapis.com/maps/api/geocode/json', ['query' => ['sensor' => 'false', 'language' => 'nl', 'latlng' => $latitude.','.$longitude]]);
         //sensor=false&language=nl&latlng='.$latitude.','.$longitude
         $res = \GuzzleHttp\json_decode($res->getBody());
-        if($res->results[0]) {
+        if($res->results) {
             $city = $res->results[0]->address_components[2]->long_name;
         }else{
             $city = "unknown";
+            $res = "no results found";
         }
         if(Location::where('user_id',Auth::user()->id)->first()){
-            Location::where('user_id', Auth::user()->id)->update(['latitude' => $latitude, 'longitude' => $longitude]);
+            Location::where('user_id', Auth::user()->id)->update(['latitude' => $latitude, 'longitude' => $longitude, 'city' => $city]);
         }else {
             $location = new Location();
             $location->longitude = $longitude;
