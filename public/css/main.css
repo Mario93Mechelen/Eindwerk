@@ -8856,11 +8856,14 @@ LOGIN STYLING
 
 */
 
-/* background-image werkt nog niet, te fixen */
-
-body.login_page {
-  /*background-image: url("/public/img/landing-banner-mobile.jpg");*/
+.login_page_wrapper {
   background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.login_page {
+  background-color: rgba(0, 34, 69, 0.7);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -8877,37 +8880,37 @@ body.login_page {
   height: 100vh;
 }
 
-body.login_page label {
+.login_page label {
   display: none;
 }
 
-body.login_page .main_logo {
+.login_page .main_logo {
   display: block;
   max-width: 150px;
   padding-bottom: 100px;
   margin: 0 auto;
 }
 
-body.login_page .login-page-center {
+.login_page .login-page-center {
   width: calc(100% - 30px);
   max-width: 420px;
   margin: 0 auto;
 }
 
-body.login_page .form-group {
+.login_page .form-group {
   margin-bottom: 0;
 }
 
-body.login_page input {
+.login_page input {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-body.login_page .form-control {
+.login_page .form-control {
   height: inherit;
 }
 
-body.login_page .btn-primary {
+.login_page .btn-primary {
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -8917,17 +8920,15 @@ body.login_page .btn-primary {
   font-weight: bold;
 }
 
-body.login_page .fb-login-intro {
-  /*color: $white;*/
-  color: red;
+.login_page .fb-login-intro {
+  color: #ffffff;
   overflow: hidden;
   text-align: center;
 }
 
-body.login_page .fb-login-intro:before,
-body.login_page .fb-login-intro:after {
-  /*background-color: $white;*/
-  background-color: red;
+.login_page .fb-login-intro:before,
+.login_page .fb-login-intro:after {
+  background-color: #ffffff;
   content: "";
   display: inline-block;
   height: 1px;
@@ -8936,12 +8937,12 @@ body.login_page .fb-login-intro:after {
   width: 50%;
 }
 
-body.login_page .fb-login-intro:before {
+.login_page .fb-login-intro:before {
   right: 0.5em;
   margin-left: -50%;
 }
 
-body.login_page .fb-login-intro:after {
+.login_page .fb-login-intro:after {
   left: 0.5em;
   margin-right: -50%;
 }
