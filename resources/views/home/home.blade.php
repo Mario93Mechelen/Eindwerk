@@ -1,11 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-    <style>
-        #header-wrapper{
-            background-image:none !important;
-        }
-    </style>
+
     <div class="main">
 
         <section class="content aroundme">
@@ -18,6 +14,7 @@
                         $crossing = \App\User::where('id',$d['id'])->first();
                     @endphp
                 <div class="aroundme_item main_item" data-id="{{$crossing->id}}">
+                    <div class="online-circle" style="width: 10px;height: 10px;position: relative;border-radius: 100%;left: 30px;top: 15px;background-color:{{$crossing->isOnline() ? 'hotpink' : 'red'}}"></div>
                     <img class="aroundme_item_image" src="{{$crossing->avatar}}">
                     <div class="aroundme_item_right aroundme_item_name">{{$crossing->first_name." ".$crossing->last_name}}</div>
                     <div class="aroundme_item_right aroundme_item_detail">

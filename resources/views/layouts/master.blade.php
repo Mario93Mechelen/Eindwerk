@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="/fonts/fontawesome-free-5.0.12/web-fonts-with-css/css/fontawesome-all.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/emoji.min.css">
+    <style>
+        #header-wrapper{
+            background-image:none !important;
+        }
+        .online-cirlce{
+
+        }
+    </style>
 </head>
 <body>
 
