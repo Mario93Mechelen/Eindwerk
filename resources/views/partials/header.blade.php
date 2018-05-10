@@ -17,11 +17,5 @@
             </div>
         </nav>
 
-        <!--
-        <div class="location">
-            <h1 class="location_city">hier var met locatie</h1>
-            <div class="location_label"><i class="fas fa-location-arrow"></i> current location</div>
-        </div>
-        -->
     </header>
 </div>

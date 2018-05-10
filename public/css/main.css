@@ -1403,7 +1403,7 @@ th {
 
 html {
   font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -7889,7 +7889,7 @@ button.close {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .carousel-control.left {
@@ -7978,7 +7978,7 @@ button.close {
   border-radius: 10px;
   cursor: pointer;
   background-color: #000 \9;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: transparent;
 }
 
 .carousel-indicators .active {
@@ -8661,22 +8661,14 @@ body {
   padding-top: 10px;
 }
 
-a[href^="http://maps.google.com/maps"] {
-  display: none !important;
-}
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
 
-a[href^="https://maps.google.com/maps"] {
-  display: none !important;
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+  display:none;
 }
-
-.gmnoprint a,
-.gmnoprint span,
-.gm-style-cc {
-  display: none;
-}
-
 .gmnoprint div {
-  background: none !important;
+  background:none !important;
 }
 
 @media (min-width: 420px) {
@@ -8856,5 +8848,117 @@ header .nav_profile_link {
   .navbar > .container-fluid .navbar-brand {
     margin-left: 0px;
   }
+}
+
+/*
+
+LOGIN STYLING
+
+*/
+
+.login_page_wrapper {
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+}
+
+.login_page {
+  background-color: rgba(0, 34, 69, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+}
+
+.login_page label {
+  display: none;
+}
+
+.login_page .main_logo {
+  display: block;
+  max-width: 150px;
+  padding-bottom: 40px;
+  margin: 0 auto;
+}
+
+.login_page .login-page-center {
+  width: calc(100% - 30px);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.login_page .form-group {
+  margin-bottom: 0;
+}
+
+.login_page input {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+.login_page #email {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.login_page #password {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.login_page .form-control {
+  height: inherit;
+}
+
+.login_page .btn-primary {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: #0048d9;
+  font-weight: bold;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+.login_page .fb-login-intro {
+  color: #ffffff;
+  overflow: hidden;
+  text-align: center;
+  font-size: 24px;
+}
+
+.login_page .fb-login-intro:before,
+.login_page .fb-login-intro:after {
+  background-color: #ffffff;
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: middle;
+  width: 50%;
+}
+
+.login_page .fb-login-intro:before {
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.login_page .fb-login-intro:after {
+  left: 0.5em;
+  margin-right: -50%;
 }
 
