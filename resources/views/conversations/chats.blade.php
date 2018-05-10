@@ -15,7 +15,7 @@
             background-color:white;
         }
         #chat-input{
-            width:70%;
+            width:70% !important;
             margin-left:10%;
             margin-top:50px;
         }
@@ -52,6 +52,7 @@
             display:inline-block;
             text-align:center;
             line-height: 50px;
+            animation: opacity 0.5s ease-in-out;
         }
     </style>
     <div class="chat-screen">
@@ -75,6 +76,7 @@
             @endif
         </div>
         <div class="chats-input">
+
             <textarea name="chat" id="chat-input" cols="30" rows="10"></textarea>
             <button class="send-chat">Verzenden</button>
         </div>
@@ -82,35 +84,6 @@
 @endsection
 
 @section('scripts')
-    <script>
-        $('.send-chat').on('click', function(){
-           var text = $('#chat-input').val();
-           $('#chat-input').val('');
-            $.ajaxSetup({
-
-                headers: {
-
-                    'X-CSRF-TOKEN': "{{csrf_token()}}",
-
-                }
-
-            });
-            $.ajax({
-                method:"POST",
-                url:"{{URL::action('ConversationController@addChatToConversation', $conversation)}}",
-                data:{
-                    'message': text,
-                    'sender_id': '{{$myUser->id}}',
-                    'receiver_id': 3,
-                    'id' : '{{$conversation->id}}'
-                }
-            }).done(function(response){
-                if(response.code==200) {
-                    console.log('message sent');
-                }
-            });
-        });
-    </script>
     <script>
         // Enable pusher logging - don't include this in production
         Pusher.logToConsole = true;
@@ -124,11 +97,74 @@
         channel.bind('new-chat', function(data) {
             $('.chat-center').remove();
             if(data.data.sender_id == '{{\Illuminate\Support\Facades\Auth::user()->id}}'){
-                $('.chats-view').append('<div class="chat-left"><p>'+data.data.chat+'</p></div>');
+                var newdiv = '<div class="chat-left"><p>'+data.data.chat+'</p></div>';
+                $(newdiv).appendTo('.chats-view').hide().fadeIn(1000);
+                $(".chats-view").animate({ scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
             }else{
-
-                $('.chats-view').append('<div class="chat-right"><p>'+data.data.chat+'</p></div>');
+                var newdiv = '<div class="chat-right"><p>'+data.data.chat+'</p></div>';
+                $(newdiv).appendTo('.chats-view').hide().fadeIn(1000);
+                $(".chats-view").animate({ scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
             }
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $('.chats-view').scrollTop($('.chats-view')[0].scrollHeight);
+            var input = "";
+            $("#chat-input").emojioneArea({
+
+                pickerPosition: "top",
+                tonesStyle: "bullet",
+                events: {
+                    keyup: function (editor, event) {
+                        input = this.getText();
+                        if(event.keyCode == 13){
+                            input = this.getText();
+                            saveChat(input);
+                            this.setText("");
+                        }
+                    },
+                    change: function(editor,event){
+                        input = this.getText();
+                    }
+                }
+            });
+
+            $('#emoji-face').click(function () {
+                $('.emojionearea-button').click()
+            });
+
+            $('.send-chat').on('click', function(){
+                saveChat(input);
+                $('.emojionearea-editor').html('');
+            })
+
+            function saveChat(input){
+                $.ajaxSetup({
+
+                    headers: {
+
+                        'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                    }
+
+                });
+                $.ajax({
+                    method:"POST",
+                    url:"{{URL::action('ConversationController@addChatToConversation', $conversation)}}",
+                    data:{
+                        'message': input,
+                        'sender_id': '{{$myUser->id}}',
+                        'receiver_id': 3,
+                        'id' : '{{$conversation->id}}'
+                    }
+                }).done(function(response){
+                    if(response.code==200) {
+                        console.log('message sent');
+                    }
+                })
+            }
+
         });
     </script>
 @endsection

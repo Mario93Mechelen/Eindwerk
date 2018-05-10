@@ -1,6 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
+
     <div class="main">
 
         <section class="content aroundme">
@@ -13,6 +14,7 @@
                         $crossing = \App\User::where('id',$d['id'])->first();
                     @endphp
                 <div class="aroundme_item main_item" data-id="{{$crossing->id}}">
+                    <div class="online-circle" style="width: 10px;height: 10px;position: relative;border-radius: 100%;left: 30px;top: 15px;background-color:{{$crossing->isOnline() ? 'hotpink' : 'red'}}"></div>
                     <img class="aroundme_item_image" src="{{$crossing->avatar}}">
                     <div class="aroundme_item_right aroundme_item_name">{{$crossing->first_name." ".$crossing->last_name}}</div>
                     <div class="aroundme_item_right aroundme_item_detail">
@@ -76,6 +78,27 @@
             storeLocation(latitude, longitude);
         }
 
+        function positionToMap(position) {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: position.coords.latitude, lng: position.coords.longitude},
+                zoom: 15,
+                zoomControl:false,
+                scaleControl:false,
+                mapTypeControl:false,
+                streetViewControl:false,
+                fullscreenControl:false
+
+            });
+        }
+
+        function initMap(){
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(positionToMap);
+                } else {
+                    alert("Geolocation is not supported by this browser.");
+                }
+        }
+
         getLocation();
         window.setInterval(getLocation, 300000);
 
@@ -134,5 +157,8 @@
             });
         });
     </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&callback=initMap"
+            async defer></script>
 
     @endsection
