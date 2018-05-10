@@ -80,7 +80,7 @@ class LoginController extends Controller
         }else{
             $appUser = User::where('email',$user->user["email"])->where('social_type','facebook')->first();
         }
-        Auth::login($appUser);
+        Auth::login($appUser,true);
         return redirect('/home');
     }
 
@@ -105,7 +105,7 @@ class LoginController extends Controller
         }else{
             $appUser = User::where('token',$user->token)->first();
         }
-        Auth::login($appUser);
+        Auth::login($appUser,true);
         return redirect('/home');
     }
 
