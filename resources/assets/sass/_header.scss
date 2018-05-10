@@ -7,8 +7,18 @@ HEADER STYLING
 header {
 
   background-color: $dark-color;
-  color: $white;
   padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+
+  a {
+    color: rgba($white, 0.5);
+  }
+
+  a:focus, a:hover {
+    color: rgba($white, 1);
+    text-decoration: none;
+  }
 
   nav {
 
@@ -52,7 +62,26 @@ header {
     }
 
     .nav_left {
+      padding-top: 10px;
+        width: 100%;
 
+      .nav_semestr {
+        display: none;
+      }
+
+      .nav_aroundme {
+        display: inline-block;
+        padding-right: 15px;
+      }
+
+      .nav_crossings {
+        display: inline-block;
+        padding-right: 15px;
+      }
+
+      .nav_groups {
+        display: inline-block;
+      }
     }
   }
 

@@ -8515,8 +8515,19 @@ HEADER STYLING
 
 header {
   background-color: #002245;
-  color: #ffffff;
   padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+header a {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+header a:focus,
+header a:hover {
+  color: white;
+  text-decoration: none;
 }
 
 header nav .nav_right .nav_chat {
@@ -8545,6 +8556,29 @@ header nav .nav_right .nav_profile a .profile_pic {
   width: 30px;
   background-size: cover;
   border-radius: 5px;
+}
+
+header nav .nav_left {
+  padding-top: 10px;
+  width: 100%;
+}
+
+header nav .nav_left .nav_semestr {
+  display: none;
+}
+
+header nav .nav_left .nav_aroundme {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+header nav .nav_left .nav_crossings {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+header nav .nav_left .nav_groups {
+  display: inline-block;
 }
 
 /*
