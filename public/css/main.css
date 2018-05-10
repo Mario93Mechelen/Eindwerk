@@ -8694,12 +8694,12 @@ LOGIN STYLING
   border-radius: 10px;
 }
 
-.login_page #email {
+.login_page #email_login {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
 
-.login_page #password {
+.login_page #password_login {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
@@ -8746,5 +8746,23 @@ LOGIN STYLING
 .login_page .fb-login-intro:after {
   left: 0.5em;
   margin-right: -50%;
+}
+
+/*
+
+SIGNUP STYLING
+
+*/
+
+#email_register,
+#password_register {
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#password_register,
+#password_repeat_register {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
 }
 
