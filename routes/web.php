@@ -21,6 +21,9 @@ Route::get('login/twitter/callback', 'Auth\LoginController@handleProviderCallbac
 Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallbackGoogle');
 Route::get('logout', 'Auth\LoginController@logout');
 
+//signup
+Route::get('/signup', 'Auth\RegisterController@index');
+
 
 Route::group(['middleware' => 'auth'], function()
 {

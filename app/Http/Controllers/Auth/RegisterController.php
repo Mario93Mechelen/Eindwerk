@@ -39,6 +39,11 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+    public function index()
+    {
+        return view('auth.signup');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *
