@@ -44,6 +44,11 @@ class RegisterController extends Controller
         return view('auth.signup');
     }
 
+    public function index2()
+    {
+        return view('auth.signup-step2');
+    }
+
     /**
      * Get a validator for an incoming registration request.
      *

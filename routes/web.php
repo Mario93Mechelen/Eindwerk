@@ -23,6 +23,7 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 //signup
 Route::get('/signup', 'Auth\RegisterController@index');
+Route::get('/signup2', 'Auth\RegisterController@index2');
 
 
 Route::group(['middleware' => 'auth'], function()
