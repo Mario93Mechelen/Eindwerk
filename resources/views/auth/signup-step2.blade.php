@@ -18,23 +18,16 @@
 
             <form class="login-form">
                 <div class="form-group">
-                    <label for="email">email</label>
-                    <input type="email" class="form-control" id="email_register" name="email" placeholder="email">
+                    <label for="firstname">first name</label>
+                    <input type="text" class="form-control" id="firstname_register" name="firstname" placeholder="first name">
                 </div>
                 <div class="form-group">
-                    <label for="password">password</label>
-                    <input type="password" class="form-control" id="password_register" name="password" placeholder="password">
+                    <label for="lastname">last name</label>
+                    <input type="text" class="form-control" id="lastname_register" name="lastname" placeholder="last name">
                 </div>
-                <div class="form-group">
-                    <label for="password_repeat">password repeat</label>
-                    <input type="password_repeat" class="form-control" id="password_repeat_register" name="password_repeat"
-                           placeholder="password repeat">
-                </div>
-                <button type="submit" class="btn btn-primary">srg vrqgqrft</button>
+                <button type="submit" class="btn btn-primary">register</button>
             </form>
 
-            <div class="fb-login-intro"><span>or register with</span></div>
-            <a class="btn btn-primary social_login facebook_login" href="/login/facebook">facebook</a>
 
         </div>
     </div>
