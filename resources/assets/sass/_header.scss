@@ -6,6 +6,68 @@ HEADER STYLING
 
 header {
 
+  background-color: $dark-color;
+  color: $white;
+  padding: 15px;
+
+  nav {
+
+
+    .nav_right {
+
+
+      .nav_chat {
+        display: inline-block;
+
+        a {
+
+          p {
+            display: none;
+          }
+
+          img {
+            height: 30px;
+          }
+        }
+      }
+
+      .nav_profile {
+        display: inline-block;
+        float: right;
+
+        a {
+
+          p {
+            display: none;
+          }
+
+          .profile_pic {
+            height: 30px;
+            width: 30px;
+            background-size: cover;
+            border-radius: 5px;
+          }
+        }
+      }
+    }
+
+    .nav_left {
+
+    }
+  }
+
+}
+
+
+
+
+
+
+
+/*
+
+header {
+
   overflow-x: hidden;
   overflow-y: hidden;
 
@@ -74,24 +136,24 @@ header {
   }
 }
 
-/* scrollbar when menu not totally visible */
+
 @media(max-width: 560px) {
   header:hover {
     overflow-x: scroll;
   }
 
-  /* width */
+
   header::-webkit-scrollbar {
     height: 6px;
   }
 
-  /* Track */
+
   header::-webkit-scrollbar-track {
     background: $hover-color;
     border-radius: 5px;
   }
 
-  /* Handle */
+
   header::-webkit-scrollbar-thumb {
     background: $primary-color;
     border-radius: 5px;
@@ -115,3 +177,4 @@ header {
   }
 }
 
+*/
