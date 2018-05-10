@@ -25,7 +25,7 @@ header {
   }
 
   .navbar {
-    min-width: 560px;
+    min-width: 525px;
     margin-bottom: 0px;
   }
 
@@ -82,15 +82,11 @@ header {
 
   /* width */
   header::-webkit-scrollbar {
-    width: 20px;
-    height: 8px;
-    position: relative;
-    top: -20px;
+    height: 6px;
   }
 
   /* Track */
   header::-webkit-scrollbar-track {
-    width: 90%;
     background: $hover-color;
     border-radius: 5px;
   }
@@ -99,7 +95,6 @@ header {
   header::-webkit-scrollbar-thumb {
     background: $primary-color;
     border-radius: 5px;
-    width: 20px;
   }
 }
 

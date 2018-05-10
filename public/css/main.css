@@ -8743,7 +8743,7 @@ header .navbar-brand {
 }
 
 header .navbar {
-  min-width: 560px;
+  min-width: 525px;
   margin-bottom: 0px;
 }
 
@@ -8804,16 +8804,12 @@ header .nav_profile_link {
   /* width */
 
   header::-webkit-scrollbar {
-    width: 20px;
-    height: 8px;
-    position: relative;
-    top: -20px;
+    height: 6px;
   }
 
   /* Track */
 
   header::-webkit-scrollbar-track {
-    width: 90%;
     background: #e2ebfe;
     border-radius: 5px;
   }
@@ -8823,7 +8819,6 @@ header .nav_profile_link {
   header::-webkit-scrollbar-thumb {
     background: #0048d9;
     border-radius: 5px;
-    width: 20px;
   }
 }
 
