@@ -6,20 +6,27 @@ HEADER STYLING
 
 header {
 
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
+
+  margin-left: 15px;
+  margin-right: 15px;
+
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   a, .navbar, .navbar-brand {
     background-color: transparent;
     border: none;
     font-size: 22px;
     font-weight: bold;
-    color: $nav_unselected;
   }
 
   .navbar {
-    min-width: 550px;
-
+    min-width: 560px;
+    margin-bottom: 0px;
   }
 
   .navbar-inverse .navbar-nav > .active > a,
@@ -34,6 +41,11 @@ header {
     margin: 0;
   }
 
+  .container-fluid > .navbar-header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   .navbar li {
     float: left;
   }
@@ -43,120 +55,68 @@ header {
     padding-bottom: 15px;
   }
 
-  .navbar-nav {
-    background-color: yellow;
+  a.navbar-brand {
+    padding-left: 0px;
+  }
+
+  .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: $nav_unselected;
+  }
+
+  .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav > li > a:hover {
+    color: $primary-color;
   }
 
   .nav_profile_link {
     background-size: cover;
     margin: 10px 15px;
+    padding-right: 0px;
   }
 }
 
-/* width */
-header::-webkit-scrollbar {
-  width: 20px;
+/* scrollbar when menu not totally visible */
+@media(max-width: 560px) {
+  header:hover {
+    overflow-x: scroll;
+  }
+
+  /* width */
+  header::-webkit-scrollbar {
+    width: 20px;
+    height: 8px;
+    position: relative;
+    top: -20px;
+  }
+
+  /* Track */
+  header::-webkit-scrollbar-track {
+    width: 90%;
+    background: $hover-color;
+    border-radius: 5px;
+  }
+
+  /* Handle */
+  header::-webkit-scrollbar-thumb {
+    background: $primary-color;
+    border-radius: 5px;
+    width: 20px;
+  }
 }
 
-/* Track */
-header::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey;
-  border-radius: 10px;
+@media(min-width: 560px) {
+  .navbar-nav {
+    overflow: auto;
+    width: calc(100% - 75px);
+  }
+
+  .navbar li.nav_profile {
+    float: right;
+  }
 }
 
-/* Handle */
-header::-webkit-scrollbar-thumb {
-  background: red;
-  border-radius: 10px;
+@media (min-width: 768px) {
+  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
+    margin-left: 0px;
+  }
 }
 
-
-
-
-
-
-
-/*
-#header_wrapper {
-  background-image: url("/img/header_bg_01_bw.jpg");
-  background-size: cover;
-}
-
-header {
-  background-color: $header-color;
-  opacity: 0.8;
-  width: 100%;
-}
-
-nav ul {
-  margin: 0px 20px;
-  padding: 20px 0px;
-  display: flex;
-  flex-direction: column;
-  font-size: 1.8em;
-  border-bottom: 1px solid $white;
-}
-
-nav ul li {
-  list-style: none;
-}
-
-li > a:link,
-li > a:visited,
-li > a:hover,
-li > a:active {
-  text-decoration: none;
-  color: $white;
-  position: relative;
-  left: 0px;
-  display: inline-block;
-  padding: 0px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-.active {
-  background-color: $primary-color;
-}
-
-.nav_profile {
-  width: 40px;
-  height: 40px;
-  background-image: url(/img/profile_pic_default.jpg);
-  background-size: contain;
-  font-size: 0;
-  border-radius: 5px;
-}
-
-.nav_profile {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-}
-
-.nav_profile a {
-  display: block;
-  width: 40px;
-  height: 40px;
-}
-
-.location {
-  display: block;
-  width: 200px;
-  margin: 0px auto;
-  padding: 40px 0px;
-}
-
-.location_city {
-  font-weight: bold;
-  color: $white;
-  font-size: 2.6em;
-  margin-bottom: 0px;
-}
-
-.location_label {
-  font-weight: bold;
-  color: $primary-color;
-  font-size: 1.2em;
-}
-*/
