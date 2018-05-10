@@ -63,7 +63,8 @@ header {
 
     .nav_left {
       padding-top: 10px;
-        width: 100%;
+      padding-bottom: 10px;
+      width: 335px;
 
       .nav_semestr {
         display: none;
@@ -88,6 +89,33 @@ header {
 }
 
 
+@media(max-width: 350px) {
+
+  .nav_left_wrapper {
+    width: calc(100vw - 30px);
+  }
+
+  .nav_left_wrapper:hover {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .nav_left_wrapper::-webkit-scrollbar {
+    height: 6px;
+  }
+
+
+  .nav_left_wrapper::-webkit-scrollbar-track {
+    background-color: rgba($white, 0.5);
+    border-radius: 5px;
+  }
+
+
+  .nav_left_wrapper::-webkit-scrollbar-thumb {
+    background: $white;
+    border-radius: 5px;
+  }
+}
 
 
 
