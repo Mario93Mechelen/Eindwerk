@@ -25,15 +25,17 @@ LOGIN STYLING
 
   .main_logo {
     display: block;
-    max-width: 150px;
-    padding-bottom: 40px;
+    max-width: 200px;
+    padding-top: 60px;
+    padding-bottom: 80px;
     margin: 0 auto;
+    height: auto;
   }
 
   .login-page-center {
     width: calc(100% - 30px);
     max-width: 420px;
-    margin: 0 auto;
+    flex: 3;
   }
 
   .form-group {
