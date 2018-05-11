@@ -8514,107 +8514,309 @@ HEADER STYLING
  */
 
 header {
-  overflow-x: hidden;
-  overflow-y: hidden;
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
-header .container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-header a,
-header .navbar,
-header .navbar-brand {
-  background-color: transparent;
-  border: none;
+  background-color: #002245;
+  padding: 15px;
   font-size: 22px;
   font-weight: bold;
 }
 
-header .navbar {
-  min-width: 525px;
-  margin-bottom: 0px;
+header a {
+  color: rgba(255, 255, 255, 0.5);
 }
 
-header .navbar-inverse .navbar-nav > .active > a,
-header .navbar-inverse .navbar-nav > .active > a:hover,
-header .navbar-inverse .navbar-nav > .active > a:focus {
-  color: #333333;
-  background-color: transparent;
+header a:focus,
+header a:hover {
+  color: white;
+  text-decoration: none;
 }
 
-header .navbar-nav,
-header .navbar-header {
-  float: left;
-  margin: 0;
+header nav .nav_right .nav_chat {
+  display: inline-block;
 }
 
-header .container-fluid > .navbar-header {
-  margin-left: 0;
-  margin-right: 0;
+header nav .nav_right .nav_chat a p {
+  display: none;
 }
 
-header .navbar li {
-  float: left;
+header nav .nav_right .nav_chat a img {
+  height: 30px;
 }
 
-header .navbar li a {
-  padding-top: 15px;
-  padding-bottom: 15px;
+header nav .nav_right .nav_profile {
+  display: inline-block;
+  float: right;
 }
 
-header a.navbar-brand {
-  padding-left: 0px;
+header nav .nav_right .nav_profile a p {
+  display: none;
 }
 
-header .navbar-inverse .navbar-brand,
-header .navbar-inverse .navbar-nav > li > a {
-  color: #aaaaaa;
-}
-
-header .navbar-inverse .navbar-brand:hover,
-header .navbar-inverse .navbar-nav > li > a:hover {
-  color: #0048d9;
-}
-
-header .nav_profile_link {
+header nav .nav_right .nav_profile a .profile_pic {
+  height: 30px;
+  width: 30px;
   background-size: cover;
-  margin: 10px 15px;
-  padding-right: 0px;
+  border-radius: 5px;
 }
 
-/* scrollbar when menu not totally visible */
+header nav .nav_left {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 335px;
+}
 
-@media (max-width: 560px) {
+header nav .nav_left .nav_semestr {
+  display: none;
+}
+
+header nav .nav_left .nav_aroundme {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+header nav .nav_left .nav_crossings {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+header nav .nav_left .nav_groups {
+  display: inline-block;
+}
+
+@media (max-width: 350px) {
+  .nav_left_wrapper {
+    width: calc(100vw - 30px);
+  }
+
+  .nav_left_wrapper:hover {
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+
+  .nav_left_wrapper::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .nav_left_wrapper::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+  }
+
+  .nav_left_wrapper::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    border-radius: 5px;
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    max-width: 960px;
+    margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  header nav .nav_right {
+    display: block;
+    width: 220px;
+    float: right;
+    position: relative;
+    top: 3px;
+  }
+
+  header nav .nav_right .nav_chat {
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    background-image: url("/img/triangle_down.png");
+    background-size: 8px 6px;
+    background-repeat: no-repeat;
+    background-position: 95% 55%;
+  }
+
+  header nav .nav_right .nav_chat a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  header nav .nav_right .nav_chat a p {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    padding-left: 10px;
+  }
+
+  header nav .nav_right .nav_profile {
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    background-image: url("/img/triangle_down.png");
+    background-size: 8px 6px;
+    background-repeat: no-repeat;
+    background-position: 95% 55%;
+  }
+
+  header nav .nav_right .nav_profile a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  header nav .nav_right .nav_profile a p {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    padding-right: 10px;
+  }
+
+  header nav .nav_left {
+    width: 500px;
+  }
+
+  header nav .nav_left .nav_semestr {
+    display: inline-block;
+    padding-right: 15px;
+    position: relative;
+    top: 5px;
+  }
+
+  header nav .nav_left .nav_semestr a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  header nav .nav_left .nav_semestr a img {
+    height: 22px;
+    width: auto;
+  }
+
+  header nav .nav_left .nav_semestr a p {
+    padding-left: 15px;
+  }
+}
+
+/*
+
+header {
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  margin-left: 15px;
+  margin-right: 15px;
+
+  .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  a, .navbar, .navbar-brand {
+    background-color: transparent;
+    border: none;
+    font-size: 22px;
+    font-weight: bold;
+  }
+
+  .navbar {
+    min-width: 525px;
+    margin-bottom: 0px;
+  }
+
+  .navbar-inverse .navbar-nav > .active > a,
+  .navbar-inverse .navbar-nav > .active > a:hover,
+  .navbar-inverse .navbar-nav > .active > a:focus {
+    color: $nav_selected;
+    background-color: transparent;
+  }
+
+  .navbar-nav, .navbar-header {
+    float:left;
+    margin: 0;
+  }
+
+  .container-fluid > .navbar-header {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .navbar li {
+    float: left;
+  }
+
+  .navbar li a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  a.navbar-brand {
+    padding-left: 0px;
+  }
+
+  .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    color: $nav_unselected;
+  }
+
+  .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav > li > a:hover {
+    color: $primary-color;
+  }
+
+  .nav_profile_link {
+    background-size: cover;
+    margin: 10px 15px;
+    padding-right: 0px;
+  }
+}
+
+
+@media(max-width: 560px) {
   header:hover {
     overflow-x: scroll;
   }
 
-  /* width */
 
   header::-webkit-scrollbar {
     height: 6px;
   }
 
-  /* Track */
 
   header::-webkit-scrollbar-track {
-    background: #e2ebfe;
+    background: $hover-color;
     border-radius: 5px;
   }
 
-  /* Handle */
 
   header::-webkit-scrollbar-thumb {
-    background: #0048d9;
+    background: $primary-color;
     border-radius: 5px;
   }
 }
 
-@media (min-width: 560px) {
+@media(min-width: 560px) {
   .navbar-nav {
     overflow: auto;
     width: calc(100% - 75px);
@@ -8626,11 +8828,12 @@ header .nav_profile_link {
 }
 
 @media (min-width: 768px) {
-  .navbar > .container .navbar-brand,
-  .navbar > .container-fluid .navbar-brand {
+  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
     margin-left: 0px;
   }
 }
+
+*/
 
 /*
 
