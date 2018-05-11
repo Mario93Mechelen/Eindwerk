@@ -3,8 +3,9 @@
 @section('content')
 
     <div class="main">
+
+        <!-- te deleten section eenmaal pagina klaar -->
         <section class="content aroundme">
-            <h2 class="content_title">wow</h2>
 
             <!-- nu placeholders, later loopen we hier de users uit de omgeving uit en vullen we de juiste zaken in  -->
             @if(isset($distance))
@@ -30,8 +31,22 @@
 
         </section>
 
-        <section>
+        <div class="map-top">
 
+            <div class="search-bar">
+
+            </div>
+
+        </div>
+
+        <h2 class="content_title">People around me</h2>
+
+        <div class="crossings-indicator">CROSSED NEW PEOPLE</div>
+
+
+
+        <!-- grid & list views -->
+        <section>
 
             <div class="container">
                 <!-- toggle switch -->
@@ -174,10 +189,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
 
         </section>
 
