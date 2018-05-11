@@ -5,6 +5,14 @@
   src: url("/fonts/Metropolis-Regular.otf");
 }
 
+@font-face {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}
+
 /*!
  * Bootstrap v3.3.7 (http://getbootstrap.com)
  * Copyright 2011-2016 Twitter, Inc.
@@ -8984,6 +8992,17 @@ Around me page styling
 
 */
 
+::-webkit-scrollbar {
+  width: 0px;
+  /* remove scrollbar space */
+  background: transparent;
+  /* optional: just make scrollbar invisible */
+}
+
+.aroundme_page {
+  overflow-x: hidden;
+}
+
 .aroundme_page .map-top {
   display: none;
 }
@@ -8992,11 +9011,73 @@ Around me page styling
   display: none;
 }
 
+.aroundme_page .crossings-indicator-wrapper {
+  width: calc(100% - 30px);
+  margin: 0px 15px;
+}
+
+.aroundme_page .crossings-indicator {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.aroundme_page .crossings-indicator .crossing_icon {
+  background-image: url("/img/Crossings.png");
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #0048d9;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.aroundme_page .crossings-indicator p {
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 30px;
+  color: #002245;
+}
+
+.aroundme_page .crossings-indicator:before {
+  position: absolute;
+  font-family: 'FontAwesome';
+  top: 6px;
+  right: 20px;
+  content: "\F105";
+  font-size: 24px;
+  color: #0048d9;
+}
+
 @media (min-width: 768px) {
-  .aroundme_page .map-top {
-    display: block;
+  .aroundme_page {
     position: relative;
     top: -57px;
+  }
+
+  .aroundme_page .map-top {
+    display: block;
     z-index: -5;
   }
 
@@ -9064,9 +9145,26 @@ Around me page styling
 
   .aroundme_page .content_title {
     display: block;
-    font-size: 24px;
+    font-size: 32px;
     color: #002245;
     font-weight: bold;
+    max-width: 960px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+  }
+
+  .aroundme_page .crossings-indicator-wrapper {
+    max-width: 960px;
+    margin: 15px auto;
+  }
+
+  .aroundme_page .crossings-indicator {
+    width: 360px;
+    margin: 0;
+  }
+
+  .aroundme_page .crossings-indicator p {
+    font-size: 18px;
   }
 }
 

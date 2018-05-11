@@ -4,8 +4,16 @@ Around me page styling
 
 */
 
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
 
 .aroundme_page {
+
+  overflow-x: hidden;
+
+
 
   .map-top {
     display: none;
@@ -15,18 +23,67 @@ Around me page styling
     display: none;
   }
 
-  .crossings-indicator {
+  .crossings-indicator-wrapper {
+    width: calc(100% - 30px);
+    margin: 0px 15px;
+  }
 
+  .crossings-indicator {
+    box-sizing: border-box;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+
+    .crossing_icon {
+      background-image: url('/img/Crossings.png');
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: $primary-color;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      box-sizing: border-box;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    p {
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      padding-left: 10px;
+      padding-right: 30px;
+      color: $dark-color;
+    }
+  }
+
+  .crossings-indicator:before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    top: 6px;
+    right: 20px;
+    content: "\f105";
+    font-size: 24px;
+    color: $primary-color;
   }
 }
 
 @media(min-width: 768px) {
   .aroundme_page {
+    position: relative;
+    top: -57px;
 
     .map-top {
       display: block;
-      position: relative;
-      top: -57px;
+
       z-index: -5;
 
       .map-top-img {
@@ -76,7 +133,7 @@ Around me page styling
           background-color: $primary-color;
           border: 0;
           color: white;
-         
+
           padding-left: 30px;
           padding-right: 30px;
           border-radius: 0;
@@ -90,13 +147,26 @@ Around me page styling
 
     .content_title {
       display: block;
-      font-size: 24px;
+      font-size: 32px;
       color: $dark-color;
       font-weight: bold;
+      max-width: 960px;
+      margin: 0 auto;
+      padding-bottom: 20px;
+    }
+
+    .crossings-indicator-wrapper {
+      max-width: 960px;
+      margin: 15px auto;
     }
 
     .crossings-indicator {
+      width: 360px;
+      margin: 0;
 
+      p {
+        font-size: 18px;
+      }
     }
   }
 }

@@ -49,7 +49,13 @@
 
         <h2 class="content_title">People around me</h2>
 
-        <div class="crossings-indicator">CROSSED NEW PEOPLE</div>
+        <div class="crossings-indicator-wrapper">
+            <a href="#" class="crossings-indicator">
+                <div class="crossing_icon"></div>
+                <p>you crossed some new people</p>
+            </a>
+        </div>
+
 
 
 
