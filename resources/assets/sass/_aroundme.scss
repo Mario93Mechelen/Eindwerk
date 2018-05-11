@@ -67,8 +67,24 @@ grid vs list view base code taken from https://codepen.io/ajaypatelaj/pen/zIBjJ
 
 /* mod */
 
+.glyphicon {
+  margin: 0px;
+  top: 2px;
+}
+
 .gridlist-toggle {
 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .btn-group {
+    position: fixed;
+    display: block;
+    margin: 0 auto;
+    bottom: 20px;
+    z-index:9999;
+  }
 
   strong {
     display: none;
@@ -79,6 +95,7 @@ grid vs list view base code taken from https://codepen.io/ajaypatelaj/pen/zIBjJ
     box-sizing: border-box;
     border-bottom-left-radius: 10px;
     border-top-left-radius: 10px;
+    box-shadow: 0px 5px 15px 0px rgba(170,170,170,1);
 
     span:before {
       font-size: 24px;
@@ -95,6 +112,7 @@ grid vs list view base code taken from https://codepen.io/ajaypatelaj/pen/zIBjJ
     box-sizing: border-box;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
+    box-shadow: 0px 5px 15px 0px rgba(170,170,170,1);
 
     span:before {
       font-size: 24px;

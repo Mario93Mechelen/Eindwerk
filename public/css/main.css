@@ -9043,6 +9043,29 @@ grid vs list view base code taken from https://codepen.io/ajaypatelaj/pen/zIBjJ
 
 /* mod */
 
+.glyphicon {
+  margin: 0px;
+  top: 2px;
+}
+
+.gridlist-toggle {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gridlist-toggle .btn-group {
+  position: fixed;
+  display: block;
+  margin: 0 auto;
+  bottom: 20px;
+  z-index: 9999;
+}
+
 .gridlist-toggle strong {
   display: none;
 }
@@ -9053,6 +9076,8 @@ grid vs list view base code taken from https://codepen.io/ajaypatelaj/pen/zIBjJ
           box-sizing: border-box;
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
 }
 
 .gridlist-toggle a#list span:before {
@@ -9070,6 +9095,8 @@ grid vs list view base code taken from https://codepen.io/ajaypatelaj/pen/zIBjJ
           box-sizing: border-box;
   border-bottom-right-radius: 10px;
   border-top-right-radius: 10px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
 }
 
 .gridlist-toggle a#grid span:before {
