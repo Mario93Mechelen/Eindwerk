@@ -62,7 +62,7 @@
         <!-- grid & list views -->
         <section>
 
-            <div class="container">
+            <div class="container gridlist-container">
                 <!-- toggle switch -->
                 <div class="gridlist-toggle">
                     <strong>Display</strong>

@@ -9070,6 +9070,19 @@ Around me page styling
   color: #0048d9;
 }
 
+@media (min-width: 990px) {
+  #aroundme_overview {
+    width: 990px;
+    margin: 0 auto;
+  }
+
+  .gridlist-container {
+    width: 990px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .item-list .item-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9201,8 +9214,10 @@ Around me page styling
             flex: 1 1 300px;
     position: relative;
     top: -25px;
-    border: 1px solid #aaaaaa;
+    border: 0px solid #aaaaaa;
     border-radius: 5px;
+    -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
+            box-shadow: 0px 5px 10px 0px #aaaaaa;
     overflow: hidden;
     font-size: 18px;
     width: 100%;
@@ -9252,11 +9267,11 @@ Around me page styling
 
   .aroundme_page .crossings-indicator-wrapper {
     max-width: 960px;
-    margin: 15px auto;
+    margin: 0px auto 30px auto;
   }
 
   .aroundme_page .crossings-indicator {
-    width: 360px;
+    width: 465px;
     margin: 0;
   }
 
@@ -9397,5 +9412,20 @@ Around me page styling
 .gridlist-toggle a.toggle-active span:before {
   color: #ffffff !important;
   background-color: #0048d9;
+}
+
+@media (min-width: 768px) {
+  .gridlist-toggle {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+
+  .gridlist-toggle .btn-group {
+    position: relative;
+    margin: 0;
+    bottom: 70px;
+    right: 15px;
+  }
 }
 

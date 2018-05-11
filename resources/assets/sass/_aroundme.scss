@@ -74,6 +74,19 @@ Around me page styling
   }
 }
 
+@media(min-width: 990px) {
+  #aroundme_overview {
+    width: 990px;
+    margin: 0 auto;
+  }
+  .gridlist-container {
+    width: 990px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
 .item-list {
 
   .item-content {
@@ -189,8 +202,9 @@ Around me page styling
           flex: 1 1 300px;
           position: relative;
           top: -25px;
-          border: 1px solid $nav_unselected;
+          border: 0px solid $nav_unselected;
           border-radius: 5px;
+          box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
           overflow: hidden;
           font-size: 18px;
           width: 100%;
@@ -241,11 +255,11 @@ Around me page styling
 
     .crossings-indicator-wrapper {
       max-width: 960px;
-      margin: 15px auto;
+      margin: 0px auto 30px auto;
     }
 
     .crossings-indicator {
-      width: 360px;
+      width: 465px;
       margin: 0;
 
       p {
@@ -386,4 +400,17 @@ Around me page styling
     }
   }
 
+}
+
+@media (min-width: 768px) {
+  .gridlist-toggle {
+    justify-content: flex-end;
+
+    .btn-group {
+      position:relative;
+      margin: 0;
+      bottom: 70px;
+      right: 15px;
+    }
+  }
 }
