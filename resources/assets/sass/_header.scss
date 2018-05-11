@@ -122,14 +122,18 @@ header {
   header {
     max-width: 960px;
     margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
 
     nav {
 
 
       .nav_right {
         display: block;
-        width: 200px;
+        width: 220px;
         float: right;
+        position: relative;
+        top: 3px;
 
         .nav_chat {
           padding-left: 10px;
@@ -137,10 +141,10 @@ header {
           padding-top: 5px;
           padding-bottom: 5px;
           border-left: 1px solid rgba($white, 0.5);
-          /*background-image: url('/img/triangle_down.png');
-          background-size: 8px 8px;
+          background-image: url('/img/triangle_down.png');
+          background-size: 8px 6px;
           background-repeat: no-repeat;
-          background-position: 50% 100%;*/
+          background-position: 95% 55%;
 
           a {
             display: flex;
@@ -162,9 +166,14 @@ header {
 
         .nav_profile {
           padding-left: 10px;
+          padding-right: 20px;
           padding-top: 5px;
           padding-bottom: 5px;
           border-left: 1px solid rgba($white, 0.5);
+          background-image: url('/img/triangle_down.png');
+          background-size: 8px 6px;
+          background-repeat: no-repeat;
+          background-position: 95% 55%;
 
 
           a {
@@ -187,8 +196,28 @@ header {
       }
 
       .nav_left {
+        width: 500px;
 
         .nav_semestr {
+          display: inline-block;
+          padding-right: 15px;
+          position: relative;
+          top: 5px;
+
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+              height: 22px;
+              width: auto;
+            }
+
+            p {
+              padding-left: 15px;
+            }
+          }
         }
 
         .nav_aroundme {

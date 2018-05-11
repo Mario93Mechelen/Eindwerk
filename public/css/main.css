@@ -8611,12 +8611,16 @@ header nav .nav_left .nav_groups {
   header {
     max-width: 960px;
     margin: 0 auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
   header nav .nav_right {
     display: block;
-    width: 200px;
+    width: 220px;
     float: right;
+    position: relative;
+    top: 3px;
   }
 
   header nav .nav_right .nav_chat {
@@ -8625,10 +8629,10 @@ header nav .nav_left .nav_groups {
     padding-top: 5px;
     padding-bottom: 5px;
     border-left: 1px solid rgba(255, 255, 255, 0.5);
-    /*background-image: url('/img/triangle_down.png');
-          background-size: 8px 8px;
-          background-repeat: no-repeat;
-          background-position: 50% 100%;*/
+    background-image: url("/img/triangle_down.png");
+    background-size: 8px 6px;
+    background-repeat: no-repeat;
+    background-position: 95% 55%;
   }
 
   header nav .nav_right .nav_chat a {
@@ -8653,9 +8657,14 @@ header nav .nav_left .nav_groups {
 
   header nav .nav_right .nav_profile {
     padding-left: 10px;
+    padding-right: 20px;
     padding-top: 5px;
     padding-bottom: 5px;
     border-left: 1px solid rgba(255, 255, 255, 0.5);
+    background-image: url("/img/triangle_down.png");
+    background-size: 8px 6px;
+    background-repeat: no-repeat;
+    background-position: 95% 55%;
   }
 
   header nav .nav_right .nav_profile a {
@@ -8676,6 +8685,38 @@ header nav .nav_left .nav_groups {
     font-size: 14px;
     font-weight: normal;
     padding-right: 10px;
+  }
+
+  header nav .nav_left {
+    width: 500px;
+  }
+
+  header nav .nav_left .nav_semestr {
+    display: inline-block;
+    padding-right: 15px;
+    position: relative;
+    top: 5px;
+  }
+
+  header nav .nav_left .nav_semestr a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  header nav .nav_left .nav_semestr a img {
+    height: 22px;
+    width: auto;
+  }
+
+  header nav .nav_left .nav_semestr a p {
+    padding-left: 15px;
   }
 }
 

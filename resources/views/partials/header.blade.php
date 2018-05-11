@@ -10,7 +10,8 @@
             </ul>
             <div class="nav_left_wrapper">
                 <ul class="nav_left">
-                    <li class="nav_semestr"><a href="#">semestr</a></li>
+                    <li class="nav_semestr"><a href="#"><img src='{{ asset('img/Semestr_logo2_gray.png')
+                    }}'><p>Semestr</p></a></li>
                     <li class="nav_aroundme"><a href="#">around me</a></li>
                     <li class="nav_crossings"><a href="#">crossings</a></li>
                     <li class="nav_groups"><a href="#">groups</a></li>
