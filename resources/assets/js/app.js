@@ -7,7 +7,9 @@
 
 require('./bootstrap');
 
-window.Vue = require('vue');
+window.VueLogin = require('vue');
+
+window.VueRouter = require('vue-router');
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,8 +17,8 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+VueLogin.component('login', require('./views/login.vue'));
 
-const app = new Vue({
-    el: '#app'
+const app = new VueLogin({
+    el: '#login'
 });

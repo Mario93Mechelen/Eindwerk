@@ -25,6 +25,8 @@ Route::get('logout', 'Auth\LoginController@logout');
 Route::get('/signup', 'Auth\RegisterController@index');
 Route::get('/signup2', 'Auth\RegisterController@index2');
 
+Route::get('/vue', 'SpaController@index');
+
 
 Route::group(['middleware' => 'auth'], function()
 {
