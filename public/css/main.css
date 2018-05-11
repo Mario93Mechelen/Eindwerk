@@ -8500,14 +8500,6 @@ table {
   border-spacing: 0;
 }
 
-/*
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-$font-family-sans-serif: "Raleway", sans-serif;
-$font-size-base: 14px;
-$line-height-base: 1.6;
-$text-color: #636b6f;
-*/
-
 body {
   font-family: Metropolis, Arial, sans-serif;
   font-size: 14px;
@@ -8615,11 +8607,18 @@ header nav .nav_left .nav_groups {
 }
 
 @media (min-width: 768px) {
+  #header_wrapper {
+    position: relative;
+    z-index: 9999;
+  }
+
   header {
     max-width: 960px;
     margin: 0 auto;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 
   header nav .nav_right {
@@ -9184,7 +9183,6 @@ Around me page styling
   .aroundme_page {
     position: relative;
     top: -57px;
-    z-index: -5;
   }
 
   .aroundme_page .map-top {
@@ -9426,6 +9424,7 @@ Around me page styling
     margin: 0;
     bottom: 70px;
     right: 15px;
+    z-index: 9999;
   }
 }
 
