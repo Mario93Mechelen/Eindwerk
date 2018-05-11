@@ -24,3 +24,10 @@ SIGNUP STYLING
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
+
+.error1 {
+  background-color: rgba($error-red, 0.5);
+  color: rgba($white, 0.5);
+  padding: 15px;
+  border: 1px solid $error-red;
+}
