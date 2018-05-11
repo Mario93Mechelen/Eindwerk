@@ -16,7 +16,9 @@
 
         <div class="login-page-center">
 
-            <form class="login-form">
+            <form class="login-form " method="post" action="{{URL::action('Auth\RegisterController@register')}}">
+                {{ csrf_field() }}
+                <div class="step1">
                 <div class="form-group">
                     <label for="email">email</label>
                     <input type="email" class="form-control" id="email_register" name="email" placeholder="email">
@@ -30,7 +32,21 @@
                     <input type="password_repeat" class="form-control" id="password_repeat_register" name="password_repeat"
                            placeholder="password repeat">
                 </div>
-                <button type="submit" class="btn btn-primary">next</button>
+                    <p class="error1" style="color:red;"></p>
+                <button class="btn btn-primary to-step-2">next</button>
+                </div>
+                <div class="step2">
+                <div class="form-group">
+                    <label for="firstname">first name</label>
+                    <input type="text" class="form-control" id="firstname_register" name="firstname" placeholder="first name">
+                </div>
+                <div class="form-group">
+                    <label for="lastname">last name</label>
+                    <input type="text" class="form-control" id="lastname_register" name="lastname" placeholder="last name">
+                </div>
+                <button type="submit" class="btn btn-primary">register</button>
+                </div>
+
             </form>
 
             <div class="fb-login-intro"><span>or register with</span></div>
@@ -38,6 +54,22 @@
 
         </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $('.step2').hide();
+        $('.to-step-2').on('click', function(e){
+            e.preventDefault();
+            if($('#email_register').val() != "" && $('#email_register').val().indexOf('@')>0 && $('#email_register').val().indexOf('.')>0 && $('#email_register').val().indexOf('@')< $('#email_register').val().indexOf('.')) {
+                if($('#password_register').val() != "" && $('#password_register').val() == $('#password_repeat_register').val()) {
+                    $('.step1').fadeOut('slow');
+                    $('.step2').fadeIn('slow');
+                }else{
+                    $('.error1').html('passwords are not the same lol');
+                }
+            }else{
+                $('.error1').html('please consider a valid email adress lol');
+            }
+        })
+    </script>
 </body>
 </html>

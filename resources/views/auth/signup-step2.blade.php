@@ -25,7 +25,7 @@
                     <label for="lastname">last name</label>
                     <input type="text" class="form-control" id="lastname_register" name="lastname" placeholder="last name">
                 </div>
-                <button type="submit" class="btn btn-primary">register</button>
+
             </form>
 
 

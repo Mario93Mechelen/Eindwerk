@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -62,6 +65,23 @@ class RegisterController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
+    }
+
+    public function register(Request $request)
+    {
+        $user = new User();
+        if($request->password != $request->password_repeat){
+            return redirect()->back()->with('status','passwords do not match');
+        }else{
+            $user->email = $request->email;
+            $user->password = Hash::make($request->password);
+            $user->first_name = $request->firstname;
+            $user->last_name = $request->lastname;
+            $user->token = $request->_token;
+            $user->save();
+            Auth::login($user, true);
+            return redirect('/');
+        }
     }
 
     /**

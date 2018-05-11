@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -49,7 +51,7 @@ class LoginController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect('/');
+        return redirect('/login');
     }
 
     public function redirectToProviderFacebook(){
@@ -62,6 +64,11 @@ class LoginController extends Controller
 
     public function redirectToProviderGoogle(){
         return Socialite::driver('google')->redirect();
+    }
+
+    public function login(Request $request)
+    {
+        dd($request->all());
     }
 
     public function handleProviderCallbackFacebook(){
@@ -81,7 +88,7 @@ class LoginController extends Controller
             $appUser = User::where('email',$user->user["email"])->where('social_type','facebook')->first();
         }
         Auth::login($appUser,true);
-        return redirect('/home');
+        return redirect('/');
     }
 
     public function handleProviderCallbackTwitter(){
@@ -106,7 +113,7 @@ class LoginController extends Controller
             $appUser = User::where('token',$user->token)->first();
         }
         Auth::login($appUser,true);
-        return redirect('/home');
+        return redirect('/');
     }
 
     public function handleProviderCallbackGoogle(){

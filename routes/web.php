@@ -11,7 +11,8 @@
 |
 */
 
-Route::get('/', 'Auth\LoginController@index')->name('login');
+Route::get('/login', 'Auth\LoginController@index')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/login/facebook','Auth\LoginController@redirectToProviderFacebook');
 Route::get('/login/twitter','Auth\LoginController@redirectToProviderTwitter');
@@ -23,7 +24,7 @@ Route::get('logout', 'Auth\LoginController@logout');
 
 //signup
 Route::get('/signup', 'Auth\RegisterController@index');
-Route::get('/signup2', 'Auth\RegisterController@index2');
+Route::post('/signup', 'Auth\RegisterController@register');
 
 Route::get('/vue', 'SpaController@index');
 
@@ -31,7 +32,7 @@ Route::get('/vue', 'SpaController@index');
 Route::group(['middleware' => 'auth'], function()
 {
     //home
-    Route::get('/home', 'HomeController@index');
+    Route::get('/', 'HomeController@index');
 
     //profile
     Route::get('/profile', 'ProfileController@index');
