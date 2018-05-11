@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="main">
+    <div class="aroundme_page">
 
         <!-- te deleten section eenmaal pagina klaar -->
         <section class="content aroundme">
@@ -33,7 +33,15 @@
 
         <div class="map-top">
 
+            <div class="map-top-img"></div>
+
             <div class="search-bar">
+
+                <div class="searchContainer">
+                    <i class="fa fa-search searchIcon"></i>
+                    <input class="searchBox" type="search" name="search" placeholder="search for location">
+                    <input type="submit" value="search filters" class="searchButton">
+                </div>
 
             </div>
 
