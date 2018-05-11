@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password_repeat">password repeat</label>
-                    <input type="password_repeat" class="form-control" id="password_repeat_register" name="password_repeat"
+                    <input type="password" class="form-control" id="password_repeat_register" name="password_repeat"
                            placeholder="password repeat">
                 </div>
                     <p class="error1" style="color:red;"></p>
