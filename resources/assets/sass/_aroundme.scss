@@ -63,6 +63,11 @@ Around me page styling
     }
   }
 
+  .crossings-indicator {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
   .crossings-indicator:before {
     position: absolute;
     font-family: 'FontAwesome';
@@ -130,7 +135,7 @@ Around me page styling
   .item-content {
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0px 5px 15px 0px rgba(170,170,170,1);
     margin-bottom: 45px;
 
@@ -138,7 +143,8 @@ Around me page styling
       width: 100%;
       height: auto;
       align-self: center;
-      border-radius: 5px;
+      border-style: none;
+      border-radius: 10px;
     }
 
     .caption {
@@ -225,6 +231,10 @@ Around me page styling
           flex: 1;
         }
 
+        .searchBox:focus {
+          outline: none;
+        }
+
         .searchButton {
           background-color: $primary-color;
           border: 0;
@@ -253,7 +263,7 @@ Around me page styling
 
     .crossings-indicator-wrapper {
       max-width: 960px;
-      margin: 0px auto 30px auto;
+      margin: 0px auto 0px auto;
     }
 
     .crossings-indicator {

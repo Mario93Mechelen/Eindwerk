@@ -9059,6 +9059,11 @@ Around me page styling
   color: #002245;
 }
 
+.aroundme_page .crossings-indicator {
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .aroundme_page .crossings-indicator:before {
   position: absolute;
   font-family: 'FontAwesome';
@@ -9140,7 +9145,7 @@ Around me page styling
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 5px;
+  border-radius: 10px;
   -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
           box-shadow: 0px 5px 15px 0px #aaaaaa;
   margin-bottom: 45px;
@@ -9151,7 +9156,8 @@ Around me page styling
   height: auto;
   -ms-flex-item-align: center;
       align-self: center;
-  border-radius: 5px;
+  border-style: none;
+  border-radius: 10px;
 }
 
 .item-grid .item-content .caption {
@@ -9240,6 +9246,10 @@ Around me page styling
             flex: 1;
   }
 
+  .aroundme_page .map-top .search-bar .searchBox:focus {
+    outline: none;
+  }
+
   .aroundme_page .map-top .search-bar .searchButton {
     background-color: #0048d9;
     border: 0;
@@ -9265,7 +9275,7 @@ Around me page styling
 
   .aroundme_page .crossings-indicator-wrapper {
     max-width: 960px;
-    margin: 0px auto 30px auto;
+    margin: 0px auto 0px auto;
   }
 
   .aroundme_page .crossings-indicator {
