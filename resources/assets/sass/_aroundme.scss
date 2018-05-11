@@ -13,8 +13,6 @@ Around me page styling
 
   overflow-x: hidden;
 
-
-
   .map-top {
     display: none;
   }
@@ -80,11 +78,12 @@ Around me page styling
   .aroundme_page {
     position: relative;
     top: -57px;
+    z-index: -5;
 
     .map-top {
       display: block;
 
-      z-index: -5;
+
 
       .map-top-img {
         width: 100%;

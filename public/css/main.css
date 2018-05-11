@@ -9074,11 +9074,11 @@ Around me page styling
   .aroundme_page {
     position: relative;
     top: -57px;
+    z-index: -5;
   }
 
   .aroundme_page .map-top {
     display: block;
-    z-index: -5;
   }
 
   .aroundme_page .map-top .map-top-img {
