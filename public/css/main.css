@@ -9070,6 +9070,56 @@ Around me page styling
   color: #0048d9;
 }
 
+.item-list .item-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  margin-bottom: 15px;
+}
+
+.item-list .item-content .list-item-img {
+  width: 25%;
+  height: auto;
+  -ms-flex-item-align: center;
+      align-self: center;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+
+.item-list .item-content .caption {
+  color: #002245;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.item-list .item-content .caption .list-item-name {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.item-list .item-content .caption .list-item-distance {
+  color: #aaaaaa;
+}
+
+.item-list .item-content .caption .list-item-intro {
+  padding-top: 10px;
+}
+
 @media (min-width: 768px) {
   .aroundme_page {
     position: relative;

@@ -80,7 +80,31 @@
 
                     <!-- item -->
                     <div class="item item-list col-xs-12 col-md-6">
-                        <div class="thumbnail">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt="" />
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">0.2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt="" />
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">0.2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
                             <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt="" />
                             <div class="caption">
                                 <h4 class="list-item-name">Amber Heard</h4>
