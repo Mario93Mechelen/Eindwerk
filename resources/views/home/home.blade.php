@@ -4,7 +4,7 @@
 
     <div class="main">
         <section class="content aroundme">
-            <h2 class="content_title">Around me</h2>
+            <h2 class="content_title">wow</h2>
 
             <!-- nu placeholders, later loopen we hier de users uit de omgeving uit en vullen we de juiste zaken in  -->
             @if(isset($distance))
@@ -30,27 +30,155 @@
 
         </section>
 
-        <section class="sidebar chat">
-            <h3 class="sidebar_title">Chat</h3>
+        <section>
 
-            <!-- nu placeholders, later loopen we hier chat items uit en vullen we de juiste zaken in uit de database -->
-            <div class="chat_item sidebar_item">
-                <img class="chat_item_image" src="{{url('img/profile_pic_default.jpg')}}">
-                <div class="chat_item_name">Amber Heard</div>
-                <div class="chat_item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
+
+            <div class="container">
+                <!-- toggle switch -->
+                <div class="gridlist-toggle">
+                    <strong>Display</strong>
+                    <div class="btn-group">
+                        <a href="#" id="list" class="btn btn-default btn-sm gridlist toggle-active"><span
+                                    class="glyphicon
+                        glyphicon-th-list">
+            </span><p>List</p></a> <a href="#" id="grid" class="btn btn-default btn-sm gridlist"><span
+                                    class="glyphicon glyphicon-th"></span><p>Grid</p></a>
+                    </div>
+                </div>
+                <div id="products" class="row list-group">
+                    <div class="item  col-xs-4 col-lg-4">
+                        <div class="thumbnail">
+                            <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <p class="lead">
+                                            $21.000</p>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  col-xs-4 col-lg-4">
+                        <div class="thumbnail">
+                            <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <p class="lead">
+                                            $21.000</p>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  col-xs-4 col-lg-4">
+                        <div class="thumbnail">
+                            <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <p class="lead">
+                                            $21.000</p>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  col-xs-4 col-lg-4">
+                        <div class="thumbnail">
+                            <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <p class="lead">
+                                            $21.000</p>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  col-xs-4 col-lg-4">
+                        <div class="thumbnail">
+                            <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <p class="lead">
+                                            $21.000</p>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item  col-xs-4 col-lg-4">
+                        <div class="thumbnail">
+                            <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                            <div class="caption">
+                                <h4 class="group inner list-group-item-heading">
+                                    Product title</h4>
+                                <p class="group inner list-group-item-text">
+                                    Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                    sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-6">
+                                        <p class="lead">
+                                            $21.000</p>
+                                    </div>
+                                    <div class="col-xs-12 col-md-6">
+                                        <a class="btn btn-success" href="http://www.jquery2dotnet.com">Add to cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="chat_item sidebar_item">
-                <img class="chat_item_image" src="{{url('img/profile_pic_default.jpg')}}">
-                <div class="chat_item_name">Amber Heard</div>
-                <div class="chat_item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
-            </div>
 
-            <div class="chat_item sidebar_item">
-                <img class="chat_item_image" src="{{url('img/profile_pic_default.jpg')}}">
-                <div class="chat_item_name">Amber Heard</div>
-                <div class="chat_item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
-            </div>
+
+
+
         </section>
 
     </div>
@@ -58,6 +186,21 @@
     @endsection
 
 @section('scripts')
+
+    <!-- toggle list & grid view -->
+    <script>
+
+        $(document).ready(function() {
+            $('#products .item').addClass('list-group-item');
+            $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');$('#list').addClass('toggle-active');$('#grid').removeClass('toggle-active');});
+            $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');$('#products .item').addClass('grid-group-item');$('#list').removeClass('toggle-active');$('#grid').addClass('toggle-active');});
+            $('#list').click(function() {
+
+            });
+        });
+
+    </script>
+
     <script>
         var longitude;
         var latitude;
