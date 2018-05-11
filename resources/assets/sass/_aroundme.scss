@@ -1,0 +1,425 @@
+/*
+
+Around me page styling
+
+*/
+
+::-webkit-scrollbar {
+  width: 0px;  /* remove scrollbar space */
+  background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.aroundme_page {
+
+  overflow-x: hidden;
+
+  .map-top {
+    display: none;
+  }
+
+  .content_title {
+    display: none;
+  }
+
+  .crossings-indicator-wrapper {
+    width: calc(100% - 30px);
+    margin: 0px 15px;
+  }
+
+  .crossings-indicator {
+    box-sizing: border-box;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+
+    .crossing_icon {
+      background-image: url('/img/Crossings.png');
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: $primary-color;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      box-sizing: border-box;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    p {
+      display: block;
+      font-size: 20px;
+      font-weight: bold;
+      padding-left: 10px;
+      padding-right: 30px;
+      color: $dark-color;
+    }
+  }
+
+  .crossings-indicator {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .crossings-indicator:before {
+    position: absolute;
+    font-family: 'FontAwesome';
+    top: 6px;
+    right: 20px;
+    content: "\f105";
+    font-size: 24px;
+    color: $primary-color;
+  }
+}
+
+@media(min-width: 990px) {
+  #aroundme_overview {
+    width: 990px;
+    margin: 0 auto;
+  }
+  .gridlist-container {
+    width: 990px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+
+.item-list {
+
+  .item-content {
+    display: flex;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px rgba(170,170,170,1);
+    margin-bottom: 15px;
+
+    .list-item-img {
+      width: 25%;
+      height: auto;
+      align-self: center;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+    }
+
+    .caption {
+      color: $dark-color;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+
+      .list-item-name {
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .list-item-distance {
+        color: $nav_unselected;
+      }
+      .list-item-intro {
+        padding-top: 10px;
+      }
+    }
+  }
+}
+
+.item-grid {
+
+  .item-content {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px 0px rgba(170,170,170,1);
+    margin-bottom: 45px;
+
+    .list-item-img {
+      width: 100%;
+      height: auto;
+      align-self: center;
+      border-style: none;
+      border-radius: 10px;
+    }
+
+    .caption {
+
+      background-color: rgba($white, 0.5);
+      border-radius: 5px;
+      position: relative;
+      top: -50px;
+      margin-bottom: -50px;
+      padding: 5px;
+      margin-left: 5px;
+      margin-right: 5px;
+
+      .list-item-name {
+        font-weight: bold;
+        font-size: 12px;
+      }
+      .list-item-distance {
+        color: $nav_unselected;
+        font-size: 10px;
+      }
+      .list-item-intro {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+@media(min-width: 768px) {
+
+  .aroundme_page {
+    position: relative;
+    top: -57px;
+
+    .map-top {
+      display: block;
+
+      .map-top-img {
+        width: 100%;
+        height: 250px;
+        background-image: url('/img/header_bg_01.jpg');
+        background-size: cover;
+        background-position: center;
+      }
+
+      .search-bar {
+
+        max-width: 960px;
+        margin: 0 auto;
+
+        /* broncode voor search bar kwam van https://codepen.io/chriscoyier/pen/bYyvvz */
+        .searchContainer {
+          display: inline-flex;
+          flex: 1 1 300px;
+          position: relative;
+          top: -25px;
+          border: 0px solid $nav_unselected;
+          border-radius: 5px;
+          box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
+          overflow: hidden;
+          font-size: 18px;
+          width: 100%;
+
+          ::-webkit-input-placeholder {
+            color: $nav_unselected;
+            font-size: 18px;
+          }
+        }
+
+        .searchIcon {
+          padding: 0.8rem;
+          color: $nav_unselected;
+          background-color: $white;
+        }
+
+        .searchBox {
+          border: 0;
+          padding: 10px 0.5rem 8px 0;
+          flex: 1;
+        }
+
+        .searchBox:focus {
+          outline: none;
+        }
+
+        .searchButton {
+          background-color: $primary-color;
+          border: 0;
+          color: white;
+
+          padding-left: 30px;
+          padding-right: 30px;
+          border-radius: 0;
+          background-image: url('/img/Filter.png'), url('/img/triangle_down.png');
+          background-size: 12px 12px, 8px 6px;
+          background-repeat: no-repeat, no-repeat;
+          background-position: 5% 50%, 95% 55%;
+        }
+      }
+    }
+
+    .content_title {
+      display: block;
+      font-size: 32px;
+      color: $dark-color;
+      font-weight: bold;
+      max-width: 960px;
+      margin: 0 auto;
+      padding-bottom: 20px;
+    }
+
+    .crossings-indicator-wrapper {
+      max-width: 960px;
+      margin: 0px auto 0px auto;
+    }
+
+    .crossings-indicator {
+      width: 465px;
+      margin: 0;
+
+      p {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+
+
+
+
+/* grid vs list view base code taken from https://codepen.io/ajaypatelaj/pen/zIBjJ */
+
+.glyphicon { margin-right:5px; }
+.thumbnail
+{
+  margin-bottom: 20px;
+  padding: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+}
+
+.item.list-group-item
+{
+  float: none;
+  width: 100%;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.item.list-group-item:nth-of-type(odd):hover,.item.list-group-item:hover
+{
+  background: #428bca;
+}
+
+.item.list-group-item .list-group-image
+{
+  margin-right: 10px;
+}
+.item.list-group-item .thumbnail
+{
+  margin-bottom: 0px;
+}
+.item.list-group-item .caption
+{
+  padding: 9px 9px 0px 9px;
+}
+.item.list-group-item:nth-of-type(odd)
+{
+  background: #eeeeee;
+}
+
+.item.list-group-item:before, .item.list-group-item:after
+{
+  display: table;
+  content: " ";
+}
+
+.item.list-group-item img
+{
+  float: left;
+}
+.item.list-group-item:after
+{
+  clear: both;
+}
+.list-group-item-text
+{
+  margin: 0 0 11px;
+}
+
+/* mod */
+
+.glyphicon {
+  margin: 0px;
+  top: 2px;
+}
+
+.gridlist-toggle {
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  .btn-group {
+    position: fixed;
+    display: block;
+    margin: 0 auto;
+    bottom: 20px;
+    z-index:9999;
+  }
+
+  strong {
+    display: none;
+  }
+
+  a#list {
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0px 5px 15px 0px rgba(170,170,170,1);
+
+    span:before {
+      font-size: 24px;
+      color: $nav_unselected;
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  a#grid {
+    padding: 10px;
+    box-sizing: border-box;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 5px 15px 0px rgba(170,170,170,1);
+
+    span:before {
+      font-size: 24px;
+      color: $nav_unselected;
+    }
+
+    p {
+      display: none;
+    }
+  }
+
+  a.toggle-active {
+    background-color: $primary-color;
+    span:before {
+      color: $white !important;
+      background-color: $primary-color;
+    }
+  }
+
+}
+
+@media (min-width: 768px) {
+  .gridlist-toggle {
+    justify-content: flex-end;
+
+    .btn-group {
+      position:relative;
+      margin: 0;
+      bottom: 70px;
+      right: 15px;
+      z-index:9999;
+    }
+  }
+}

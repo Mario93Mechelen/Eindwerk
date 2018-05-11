@@ -2,9 +2,10 @@
 
 @section('content')
 
-    <div class="main">
+    <div class="aroundme_page">
+
+        <!-- te deleten section eenmaal pagina klaar -->
         <section class="content aroundme">
-            <h2 class="content_title">Around me</h2>
 
             <!-- nu placeholders, later loopen we hier de users uit de omgeving uit en vullen we de juiste zaken in  -->
             @if(isset($distance))
@@ -30,27 +31,129 @@
 
         </section>
 
-        <section class="sidebar chat">
-            <h3 class="sidebar_title">Chat</h3>
+        <div class="map-top">
 
-            <!-- nu placeholders, later loopen we hier chat items uit en vullen we de juiste zaken in uit de database -->
-            <div class="chat_item sidebar_item">
-                <img class="chat_item_image" src="{{url('img/profile_pic_default.jpg')}}">
-                <div class="chat_item_name">Amber Heard</div>
-                <div class="chat_item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
+            <div class="map-top-img"></div>
+
+            <div class="search-bar">
+
+                <div class="searchContainer">
+                    <i class="fa fa-search searchIcon"></i>
+                    <input class="searchBox" type="search" name="search" placeholder="search for location">
+                    <input type="submit" value="search filters" class="searchButton">
+                </div>
+
             </div>
 
-            <div class="chat_item sidebar_item">
-                <img class="chat_item_image" src="{{url('img/profile_pic_default.jpg')}}">
-                <div class="chat_item_name">Amber Heard</div>
-                <div class="chat_item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
+        </div>
+
+        <h2 class="content_title">People around me</h2>
+
+        <div class="crossings-indicator-wrapper">
+            <a href="#" class="crossings-indicator">
+                <div class="crossing_icon"></div>
+                <p>you crossed some new people</p>
+            </a>
+        </div>
+
+
+
+
+        <!-- grid & list views -->
+        <section>
+
+            <div class="container gridlist-container">
+                <!-- toggle switch -->
+                <div class="gridlist-toggle">
+                    <strong>Display</strong>
+                    <div class="btn-group">
+                        <a href="#" id="list" class="btn btn-default btn-sm gridlist toggle-active"><span
+                                    class="glyphicon
+                        glyphicon-th-list">
+                        </span><p>List</p></a> <a href="#" id="grid" class="btn btn-default btn-sm gridlist"><span
+                                    class="glyphicon glyphicon-th"></span><p>Grid</p></a>
+                    </div>
+                </div>
+
+                <!-- list & grid view  -->
+                <div id="aroundme_overview" class="row list-group">
+
+                    <!-- item -->
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">0.2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt="" />
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">0.2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt="" />
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">0.2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt="" />
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">0.2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt="" />
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">0.2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- item -->
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt="" />
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">0.2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
             </div>
 
-            <div class="chat_item sidebar_item">
-                <img class="chat_item_image" src="{{url('img/profile_pic_default.jpg')}}">
-                <div class="chat_item_name">Amber Heard</div>
-                <div class="chat_item_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.</div>
-            </div>
         </section>
 
     </div>
@@ -58,6 +161,21 @@
     @endsection
 
 @section('scripts')
+
+    <!-- toggle list & grid view -->
+    <script>
+
+        $(document).ready(function() {
+            $('#products .item').addClass('list-view');
+            $('#list').click(function(event){event.preventDefault();$('.item').addClass('item-list col-xs-12 col-md-6').removeClass('item-grid col-xs-6 col-md-3');$('#list').addClass('toggle-active');$('#grid').removeClass('toggle-active');});
+            $('#grid').click(function(event){event.preventDefault();$('.item').addClass('item-grid col-xs-6 col-md-3').removeClass('item-list col-xs-12 col-md-6');$('#list').removeClass('toggle-active');$('#grid').addClass('toggle-active');});
+            $('#list').click(function() {
+
+            });
+        });
+
+    </script>
+
     <script>
         var longitude;
         var latitude;
