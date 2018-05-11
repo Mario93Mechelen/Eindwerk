@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
@@ -68,7 +69,17 @@ class LoginController extends Controller
 
     public function login(Request $request)
     {
-        dd($request->all());
+        if(User::where('email', $request->email)->first()){
+            $user = User::where('email', $request->email)->first();
+            if(Hash::check($request->password,$user->password)){
+                Auth::login($user, true);
+                return redirect('/');
+            }else{
+                return Redirect::back()->withErrors(['incorrect password lol']);
+            }
+        }else{
+            return Redirect::back()->withErrors(['incorrect email lol']);
+        }
     }
 
     public function handleProviderCallbackFacebook(){

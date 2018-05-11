@@ -16,7 +16,8 @@
 
         <div class="login-page-center">
 
-            <form class="login-form">
+            <form class="login-form" method="post" action="{{URL::action('Auth\LoginController@login')}}">
+                {{csrf_field()}}
                 <div class="form-group">
                     <label for="email">email</label>
                     <input type="email" class="form-control" id="email_login" name="email" placeholder="email">
@@ -27,6 +28,9 @@
                 </div>
                 <button type="submit" class="btn btn-primary">login</button>
             </form>
+            @if($errors->any())
+                <h4 style="color:red">{{$errors->first()}}</h4>
+            @endif
 
             <div class="fb-login-intro"><span>or login with</span></div>
             <a class="btn btn-primary social_login facebook_login" href="/login/facebook">facebook</a>
