@@ -117,6 +117,92 @@ header {
   }
 }
 
+@media(min-width: 768px) {
+
+  header {
+    max-width: 960px;
+    margin: 0 auto;
+
+    nav {
+
+
+      .nav_right {
+        display: block;
+        width: 200px;
+        float: right;
+
+        .nav_chat {
+          padding-left: 10px;
+          padding-right: 20px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          border-left: 1px solid rgba($white, 0.5);
+          /*background-image: url('/img/triangle_down.png');
+          background-size: 8px 8px;
+          background-repeat: no-repeat;
+          background-position: 50% 100%;*/
+
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+              display: block;
+              color: $white;
+              font-size: 14px;
+              font-weight: normal;
+              padding-left: 10px;
+            }
+
+            img {
+            }
+          }
+        }
+
+        .nav_profile {
+          padding-left: 10px;
+          padding-top: 5px;
+          padding-bottom: 5px;
+          border-left: 1px solid rgba($white, 0.5);
+
+
+          a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            p {
+              display: block;
+              color: $white;
+              font-size: 14px;
+              font-weight: normal;
+              padding-right: 10px;
+            }
+
+            .profile_pic {
+            }
+          }
+        }
+      }
+
+      .nav_left {
+
+        .nav_semestr {
+        }
+
+        .nav_aroundme {
+        }
+
+        .nav_crossings {
+        }
+
+        .nav_groups {
+        }
+      }
+    }
+  }
+}
 
 
 

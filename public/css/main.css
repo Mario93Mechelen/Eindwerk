@@ -8607,6 +8607,78 @@ header nav .nav_left .nav_groups {
   }
 }
 
+@media (min-width: 768px) {
+  header {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  header nav .nav_right {
+    display: block;
+    width: 200px;
+    float: right;
+  }
+
+  header nav .nav_right .nav_chat {
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    /*background-image: url('/img/triangle_down.png');
+          background-size: 8px 8px;
+          background-repeat: no-repeat;
+          background-position: 50% 100%;*/
+  }
+
+  header nav .nav_right .nav_chat a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  header nav .nav_right .nav_chat a p {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    padding-left: 10px;
+  }
+
+  header nav .nav_right .nav_profile {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+  }
+
+  header nav .nav_right .nav_profile a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  header nav .nav_right .nav_profile a p {
+    display: block;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: normal;
+    padding-right: 10px;
+  }
+}
+
 /*
 
 header {
