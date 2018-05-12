@@ -29,7 +29,7 @@
                 <button type="submit" class="btn btn-primary">login</button>
             </form>
             @if($errors->any())
-                <h4 style="color:red">{{$errors->first()}}</h4>
+                <h4 class="error1">{{$errors->first()}}</h4>
             @endif
 
             <div class="fb-login-intro"><span>or login with</span></div>
