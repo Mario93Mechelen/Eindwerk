@@ -13,9 +13,28 @@
                 </li>
 
                 <div class="dropdown-menu" id="dropdown-menu-chat" style="display:none">
-                    <a class="dropdown-item dropdown-item-chat" href="#">hey 1</a>
-                    <a class="dropdown-item dropdown-item-chat" href="#">hey 2</a>
-                    <a class="dropdown-item dropdown-item-chat" href="#">hey 3</a>
+                    <a class="dropdown-item dropdown-item-chat" href="#">
+                        <img class="chat-avatar" src='{{ asset('img/profile-pic-default') }}'>
+                        <p class="chat-name">Amber Heard</p>
+                        <p class="chat-time">2h ago</p>
+                        <p class="chat-last-message-start">How are you doing</p>
+                    </a>
+                    <a class="dropdown-item dropdown-item-chat" href="#">
+                        <a class="dropdown-item dropdown-item-chat" href="#">
+                            <img class="chat-avatar" src='{{ asset('img/profile-pic-default') }}'>
+                            <p class="chat-name">Amber Heard</p>
+                            <p class="chat-time">2h ago</p>
+                            <p class="chat-last-message-start">How are you doing</p>
+                        </a>
+                    </a>
+                    <a class="dropdown-item dropdown-item-chat" href="#">
+                        <a class="dropdown-item dropdown-item-chat" href="#">
+                            <img class="chat-avatar" src='{{ asset('img/profile-pic-default') }}'>
+                            <p class="chat-name">Amber Heard</p>
+                            <p class="chat-time">2h ago</p>
+                            <p class="chat-last-message-start">How are you doing</p>
+                        </a>
+                    </a>
                 </div>
 
                 <li class="nav_profile" id="nav_profile">
@@ -25,9 +44,9 @@
                 </li>
 
                 <div class="dropdown-menu" id="dropdown-menu-profile" style="display:none">
-                    <a class="dropdown-item dropdown-item-profile" href="#">hey 1</a>
-                    <a class="dropdown-item dropdown-item-profile" href="#">hey 2</a>
-                    <a class="dropdown-item dropdown-item-profile" href="#">hey 3</a>
+                    <a class="dropdown-item dropdown-item-profile" href="#">my profile</a>
+                    <a class="dropdown-item dropdown-item-profile" href="#">settings</a>
+                    <a class="dropdown-item dropdown-item-profile" href="#">logout</a>
                 </div>
 
             </ul>
