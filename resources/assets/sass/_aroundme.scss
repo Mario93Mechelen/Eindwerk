@@ -14,8 +14,77 @@ Around me page styling
   overflow-x: hidden;
 
   .map-top {
-    display: none;
+
+    .map-top-img {
+      display: none;
+    }
+
+    .search-bar {
+
+      width: calc(100% - 30px);
+      margin: 0 auto;
+
+      .searchContainer {
+        display: inline-flex;
+        flex: 1 1 300px;
+        border: 0px solid $nav_unselected;
+        font-size: 18px;
+        width: 100%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        ::-webkit-input-placeholder {
+          color: $nav_unselected;
+          font-size: 18px;
+        }
+      }
+
+      .searchBox {
+        border: 0;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
+        background-color: $white;
+        width: calc(100% - 50px);
+      }
+
+      .searchIcon {
+        padding: 0.8rem;
+        color: $nav_unselected;
+        background-color: $white;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+
+      .searchBox_inner {
+        display: inline;
+        border: 0;
+        width: 150px;
+      }
+
+      .searchBox_inner:focus {
+        outline: none;
+      }
+
+      .searchButton {
+        background-color: $primary-color;
+        border: 0;
+        color: white;
+        padding-left: 25px;
+        padding-right: 25px;
+        background-image: url('/img/Filter.png');
+        background-size: 12px 12px;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
+        text-align: left;
+      }
+    }
   }
+
 
   .content_title {
     display: none;
@@ -186,9 +255,10 @@ Around me page styling
     top: -57px;
 
     .map-top {
-      display: block;
+
 
       .map-top-img {
+        display: block;
         width: 100%;
         height: 250px;
         background-image: url('/img/header_bg_01.jpg');

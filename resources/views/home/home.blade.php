@@ -16,7 +16,7 @@
                         <input class="searchBox_inner" type="search" name="search" placeholder="search for users">
                     </div>
 
-                    <input type="submit" value="search filters" class="searchButton">
+                    <input type="submit" value="" class="searchButton">
                 </div>
 
             </div>
@@ -138,9 +138,9 @@
 
 @section('scripts')
 
-    <!-- toggle list & grid view -->
-    <script>
 
+    <script>
+        <!-- toggle list & grid view -->
         $(document).ready(function() {
             $('#products .item').addClass('list-view');
             $('#list').click(function(event){event.preventDefault();$('.item').addClass('item-list col-xs-12 col-md-6').removeClass('item-grid col-xs-6 col-md-3');$('#list').addClass('toggle-active');$('#grid').removeClass('toggle-active');});
@@ -150,7 +150,26 @@
             });
         });
 
+        <!-- hide search filter value when mobile -->
+        $(document).ready(function() {
+            if(window.innerWidth < 768) {
+                $(".searchButton").prop('value', '');
+            } else {
+                $(".searchButton").prop('value', 'search filters');
+            }
+        });
+
+        window.onresize = function() {
+            if(window.innerWidth < 768) {
+                $(".searchButton").prop('value', '');
+            } else {
+                $(".searchButton").prop('value', 'search filters');
+            }
+        };
+
     </script>
+
+
 
     <script>
         var longitude;
