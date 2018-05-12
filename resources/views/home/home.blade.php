@@ -11,8 +11,11 @@
             <div class="search-bar">
 
                 <div class="searchContainer">
-                    <i class="fa fa-search searchIcon"></i>
-                    <input class="searchBox" type="search" name="search" placeholder="search for location">
+                    <div class="searchBox">
+                        <i class="fa fa-search searchIcon"></i>
+                        <input class="searchBox_inner" type="search" name="search" placeholder="search for users">
+                    </div>
+
                     <input type="submit" value="search filters" class="searchButton">
                 </div>
 
