@@ -249,32 +249,77 @@ header {
     flex-direction: column;
     border-top-left-radius: 0px;
     border-top-right-radius: 0px;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     min-width: 0px;
     padding: 0px;
   }
 
   #dropdown-menu-chat {
+    width: 232px;
+    position: absolute;
+    left: -110px;
+    top: 47px;
 
     a {
+      display: flex;
+      flex-direction: row;
+      padding: 10px;
+      border-bottom: 1px solid $nav_unselected;
 
       .chat-avatar{
-
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
       }
 
-      .chat-name {
+      .chat-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 10px;
+        width: 100%;
 
+        .chat-nametime {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .chat-name {
+            color: $dark-color;
+            font-weight: bold;
+            font-size: 14px;
+          }
+
+          .chat-time {
+            color: $nav_unselected;
+            font-size: 12px;
+          }
+        }
+
+        .chat-last-message-start {
+          color: $nav_selected;
+          font-size: 12px;
+          font-weight: normal;
+        }
       }
+    }
 
-      .chat-time {
+    .all-chats-link {
+      color: $dark-color;
+      font-weight: bold;
+      font-size: 18px;
+      padding-bottom: 8px;
+    }
 
-      }
-
-      .chat-last-message-start {
-
-      }
-
+    .all-chats-link:before {
+      position: absolute;
+      font-family: 'FontAwesome';
+      top: 158px;
+      right: 20px;
+      content: "\f105";
+      font-size: 24px;
+      color: $primary-color;
     }
   }
 
@@ -282,7 +327,7 @@ header {
     width: 116px;
     position: absolute;
     left: 120px;
-    top: 46px;
+    top: 47px;
 
     a {
       color: $dark-color;
