@@ -240,120 +240,63 @@ header {
   }
 }
 
-
-
-
-/*
+/*  dropdowns  */
 
 header {
 
-  overflow-x: hidden;
-  overflow-y: hidden;
-
-  margin-left: 15px;
-  margin-right: 15px;
-
-  .container-fluid {
-    padding-left: 0;
-    padding-right: 0;
+  .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-width: 0px;
+    padding: 0px;
   }
 
-  a, .navbar, .navbar-brand {
-    background-color: transparent;
-    border: none;
-    font-size: 22px;
-    font-weight: bold;
+  #dropdown-menu-chat {
+
+    a {
+
+      .chat-avatar{
+
+      }
+
+      .chat-name {
+
+      }
+
+      .chat-time {
+
+      }
+
+      .chat-last-message-start {
+
+      }
+
+    }
   }
 
-  .navbar {
-    min-width: 525px;
-    margin-bottom: 0px;
-  }
+  #dropdown-menu-profile {
+    width: 116px;
+    position: absolute;
+    left: 120px;
+    top: 46px;
 
-  .navbar-inverse .navbar-nav > .active > a,
-  .navbar-inverse .navbar-nav > .active > a:hover,
-  .navbar-inverse .navbar-nav > .active > a:focus {
-    color: $nav_selected;
-    background-color: transparent;
-  }
+    a {
+      color: $dark-color;
+      font-weight: bold;
+      font-size: 14px;
+      padding: 10px;
+      border-bottom: 1px solid $nav_unselected;
+    }
 
-  .navbar-nav, .navbar-header {
-    float:left;
-    margin: 0;
-  }
-
-  .container-fluid > .navbar-header {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  .navbar li {
-    float: left;
-  }
-
-  .navbar li a {
-    padding-top: 15px;
-    padding-bottom: 15px;
-  }
-
-  a.navbar-brand {
-    padding-left: 0px;
-  }
-
-  .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
-    color: $nav_unselected;
-  }
-
-  .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav > li > a:hover {
-    color: $primary-color;
-  }
-
-  .nav_profile_link {
-    background-size: cover;
-    margin: 10px 15px;
-    padding-right: 0px;
+    a:last-of-type {
+      border-bottom: 1px solid transparent;
+    }
   }
 }
 
 
-@media(max-width: 560px) {
-  header:hover {
-    overflow-x: scroll;
-  }
 
-
-  header::-webkit-scrollbar {
-    height: 6px;
-  }
-
-
-  header::-webkit-scrollbar-track {
-    background: $hover-color;
-    border-radius: 5px;
-  }
-
-
-  header::-webkit-scrollbar-thumb {
-    background: $primary-color;
-    border-radius: 5px;
-  }
-}
-
-@media(min-width: 560px) {
-  .navbar-nav {
-    overflow: auto;
-    width: calc(100% - 75px);
-  }
-
-  .navbar li.nav_profile {
-    float: right;
-  }
-}
-
-@media (min-width: 768px) {
-  .navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand {
-    margin-left: 0px;
-  }
-}
-
-*/
