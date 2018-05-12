@@ -34,6 +34,7 @@
 
             <div class="fb-login-intro"><span>or login with</span></div>
             <a class="btn btn-primary social_login facebook_login" href="/login/facebook">facebook</a>
+            <div class="login-to-signup">don't have an account yet? <a href="#">Sign up!</a></div>
 
         </div>
     </div>

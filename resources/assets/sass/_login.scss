@@ -100,5 +100,22 @@ LOGIN STYLING
     left: 0.5em;
     margin-right: -50%;
   }
+
+  .login-to-signup {
+    color: $white;
+    position: relative;
+    top: -15px;
+    text-align: center;
+
+    a {
+      color: $primary-color;
+    }
+
+    a:hover {
+      text-decoration: none;
+      font-weight: bold;
+      color: $header-color;
+    }
+  }
 }
 
