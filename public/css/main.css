@@ -9028,6 +9028,7 @@ Around me page styling
 }
 
 .aroundme_page .crossings-indicator-wrapper {
+  display: none;
   width: calc(100% - 30px);
   margin: 0px 15px;
 }
@@ -9291,6 +9292,7 @@ Around me page styling
   }
 
   .aroundme_page .crossings-indicator-wrapper {
+    display: block;
     max-width: 960px;
     margin: 0px auto 0px auto;
   }

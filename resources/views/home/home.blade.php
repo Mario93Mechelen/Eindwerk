@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="aroundme_page">
-        
+
         <div class="map-top">
 
             <div class="map-top-img"></div>
