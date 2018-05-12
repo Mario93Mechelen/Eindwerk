@@ -5,25 +5,16 @@ SIGNUP STYLING
 */
 
 
-#email_register, #password_register {
+#firstname_register, #lastname_register, #password_register {
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
 
-#password_register, #password_repeat_register {
+#lastname_register, #email_register, #password_repeat_register {
   border-top-left-radius: 0px;
   border-top-right-radius: 0px;
 }
 
-#firstname_register {
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-}
-
-#lastname_register {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-}
 
 .error1 {
   background-color: rgba($error-red, 0.5);

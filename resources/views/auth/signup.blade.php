@@ -19,32 +19,37 @@
             <form class="login-form " method="post" action="{{URL::action('Auth\RegisterController@register')}}">
                 {{ csrf_field() }}
                 <div class="step1">
-                <div class="form-group">
-                    <label for="email">email</label>
-                    <input type="email" class="form-control" id="email_register" name="email" placeholder="email">
-                </div>
-                <div class="form-group">
-                    <label for="password">password</label>
-                    <input type="password" class="form-control" id="password_register" name="password" placeholder="password">
-                </div>
-                <div class="form-group">
-                    <label for="password_repeat">password repeat</label>
-                    <input type="password" class="form-control" id="password_repeat_register" name="password_repeat"
-                           placeholder="password repeat">
-                </div>
-                    <p class="error1" style="color:red;"></p>
-                <button class="btn btn-primary to-step-2">next</button>
+                    <div class="form-group">
+                        <label for="firstname">first name</label>
+                        <input type="text" class="form-control" id="firstname_register" name="firstname" placeholder="first name">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">last name</label>
+                        <input type="text" class="form-control" id="lastname_register" name="lastname" placeholder="last name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">email</label>
+                        <input type="email" class="form-control" id="email_register" name="email" placeholder="email">
+                    </div>
+                        @if($errors->any())
+                            <h4 class="error1">{{$errors->first()}}</h4>
+                        @endif
+                     <button class="btn btn-primary to-step-2">next</button>
                 </div>
                 <div class="step2">
-                <div class="form-group">
-                    <label for="firstname">first name</label>
-                    <input type="text" class="form-control" id="firstname_register" name="firstname" placeholder="first name">
-                </div>
-                <div class="form-group">
-                    <label for="lastname">last name</label>
-                    <input type="text" class="form-control" id="lastname_register" name="lastname" placeholder="last name">
-                </div>
-                <button type="submit" class="btn btn-primary">register</button>
+                    <div class="form-group">
+                        <label for="password">password</label>
+                        <input type="password" class="form-control" id="password_register" name="password" placeholder="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password_repeat">password repeat</label>
+                        <input type="password" class="form-control" id="password_repeat_register" name="password_repeat"
+                               placeholder="password repeat">
+                    </div>
+                        @if($errors->any())
+                            <h4 class="error1">{{$errors->first()}}</h4>
+                        @endif
+                    <button type="submit" class="btn btn-primary">register</button>
                 </div>
 
             </form>
