@@ -29,8 +29,10 @@ window.onresize = function() {
 $(document).ready(function() {
     $( "#nav_chat" ).click(function() {
         $("#dropdown-menu-chat").toggle();
+        $( "#nav_chat" ).toggleClass("highlighted");
     });
     $( "#nav_profile" ).click(function() {
         $("#dropdown-menu-profile").toggle();
+        $( "#nav_profile" ).toggleClass("highlighted");
     });
 });

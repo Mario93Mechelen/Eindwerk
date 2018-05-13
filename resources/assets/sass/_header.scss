@@ -144,9 +144,10 @@ header {
 
         .nav_chat {
           padding-left: 10px;
-          padding-right: 20px;
-          padding-top: 5px;
-          padding-bottom: 5px;
+          padding-right: 28px;
+          padding-top: 14px;
+          padding-bottom: 15px;
+          margin-top: -10px;
           border-left: 1px solid rgba($white, 0.5);
           background-image: url('/img/triangle_down.png');
           background-size: 8px 6px;
@@ -173,14 +174,16 @@ header {
 
         .nav_profile {
           padding-left: 10px;
-          padding-right: 20px;
-          padding-top: 5px;
-          padding-bottom: 5px;
-          border-left: 1px solid rgba($white, 0.5);
-          background-image: url('/img/triangle_down.png');
+          padding-right: 33px;
+          padding-top: 15px;
+          padding-bottom: 14px;
+          margin-top: -10px;
+          margin-right: -15px;
+          border-left: 1px solid rgba(255, 255, 255, 0.5);
+          background-image: url(/img/triangle_down.png);
           background-size: 8px 6px;
           background-repeat: no-repeat;
-          background-position: 95% 55%;
+          background-position: 85% 55%;
 
 
           a {
@@ -444,6 +447,10 @@ header {
         border-bottom: 1px solid transparent;
       }
     }
+  }
+
+  .highlighted {
+    background-color: $primary-color;
   }
 }
 
