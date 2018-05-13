@@ -9593,11 +9593,11 @@ Around me page styling
   .aroundme_page .map-top .search-bar .searchButtonOptions {
     position: absolute;
     right: 15px;
-    top: 300px;
+    top: 290px;
     width: 36.5%;
     margin: 0;
     background-color: #ffffff;
-    z-index: 500;
+    z-index: 99999;
   }
 
   .aroundme_page .content_title {
@@ -9623,6 +9623,13 @@ Around me page styling
 
   .aroundme_page .crossings-indicator p {
     font-size: 18px;
+  }
+}
+
+@media (min-width: 960px) {
+  main .aroundme_page .map-top .search-bar .searchButtonOptions {
+    right: calc((100vw - 960px)/2);
+    width: 360px;
   }
 }
 

@@ -40,7 +40,13 @@ $(document).ready(function() {
 <!-- show selected radius filter -->
 $(document).ready(function() {
     $("#radiusSlider").change(function() {
-        console.log("radius change");
         $("#selectedRadius").html($("#radiusSlider").val() + "km");
+    });
+});
+
+<!-- toggle search filter -->
+$(document).ready(function() {
+    $(".searchButton").click(function() {
+        $(".searchButtonOptions").toggleClass("hidden");
     });
 });

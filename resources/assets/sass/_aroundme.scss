@@ -413,11 +413,11 @@ Around me page styling
         .searchButtonOptions {
           position: absolute;
           right: 15px;
-          top: 300px;
+          top: 290px;
           width: 36.5%;
           margin: 0;
           background-color: $white;
-          z-index: 500;
+          z-index: 99999;
 
 
           .searchButtonOptionRadius {
@@ -493,6 +493,12 @@ Around me page styling
   }
 }
 
+@media(min-width: 960px) {
+  main .aroundme_page .map-top .search-bar .searchButtonOptions {
+    right: calc((100vw - 960px)/2);
+    width: 360px;
+  }
+}
 
 
 

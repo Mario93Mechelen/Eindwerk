@@ -20,7 +20,7 @@
                     
                 </div>
 
-                <div class="searchButtonOptions">
+                <div class="searchButtonOptions hidden">
                     <div class="searchButtonOptionRadius">
                         <h6>radius</h6>
                         <div class="radiusSliderContainer">
