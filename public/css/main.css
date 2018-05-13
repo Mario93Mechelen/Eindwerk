@@ -9314,6 +9314,7 @@ Around me page styling
   color: #0048d9;
   padding: 5px;
   margin: 5px;
+  cursor: pointer;
 }
 
 .aroundme_page .map-top .search-bar .searchButtonOptions .searchButtonOptionInterests ul li.selected {
@@ -9608,6 +9609,7 @@ Around me page styling
     max-width: 960px;
     margin: 0 auto;
     padding-bottom: 20px;
+    padding-left: 15px;
   }
 
   .aroundme_page .crossings-indicator-wrapper {
@@ -9630,6 +9632,10 @@ Around me page styling
   main .aroundme_page .map-top .search-bar .searchButtonOptions {
     right: calc((100vw - 960px)/2);
     width: 360px;
+  }
+
+  .aroundme_page .content_title {
+    padding-left: 0px;
   }
 }
 

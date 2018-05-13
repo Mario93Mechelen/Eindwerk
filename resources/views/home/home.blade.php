@@ -31,13 +31,13 @@
                     <div class="searchButtonOptionInterests">
                         <h6>interests</h6>
                         <ul>
-                            <li class="selected">chinese food</li>
-                            <li class="selected">tennis</li>
-                            <li>beer</li>
-                            <li>foreign languages</li>
-                            <li class="selected">movies</li>
-                            <li>dance music</li>
-                            <li>video games</li>
+                            <li class="interest-item selected">chinese food</li>
+                            <li class="interest-item selected">tennis</li>
+                            <li class="interest-item">beer</li>
+                            <li class="interest-item">foreign languages</li>
+                            <li class="interest-item selected">movies</li>
+                            <li class="interest-item">dance music</li>
+                            <li class="interest-item">video games</li>
                         </ul>
                     </div>
                 </div>

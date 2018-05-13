@@ -50,3 +50,10 @@ $(document).ready(function() {
         $(".searchButtonOptions").toggleClass("hidden");
     });
 });
+
+<!-- interest item selection -->
+$(document).ready(function() {
+    $(".interest-item").click(function() {
+        $(this).toggleClass("selected");
+    });
+});
