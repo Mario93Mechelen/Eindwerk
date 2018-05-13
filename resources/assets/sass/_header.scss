@@ -256,9 +256,9 @@ header {
   }
 
   #dropdown-menu-chat {
-    width: 232px;
+    width: calc(100% - 30px);
     position: absolute;
-    left: -110px;
+    left: 15px;
     top: 47px;
 
     a {
@@ -324,9 +324,9 @@ header {
   }
 
   #dropdown-menu-profile {
-    width: 116px;
+    width: calc(50% - 30px);
     position: absolute;
-    left: 120px;
+    left: calc(50% + 15px);
     top: 47px;
 
     a {
@@ -335,6 +335,7 @@ header {
       font-size: 14px;
       padding: 10px;
       border-bottom: 1px solid $nav_unselected;
+      text-align: center;
     }
 
     a:last-of-type {
@@ -343,5 +344,107 @@ header {
   }
 }
 
+@media(min-width: 768px) {
+  header {
+
+    .dropdown-menu {
+      display: flex;
+      flex-direction: column;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+      min-width: 0px;
+      padding: 0px;
+    }
+
+    #dropdown-menu-chat {
+      width: 232px;
+      position: absolute;
+      left: -110px;
+      top: 47px;
+
+      a {
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        border-bottom: 1px solid $nav_unselected;
+
+        .chat-avatar{
+          width: 30px;
+          height: 30px;
+          border-radius: 5px;
+        }
+
+        .chat-right {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          padding-left: 10px;
+          width: 100%;
+
+          .chat-nametime {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .chat-name {
+              color: $dark-color;
+              font-weight: bold;
+              font-size: 14px;
+            }
+
+            .chat-time {
+              color: $nav_unselected;
+              font-size: 12px;
+            }
+          }
+
+          .chat-last-message-start {
+            color: $nav_selected;
+            font-size: 12px;
+            font-weight: normal;
+          }
+        }
+      }
+
+      .all-chats-link {
+        color: $dark-color;
+        font-weight: bold;
+        font-size: 18px;
+        padding-bottom: 8px;
+      }
+
+      .all-chats-link:before {
+        position: absolute;
+        font-family: 'FontAwesome';
+        top: 158px;
+        right: 20px;
+        content: "\f105";
+        font-size: 24px;
+        color: $primary-color;
+      }
+    }
+
+    #dropdown-menu-profile {
+      width: 116px;
+      position: absolute;
+      left: 120px;
+      top: 47px;
+
+      a {
+        color: $dark-color;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px;
+        border-bottom: 1px solid $nav_unselected;
+      }
+
+      a:last-of-type {
+        border-bottom: 1px solid transparent;
+      }
+    }
+  }
+}
 
 
