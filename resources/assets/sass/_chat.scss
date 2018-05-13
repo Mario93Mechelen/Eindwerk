@@ -7,4 +7,55 @@ Chat page styling
 #chat_overview {
   padding: 15px;
 
+  .item {
+
+    a.item-content {
+      display: flex;
+      flex-direction: row;
+
+
+      .chat-avatar {
+        width: 25%;
+        height: auto;
+        align-self: center;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+      }
+
+      .chat-right {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 15px;
+        width: 100%;
+
+        .chat-nametime {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .chat-name {
+            color: $dark-color;
+            font-weight: bold;
+            font-size: 20px;
+          }
+
+          .chat-time {
+            color: $nav_unselected;
+            font-size: 12px;
+          }
+        }
+
+        .chat-last-message-start {
+          color: $nav_selected;
+          font-size: 12px;
+          font-weight: normal;
+        }
+      }
+    }
+
+    a.item-content:hover {
+      text-decoration: none;
+    }
+  }
 }
