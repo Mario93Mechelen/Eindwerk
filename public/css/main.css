@@ -9311,6 +9311,7 @@ Around me page styling
 
 .aroundme_page .map-top .search-bar .searchButtonOptions .searchButtonOptionInterests ul li {
   border: 1px solid #0048d9;
+  border-radius: 5px;
   color: #0048d9;
   padding: 5px;
   margin: 5px;
