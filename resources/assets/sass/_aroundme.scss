@@ -82,6 +82,85 @@ Around me page styling
         box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
         text-align: left;
       }
+
+      .searchButtonOptions {
+        width: 100%;
+        margin: 0 auto;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        position: relative;
+        top: -10px;
+
+        .searchButtonOptionRadius {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 15px;
+          border-bottom: 1px solid $nav_unselected;
+
+          h6 {
+            font-size: 18px;
+            font-weight: bold;
+            font-color: $dark-color;
+          }
+
+          .radiusSliderContainer{
+
+            .slider {
+              -webkit-appearance: none;
+              width: 100%;
+              height: 5px;
+              border-radius: 5px;
+              background: $primary-color;
+              outline: none;
+            }
+
+            .slider::-webkit-slider-thumb {
+              -webkit-appearance: none; /* Override default look */
+              appearance: none;
+              width: 20px;
+              height: 20px;
+              background: $primary-color;
+              cursor: pointer;
+              border-radius: 50px;
+            }
+          }
+
+          #selectedRadius {
+
+          }
+        }
+
+        .searchButtonOptionInterests {
+          padding: 15px;
+
+          h6 {
+            font-size: 18px;
+            font-weight: bold;
+            color: $dark-color;
+          }
+
+          ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            padding-top: 10px;
+
+            li {
+              border: 1px solid $primary-color;
+              color: $primary-color;
+              padding: 5px;
+              margin: 5px;
+            }
+
+            li.selected {
+              background-color: $primary-color;
+              color: $white;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -329,6 +408,60 @@ Around me page styling
           box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
           flex: 1;
           text-align: left;
+        }
+
+        .searchButtonOptions {
+          position: absolute;
+          right: 15px;
+          top: 300px;
+          width: 36.5%;
+          margin: 0;
+          background-color: $white;
+          z-index: 500;
+
+
+          .searchButtonOptionRadius {
+
+
+            h6 {
+
+            }
+
+            .radiusSliderContainer{
+
+              .slider {
+
+              }
+
+              .slider::-webkit-slider-thumb {
+
+              }
+            }
+
+            #selectedRadius {
+
+            }
+          }
+
+          .searchButtonOptionInterests {
+
+
+            h6 {
+
+            }
+
+            ul {
+
+
+              li {
+
+              }
+
+              li.selected {
+
+              }
+            }
+          }
         }
       }
     }

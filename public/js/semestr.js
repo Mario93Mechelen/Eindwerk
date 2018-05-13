@@ -36,3 +36,11 @@ $(document).ready(function() {
         $( "#nav_profile" ).toggleClass("highlighted");
     });
 });
+
+<!-- show selected radius filter -->
+$(document).ready(function() {
+    $("#radiusSlider").change(function() {
+        console.log("radius change");
+        $("#selectedRadius").html($("#radiusSlider").val() + "km");
+    });
+});

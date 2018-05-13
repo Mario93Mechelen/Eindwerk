@@ -17,25 +17,29 @@
                     </div>
 
                     <input type="submit" value="" class="searchButton">
+                    
                 </div>
 
                 <div class="searchButtonOptions">
                     <div class="searchButtonOptionRadius">
                         <h6>radius</h6>
                         <div class="radiusSliderContainer">
-                            <input type="range" min="1" max="10" value="5" class="slider radiusSlider" id="radius">
+                            <input type="range" min="1" max="10" value="5" class="slider radiusSlider" id="radiusSlider">
                         </div>
                         <div id="selectedRadius">2km</div>
                     </div>
-                    <ul class="searchButtonOptionInterests">
-                        <li>chinese food</li>
-                        <li>tennis</li>
-                        <li>beer</li>
-                        <li>foreign languages</li>
-                        <li>movies</li>
-                        <li>dance music</li>
-                        <li>video games</li>
-                    </ul>
+                    <div class="searchButtonOptionInterests">
+                        <h6>interests</h6>
+                        <ul>
+                            <li class="selected">chinese food</li>
+                            <li class="selected">tennis</li>
+                            <li>beer</li>
+                            <li>foreign languages</li>
+                            <li class="selected">movies</li>
+                            <li>dance music</li>
+                            <li>video games</li>
+                        </ul>
+                    </div>
                 </div>
 
             </div>
