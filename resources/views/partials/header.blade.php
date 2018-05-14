@@ -50,7 +50,7 @@
 
                 <li class="nav_profile" id="nav_profile">
                     <a href="#">
-                        <p>{{$myUser->first_name}}</p><div class="profile_pic" style="background-image: url('{{$myUser->avatar}}');"></div>
+                        <p>{{$myUser->first_name}}</p><div class="profile_pic" style="background-image: url({{url($myUser->avatar)}})"></div>
                     </a>
                 </li>
 

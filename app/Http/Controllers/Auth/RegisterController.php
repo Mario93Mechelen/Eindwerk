@@ -78,6 +78,7 @@ class RegisterController extends Controller
             $user->first_name = $request->firstname;
             $user->last_name = $request->lastname;
             $user->token = $request->_token;
+            $user->avatar = "img/Default_pictures_Man.png";
             $user->save();
             Auth::login($user, true);
             return redirect('/');
