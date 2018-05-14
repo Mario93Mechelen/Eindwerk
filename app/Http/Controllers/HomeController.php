@@ -36,12 +36,11 @@ class HomeController extends Controller
 
                 $kms = number_format((float)$kms, 2, ',','');
 
-                $distance[$i] = ['id' => $l->user_id, 'kms' => $kms];
+                $distance[$i] = ['user' => $l->user, 'kms' => $kms];
                 $i++;
             }
 
             foreach($distance as $key => $row){
-                $id[$key] = $row['id'];
                 $kmsArr[$key] = $row['kms'];
             }
 
