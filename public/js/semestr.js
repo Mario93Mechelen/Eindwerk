@@ -29,11 +29,15 @@ window.onresize = function() {
 $(document).ready(function() {
     $( "#nav_chat" ).click(function() {
         $("#dropdown-menu-chat").toggle();
+        $("#dropdown-menu-profile").hide();
         $( "#nav_chat" ).toggleClass("highlighted");
+        $( "#nav_profile" ).removeClass("highlighted");
     });
     $( "#nav_profile" ).click(function() {
         $("#dropdown-menu-profile").toggle();
+        $("#dropdown-menu-chat").hide();
         $( "#nav_profile" ).toggleClass("highlighted");
+        $( "#nav_chat" ).removeClass("highlighted");
     });
 });
 
