@@ -26,7 +26,7 @@
                     <div class="searchButtonOptionRadius">
                         <h6>radius</h6>
                         <div class="radiusSliderContainer">
-                            <input type="range" min="1" max="8" value="4" class="slider radiusSlider" id="radiusSlider">
+                            <input type="range" min="1" max="9" value="5" class="slider radiusSlider" id="radiusSlider">
                         </div>
                         <div id="selectedRadius">1km</div>
                     </div>
@@ -258,6 +258,8 @@
                     distance = 4;
                 }else if(rate == 8){
                     distance = 5;
+                }else if (rate == 9){
+                    distance = 100;
                 }
                 $('#selectedRadius').html(distance+'km');
                 console.log(distance);
