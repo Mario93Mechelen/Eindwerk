@@ -38,7 +38,23 @@ $(document).ready(function() {
         $("#dropdown-menu-chat").hide();
         $( "#nav_profile" ).toggleClass("highlighted");
         $( "#nav_chat" ).removeClass("highlighted");
+        console.log("yo");
     });
+});
+
+$(document).mouseup(function (e){
+
+    var container = $("#nav_profile");
+    if (!container.is(e.target) && container.has(e.target).length === 0){
+        $("#dropdown-menu-profile").hide();
+        $( "#nav_profile" ).removeClass("highlighted");
+    }
+
+    var container2 = $("#nav_chat");
+    if (!container2.is(e.target) && container2.has(e.target).length === 0){
+        $("#dropdown-menu-chat").hide();
+        $( "#nav_chat" ).removeClass("highlighted");
+    }
 });
 
 <!-- show selected radius filter -->
