@@ -78,12 +78,6 @@ $(document).mouseup(function (e){
 });
 */
 
-<!-- show selected radius filter -->
-$(document).ready(function() {
-    $("#radiusSlider").change(function() {
-        $("#selectedRadius").html($("#radiusSlider").val() + "km");
-    });
-});
 
 <!-- interest item selection -->
 $(document).ready(function() {

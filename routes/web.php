@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function()
 {
     //home
     Route::get('/', 'HomeController@index');
+    Route::post('/filterDistance', 'HomeController@filterDistance');
 
     //profile
     Route::get('/profile', 'ProfileController@index');

@@ -26,7 +26,7 @@
                     <div class="searchButtonOptionRadius">
                         <h6>radius</h6>
                         <div class="radiusSliderContainer">
-                            <input type="range" min="1" max="10" value="5" class="slider radiusSlider" id="radiusSlider">
+                            <input type="range" min="1" max="8" value="4" class="slider radiusSlider" id="radiusSlider">
                         </div>
                         <div id="selectedRadius">2km</div>
                     </div>
@@ -235,6 +235,66 @@
                     }
                 });
             }
+        });
+    </script>
+    <script>
+        <!-- show selected radius filter -->
+        var slidingTimer;                //timer identifier
+        var doneSlidingInterval = 1000;
+        $(document).ready(function() {
+            $("#radiusSlider").change(function() {
+                var rate  = $(this).val();
+                var distance = 0;
+                if(rate == 1){
+                    distance = 0.1;
+                }else if(rate == 2){
+                    distance = 0.25;
+                }else if(rate == 3){
+                    distance = 0.5;
+                }else if(rate == 4){
+                    distance = 1;
+                }else if(rate == 5){
+                    distance = 2;
+                }else if(rate == 6){
+                    distance = 3;
+                }else if(rate == 7){
+                    distance = 4;
+                }else if(rate == 8){
+                    distance = 5;
+                }
+                console.log(distance);
+                clearTimeout(slidingTimer);
+                slidingTimer = setTimeout(doneSliding(distance), doneSlidingInterval);
+                function doneSliding(distance){
+                    $.ajaxSetup({
+
+                        headers: {
+
+                            'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                        }
+
+                    });
+                    $.ajax({
+                        method:"POST",
+                        url:"{{URL::action('HomeController@filterDistance')}}",
+                        data:{
+                            'distance': distance,
+                        }
+                    }).done(function(response){
+                        if(response.code==200) {
+                            $('.item').each(function(){
+                                $(this).remove();
+                            });
+                            for(i=0;i<response.distance.length;i++){
+                                $('#aroundme_overview').append('<div class="item item-list col-xs-12 col-md-6"><div class="item-content"><img class="list-item-img" src="'+response.distance[i]['user']['avatar']+'" alt=""/><div class="caption"><h4 class="list-item-name">'+response.distance[i]['user']['first_name']+' '+response.distance[i]['user']['last_name']+'</h4><p class="list-item-distance">'+response.distance[i]['kms']+' km away</p><p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p></div></div></div>')
+                                console.log(response.distance[i]['user'])
+                            }
+                        }
+                    });
+                }
+
+            });
         });
     </script>
 

@@ -51,6 +51,45 @@ class HomeController extends Controller
         return view('home.home', compact('user','location', 'distance'));
     }
 
+    public function filterDistance(Request $request){
+        $user = Auth::user();
+        $location = Location::where('user_id',$user->id)->first();
+        $locations = Location::where('user_id','!=', $user->id)->get();
+        if(!is_null($location) && !is_null($locations)) {
+            $i = 0;
+            $distance = [];
+            foreach ($locations as $l) {
+                $lon1 = $location->longitude;
+                $lat1 = $location->latitude;
+                $lon2 = $l->longitude;
+                $lat2 = $l->latitude;
+                $theta = $lon1 - $lon2;
+                $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+                $dist = acos($dist);
+                $dist = rad2deg($dist);
+                $miles = $dist * 60 * 1.1515;
+
+                $kms = ($miles * 1.609344);
+
+                $kms = number_format((float)$kms, 2, ',','');
+
+                if($kms <= $request->distance) {
+
+                    $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                    $i++;
+                }
+            }
+
+            foreach($distance as $key => $row){
+                $kmsArr[$key] = $row['kms'];
+            }
+
+            array_multisort($kmsArr, SORT_ASC,$distance);
+        }
+
+        return response()->json(['code' => 200, 'distance' => $distance]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
