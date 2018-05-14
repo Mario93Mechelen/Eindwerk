@@ -54,6 +54,7 @@ class HomeController extends Controller
         $user = Auth::user();
         $location = Location::where('user_id',$user->id)->first();
         $locations = Location::where('user_id','!=', $user->id)->get();
+        $reqdistance = $request->distance;
         if(!is_null($location) && !is_null($locations)) {
             $i = 0;
             $distance = [];
@@ -86,7 +87,7 @@ class HomeController extends Controller
             array_multisort($kmsArr, SORT_ASC,$distance);
         }
 
-        return response()->json(['code' => 200, 'distance' => $distance]);
+        return response()->json(['code' => 200, 'distance' => $distance, 'sent' => $reqdistance]);
     }
 
     /**

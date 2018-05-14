@@ -28,7 +28,7 @@
                         <div class="radiusSliderContainer">
                             <input type="range" min="1" max="8" value="4" class="slider radiusSlider" id="radiusSlider">
                         </div>
-                        <div id="selectedRadius">2km</div>
+                        <div id="selectedRadius">1km</div>
                     </div>
                     <div class="searchButtonOptionInterests">
                         <h6>interests</h6>
@@ -259,6 +259,7 @@
                 }else if(rate == 8){
                     distance = 5;
                 }
+                $('#selectedRadius').html(distance+'km');
                 console.log(distance);
                 clearTimeout(slidingTimer);
                 slidingTimer = setTimeout(doneSliding(distance), doneSlidingInterval);
