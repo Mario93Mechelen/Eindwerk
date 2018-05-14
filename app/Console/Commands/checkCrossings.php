@@ -41,16 +41,12 @@ class checkCrossings extends Command
      */
     public function handle()
     {
-        $this->line('function started');
         $locations = Location::all();
-        $this->line('locations picked');
         foreach($locations as $location) {
-            $this->line('going through first foreach loop');
             if($location->user->isOnline()) {
                 $otherLocations = Location::where('user_id', '!=', $location->user_id)->get();
                 foreach ($otherLocations as $otherLocation) {
                     if($otherLocation->user->isOnline()) {
-                        $this->line('Second foreach loop started');
                         $lon1 = $location->longitude;
                         $lat1 = $location->latitude;
                         $lon2 = $otherLocation->longitude;
@@ -69,7 +65,6 @@ class checkCrossings extends Command
                             //ladies and gents, we've got a crossing right here
                             //is there already a crossing registered?
                             if (!Crossing::where('crosser_id', $location->user_id)->where('crossed_id', $otherLocation->user_id)->first() || !Crossing::where('crosser_id', $otherLocation->user_id)->where('crossed_id', $location->user_id)->first()) {
-                                $this->line('the crossing is not in the table');
                                 $crossing = new Crossing();
                                 $crossing->crosser_id = $location->user_id;
                                 $crossing->crossed_id = $otherLocation->user_id;
@@ -82,7 +77,6 @@ class checkCrossings extends Command
                                 $crossing_location->save();
                                 //update the registered crossing and add a new crossing_location
                             }else{
-                                $this->line('the crossing is in the table');
                                 $crossing = Crossing::where('crosser_id', $location->user_id)->where('crossed_id', $otherLocation->user_id)->first();
                                 if($crossing->meeting == false) {
                                     $crossing->meeting = true;
@@ -96,14 +90,11 @@ class checkCrossings extends Command
                             }
                             //if there is an existing crossing, update it to be false when users are far away from each other
                         }else{
-                            $this->line('the users are not crossing anymore');
                             if(Crossing::where('crosser_id', $location->user_id)->where('crossed_id', $otherLocation->user_id)->first() && Crossing::where('crosser_id', $otherLocation->user_id)->where('crossed_id', $location->user_id)->first()) {
-                                $this->line('did they cross each other before?');
                                 $mycrossing = Crossing::where('crosser_id', $location->user_id)->where('crossed_id', $otherLocation->user_id)->first();
                                 $yourcrossing = Crossing::where('crosser_id', $otherLocation->user_id)->where('crossed_id', $location->user_id)->first();
                                 //only update them when they are true, we don't want too many queries
                                 if($mycrossing->meeting && $yourcrossing->meeting) {
-                                    $this->line('they did! updating their meeting status');
                                     $mycrossing->meeting = false;
                                     $mycrossing->save();
                                     $yourcrossing->meeting = false;
@@ -114,13 +105,10 @@ class checkCrossings extends Command
                     }
                 }
             }else{
-                $this->line('checking for crossing of offline users');
                 if(Crossing::where('crosser_id', $location->user_id)->get()){
-                    $this->line('updating offline crossing for crosser_ids');
                     Crossing::where('crosser_id', $location->user_id)->update(['meeting' => 0]);
                 }
                 if(Crossing::where('crossed_id', $location->user_id)->get()){
-                    $this->line('updating offline crossing for crossed_ids');
                     Crossing::where('crossed_id', $location->user_id)->update(['meeting' => 0]);
                 }
             }
