@@ -449,9 +449,11 @@ header {
     }
   }
 
-  .highlighted {
-    background-color: $primary-color;
-  }
+
+}
+
+.highlighted {
+  background-color: $primary-color !important;
 }
 
 
