@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCrossingsTable extends Migration
+class CreateCrossingsLocationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,11 @@ class CreateCrossingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('crossings', function (Blueprint $table) {
+        Schema::create('crossings_locations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('crosser_id');
-            $table->integer('crossed_id');
-            $table->boolean('meeting')->default(0);
-            $table->boolean('contacted')->default(0);
+            $table->integer('crossing_id');
+            $table->double('latitude');
+            $table->double('longitude');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ class CreateCrossingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('crossings');
+        Schema::dropIfExists('crossings_locations');
     }
 }
