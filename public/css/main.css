@@ -8623,7 +8623,6 @@ header nav .nav_left .nav_groups {
 
   header nav .nav_right {
     display: block;
-    width: 220px;
     float: right;
     position: relative;
     top: 3px;
@@ -8745,6 +8744,7 @@ header .dropdown-menu {
   border-bottom-right-radius: 10px;
   min-width: 0px;
   padding: 0px;
+  border: 0px solid transparent;
 }
 
 header #dropdown-menu-chat {
