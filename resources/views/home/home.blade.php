@@ -214,6 +214,30 @@
         });
     </script>
 
+    <script>
+        $('.searchBox_inner').on('keyup', function(e){
+           var name = $(this).val().toLowerCase();
+           console.log(name);
+           if(name != "" && e.keyCode!=8) {
+               console.log('other keys are pressed');
+               $('.list-item-name').each(function () {
+                   console.log($(this).html());
+                   if (!$(this).html().toLowerCase().includes(name)) {
+                       $(this).parent().parent().parent().hide();
+                   }
+               });
+           }else if(e.keyCode == 8){
+               console.log('backspace pressed');
+                $('.list-item-name').each(function () {
+                    console.log($(this).html());
+                    if ($(this).html().toLowerCase().includes(name)) {
+                        $(this).parent().parent().parent().show();
+                    }
+                });
+            }
+        });
+    </script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&callback=initMap"
             async defer></script>
 
