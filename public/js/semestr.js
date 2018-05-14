@@ -38,7 +38,6 @@ $(document).ready(function() {
         $("#dropdown-menu-chat").hide();
         $( "#nav_profile" ).toggleClass("highlighted");
         $( "#nav_chat" ).removeClass("highlighted");
-        console.log("yo");
     });
 });
 
@@ -57,17 +56,32 @@ $(document).mouseup(function (e){
     }
 });
 
-<!-- show selected radius filter -->
-$(document).ready(function() {
-    $("#radiusSlider").change(function() {
-        $("#selectedRadius").html($("#radiusSlider").val() + "km");
-    });
-});
-
 <!-- toggle search filter -->
 $(document).ready(function() {
     $(".searchButton").click(function() {
         $(".searchButtonOptions").toggleClass("hidden");
+    });
+});
+
+/* later nog te bekijken, door absolute positioning van de searchButtonOptions div, pakt het click event daar niet op */
+/*
+$(document).mouseup(function (e){
+    var container1 = $(".searchButton");
+    var container2 = $(".searchButtonOptions");
+    if (!container1.is(e.target) && !container2.is(e.target) && container1.has(e.target).length === 0){
+        container2.addClass("hidden");
+    }
+
+    if(container2.is(e.target)) {
+        console.log("klikkk");
+    }
+});
+*/
+
+<!-- show selected radius filter -->
+$(document).ready(function() {
+    $("#radiusSlider").change(function() {
+        $("#selectedRadius").html($("#radiusSlider").val() + "km");
     });
 });
 
