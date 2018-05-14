@@ -26,9 +26,9 @@
                     <div class="searchButtonOptionRadius">
                         <h6>radius</h6>
                         <div class="radiusSliderContainer">
-                            <input type="range" min="1" max="9" value="5" class="slider radiusSlider" id="radiusSlider">
+                            <input type="range" min="1" max="9" value="9" class="slider radiusSlider" id="radiusSlider">
                         </div>
-                        <div id="selectedRadius">1km</div>
+                        <div id="selectedRadius">100km</div>
                     </div>
                     <div class="searchButtonOptionInterests">
                         <h6>interests</h6>
