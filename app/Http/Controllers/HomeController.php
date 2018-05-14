@@ -40,11 +40,13 @@ class HomeController extends Controller
                 $i++;
             }
 
-            foreach($distance as $key => $row){
-                $kmsArr[$key] = $row['kms'];
-            }
+            if(!empty($distance)){
+                foreach($distance as $key => $row){
+                    $kmsArr[$key] = $row['kms'];
+                }
 
-            array_multisort($kmsArr, SORT_ASC,$distance);
+                array_multisort($kmsArr, SORT_ASC,$distance);
+            }
         }
 
         return view('home.home', compact('user','location', 'distance'));
@@ -80,11 +82,15 @@ class HomeController extends Controller
                 }
             }
 
-            foreach($distance as $key => $row){
-                $kmsArr[$key] = $row['kms'];
+            if(!empty($distance)){
+                foreach($distance as $key => $row){
+                    $kmsArr[$key] = $row['kms'];
+                }
+
+                array_multisort($kmsArr, SORT_ASC,$distance);
             }
 
-            array_multisort($kmsArr, SORT_ASC,$distance);
+
         }
 
         return response()->json(['code' => 200, 'distance' => $distance, 'sent' => $reqdistance]);
