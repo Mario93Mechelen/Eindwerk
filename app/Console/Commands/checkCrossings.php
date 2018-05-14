@@ -117,8 +117,9 @@ class checkCrossings extends Command
                 $this->line('checking for crossing of offline users');
                 if(Crossing::where('crosser_id', $location->user_id)->get()){
                     $this->line('updating offline crossing for crosser_ids');
-                    Crossing::where('crosser_id', $location->user_id)->get()->update(['meeting' => 0]);
-                }elseif(Crossing::where('crossed_id', $location->user_id)->get()){
+                    Crossing::where('crosser_id', $location->user_id)->update(['meeting' => 0]);
+                }
+                if(Crossing::where('crossed_id', $location->user_id)->get()){
                     $this->line('updating offline crossing for crossed_ids');
                     Crossing::where('crossed_id', $location->user_id)->update(['meeting' => 0]);
                 }
