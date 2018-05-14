@@ -57,7 +57,7 @@
                 <div class="dropdown-menu" id="dropdown-menu-profile" style="display:none">
                     <a class="dropdown-item dropdown-item-profile" href="#">my profile</a>
                     <a class="dropdown-item dropdown-item-profile" href="#">settings</a>
-                    <a class="dropdown-item dropdown-item-profile" href="#">logout</a>
+                    <a class="dropdown-item dropdown-item-profile" href="{{URL::action('Auth\LoginController@logout')}}">logout</a>
                 </div>
 
             </ul>
