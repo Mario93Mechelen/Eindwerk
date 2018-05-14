@@ -54,7 +54,7 @@ class HomeController extends Controller
         $user = Auth::user();
         $location = Location::where('user_id',$user->id)->first();
         $locations = Location::where('user_id','!=', $user->id)->get();
-        $reqdistance = $request->distance;
+        $reqdistance = floatval($request->distance);
         if(!is_null($location) && !is_null($locations)) {
             $i = 0;
             $distance = [];
@@ -73,7 +73,7 @@ class HomeController extends Controller
 
                 $kms = number_format((float)$kms, 2, ',','');
 
-                if($kms <= $request->distance) {
+                if((float)$kms <= (float)$request->distance) {
 
                     $distance[$i] = ['user' => $l->user, 'kms' => $kms];
                     $i++;
