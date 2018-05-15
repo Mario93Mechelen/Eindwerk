@@ -27,7 +27,7 @@
                 </div>
 
                 <!-- indien vriend -->
-                <div class="button-wrapper isfriend-button-wrapper hidden">
+                <div class="button-wrapper isfriend-button-wrapper">  <!-- hidden -->
                     <a href="#" class="button">
                         <div class="icon friend-icon"></div>
                         <p>friends</p>
@@ -52,7 +52,7 @@
                 <p class="subtext">become friends to see where you have crossed</p>
 
                 <!-- indien vriend -->
-                <div class="button-wrapper crossings-location-button-wrapper hidden">
+                <div class="button-wrapper crossings-location-button-wrapper">  <!-- hidden -->
                     <a href="#" class="button">
                         <div class="icon crossings-location-icon"></div>
                         <p>see where you crossed each other</p>
