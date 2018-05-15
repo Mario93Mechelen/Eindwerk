@@ -69,7 +69,15 @@
 
                 <h2 class="section_title">photos</h2>
 
-                <img class="userphoto" src="" alt="">
+                <div class="photo_collection">
+                    <img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt="">
+                    <img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt="">
+                    <img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt="">
+                    <img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt="">
+                    <img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt="">
+                    <img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt="">
+                </div>
+
 
             </div>  <!-- einde photo section -->
 
