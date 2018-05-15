@@ -15,119 +15,138 @@ profile page styling
     background-repeat: no-repeat;
   }
 
-  .upper_section {
-    max-width: 960px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .profile_page_content {
+    position: relative;
+    top: -120px;
 
-    .profile_image {
-      display: block;
-      width: 150px;
-      height: 150px;
-      margin:0 auto;
-      border-radius: 5px;
-      box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
-    }
-
-    .user_name {
-      color: $dark-color;
-      font-size: 28px;
-      font-weight: bold;
-      padding: 15px 15px;
-    }
-
-    .user_introtext {
-      color: $nav_unselected;
-      font-size: 14px;
-      text-align: center;
-      padding: 0px 30px;
-    }
-
-    .buttons {
-
-      width: 100vw;
+    .upper_section {
+      max-width: 960px;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      padding: 15px;
+      flex-direction: column;
+      align-items: center;
 
-      .button-wrapper {
-        width: calc(50% - 15px);
-        box-sizing: border-box;
-        margin-right: 15px;
+      .profile_image {
+        display: block;
+        width: 150px;
+        height: 150px;
+        margin:0 auto;
+        border-radius: 5px;
+        box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
+      }
 
-        .button {
+      .user_name {
+        color: $dark-color;
+        font-size: 28px;
+        font-weight: bold;
+        padding: 15px 15px;
+      }
 
+      .user_introtext {
+        color: $nav_selected;
+        font-size: 14px;
+        text-align: center;
+        padding: 0px 30px;
+      }
+
+      .buttons {
+
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 15px;
+
+        .button-wrapper {
+          width: calc(50% - 15px);
           box-sizing: border-box;
-          max-width: 480px;
-          margin: 0 auto;
-          padding: 0px;
-          display: flex;
-          align-items: center;
-          border-radius: 5px;
-          box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
-          margin-top: 15px;
-          margin-bottom: 15px;
-          position: relative;
-          text-decoration: none;
-          cursor: pointer;
+          margin-right: 15px;
 
-          .icon {
-            background-size: 20px 20px;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-color: $primary-color;
-            width: 40px;
-            height: 40px;
-            padding: 10px;
+          .button {
+
             box-sizing: border-box;
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
-          }
+            margin: 0 auto;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            position: relative;
+            text-decoration: none;
+            cursor: pointer;
 
-          .add-friend-icon {background-image: url('/img/add_friend.png');}
-          .friend-icon {background-image: url('/img/checkmark.png');}
-          .message-icon {background-image: url('/img/Chat.png');}
-          .crossings-quantity-icon {background-image: url('/img/Crossings.png');}
-          .crossings-location-icon {background-image: url('/img/Crossings.png');}
+            .icon {
+              background-size: 20px 20px;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: $primary-color;
+              width: 40px;
+              height: 40px;
+              padding: 10px;
+              box-sizing: border-box;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+            }
 
-          p {
-            display: block;
-            font-size: 20px;
-            font-weight: bold;
-            padding-left: 10px;
-            padding-right: 30px;
-            color: $dark-color;
+            .add-friend-icon {background-image: url('/img/add_friend.png');}
+            .friend-icon {background-image: url('/img/checkmark.png');}
+            .message-icon {background-image: url('/img/Chat.png');}
+            .crossings-quantity-icon {background-image: url('/img/Crossings.png');}
+            .crossings-location-icon {background-image: url('/img/Crossings.png');}
+
+            p {
+              display: block;
+              font-size: 16px;
+              font-weight: bold;
+              padding-left: 10px;
+              padding-right: 10px;
+              color: $dark-color;
+            }
           }
         }
-      }
 
-      .crossings-quantity--button-wrapper, .crossings-location-button-wrapper {
-        width: 100%;
-      }
+        .crossings-quantity--button-wrapper, .crossings-location-button-wrapper {
+          width: 100%;
 
-      .crossings-location-button-wrapper {
-        .button:before {
-          position: absolute;
-          font-family: 'FontAwesome';
-          top: 6px;
-          right: 20px;
-          content: "\f105";
-          font-size: 24px;
-          color: $primary-color;
+          .button {
+            margin-top: 0px;
+            margin-bottom: 10px;
+
+            p {
+              padding-right: 30px;
+            }
+          }
+        }
+
+        .crossings-location-button-wrapper {
+          .button:before {
+            position: absolute;
+            font-family: 'FontAwesome';
+            top: 6px;
+            right: 20px;
+            content: "\f105";
+            font-size: 24px;
+            color: $primary-color;
+          }
+        }
+
+        .subtext {
+          color: $nav_unselected;
+          font-size: 12px;
+          text-align: center;
+          padding: 0px 30px;
         }
       }
+    }
+
+    .aboutme_section {
 
     }
-  }
 
-  .aboutme_section {
-
-  }
-
-  .hidden {
-    display: none;
+    .hidden {
+      display: none;
+    }
   }
 }
 

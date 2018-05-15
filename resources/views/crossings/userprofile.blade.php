@@ -6,176 +6,181 @@
 
         <div class="cover_image" style="background-image: url('/img/cover_image_default.jpg');"></div>
 
-        <div class="upper_section">
+        <div class="profile_page_content">
+
+            <div class="upper_section">
 
 
-            <img class="profile_image" src="{{url('img/profile_pic_default.jpg')}}" alt="">
+                <img class="profile_image" src="{{url('img/profile_pic_default.jpg')}}" alt="">
 
-            <h2 class="user_name">Amber Heard</h2>
+                <h2 class="user_name">Amber Heard</h2>
 
-            <p class="user_introtext">Hey, ik ben Amber, ik vind Mario een toffe jongen maar ben te verlegen iets
-                tegen hem te zeggen. En ik hou van ice cream, yeah!</p>
+                <p class="user_introtext">Hey, ik ben Amber, ik vind Mario een toffe jongen maar ben te verlegen iets
+                    tegen hem te zeggen. En ik hou van ice cream, yeah!</p>
 
-            <div class="buttons">
+                <div class="buttons">
 
-                <!-- indien nog geen vrienden -->
-                <div class="button-wrapper addfriend-button-wrapper">
-                    <a href="#" class="button">
-                        <div class="icon add-friend-icon"></div>
-                        <p>add friend</p>
-                    </a>
+                    <!-- indien nog geen vrienden -->
+                    <div class="button-wrapper addfriend-button-wrapper">
+                        <a href="#" class="button">
+                            <div class="icon add-friend-icon"></div>
+                            <p>add friend</p>
+                        </a>
+                    </div>
+
+                    <!-- indien vriend -->
+                    <div class="button-wrapper isfriend-button-wrapper hidden">  <!-- hidden -->
+                        <a href="#" class="button">
+                            <div class="icon friend-icon"></div>
+                            <p>friends</p>
+                        </a>
+                    </div>
+
+                    <!-- message -->
+                    <div class="button-wrapper message-button-wrapper">
+                        <a href="#" class="button">
+                            <div class="icon message-icon"></div>
+                            <p>message</p>
+                        </a>
+                    </div>
+
+                    <!-- indien nog geen vrienden -->
+                    <div class="button-wrapper crossings-quantity--button-wrapper">
+                        <a href="#" class="button">
+                            <div class="icon crossings-quantity-icon"></div>
+                            <p>you crossed x times already</p>
+                        </a>
+                    </div>
+                    <p class="subtext">become friends to see where you have crossed</p>
+
+                    <!-- indien vriend -->
+                    <div class="button-wrapper crossings-location-button-wrapper hidden">  <!-- hidden -->
+                        <a href="#" class="button">
+                            <div class="icon crossings-location-icon"></div>
+                            <p>see where you crossed each other</p>
+                        </a>
+                    </div>
+
+                </div>  <!-- einde div buttons -->
+
+            </div>  <!-- einde upper section -->
+
+            <div class="photos_section">
+
+                <img class="userphoto" src="" alt="">
+
+            </div>  <!-- einde photo section -->
+
+            <div class="aboutme_section">
+
+                <h2 class="section_title">about me</h2>
+
+                <form class="aboutme_subsection aboutme_basic-info">
+
+                    <h4 class="subsection_title">basic info</h4>
+
+                    <!-- geboortedatum -->
+                    <div class="aboutme_item">
+                        <p class="item_label">birth date</p>
+                        <input type="date" value="1991-10-23" readonly>
+                    </div>
+
+                    <!-- geslacht -->
+                    <div class="aboutme_item">
+                        <p class="item_label">gender</p>
+                        <select disabled>
+                            <option value="male">male</option>
+                            <option value="female">female</option>
+                            <option value="other" selected>other</option>
+                        </select>
+                    </div>
+
+                    <!-- thuisplaats -->
+                    <div class="aboutme_item">
+                        <p class="item_label">home</p>
+                        <input type="text" value="London, UK" readonly>
+                    </div>
+
+                </form>  <!-- einde basic info -->
+
+
+                <form class="aboutme_subsection aboutme_school-info">
+
+                    <h4 class="subsection_title">education info</h4>
+
+                    <!-- school thuis -->
+                    <div class="aboutme_item">
+                        <p class="item_label">school at home</p>
+                        <input type="text" value="Oxford University" readonly>
+                    </div>
+
+                    <!-- school buitenland -->
+                    <div class="aboutme_item">
+                        <p class="item_label">school abroad</p>
+                        <input type="text" value="New York University" readonly>
+                    </div>
+
+                    <!-- huidige studie -->
+                    <div class="aboutme_item">
+                        <p class="item_label">study</p>
+                        <input type="text" value="Master in Psychology" readonly>
+                    </div>
+
+                </form>  <!-- einde education info -->
+
+                <form class="aboutme_subsection aboutme_social-info">
+
+                    <h4 class="subsection_title">social</h4>
+
+                    <!-- facebook -->
+                    <div class="aboutme_item social_item">
+                        <img src="" alt="" class="social_icon">
+                        <p class="item_label">facebook</p>
+                        <input type="text" value="www.facebook.com/someuser" readonly hidden>
+                    </div>
+
+                    <!-- twitter -->
+                    <div class="aboutme_item social_item">
+                        <img src="" alt="" class="social_icon">
+                        <p class="item_label">twitter</p>
+                        <input type="text" value="www.twitter.com/someuser" readonly hidden>
+                    </div>
+
+                    <!-- instagram -->
+                    <div class="aboutme_item social_item">
+                        <img src="" alt="" class="social_icon">
+                        <p class="item_label">instagram</p>
+                        <input type="text" value="www.instagram.com/someuser" readonly hidden>
+                    </div>
+
+                </form>  <!-- einde social info -->
+
+            </div>  <!-- einde about me section -->
+
+            <div class="interests_section">
+
+                <h2 class="section_title">interests</h2>
+
+                <div class="interests">
+                    <span>chinese food</span>
+                    <span>tennis</span>
+                    <span>beer</span>
+                    <span>foreign languages</span>
+                    <span>movies</span>
+                    <span>dance music</span>
+                    <span>video games</span>
                 </div>
 
-                <!-- indien vriend -->
-                <div class="button-wrapper isfriend-button-wrapper">  <!-- hidden -->
-                    <a href="#" class="button">
-                        <div class="icon friend-icon"></div>
-                        <p>friends</p>
-                    </a>
-                </div>
+            </div>  <!-- einde interests section -->
 
-                <!-- message -->
-                <div class="button-wrapper message-button-wrapper">
-                    <a href="#" class="button">
-                        <div class="icon message-icon"></div>
-                        <p>message</p>
-                    </a>
-                </div>
+            <div class="report_abuse">
 
-                <!-- indien nog geen vrienden -->
-                <div class="button-wrapper crossings-quantity--button-wrapper">
-                    <a href="#" class="button">
-                        <div class="icon crossings-quantity-icon"></div>
-                        <p>you crossed x times already</p>
-                    </a>
-                </div>
-                <p class="subtext">become friends to see where you have crossed</p>
+                <p>see something suspicious? <a href="">report it</a></p>
 
-                <!-- indien vriend -->
-                <div class="button-wrapper crossings-location-button-wrapper">  <!-- hidden -->
-                    <a href="#" class="button">
-                        <div class="icon crossings-location-icon"></div>
-                        <p>see where you crossed each other</p>
-                    </a>
-                </div>
-
-            </div>  <!-- einde div buttons -->
-
-        </div>  <!-- einde upper section -->
-
-        <div class="photos_section">
-
-            <img class="userphoto" src="" alt="">
-
-        </div>  <!-- einde photo section -->
-
-        <div class="aboutme_section">
-
-            <h2 class="section_title">about me</h2>
-
-            <form class="aboutme_subsection aboutme_basic-info">
-
-                <h4 class="subsection_title">basic info</h4>
-
-                <!-- geboortedatum -->
-                <div class="aboutme_item">
-                    <p class="item_label">birth date</p>
-                    <input type="date" value="1991-10-23" readonly>
-                </div>
-
-                <!-- geslacht -->
-                <div class="aboutme_item">
-                    <p class="item_label">gender</p>
-                    <select disabled>
-                        <option value="male">male</option>
-                        <option value="female">female</option>
-                        <option value="other" selected>other</option>
-                    </select>
-                </div>
-
-                <!-- thuisplaats -->
-                <div class="aboutme_item">
-                    <p class="item_label">home</p>
-                    <input type="text" value="London, UK" readonly>
-                </div>
-
-            </form>  <!-- einde basic info -->
-
-
-            <form class="aboutme_subsection aboutme_school-info">
-
-                <h4 class="subsection_title">education info</h4>
-
-                <!-- school thuis -->
-                <div class="aboutme_item">
-                    <p class="item_label">school at home</p>
-                    <input type="text" value="Oxford University" readonly>
-                </div>
-
-                <!-- school buitenland -->
-                <div class="aboutme_item">
-                    <p class="item_label">school abroad</p>
-                    <input type="text" value="New York University" readonly>
-                </div>
-
-                <!-- huidige studie -->
-                <div class="aboutme_item">
-                    <p class="item_label">study</p>
-                    <input type="text" value="Master in Psychology" readonly>
-                </div>
-
-            </form>  <!-- einde education info -->
-
-            <form class="aboutme_subsection aboutme_social-info">
-
-                <h4 class="subsection_title">social</h4>
-
-                <!-- facebook -->
-                <div class="aboutme_item social_item">
-                    <img src="" alt="" class="social_icon">
-                    <p class="item_label">facebook</p>
-                    <input type="text" value="www.facebook.com/someuser" readonly hidden>
-                </div>
-
-                <!-- twitter -->
-                <div class="aboutme_item social_item">
-                    <img src="" alt="" class="social_icon">
-                    <p class="item_label">twitter</p>
-                    <input type="text" value="www.twitter.com/someuser" readonly hidden>
-                </div>
-
-                <!-- instagram -->
-                <div class="aboutme_item social_item">
-                    <img src="" alt="" class="social_icon">
-                    <p class="item_label">instagram</p>
-                    <input type="text" value="www.instagram.com/someuser" readonly hidden>
-                </div>
-
-            </form>  <!-- einde social info -->
-
-        </div>  <!-- einde about me section -->
-
-        <div class="interests_section">
-
-            <h2 class="section_title">interests</h2>
-
-            <div class="interests">
-                <span>chinese food</span>
-                <span>tennis</span>
-                <span>beer</span>
-                <span>foreign languages</span>
-                <span>movies</span>
-                <span>dance music</span>
-                <span>video games</span>
             </div>
 
-        </div>  <!-- einde interests section -->
+        </div>  <!-- einde profile page content -->
 
-        <div class="report_abuse">
-
-            <p>see something suspicious? <a href="">report it</a></p>
-
-        </div>
 
     </div>  <!-- einde profile page -->
 
