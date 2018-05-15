@@ -10031,13 +10031,13 @@ profile page styling
 @media (min-width: 768px) {
   .profile_page .cover_image {
     height: 350px;
-    position: fixed;
-    top: 0px;
+    position: relative;
+    top: -60px;
   }
 
   .profile_page .profile_page_content {
     position: relative;
-    top: 200px;
+    top: -150px;
   }
 
   .profile_page .profile_page_content .upper_section {

@@ -149,6 +149,18 @@ profile page styling
 
     .aboutme_section {
 
+      .section_title {
+
+      }
+
+      .aboutme_subsection {
+
+        .subsection_title {
+
+        }
+
+
+      }
     }
 
     .hidden {
@@ -164,12 +176,12 @@ profile page styling
 
     .cover_image{
       height: 350px;
-      position: fixed;
-      top: 0px;
+      position: relative;
+      top: -60px;
     }
     .profile_page_content {
       position: relative;
-      top: 200px;
+      top: -150px;
 
       .upper_section {
         display: block;
