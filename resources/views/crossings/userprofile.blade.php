@@ -77,87 +77,89 @@
 
                 <h2 class="section_title">about me</h2>
 
-                <div class="aboutme_section_inner"></div>
+                <div class="aboutme_section_inner">
 
-                <form class="aboutme_subsection aboutme_basic-info">
+                    <form class="aboutme_subsection aboutme_basic-info">
 
-                    <h4 class="subsection_title">basic info</h4>
+                        <h4 class="subsection_title">basic info</h4>
 
-                    <!-- geboortedatum -->
-                    <div class="aboutme_item">
-                        <p class="item_label">birth date</p>
-                        <input type="date" value="1991-10-23" readonly>
-                    </div>
+                        <!-- geboortedatum -->
+                        <div class="aboutme_item">
+                            <p class="item_label">birth date</p>
+                            <input type="date" value="1991-10-23" readonly>
+                        </div>
 
-                    <!-- geslacht -->
-                    <div class="aboutme_item">
-                        <p class="item_label">gender</p>
-                        <select disabled>
-                            <option value="male">male</option>
-                            <option value="female">female</option>
-                            <option value="other" selected>other</option>
-                        </select>
-                    </div>
+                        <!-- geslacht -->
+                        <div class="aboutme_item">
+                            <p class="item_label">gender</p>
+                            <select disabled>
+                                <option value="male">male</option>
+                                <option value="female">female</option>
+                                <option value="other" selected>other</option>
+                            </select>
+                        </div>
 
-                    <!-- thuisplaats -->
-                    <div class="aboutme_item">
-                        <p class="item_label">home</p>
-                        <input type="text" value="London, UK" readonly>
-                    </div>
+                        <!-- thuisplaats -->
+                        <div class="aboutme_item">
+                            <p class="item_label">home</p>
+                            <input type="text" value="London, UK" readonly>
+                        </div>
 
-                </form>  <!-- einde basic info -->
+                    </form>  <!-- einde basic info -->
 
 
-                <form class="aboutme_subsection aboutme_school-info">
+                    <form class="aboutme_subsection aboutme_school-info">
 
-                    <h4 class="subsection_title">education info</h4>
+                        <h4 class="subsection_title">education info</h4>
 
-                    <!-- school thuis -->
-                    <div class="aboutme_item">
-                        <p class="item_label">school at home</p>
-                        <input type="text" value="Oxford University" readonly>
-                    </div>
+                        <!-- school thuis -->
+                        <div class="aboutme_item">
+                            <p class="item_label">school at home</p>
+                            <input type="text" value="Oxford University" readonly>
+                        </div>
 
-                    <!-- school buitenland -->
-                    <div class="aboutme_item">
-                        <p class="item_label">school abroad</p>
-                        <input type="text" value="New York University" readonly>
-                    </div>
+                        <!-- school buitenland -->
+                        <div class="aboutme_item">
+                            <p class="item_label">school abroad</p>
+                            <input type="text" value="New York University" readonly>
+                        </div>
 
-                    <!-- huidige studie -->
-                    <div class="aboutme_item">
-                        <p class="item_label">study</p>
-                        <input type="text" value="Master in Psychology" readonly>
-                    </div>
+                        <!-- huidige studie -->
+                        <div class="aboutme_item">
+                            <p class="item_label">study</p>
+                            <input type="text" value="Master in Psychology" readonly>
+                        </div>
 
-                </form>  <!-- einde education info -->
+                    </form>  <!-- einde education info -->
 
-                <form class="aboutme_subsection aboutme_social-info">
+                    <form class="aboutme_subsection aboutme_social-info">
 
-                    <h4 class="subsection_title">social</h4>
+                        <h4 class="subsection_title">social</h4>
 
-                    <!-- facebook -->
-                    <div class="aboutme_item social_item">
-                        <i class="fab fa-facebook"></i>
-                        <p class="item_label">facebook</p>
-                        <input type="text" value="www.facebook.com/someuser" readonly hidden>
-                    </div>
+                        <!-- facebook -->
+                        <div class="aboutme_item social_item">
+                            <i class="fab fa-facebook"></i>
+                            <p class="item_label">facebook</p>
+                            <input type="text" value="www.facebook.com/someuser" readonly hidden>
+                        </div>
 
-                    <!-- twitter -->
-                    <div class="aboutme_item social_item">
-                        <i class="fab fa-twitter"></i>
-                        <p class="item_label">twitter</p>
-                        <input type="text" value="www.twitter.com/someuser" readonly hidden>
-                    </div>
+                        <!-- twitter -->
+                        <div class="aboutme_item social_item">
+                            <i class="fab fa-twitter"></i>
+                            <p class="item_label">twitter</p>
+                            <input type="text" value="www.twitter.com/someuser" readonly hidden>
+                        </div>
 
-                    <!-- instagram -->
-                    <div class="aboutme_item social_item">
-                        <i class="fab fa-instagram"></i>
-                        <p class="item_label">instagram</p>
-                        <input type="text" value="www.instagram.com/someuser" readonly hidden>
-                    </div>
+                        <!-- instagram -->
+                        <div class="aboutme_item social_item">
+                            <i class="fab fa-instagram"></i>
+                            <p class="item_label">instagram</p>
+                            <input type="text" value="www.instagram.com/someuser" readonly hidden>
+                        </div>
 
-                </form>  <!-- einde social info -->
+                    </form>  <!-- einde social info -->
+
+                </div>  <!-- einde about me inner section (voor desktop positioning) -->
 
             </div>  <!-- einde about me section -->
 

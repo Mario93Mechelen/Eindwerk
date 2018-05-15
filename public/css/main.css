@@ -10157,6 +10157,7 @@ profile page styling
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
+    padding-left: 15px;
   }
 
   .profile_page .profile_page_content .upper_section .buttons .button-wrapper {
@@ -10176,6 +10177,23 @@ profile page styling
   .profile_page .profile_page_content .upper_section .buttons .subtext {
     text-align: right;
     padding-right: 0;
+  }
+
+  .profile_page .profile_page_content .aboutme_section .aboutme_section_inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .profile_page .profile_page_content .aboutme_section .aboutme_subsection {
+    width: calc(33.333% - 10px);
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    margin-right: 15px;
+  }
+
+  .profile_page .profile_page_content .aboutme_section .aboutme_subsection:last-of-type {
+    margin-right: 0px;
   }
 }
 

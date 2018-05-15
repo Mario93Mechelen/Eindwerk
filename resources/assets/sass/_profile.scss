@@ -276,6 +276,7 @@ profile page styling
         .buttons {
           width: calc(100% - 150px);
           align-items: flex-start;
+          padding-left: 15px;
 
           .button-wrapper {
             width: calc(25% - 15px);
@@ -300,8 +301,14 @@ profile page styling
 
       .aboutme_section {
 
-        .aboutme_subsection {
+        .aboutme_section_inner {
+          display: flex;
+        }
 
+        .aboutme_subsection {
+          width: calc(33.333% - 10px);
+          box-sizing: border-box;
+          margin-right: 15px;
 
           .subsection_title {
 
@@ -333,6 +340,11 @@ profile page styling
             }
           }
         }
+
+        .aboutme_subsection:last-of-type {
+          margin-right: 0px;
+        }
+
       }
     }
   }
