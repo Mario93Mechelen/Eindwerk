@@ -77,6 +77,8 @@
 
                 <h2 class="section_title">about me</h2>
 
+                <div class="aboutme_section_inner"></div>
+
                 <form class="aboutme_subsection aboutme_basic-info">
 
                     <h4 class="subsection_title">basic info</h4>

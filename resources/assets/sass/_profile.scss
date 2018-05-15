@@ -20,6 +20,7 @@ profile page styling
     top: -120px;
     max-width: 960px;
     margin: 0 auto;
+    padding: 0 15px;
 
     .upper_section {
       display: flex;
@@ -59,7 +60,7 @@ profile page styling
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        padding: 15px;
+        padding: 15px 0px;
 
         .button-wrapper {
           width: calc(50% - 15px);
@@ -160,7 +161,7 @@ profile page styling
     }
 
     .aboutme_section {
-      padding: 15px;
+      padding: 15px 0px;
 
       .aboutme_subsection {
         margin-top: 15px;
@@ -219,11 +220,11 @@ profile page styling
     }
 
     .interests_section {
-      padding: 15px;
+      padding: 15px 0px;
     }
 
     .report_abuse {
-      padding: 15px;
+      padding: 15px 0px;
     }
 
     .hidden {
@@ -299,11 +300,46 @@ profile page styling
 
       .aboutme_section {
 
-      }
+        .aboutme_subsection {
 
-      .hidden {
-        display: none;
+
+          .subsection_title {
+
+          }
+
+          .aboutme_item {
+
+            .item_label  {
+
+            }
+
+            input, select {
+
+            }
+          }
+
+          .aboutme_item:last-of-type {
+
+          }
+
+          .social_item {
+
+            .item_label {
+
+            }
+
+            i {
+
+            }
+          }
+        }
       }
     }
+  }
+}
+
+@media(min-width: 990px) {
+  .profile_page_content {
+    padding: 0px;
   }
 }
