@@ -35,8 +35,12 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/', 'HomeController@index');
     Route::post('/filterDistance', 'HomeController@filterDistance');
 
-    //profile
-    Route::get('/profile', 'ProfileController@index');
+    //profile-overview
+    Route::get('/crossings', 'ProfileController@index');
+    //other peoples profiles
+    Route::get('/users/{user}', 'ProfileController@show');
+    //my profile
+    Route::get('/profile/edit','ProfileController@edit');
 
     //conversation
     Route::post('/conversation', 'ConversationController@store');

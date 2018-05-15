@@ -13,7 +13,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('profile');
+        return view('crossings.overview');
     }
 
     /**
@@ -43,9 +43,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(User $user)
     {
-        //
+        //Als je surft naar de link /user/eigen-user-id zou je deze link ook wel moeten kunnen zien
+        return view('crossings.userprofile',compact('user'));
     }
 
     /**
@@ -54,9 +55,10 @@ class ProfileController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+        //gebruik hiervoor de globale $myUser variabele in de view
+        return view('crossings.myprofile');
     }
 
     /**
