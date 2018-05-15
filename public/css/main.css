@@ -10102,6 +10102,41 @@ profile page styling
   padding: 15px 0px;
 }
 
+.profile_page .profile_page_content .interests_section .interests {
+  margin-left: -5px;
+}
+
+.profile_page .profile_page_content .interests_section ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 10px;
+}
+
+.profile_page .profile_page_content .interests_section ul li {
+  border: 1px solid #0048d9;
+  border-radius: 5px;
+  color: #0048d9;
+  padding: 8px;
+  margin: 8px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.profile_page .profile_page_content .interests_section ul li.selected {
+  background-color: #0048d9;
+  color: #ffffff;
+}
+
 .profile_page .profile_page_content .report_abuse {
   padding: 15px 0px;
 }

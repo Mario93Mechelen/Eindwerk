@@ -167,15 +167,15 @@
 
                 <h2 class="section_title">interests</h2>
 
-                <div class="interests">
-                    <span>chinese food</span>
-                    <span>tennis</span>
-                    <span>beer</span>
-                    <span>foreign languages</span>
-                    <span>movies</span>
-                    <span>dance music</span>
-                    <span>video games</span>
-                </div>
+                <ul class="interests">
+                    <li class="interest-item selected">chinese food</li>
+                    <li class="interest-item ">tennis</li>
+                    <li class="interest-item selected">beer</li>
+                    <li class="interest-item ">foreign languages</li>
+                    <li class="interest-item selected">movies</li>
+                    <li class="interest-item ">dance music</li>
+                    <li class="interest-item ">video games</li>
+                </ul>
 
             </div>  <!-- einde interests section -->
 
