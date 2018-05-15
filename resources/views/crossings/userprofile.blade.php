@@ -4,9 +4,11 @@
 
     <div class="profile_page">
 
+        <div class="cover_image" style="background-image: url('/img/cover_image_default.jpg');"></div>
+
         <div class="upper_section">
 
-            <img class="cover_image" src="" alt="">
+
             <img class="profile_image" src="{{url('img/profile_pic_default.jpg')}}" alt="">
 
             <h2 class="user_name">Amber Heard</h2>

@@ -7,11 +7,16 @@ profile page styling
 
 .profile_page {
 
+  .cover_image{
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
   .upper_section {
 
-    .cover-image{
-
-    }
 
     .profile_image {
 
@@ -39,5 +44,50 @@ profile page styling
 
   .hidden {
     display: none;
+  }
+}
+
+
+/* desktop */
+@media(min-width: 768px) {
+  .profile_page {
+
+    .cover_image{
+      height: 350px;
+      position: fixed;
+      top: 0px;
+    }
+
+    .upper_section {
+      position: fixed;
+      top: 350px;
+
+      .profile_image {
+
+      }
+
+      .user_name {
+
+      }
+
+      .user_introtext {
+
+      }
+
+      .buttons {
+
+        .button-wrapper {
+
+        }
+      }
+    }
+
+    .aboutme_section {
+
+    }
+
+    .hidden {
+      display: none;
+    }
   }
 }
