@@ -15,9 +15,6 @@
 
                 <h2 class="user_name">Amber Heard</h2>
 
-                <p class="user_introtext">Hey, ik ben Amber, ik vind Mario een toffe jongen maar ben te verlegen iets
-                    tegen hem te zeggen. En ik hou van ice cream, yeah!</p>
-
                 <div class="buttons">
 
                     <!-- indien nog geen vrienden -->
@@ -45,7 +42,7 @@
                     </div>
 
                     <!-- indien nog geen vrienden -->
-                    <div class="button-wrapper crossings-quantity--button-wrapper">
+                    <div class="button-wrapper crossings-quantity-button-wrapper">
                         <a href="#" class="button">
                             <div class="icon crossings-quantity-icon"></div>
                             <p>you crossed x times already</p>
@@ -62,6 +59,9 @@
                     </div>
 
                 </div>  <!-- einde div buttons -->
+
+                <p class="user_introtext">Hey, ik ben Amber, ik vind Mario een toffe jongen maar ben te verlegen iets
+                    tegen hem te zeggen. En ik hou van ice cream, yeah!</p>
 
             </div>  <!-- einde upper section -->
 

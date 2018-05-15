@@ -18,14 +18,16 @@ profile page styling
   .profile_page_content {
     position: relative;
     top: -120px;
+    max-width: 960px;
+    margin: 0 auto;
 
     .upper_section {
-      max-width: 960px;
       display: flex;
       flex-direction: column;
       align-items: center;
 
       .profile_image {
+        order: 1;
         display: block;
         width: 150px;
         height: 150px;
@@ -35,6 +37,7 @@ profile page styling
       }
 
       .user_name {
+        order: 2;
         color: $dark-color;
         font-size: 28px;
         font-weight: bold;
@@ -42,15 +45,17 @@ profile page styling
       }
 
       .user_introtext {
+        order: 3;
         color: $nav_selected;
         font-size: 14px;
         text-align: center;
         padding: 0px 30px;
+        line-height: 1.2em;
       }
 
       .buttons {
-
-        width: 100vw;
+        order: 4;
+        width: 100%;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -106,7 +111,7 @@ profile page styling
           }
         }
 
-        .crossings-quantity--button-wrapper, .crossings-location-button-wrapper {
+        .crossings-quantity-button-wrapper, .crossings-location-button-wrapper {
           width: 100%;
 
           .button {
@@ -136,6 +141,8 @@ profile page styling
           font-size: 12px;
           text-align: center;
           padding: 0px 30px;
+          display: block;
+          width: 100%;
         }
       }
     }
@@ -160,37 +167,68 @@ profile page styling
       position: fixed;
       top: 0px;
     }
+    .profile_page_content {
+      position: relative;
+      top: 200px;
 
-    .upper_section {
-      position: fixed;
-      top: 350px;
+      .upper_section {
+        display: block;
 
-      .profile_image {
 
-      }
+        .profile_image {
+          margin: 0px;
+          float: left;
+        }
 
-      .user_name {
+        .user_name {
+          display: block;
+          float: left;
+          width: calc(100% - 150px);
+          color: $white;
+          font-weight: bold;
+          padding-left: 30px;
+          padding-top: 50px;
+        }
 
-      }
+        .user_introtext {
+          order: 10;
+          text-align: left;
+          max-width: 70%;
+          padding-left: 0;
+        }
 
-      .user_introtext {
+        .buttons {
+          width: calc(100% - 150px);
+          align-items: flex-start;
 
-      }
+          .button-wrapper {
+            width: calc(25% - 15px);
 
-      .buttons {
+            .button {
+              margin-top: 0px;
+            }
+          }
 
-        .button-wrapper {
+          .crossings-quantity-button-wrapper, .crossings-location-button-wrapper {
+            width: 50%;
+            margin-right: 0;
+          }
+
+          .subtext {
+            text-align: right;
+            padding-right: 0;
+          }
 
         }
       }
-    }
 
-    .aboutme_section {
+      .aboutme_section {
 
-    }
+      }
 
-    .hidden {
-      display: none;
+      .hidden {
+        display: none;
+      }
     }
   }
 }
