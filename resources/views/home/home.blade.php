@@ -96,10 +96,11 @@
                     </div>
                      @endforeach
                      @else
-                        <!-- <p>We couldn't find users nearby, did you share your location with us?</p> -->
+                        <p>We couldn't find users nearby, did you share your location with us?</p>
                      @endif
 
                     <!-- for further layout testing -->
+                    <!--
                     <div class="item item-list col-xs-12 col-md-6">
                         <div class="item-content">
                             <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
@@ -140,6 +141,7 @@
                             </div>
                         </div>
                     </div>
+                    -->
 
 
                 </div>
