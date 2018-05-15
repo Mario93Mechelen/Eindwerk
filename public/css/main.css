@@ -9833,6 +9833,16 @@ Around me page styling
 
 /*
 
+profile page styling
+
+ */
+
+.profile_page .hidden {
+  display: none;
+}
+
+/*
+
 Crossings page styling
 
 */
