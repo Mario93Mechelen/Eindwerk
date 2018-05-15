@@ -67,6 +67,8 @@
 
             <div class="photos_section">
 
+                <h2 class="section_title">photos</h2>
+
                 <img class="userphoto" src="" alt="">
 
             </div>  <!-- einde photo section -->
@@ -134,21 +136,21 @@
 
                     <!-- facebook -->
                     <div class="aboutme_item social_item">
-                        <img src="" alt="" class="social_icon">
+                        <i class="fab fa-facebook"></i>
                         <p class="item_label">facebook</p>
                         <input type="text" value="www.facebook.com/someuser" readonly hidden>
                     </div>
 
                     <!-- twitter -->
                     <div class="aboutme_item social_item">
-                        <img src="" alt="" class="social_icon">
+                        <i class="fab fa-twitter"></i>
                         <p class="item_label">twitter</p>
                         <input type="text" value="www.twitter.com/someuser" readonly hidden>
                     </div>
 
                     <!-- instagram -->
                     <div class="aboutme_item social_item">
-                        <img src="" alt="" class="social_icon">
+                        <i class="fab fa-instagram"></i>
                         <p class="item_label">instagram</p>
                         <input type="text" value="www.instagram.com/someuser" readonly hidden>
                     </div>
