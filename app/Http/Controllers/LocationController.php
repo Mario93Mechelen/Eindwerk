@@ -48,18 +48,32 @@ class LocationController extends Controller
     {
         $longitude = $request->longitude;
         $latitude = $request->latitude;
-        $client = new Client();
-        $res = $client->request('GET','http://maps.googleapis.com/maps/api/geocode/json', ['query' => ['sensor' => 'false', 'language' => 'nl', 'latlng' => $latitude.','.$longitude]]);
-        //sensor=false&language=nl&latlng='.$latitude.','.$longitude
-        $res = \GuzzleHttp\json_decode($res->getBody());
-        if($res->results) {
-            $city = $res->results[0]->address_components[2]->long_name;
+        if($request->amount<1){
+            $client = new Client();
+            $res = $client->request('GET','http://maps.googleapis.com/maps/api/geocode/json', ['query' => ['sensor' => 'false', 'language' => 'nl', 'latlng' => $latitude.','.$longitude]]);
+            //sensor=false&language=nl&latlng='.$latitude.','.$longitude
+            $res = \GuzzleHttp\json_decode($res->getBody());
+            if($res->results) {
+                $city = $res->results[0]->address_components[2]->long_name;
+            }else{
+                $city = "unknown";
+                $res = ['results'=>[['address_components'=>[['first'=>'first'],['first'=>'first'],['long_name' => $city]]]],['array2' =>"self constructed"]];
+            }
         }else{
-            $city = "unknown";
-            $res = "no results found";
+            if(Location::where('user_id',Auth::user()->id)->first()){
+                $city = Location::where('user_id',Auth::user()->id)->first()->city;
+                $res = ['results'=>[['address_components'=>[['first'=>'first'],['first'=>'first'],['long_name' => $city]]]],['array2' =>"self constructed"]];
+            }else{
+                $city = "unknown";
+                $res = ['results'=>[['address_components'=>[['first'=>'first'],['first'=>'first'],['long_name' => $city]]]],['array2' =>"self constructed"]];
+            }
         }
         if(Location::where('user_id',Auth::user()->id)->first()){
-            Location::where('user_id', Auth::user()->id)->update(['latitude' => $latitude, 'longitude' => $longitude, 'city' => $city]);
+            if($city != 'unknown') {
+                Location::where('user_id', Auth::user()->id)->update(['latitude' => $latitude, 'longitude' => $longitude, 'city' => $city]);
+            }else{
+                Location::where('user_id', Auth::user()->id)->update(['latitude' => $latitude, 'longitude' => $longitude]);
+            }
         }else {
             $location = new Location();
             $location->longitude = $longitude;

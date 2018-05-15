@@ -158,6 +158,7 @@
     <script>
         var longitude;
         var latitude;
+        var functionamount = 0;
 
         function getLocation() {
             if (navigator.geolocation) {
@@ -170,7 +171,8 @@
             latitude = position.coords.latitude;
             longitude = position.coords.longitude;
             console.log(latitude+":"+longitude)
-            storeLocation(latitude, longitude);
+            storeLocation(latitude, longitude, functionamount);
+            functionamount++;
         }
 
         function positionToMap(position) {
@@ -197,7 +199,7 @@
         getLocation();
         window.setInterval(getLocation, 300000);
 
-        function storeLocation(latitude,longitude){
+        function storeLocation(latitude,longitude,f){
             $.ajaxSetup({
 
                 headers: {
@@ -213,6 +215,7 @@
                 data:{
                     'longitude': longitude,
                     'latitude': latitude,
+                    'amount': f,
                 }
             }).done(function(response){
                 if(response.code==200) {
