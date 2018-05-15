@@ -658,6 +658,34 @@ Around me page styling
 }
 
 
+/* small screen fix for list items */
+@media (max-width: 400px) {
+  .item-list {
+
+    .item-content {
+
+      .list-item-img {
+        min-width: 95px;
+      }
+
+      .caption {
+
+        .list-item-name {
+          font-size: 16px;
+        }
+        .list-item-distance {
+          font-size: 12px;
+        }
+        .list-item-intro {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+
+
 @media (max-width: 768px) {
   .searchButtonRadiusFix {
     border-bottom-right-radius: 0px !important;
