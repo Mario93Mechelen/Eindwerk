@@ -60,6 +60,9 @@ $(document).mouseup(function (e){
 $(document).ready(function() {
     $(".searchButton").click(function() {
         $(".searchButtonOptions").toggleClass("hidden");
+        $(".searchButton").toggleClass("searchButtonRadiusFix");
+        $(".searchBox").toggleClass("searchBoxRadiusFix");
+
     });
 });
 

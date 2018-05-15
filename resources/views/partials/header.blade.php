@@ -44,7 +44,7 @@
                         </div>
                     </a>
 
-                    <a class="dropdown-item all-chats-link" href="">go to all chats</a>
+                    <a class="dropdown-item all-chats-link" href="{{URL::action('ConversationController@index')}}">go to all chats</a>
 
                 </div>
 
@@ -57,16 +57,16 @@
                 <div class="dropdown-menu" id="dropdown-menu-profile" style="display:none">
                     <a class="dropdown-item dropdown-item-profile" href="#">my profile</a>
                     <a class="dropdown-item dropdown-item-profile" href="#">settings</a>
-                    <a class="dropdown-item dropdown-item-profile" href="#">logout</a>
+                    <a class="dropdown-item dropdown-item-profile" href="{{URL::action('Auth\LoginController@logout')}}">logout</a>
                 </div>
 
             </ul>
 
             <div class="nav_left_wrapper">
                 <ul class="nav_left">
-                    <li class="nav_semestr"><a href="#"><img src='{{ asset('img/Semestr_logo2_gray.png')
+                    <li class="nav_semestr"><a href="{{URL::action('HomeController@index')}}"><img src='{{ asset('img/Semestr_logo2_gray.png')
                     }}'><p>Semestr</p></a></li>
-                    <li class="nav_aroundme"><a href="#">around me</a></li>
+                    <li class="nav_aroundme"><a href="{{URL::action('HomeController@index')}}">around me</a></li>
                     <li class="nav_crossings"><a href="#">crossings</a></li>
                     <li class="nav_groups"><a href="#">groups</a></li>
                 </ul>

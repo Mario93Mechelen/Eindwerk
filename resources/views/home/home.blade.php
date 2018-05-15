@@ -96,8 +96,50 @@
                     </div>
                      @endforeach
                      @else
-                        <p>We couldn't find users nearby, did you share your location with us?</p>
+                        <!-- <p>We couldn't find users nearby, did you share your location with us?</p> -->
                      @endif
+
+                    <!-- for further layout testing -->
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">2km away</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
 
 
                 </div>
