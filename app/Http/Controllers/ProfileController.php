@@ -49,6 +49,11 @@ class ProfileController extends Controller
         return view('crossings.userprofile',compact('user'));
     }
 
+    // gewoon om te designen man
+    public function show2() {
+        return view('crossings.userprofile');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

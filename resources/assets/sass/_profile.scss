@@ -1,0 +1,432 @@
+/*
+
+profile page styling
+
+ */
+
+
+.profile_page {
+
+  background-color: $offwhite;
+
+  .cover_image{
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .profile_page_content {
+    position: relative;
+    top: -120px;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 15px;
+
+    .upper_section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .profile_image {
+        order: 1;
+        display: block;
+        width: 150px;
+        height: 150px;
+        margin:0 auto;
+        border-radius: 5px;
+        box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
+      }
+
+      .user_name {
+        order: 2;
+        color: $dark-color;
+        font-size: 28px;
+        font-weight: bold;
+        padding: 15px 15px;
+      }
+
+      .user_introtext {
+        order: 3;
+        color: $nav_selected;
+        font-size: 14px;
+        text-align: center;
+        padding: 0px 30px;
+        line-height: 1.2em;
+      }
+
+      .buttons {
+        order: 4;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 15px 0px;
+
+        .button-wrapper {
+          width: calc(50% - 15px);
+          box-sizing: border-box;
+          margin-right: 15px;
+
+          .button {
+
+            box-sizing: border-box;
+            margin: 0 auto;
+            padding: 0px;
+            display: flex;
+            align-items: center;
+            border-radius: 5px;
+            box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            position: relative;
+            text-decoration: none;
+            cursor: pointer;
+
+            .icon {
+              background-size: 20px 20px;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: $primary-color;
+              width: 40px;
+              height: 40px;
+              padding: 10px;
+              box-sizing: border-box;
+              border-top-left-radius: 5px;
+              border-bottom-left-radius: 5px;
+            }
+
+            .add-friend-icon {background-image: url('/img/add_friend.png');}
+            .friend-icon {background-image: url('/img/checkmark.png');}
+            .message-icon {background-image: url('/img/Chat.png');}
+            .crossings-quantity-icon {background-image: url('/img/Crossings.png');}
+            .crossings-location-icon {background-image: url('/img/Crossings.png');}
+
+            p {
+              display: block;
+              font-size: 16px;
+              font-weight: bold;
+              padding-left: 10px;
+              padding-right: 10px;
+              color: $dark-color;
+            }
+          }
+        }
+
+        .crossings-quantity-button-wrapper, .crossings-location-button-wrapper {
+          width: 100%;
+
+          .button {
+            margin-top: 0px;
+            margin-bottom: 10px;
+
+            p {
+              padding-right: 30px;
+            }
+          }
+        }
+
+        .crossings-location-button-wrapper {
+          .button:before {
+            position: absolute;
+            font-family: 'FontAwesome';
+            top: 6px;
+            right: 20px;
+            content: "\f105";
+            font-size: 24px;
+            color: $primary-color;
+          }
+        }
+
+        .subtext {
+          color: $nav_unselected;
+          font-size: 12px;
+          text-align: center;
+          padding: 0px 30px;
+          display: block;
+          width: 100%;
+        }
+      }
+    }
+
+    .section_title {
+      font-size: 28px;
+      font-weight: bold;
+      color: $dark-color;
+      padding-bottom: 15px;
+    }
+
+    .photos_section {
+      padding: 15px 0px;
+
+      .photo_collection {
+        padding-top: 15px;
+        border-radius: 5px;
+        display: flex;
+
+        img {
+          width: 50px;
+          height: 50px;
+        }
+
+        img:first-of-type {
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+
+        img:last-of-type {
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+
+    .aboutme_section {
+      padding: 15px 0px;
+
+      .aboutme_subsection {
+        margin-top: 15px;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        font-weight: bold;
+        color: $dark-color;
+        font-size: 16px;
+
+
+        .subsection_title {
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+          padding: 10px;
+        }
+
+        .aboutme_item {
+          padding: 10px 10px 0px 10px;
+
+
+          .item_label  {
+            color: $nav_unselected;
+            font-size: 12px;
+            font-weight: normal;
+          }
+
+          input, select {
+            border: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+          }
+        }
+
+        .aboutme_item:last-of-type {
+          padding: 10px;
+        }
+
+        .social_item {
+          display: flex;
+          align-items: center;
+
+          .item_label {
+            font-weight: bold;
+            color: $dark-color;
+            font-size: 16px;
+            padding-left: 10px;
+          }
+
+          i {
+            color: $nav_unselected;
+            font-size: 30px;
+          }
+        }
+      }
+    }
+
+    .interests_section {
+      padding: 15px 0px;
+
+      .interests {
+        margin-left: -5px;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        padding-top: 10px;
+
+        li {
+          border: 1px solid $primary-color;
+          border-radius: 5px;
+          color: $primary-color;
+          padding: 8px;
+          margin: 8px;
+          cursor: pointer;
+          font-size: 20px;
+        }
+
+        li.selected {
+          background-color: $primary-color;
+          color: $white;
+        }
+      }
+    }
+
+    .report_abuse {
+      padding: 15px 0px;
+
+      p {
+        color: $nav_unselected;
+        text-align: center;
+        a {
+          color: $nav_unselected;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .hidden {
+      display: none;
+    }
+  }
+}
+
+
+/* desktop */
+@media(min-width: 768px) {
+  .profile_page {
+
+    .cover_image{
+      height: 350px;
+      position: relative;
+      top: -60px;
+    }
+    .profile_page_content {
+      position: relative;
+      top: -150px;
+
+      .upper_section {
+        display: block;
+
+
+        .profile_image {
+          margin: 0px;
+          float: left;
+        }
+
+        .user_name {
+          display: block;
+          float: left;
+          width: calc(100% - 150px);
+          color: $white;
+          font-weight: bold;
+          padding-left: 30px;
+          padding-top: 50px;
+        }
+
+        .user_introtext {
+          order: 10;
+          text-align: left;
+          max-width: 70%;
+          padding-left: 0;
+        }
+
+        .buttons {
+          width: calc(100% - 150px);
+          align-items: flex-start;
+          padding-left: 15px;
+
+          .button-wrapper {
+            width: calc(25% - 15px);
+
+            .button {
+              margin-top: 0px;
+            }
+          }
+
+          .crossings-quantity-button-wrapper, .crossings-location-button-wrapper {
+            width: 50%;
+            margin-right: 0;
+          }
+
+          .subtext {
+            text-align: right;
+            padding-right: 0;
+          }
+
+        }
+      }
+
+      .photos_section {
+
+        .photo_collection {
+
+          img {
+            width: 80px;
+            height: 80px;
+          }
+
+          img:first-of-type {
+          }
+
+          img:last-of-type {
+          }
+        }
+      }
+
+      .aboutme_section {
+
+        .aboutme_section_inner {
+          display: flex;
+        }
+
+        .aboutme_subsection {
+          width: calc(33.333% - 10px);
+          box-sizing: border-box;
+          margin-right: 15px;
+
+          .subsection_title {
+
+          }
+
+          .aboutme_item {
+
+            .item_label  {
+
+            }
+
+            input, select {
+
+            }
+          }
+
+          .aboutme_item:last-of-type {
+
+          }
+
+          .social_item {
+
+            .item_label {
+
+            }
+
+            i {
+
+            }
+          }
+        }
+
+        .aboutme_subsection:last-of-type {
+          margin-right: 0px;
+        }
+
+      }
+    }
+  }
+}
+
+@media(min-width: 990px) {
+  .profile_page_content {
+    padding: 0px;
+  }
+}
