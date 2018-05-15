@@ -42,6 +42,9 @@ Route::group(['middleware' => 'auth'], function()
     //my profile
     Route::get('/profile/edit','ProfileController@edit');
 
+    //te verwijderen later, is om te designen
+    Route::get('/profiledesign', 'ProfileController@show2');
+
     //conversation
     Route::post('/conversation', 'ConversationController@store');
     Route::get('/conversation/{conversation}', 'ConversationController@show');
