@@ -95,13 +95,11 @@ $(document).ready(function() {
         $(this).toggleClass("hidden");
         $(".crossings-hide-map-button-wrapper").toggleClass("hidden");
         $(".crossings_map").toggleClass("hidden");
-        console.log("show map");
     });
     $(".crossings-hide-map-button-wrapper").click(function() {
         $(this).toggleClass("hidden");
         $(".crossings-location-button-wrapper").toggleClass("hidden");
         $(".crossings_map").toggleClass("hidden");
-        console.log("hide map");
     });
 
 });
