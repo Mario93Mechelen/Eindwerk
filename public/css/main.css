@@ -10094,12 +10094,12 @@ profile page styling
   height: 50px;
 }
 
-.profile_page .profile_page_content .photos_section .photo_collection img:first-of-type {
+.profile_page .profile_page_content .photos_section .photo_collection a:first-of-type img {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.profile_page .profile_page_content .photos_section .photo_collection img:last-of-type {
+.profile_page .profile_page_content .photos_section .photo_collection a:last-of-type img {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
