@@ -35,7 +35,6 @@ class ProfileController extends Controller
 
             array_multisort($countArr, SORT_DESC,$crossingArr);
         }
-        dd($crossingArr);
         return view('crossings.overview',compact('crossingArr'));
     }
 

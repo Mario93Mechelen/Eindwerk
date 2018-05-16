@@ -245,13 +245,20 @@
 
             });
             var i = 0;
+            var icon = {
+                url: "{{asset('img/crossings-with-background.png')}}", // url
+                scaledSize: new google.maps.Size(25, 25), // scaled size
+                origin: new google.maps.Point(0,0), // origin
+                anchor: new google.maps.Point(0, 0) // anchor
+            };
             @foreach($crossingLocations as $cl)
             var lat = '{{$cl->latitude}}';
             var lng = '{{$cl->longitude}}';
             var marker = new google.maps.Marker({
                 position: {lat:parseFloat(lat),lng:parseFloat(lng)},
                 map: map,
-                title: 'crossing nr '+i
+                title: 'crossing nr '+i,
+                icon: icon
             });
             i++;
             @endforeach
