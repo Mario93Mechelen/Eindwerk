@@ -10349,6 +10349,10 @@ Crossings page styling
 
 */
 
+.crossings_page .content_title {
+  display: none;
+}
+
 .crossings_page .crossings-indicator-wrapper {
   width: calc(100% - 30px);
   margin: 0px 15px;
@@ -10400,10 +10404,18 @@ Crossings page styling
   color: #002245;
 }
 
+.crossings_page .search-bar {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .crossings_page {
     position: relative;
     top: -57px;
+  }
+
+  .crossings_page .search-bar {
+    display: block;
   }
 }
 

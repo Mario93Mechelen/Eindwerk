@@ -6,6 +6,12 @@ Crossings page styling
 
 .crossings_page {
 
+
+
+  .content_title {
+    display: none;
+  }
+
   .crossings-indicator-wrapper {
 
     width: calc(100% - 30px);
@@ -51,12 +57,20 @@ Crossings page styling
     }
   }
 
+  .search-bar {
+    display: none;
+  }
+
 }
 
 @media(min-width: 768px) {
   .crossings_page {
     position: relative;
     top: -57px;
+
+    .search-bar {
+      display: block;
+    }
   }
 }
 
