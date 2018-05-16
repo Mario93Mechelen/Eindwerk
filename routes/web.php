@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/users/{user}', 'ProfileController@show');
     //my profile
     Route::get('/profile/edit','ProfileController@edit');
+    Route::post('/users', 'ProfileController@sendFriendRequest');
 
 
     //conversation

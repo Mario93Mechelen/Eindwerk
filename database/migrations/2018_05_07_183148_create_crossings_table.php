@@ -15,8 +15,10 @@ class CreateCrossingsTable extends Migration
     {
         Schema::create('crossings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('crosser_id');
-            $table->integer('crossed_id');
+            $table->integer('crosser_id')->unsigned();
+            $table->integer('crossed_id')->unsigned();
+            $table->foreign('crosser_id')->references('id')->on('users');
+            $table->foreign('crossed_id')->references('id')->on('users');
             $table->boolean('meeting')->default(0);
             $table->boolean('contacted')->default(0);
             $table->timestamps();

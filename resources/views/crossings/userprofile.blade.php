@@ -3,6 +3,9 @@
 @section('content')
 
     <div class="profile_page">
+        @php
+            $crossingLocations = App\Crossing::where('crosser_id',$myUser->id)->where('crossed_id', $user->id)->first()->crossingLocations->count();
+        @endphp
 
         <div class="cover_image" style="background-image: url('/img/cover_image_default.jpg');"></div>
 
@@ -12,7 +15,6 @@
 
             <div class="upper_section">
 
-
                 <img class="profile_image" src="{{url($user->avatar)}}" alt="">
 
                 <h2 class="user_name">{{$user->first_name." ".$user->last_name}}</h2>
@@ -21,21 +23,31 @@
                 <div class="buttons">
                 @if($user != $myUser)
 
+                    @if($user->friendRequestIsAccepted($myUser->id,$user->id))
+                    <!-- indien vriend -->
+                     <div class="button-wrapper friend-button isfriend-button-wrapper">  <!-- hidden -->
+                         <a href="#" class="button">
+                             <div class="icon friend-icon"></div>
+                             <p>friends</p>
+                         </a>
+                     </div>
+                    @elseif($user->friendRequestIsSent($myUser->id,$user->id))
+                     <div class="button-wrapper friend-button addfriend-button-wrapper" data-id="{{$user->id}}">
+                         <a href="#" class="button">
+                             <div class="icon add-friend-icon"></div>
+                             <p>Request sent</p>
+                         </a>
+                     </div>
+                    @else
                     <!-- indien nog geen vrienden -->
-                    <div class="button-wrapper addfriend-button-wrapper">
+                    <div class="button-wrapper friend-button addfriend-button-wrapper" data-id="{{$user->id}}">
                         <a href="#" class="button">
                             <div class="icon add-friend-icon"></div>
                             <p>add friend</p>
                         </a>
                     </div>
+                    @endif
 
-                    <!-- indien vriend -->
-                    <div class="button-wrapper isfriend-button-wrapper hidden">  <!-- hidden -->
-                        <a href="#" class="button">
-                            <div class="icon friend-icon"></div>
-                            <p>friends</p>
-                        </a>
-                    </div>
 
                     <!-- message -->
                     <div class="button-wrapper message-button-wrapper">
@@ -45,15 +57,8 @@
                         </a>
                     </div>
 
-                    <!-- indien nog geen vrienden -->
-                    <div class="button-wrapper crossings-quantity-button-wrapper hidden">
-                        <a href="#" class="button">
-                            <div class="icon crossings-quantity-icon"></div>
-                            <p>you crossed x times already</p>
-                        </a>
-                    </div>
-                    <p class="subtext hidden">become friends to see where you have crossed</p>
 
+                    @if($user->friendRequestIsAccepted($myUser->id,$user->id))
                     <!-- indien vriend -->
                     <div class="button-wrapper crossings-location-button-wrapper">  <!-- hidden -->
                         <a href="#" class="button">
@@ -61,6 +66,16 @@
                             <p>see where you crossed each other</p>
                         </a>
                     </div>
+                    @else
+                     <!-- indien nog geen vrienden -->
+                     <div class="button-wrapper crossings-quantity-button-wrapper">
+                         <a href="#" class="button">
+                             <div class="icon crossings-quantity-icon"></div>
+                             <p>you crossed {{($crossingLocations == 1) ? $crossingLocations.' time' : $crossingLocations.' times'}} already</p>
+                         </a>
+                     </div>
+                     <p class="subtext">become friends to see where you have crossed</p>
+                    @endif
 
                     <!-- indien vriend en crossings map open -->
                     <div class="button-wrapper crossings-hide-map-button-wrapper hidden">  <!-- hidden -->
@@ -78,8 +93,8 @@
                 </div>  <!-- einde div buttons -->
 
 
-
-                <p class="user_introtext">{{$user->intro ? $user->intro : 'Seems like you still need to give yourself a nice cliché intro'}}</p>
+                <p class="user_introtext">{{$user->intro ? $user->intro : (($user == $myUser) ? 'Seems like you still need to give yourself a nice cliché intro' : null)}}</p>
+-
 
             </div>  <!-- einde upper section -->
 
@@ -234,26 +249,28 @@
     </script>
 
     <script>
-        $('.searchBox_inner').on('keyup', function(e){
-            var name = $(this).val().toLowerCase();
-            console.log(name);
-            if(name != "" && e.keyCode!=8) {
-                console.log('other keys are pressed');
-                $('.list-item-name').each(function () {
-                    console.log($(this).html());
-                    if (!$(this).html().toLowerCase().includes(name)) {
-                        $(this).parent().parent().parent().hide();
-                    }
-                });
-            }else if(e.keyCode == 8){
-                console.log('backspace pressed');
-                $('.list-item-name').each(function () {
-                    console.log($(this).html());
-                    if ($(this).html().toLowerCase().includes(name)) {
-                        $(this).parent().parent().parent().show();
-                    }
-                });
-            }
+        $('.friend-button').on('click', function(e){
+            var id = $(this).data('id');
+            $.ajaxSetup({
+
+                headers: {
+
+                    'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                }
+
+            });
+            $.ajax({
+                method:"POST",
+                url:"{{URL::action('ProfileController@sendFriendRequest')}}",
+                data:{
+                    'id': id,
+                }
+            }).done(function(response){
+                if(response.code==200) {
+                    $('.friend-button').find('p').text(response.text);
+                }
+            });
         });
     </script>
     <script>

@@ -53,4 +53,14 @@ class User extends Authenticatable
     {
         return Cache::has('user-is-online-' . $this->id);
     }
+
+    public function friendRequestIsSent($myId,$userId)
+    {
+        return Friend::where('friend_sender',$myId)->where('friend_receiver',$userId)->where('request_type','sent')->first();
+    }
+
+    public function friendRequestIsAccepted($myId, $userId)
+    {
+        return Friend::where('friend_sender',$myId)->where('friend_receiver',$userId)->where('request_type','friends')->first();
+    }
 }
