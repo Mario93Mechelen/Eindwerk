@@ -231,7 +231,7 @@
 
 @section('scripts')
 
-    <script>$
+    <script>
         @if($user != $myUser && isset($crossingLocations))
         function positionToMap(position) {
             var map = new google.maps.Map(document.getElementById('map'), {

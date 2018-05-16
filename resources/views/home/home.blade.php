@@ -114,40 +114,6 @@
 @section('scripts')
 
 
-
-    <script>
-        function positionToMap(position) {
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: position.coords.latitude, lng: position.coords.longitude},
-                zoom: 15,
-                zoomControl:false,
-                scaleControl:false,
-                mapTypeControl:false,
-                streetViewControl:false,
-                fullscreenControl:false
-
-            });
-
-            var cityCircle = new google.maps.Circle({
-                strokeColor: '#0048d9',
-                strokeOpacity: 0.8,
-                strokeWeight: 2,
-                fillColor: '#0048d9',
-                fillOpacity: 0.35,
-                map: map,
-                center: {lat: position.coords.latitude, lng: position.coords.longitude},
-                radius: 5000
-            });
-        }
-
-        function initMap(){
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(positionToMap);
-            } else {
-                alert("Geolocation is not supported by this browser.");
-            }
-        }
-    </script>
     <script>
         $('.aroundme_item').on('click', function(){
             var id = $(this).data('id');
@@ -202,10 +168,42 @@
         <!-- show selected radius filter -->
         var slidingTimer;                //timer identifier
         var doneSlidingInterval = 1000;
+        var distance = 5;
+        function positionToMap(position) {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: position.coords.latitude, lng: position.coords.longitude},
+                zoom: 15,
+                zoomControl:false,
+                scaleControl:false,
+                mapTypeControl:false,
+                streetViewControl:false,
+                fullscreenControl:false
+
+            });
+
+            var cityCircle = new google.maps.Circle({
+                strokeColor: '#0048d9',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#0048d9',
+                fillOpacity: 0.35,
+                map: map,
+                center: {lat: position.coords.latitude, lng: position.coords.longitude},
+                radius: distance*1000
+            });
+        }
+
+        function initMap(){
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(positionToMap);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
         $(document).ready(function() {
             $("#radiusSlider").change(function() {
                 var rate  = $(this).val();
-                var distance = 0;
+                distance = 0;
                 if(rate == 1){
                     distance = 0.1;
                 }else if(rate == 2){
@@ -229,37 +227,6 @@
                 console.log(distance);
                 clearTimeout(slidingTimer);
                 slidingTimer = setTimeout(doneSliding(distance), doneSlidingInterval);
-                function positionToMap(position) {
-                    map = new google.maps.Map(document.getElementById('map'), {
-                        center: {lat: position.coords.latitude, lng: position.coords.longitude},
-                        zoom: 15,
-                        zoomControl:false,
-                        scaleControl:false,
-                        mapTypeControl:false,
-                        streetViewControl:false,
-                        fullscreenControl:false
-
-                    });
-
-                    var cityCircle = new google.maps.Circle({
-                        strokeColor: '#0048d9',
-                        strokeOpacity: 0.8,
-                        strokeWeight: 2,
-                        fillColor: '#0048d9',
-                        fillOpacity: 0.35,
-                        map: map,
-                        center: {lat: position.coords.latitude, lng: position.coords.longitude},
-                        radius: distance*1000
-                    });
-                }
-
-                function initMap(){
-                    if (navigator.geolocation) {
-                        navigator.geolocation.getCurrentPosition(positionToMap);
-                    } else {
-                        alert("Geolocation is not supported by this browser.");
-                    }
-                }
                 function doneSliding(distance){
                     initMap();
                     $.ajaxSetup({
