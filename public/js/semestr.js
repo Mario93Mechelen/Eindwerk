@@ -89,6 +89,23 @@ $(document).ready(function() {
     });
 });
 
+<!-- toggle crossings map and button on profile page -->
+$(document).ready(function() {
+    $(".crossings-location-button-wrapper").click(function() {
+        $(this).toggleClass("hidden");
+        $(".crossings-hide-map-button-wrapper").toggleClass("hidden");
+        $(".crossings_map").toggleClass("hidden");
+        console.log("show map");
+    });
+    $(".crossings-hide-map-button-wrapper").click(function() {
+        $(this).toggleClass("hidden");
+        $(".crossings-location-button-wrapper").toggleClass("hidden");
+        $(".crossings_map").toggleClass("hidden");
+        console.log("hide map");
+    });
+
+});
+
 
 <!-- script voor locatiebepalingen -->
 $(document).ready(function(){
