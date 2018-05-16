@@ -3,6 +3,9 @@
 @section('content')
 
     <div class="profile_page">
+        @php
+            $crossingLocations = App\Crossing::where('crosser_id',$myUser->id)->where('crossed_id', $user->id)->first()->crossingLocations->count();
+        @endphp
 
         <div class="cover_image" style="background-image: url('/img/cover_image_default.jpg');"></div>
 
@@ -11,7 +14,6 @@
         <div class="profile_page_content">
 
             <div class="upper_section">
-
 
                 <img class="profile_image" src="{{url($user->avatar)}}" alt="">
 
@@ -23,7 +25,7 @@
 
                     @if($user->friendRequestIsAccepted($myUser->id,$user->id))
                     <!-- indien vriend -->
-                     <div class="button-wrapper friend-button isfriend-button-wrapper hidden">  <!-- hidden -->
+                     <div class="button-wrapper friend-button isfriend-button-wrapper">  <!-- hidden -->
                          <a href="#" class="button">
                              <div class="icon friend-icon"></div>
                              <p>friends</p>
@@ -55,15 +57,8 @@
                         </a>
                     </div>
 
-                    <!-- indien nog geen vrienden -->
-                    <div class="button-wrapper crossings-quantity-button-wrapper hidden">
-                        <a href="#" class="button">
-                            <div class="icon crossings-quantity-icon"></div>
-                            <p>you crossed x times already</p>
-                        </a>
-                    </div>
-                    <p class="subtext hidden">become friends to see where you have crossed</p>
 
+                    @if($user->friendRequestIsAccepted($myUser->id,$user->id))
                     <!-- indien vriend -->
                     <div class="button-wrapper crossings-location-button-wrapper">  <!-- hidden -->
                         <a href="#" class="button">
@@ -71,6 +66,16 @@
                             <p>see where you crossed each other</p>
                         </a>
                     </div>
+                    @else
+                     <!-- indien nog geen vrienden -->
+                     <div class="button-wrapper crossings-quantity-button-wrapper">
+                         <a href="#" class="button">
+                             <div class="icon crossings-quantity-icon"></div>
+                             <p>you crossed {{($crossingLocations == 1) ? $crossingLocations.' time' : $crossingLocations.' times'}} already</p>
+                         </a>
+                     </div>
+                     <p class="subtext">become friends to see where you have crossed</p>
+                    @endif
 
                     <!-- indien vriend en crossings map open -->
                     <div class="button-wrapper crossings-hide-map-button-wrapper hidden">  <!-- hidden -->
