@@ -11,9 +11,9 @@
             <div class="upper_section">
 
 
-                <img class="profile_image" src="{{url('img/profile_pic_default.jpg')}}" alt="">
+                <img class="profile_image" src="{{url($user->avatar)}}" alt="">
 
-                <h2 class="user_name">Amber Heard</h2>
+                <h2 class="user_name">{{$user->first_name." ".$user->last_name}}</h2>
 
                 <div class="buttons">
 
@@ -60,8 +60,7 @@
 
                 </div>  <!-- einde div buttons -->
 
-                <p class="user_introtext">Hey, ik ben Amber, ik vind Mario een toffe jongen maar ben te verlegen iets
-                    tegen hem te zeggen. En ik hou van ice cream, yeah!</p>
+                <p class="user_introtext">{{$user->intro ? $user->intro : 'Seems like you still need to give yourself a nice cliché intro'}}</p>
 
             </div>  <!-- einde upper section -->
 
@@ -94,23 +93,23 @@
                         <!-- geboortedatum -->
                         <div class="aboutme_item">
                             <p class="item_label">birth date</p>
-                            <input type="date" value="1991-10-23" readonly>
+                            <input type="date" value="{{$user->birthday}}" readonly>
                         </div>
 
                         <!-- geslacht -->
                         <div class="aboutme_item">
                             <p class="item_label">gender</p>
                             <select disabled>
-                                <option value="male">male</option>
-                                <option value="female">female</option>
-                                <option value="other" selected>other</option>
+                                <option value="male" {{($user->gender =='male') ? 'selecte' : null }}>male</option>
+                                <option value="female" {{($user->gender =='female') ? 'selecte' : null }}>female</option>
+                                <option value="other" {{($user->gender =='other') ? 'selecte' : null }}>other</option>
                             </select>
                         </div>
 
                         <!-- thuisplaats -->
                         <div class="aboutme_item">
                             <p class="item_label">home</p>
-                            <input type="text" value="London, UK" readonly>
+                            <input type="text" value="{{$user->home}}" readonly>
                         </div>
 
                     </form>  <!-- einde basic info -->
@@ -123,19 +122,19 @@
                         <!-- school thuis -->
                         <div class="aboutme_item">
                             <p class="item_label">school at home</p>
-                            <input type="text" value="Oxford University" readonly>
+                            <input type="text" value="{{$user->home_school}}" readonly>
                         </div>
 
                         <!-- school buitenland -->
                         <div class="aboutme_item">
                             <p class="item_label">school abroad</p>
-                            <input type="text" value="New York University" readonly>
+                            <input type="text" value="{{$user->abroad_school}}" readonly>
                         </div>
 
                         <!-- huidige studie -->
                         <div class="aboutme_item">
                             <p class="item_label">study</p>
-                            <input type="text" value="Master in Psychology" readonly>
+                            <input type="text" value="{{$user->study}}" readonly>
                         </div>
 
                     </form>  <!-- einde education info -->

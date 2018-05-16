@@ -15,6 +15,9 @@ class CreateFriendsTable extends Migration
     {
         Schema::create('friends', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('friend_sender');
+            $table->integer('friend_receiver');
+            $table->enum('request_type',['sent','pending','friends','none'])->default('none');
             $table->timestamps();
         });
     }

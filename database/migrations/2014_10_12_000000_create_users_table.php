@@ -23,7 +23,11 @@ class CreateUsersTable extends Migration
             $table->string('avatar')->nullable();
             $table->string('token');
             $table->string('password')->nullable();
-            $table->enum('social_type',['facebook','twitter','google']);
+            $table->text('intro')->nullable();
+            $table->string('home_school')->nullable();
+            $table->string('abroad_school')->nullable();
+            $table->string('home')->nullable();
+            $table->string('study')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -84,71 +84,20 @@ class LoginController extends Controller
 
     public function handleProviderCallbackFacebook(){
         $user = Socialite::driver('facebook')->fields(['languages', 'first_name', 'last_name', 'email', 'gender', 'birthday'])->user();
-        if(!User::where('email',$user->user["email"])->where('social_type','facebook')->first()) {
+        if(!User::where('email',$user->user["email"])->first()) {
             $appUser = new User();
             $appUser->first_name = $user->user["first_name"];
             $appUser->last_name = $user->user["last_name"];
-            $appUser->gender = isset($user->user["gender"]) ? $user->user["gender"] : null;
+            $appUser->gender = isset($user->user["gender"]) ? $user->user["gender"] : 'other';
             $appUser->birthday = isset($user->user["birthday"]) ? \Carbon\Carbon::parse($user->user["birthday"]) : null;
             $appUser->email = $user->user["email"];
-            $appUser->avatar = $user->avatar;
+            $appUser->avatar = str_replace("normal","large",$user->avatar);
             $appUser->token = $user->token;
-            $appUser->social_type = 'facebook';
             $appUser->save();
         }else{
-            $appUser = User::where('email',$user->user["email"])->where('social_type','facebook')->first();
+            $appUser = User::where('email',$user->user["email"])->first();
         }
         Auth::login($appUser,true);
         return redirect('/');
-    }
-
-    public function handleProviderCallbackTwitter(){
-        $user = Socialite::driver('twitter')->user();
-        if(!User::where('token',$user->token)->first()) {
-            if(strpos($user->name,' ')) {
-                $indexSpace = strpos($user->name, ' ');
-                $length = strlen($user->name);
-                $first_name = substr($user->name,0,($indexSpace+1));
-                $last_name = substr($user->name,($indexSpace+1),$length);
-            }else{
-                $first_name = $user->name;
-                $last_name = $user->name;
-            }
-            $appUser = new User();
-            $appUser->first_name = $first_name;
-            $appUser->last_name = $last_name;
-            $appUser->token = $user->token;
-            $appUser->social_type = 'twitter';
-            $appUser->save();
-        }else{
-            $appUser = User::where('token',$user->token)->first();
-        }
-        Auth::login($appUser,true);
-        return redirect('/');
-    }
-
-    public function handleProviderCallbackGoogle(){
-        $user = Socialite::driver('google')->user();
-        dd($user);
-        /*if(!User::where('token',$user->token)->first()) {
-            if(strpos($user->name,' ')) {
-                $indexSpace = strpos($user->name, ' ');
-                $length = strlen($user->name);
-                $first_name = substr($user->name,0,($indexSpace+1));
-                $last_name = substr($user->name,($indexSpace+1),$length);
-            }else{
-                $first_name = $user->name;
-                $last_name = $user->name;
-            }
-            $appUser = new User();
-            $appUser->first_name = $first_name;
-            $appUser->last_name = $last_name;
-            $appUser->token = $user->token;
-            $appUser->save();
-        }else{
-            $appUser = User::where('token',$user->token)->first();
-        }
-        Auth::login($appUser);
-        return redirect('/home');*/
     }
 }

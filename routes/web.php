@@ -15,11 +15,7 @@ Route::get('/login', 'Auth\LoginController@index')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/login/facebook','Auth\LoginController@redirectToProviderFacebook');
-Route::get('/login/twitter','Auth\LoginController@redirectToProviderTwitter');
-Route::get('/login/google','Auth\LoginController@redirectToProviderGoogle');
 Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallbackFacebook');
-Route::get('login/twitter/callback', 'Auth\LoginController@handleProviderCallbackTwitter');
-Route::get('login/google/callback', 'Auth\LoginController@handleProviderCallbackGoogle');
 Route::get('logout', 'Auth\LoginController@logout');
 
 //signup
