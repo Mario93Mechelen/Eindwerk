@@ -103,7 +103,9 @@ class ProfileController extends Controller
     {
         //Als je surft naar de link /user/eigen-user-id zou je deze link ook wel moeten kunnen zien
         if($user->id != Auth::user()->id) {
-            $crossingLocations = Crossing::where('crosser_id', Auth::user()->id)->where('crossed_id', $user->id)->first()->crossingLocations;
+            if(Crossing::where('crosser_id', Auth::user()->id)->where('crossed_id', $user->id)->first()) {
+                $crossingLocations = Crossing::where('crosser_id', Auth::user()->id)->where('crossed_id', $user->id)->first()->crossingLocations;
+            }
         }
         return view('crossings.userprofile',compact('user','crossingLocations'));
     }

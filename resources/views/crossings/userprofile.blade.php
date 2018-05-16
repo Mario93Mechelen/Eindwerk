@@ -70,7 +70,7 @@
                          <div class="button-wrapper crossings-quantity-button-wrapper">
                              <a href="#" class="button">
                                  <div class="icon crossings-quantity-icon"></div>
-                                 <p>you crossed {{$crossingLocations ? (($crossingLocations->count() == 1) ? $crossingLocations->count().' time' : $crossingLocations->count().' times') : '0 times}} already</p>
+                                 <p>you crossed {{isset($crossingLocations) ? (($crossingLocations->count() == 1) ? $crossingLocations->count().' time' : $crossingLocations->count().' times') : '0 times'}} already</p>
                              </a>
                          </div>
                          <p class="subtext">become friends to see where you have crossed</p>
@@ -232,7 +232,7 @@
 @section('scripts')
 
     <script>$
-        @if($user != $myUser)
+        @if($user != $myUser && isset($crossingLocations))
         function positionToMap(position) {
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: position.coords.latitude, lng: position.coords.longitude},
