@@ -8614,9 +8614,8 @@ header nav .nav_left .nav_groups {
 
   header {
     max-width: 960px;
-    margin: 0 auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin: 0 15px;
+    padding: 5px 15px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -8980,6 +8979,12 @@ header #dropdown-menu-profile a:last-of-type {
 
 .highlighted {
   background-color: #0048d9 !important;
+}
+
+@media (min-width: 990px) {
+  header {
+    margin: 0 auto;
+  }
 }
 
 /*
