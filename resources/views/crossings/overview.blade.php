@@ -4,6 +4,13 @@
 
     <div class="crossings_page">
 
+        <div class="crossings-indicator-wrapper">
+            <a href="#" class="crossings-indicator">
+                <div class="crossing_icon"></div>
+                <p>you crossed x people the past month</p>
+            </a>
+        </div>
+
         <!-- grid & list views -->
         <section>
 
@@ -27,7 +34,7 @@
                             <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
                             <div class="caption">
                                 <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">2km away</p>
+                                <p class="list-item-distance">5 crossings</p>
                                 <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                             </div>
                         </div>
@@ -37,7 +44,7 @@
                             <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
                             <div class="caption">
                                 <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">2km away</p>
+                                <p class="list-item-distance">5 crossings</p>
                                 <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                             </div>
                         </div>
@@ -47,7 +54,7 @@
                             <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
                             <div class="caption">
                                 <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">2km away</p>
+                                <p class="list-item-distance">4 crossings</p>
                                 <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                             </div>
                         </div>
@@ -57,7 +64,7 @@
                             <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
                             <div class="caption">
                                 <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">2km away</p>
+                                <p class="list-item-distance">3 crossings</p>
                                 <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                             </div>
                         </div>
