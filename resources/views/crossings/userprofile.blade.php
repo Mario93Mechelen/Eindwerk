@@ -21,21 +21,31 @@
                 <div class="buttons">
                 @if($user != $myUser)
 
+                    @if($user->friendRequestIsAccepted($myUser->id,$user->id))
+                    <!-- indien vriend -->
+                     <div class="button-wrapper friend-button isfriend-button-wrapper hidden">  <!-- hidden -->
+                         <a href="#" class="button">
+                             <div class="icon friend-icon"></div>
+                             <p>friends</p>
+                         </a>
+                     </div>
+                    @elseif($user->friendRequestIsSent($myUser->id,$user->id))
+                     <div class="button-wrapper friend-button addfriend-button-wrapper" data-id="{{$user->id}}">
+                         <a href="#" class="button">
+                             <div class="icon add-friend-icon"></div>
+                             <p>Request sent</p>
+                         </a>
+                     </div>
+                    @else
                     <!-- indien nog geen vrienden -->
-                    <div class="button-wrapper addfriend-button-wrapper">
+                    <div class="button-wrapper friend-button addfriend-button-wrapper" data-id="{{$user->id}}">
                         <a href="#" class="button">
                             <div class="icon add-friend-icon"></div>
                             <p>add friend</p>
                         </a>
                     </div>
+                    @endif
 
-                    <!-- indien vriend -->
-                    <div class="button-wrapper isfriend-button-wrapper hidden">  <!-- hidden -->
-                        <a href="#" class="button">
-                            <div class="icon friend-icon"></div>
-                            <p>friends</p>
-                        </a>
-                    </div>
 
                     <!-- message -->
                     <div class="button-wrapper message-button-wrapper">
@@ -234,26 +244,28 @@
     </script>
 
     <script>
-        $('.searchBox_inner').on('keyup', function(e){
-            var name = $(this).val().toLowerCase();
-            console.log(name);
-            if(name != "" && e.keyCode!=8) {
-                console.log('other keys are pressed');
-                $('.list-item-name').each(function () {
-                    console.log($(this).html());
-                    if (!$(this).html().toLowerCase().includes(name)) {
-                        $(this).parent().parent().parent().hide();
-                    }
-                });
-            }else if(e.keyCode == 8){
-                console.log('backspace pressed');
-                $('.list-item-name').each(function () {
-                    console.log($(this).html());
-                    if ($(this).html().toLowerCase().includes(name)) {
-                        $(this).parent().parent().parent().show();
-                    }
-                });
-            }
+        $('.friend-button').on('click', function(e){
+            var id = $(this).data('id');
+            $.ajaxSetup({
+
+                headers: {
+
+                    'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                }
+
+            });
+            $.ajax({
+                method:"POST",
+                url:"{{URL::action('ProfileController@sendFriendRequest')}}",
+                data:{
+                    'id': id,
+                }
+            }).done(function(response){
+                if(response.code==200) {
+                    $('.friend-button').find('p').text(response.text);
+                }
+            });
         });
     </script>
     <script>
