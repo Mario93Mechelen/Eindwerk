@@ -4,7 +4,75 @@
 
     <div class="crossings_page">
 
-        wow
+        <div class="crossings-indicator-wrapper">
+            <a href="#" class="crossings-indicator">
+                <div class="crossing_icon"></div>
+                <p>you crossed x people the past month</p>
+            </a>
+        </div>
+
+        <!-- grid & list views -->
+        <section>
+
+            <div class="container gridlist-container">
+                <!-- toggle switch -->
+                <div class="gridlist-toggle">
+                    <strong>Display</strong>
+                    <div class="btn-group">
+                        <a href="#" id="list" class="btn btn-default btn-sm gridlist toggle-active"><span
+                                    class="glyphicon
+                        glyphicon-th-list">
+                        </span><p>List</p></a> <a href="#" id="grid" class="btn btn-default btn-sm gridlist"><span
+                                    class="glyphicon glyphicon-th"></span><p>Grid</p></a>
+                    </div>
+                </div>
+
+             <div id="crossings_overview" class="row list-group">
+
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">5 crossings</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">5 crossings</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">4 crossings</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item item-list col-xs-12 col-md-6">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-distance">3 crossings</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
 
     </div>
 

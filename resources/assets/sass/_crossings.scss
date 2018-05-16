@@ -4,5 +4,64 @@ Crossings page styling
 
 */
 
+.crossings_page {
 
+  .crossings-indicator-wrapper {
+
+    width: calc(100% - 30px);
+    margin: 0px 15px;
+  }
+
+  .crossings-indicator {
+    box-sizing: border-box;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: relative;
+    text-decoration: none;
+    cursor: pointer;
+
+    .crossing_icon {
+      background-image: url('/img/Crossings.png');
+      background-size: 20px 20px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: $primary-color;
+      width: 40px;
+      height: 40px;
+      padding: 10px;
+      box-sizing: border-box;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+
+    p {
+      display: block;
+      font-size: 16px;
+      font-weight: bold;
+      padding-left: 10px;
+      padding-right: 10px;
+      color: $dark-color;
+    }
+  }
+
+}
+
+@media(min-width: 990px) {
+  .crossings_page {
+    width: 990px;
+    margin: 0 auto 30px auto;
+  }
+  .gridlist-container {
+    width: 960px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 
