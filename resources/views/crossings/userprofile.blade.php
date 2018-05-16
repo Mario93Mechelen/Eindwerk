@@ -79,16 +79,17 @@
                 <h2 class="section_title">photos</h2>
 
                 <div class="photo_collection">
-                    <img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt="">
-                    <img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt="">
-                    <img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt="">
-                    <img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt="">
-                    <img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt="">
-                    <img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt="">
+                    <a href="{{url('img/user_photo_example1.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example2.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example3.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example1.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example2.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example3.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""></a>
                 </div>
 
 
-            </div>  <!-- einde photo section -->
+            </div>
+            <!-- einde photo section -->
 
             <div class="aboutme_section">
 
@@ -212,30 +213,31 @@
 @section('scripts')
 
     <script>
-        $('.aroundme_item').on('click', function(){
-            var id = $(this).data('id');
-            $.ajaxSetup({
+        /*$(document).ready(function() {
+            var $lightbox = $('#lightbox');
 
-                headers: {
-
-                    'X-CSRF-TOKEN': "{{csrf_token()}}",
-
-                }
-
+            $('[data-target="#lightbox"]').on('click', function(event) {
+                var $img = $(this).find('img'),
+                    src = $img.attr('src'),
+                    alt = $img.attr('alt'),
+                    css = {
+                        'maxWidth': $(window).width() - 100,
+                        'maxHeight': $(window).height() - 100
+                    };
+                console.log($(this).find('img').attr('src'));
+                $lightbox.find('.close').addClass('hidden');
+                $lightbox.find('img').attr('src', src);
+                $lightbox.find('img').attr('alt', alt);
+                $lightbox.find('img').css(css);
             });
-            $.ajax({
-                method:"POST",
-                url:"{{URL::action('ConversationController@store')}}",
-                data:{
-                    'id': id,
-                }
-            }).done(function(response){
-                if(response.code==200) {
-                    console.log('conversation '+response.conversation_id+' created');
-                    window.location.replace('/conversation/'+response.conversation_id);
-                }
+
+            $lightbox.on('shown.bs.modal', function (e) {
+                var $img = $lightbox.find('img');
+
+                $lightbox.find('.modal-dialog').css({'width': $img.width()});
+                $lightbox.find('.close').removeClass('hidden');
             });
-        });
+        });*/
     </script>
 
     <script>

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/fonts/fontawesome-free-5.0.12/web-fonts-with-css/css/fontawesome-all.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/emoji.min.css">
+    <link rel="stylesheet" href="/css/lightbox.css">
     <style>
         #header-wrapper{
             background-image:none !important;
@@ -34,6 +35,7 @@
 <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
 <script src="/js/emoji.js"></script>
 <script src="/js/semestr.js"></script>
+<script src="/js/lightbox.js"></script>
 @yield('scripts')
 
 </body>
