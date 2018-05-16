@@ -88,12 +88,12 @@
                 <h2 class="section_title">photos</h2>
 
                 <div class="photo_collection">
-                    <a href="{{url('img/user_photo_example1.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""></a>
-                    <a href="{{url('img/user_photo_example2.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""></a>
-                    <a href="{{url('img/user_photo_example3.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""></a>
-                    <a href="{{url('img/user_photo_example1.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""></a>
-                    <a href="{{url('img/user_photo_example2.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""></a>
-                    <a href="{{url('img/user_photo_example3.jpg')}}" data-lightbox="profile"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example1.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example2.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example3.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example1.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example2.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example3.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""></a>
                 </div>
 
 
@@ -120,9 +120,9 @@
                         <div class="aboutme_item">
                             <p class="item_label">gender</p>
                             <select disabled>
-                                <option value="male" {{($user->gender =='male') ? 'selecte' : null }}>male</option>
-                                <option value="female" {{($user->gender =='female') ? 'selecte' : null }}>female</option>
-                                <option value="other" {{($user->gender =='other') ? 'selecte' : null }}>other</option>
+                                <option value="male" {{($user->gender =='male') ? 'selected' : null }}>male</option>
+                                <option value="female" {{($user->gender =='female') ? 'selected' : null }}>female</option>
+                                <option value="other" {{($user->gender =='other' || $user->gender=="") ? 'selected' : null }}>other</option>
                             </select>
                         </div>
 
@@ -222,31 +222,15 @@
 @section('scripts')
 
     <script>
-        /*$(document).ready(function() {
-            var $lightbox = $('#lightbox');
-
-            $('[data-target="#lightbox"]').on('click', function(event) {
-                var $img = $(this).find('img'),
-                    src = $img.attr('src'),
-                    alt = $img.attr('alt'),
-                    css = {
-                        'maxWidth': $(window).width() - 100,
-                        'maxHeight': $(window).height() - 100
-                    };
-                console.log($(this).find('img').attr('src'));
-                $lightbox.find('.close').addClass('hidden');
-                $lightbox.find('img').attr('src', src);
-                $lightbox.find('img').attr('alt', alt);
-                $lightbox.find('img').css(css);
+        $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+            event.preventDefault();
+            $(this).ekkoLightbox({
+                alwaysShowClose: true,
+                width:1000,
+                height:1000,
+                showArrows:true
             });
-
-            $lightbox.on('shown.bs.modal', function (e) {
-                var $img = $lightbox.find('img');
-
-                $lightbox.find('.modal-dialog').css({'width': $img.width()});
-                $lightbox.find('.close').removeClass('hidden');
-            });
-        });*/
+        });
     </script>
 
     <script>
