@@ -93,8 +93,8 @@
                 </div>  <!-- einde div buttons -->
 
 
-
-                <p class="user_introtext">{{$user->intro ? $user->intro : 'Seems like you still need to give yourself a nice cliché intro'}}</p>
+                <p class="user_introtext">{{$user->intro ? $user->intro : (($user == $myUser) ? 'Seems like you still need to give yourself a nice cliché intro' : null)}}</p>
+-
 
             </div>  <!-- einde upper section -->
 
