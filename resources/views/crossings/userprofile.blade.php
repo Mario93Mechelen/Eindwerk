@@ -215,7 +215,12 @@
     <script>
         $(document).on('click', '[data-toggle="lightbox"]', function(event) {
             event.preventDefault();
-            $(this).ekkoLightbox();
+            $(this).ekkoLightbox({
+                alwaysShowClose: true,
+                width:1000,
+                height:1000,
+                showArrows:true
+            });
         });
     </script>
 
