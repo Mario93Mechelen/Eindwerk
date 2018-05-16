@@ -4,12 +4,14 @@
 
     <div class="profile_page">
         @php
-            $crossingLocations = App\Crossing::where('crosser_id',$myUser->id)->where('crossed_id', $user->id)->first()->crossingLocations->count();
+            $crossingLocations = App\Crossing::where('crosser_id',$myUser->id)->where('crossed_id', $user->id)->first()->crossingLocations;
         @endphp
 
         <div class="cover_image" style="background-image: url('/img/cover_image_default.jpg');"></div>
 
-        <div class="crossings_map hidden" style="background-image: url('/img/header_bg_01.jpg');"></div>
+        <div class="crossings_map hidden" style="background-image: url('/img/header_bg_01.jpg');">
+            <div id="map" style="position:absolute !important; height:100%;width:100%;"></div>
+        </div>
 
         <div class="profile_page_content">
 
@@ -24,28 +26,28 @@
                 @if($user != $myUser)
 
                     @if($user->friendRequestIsAccepted($myUser->id,$user->id))
-                    <!-- indien vriend -->
-                     <div class="button-wrapper friend-button isfriend-button-wrapper">  <!-- hidden -->
-                         <a href="#" class="button">
-                             <div class="icon friend-icon"></div>
-                             <p>friends</p>
-                         </a>
-                     </div>
+                        <!-- indien vriend -->
+                         <div class="button-wrapper friend-button isfriend-button-wrapper">  <!-- hidden -->
+                             <a href="#" class="button">
+                                 <div class="icon friend-icon"></div>
+                                 <p>friends</p>
+                             </a>
+                         </div>
                     @elseif($user->friendRequestIsSent($myUser->id,$user->id))
-                     <div class="button-wrapper friend-button addfriend-button-wrapper" data-id="{{$user->id}}">
-                         <a href="#" class="button">
-                             <div class="icon add-friend-icon"></div>
-                             <p>Request sent</p>
-                         </a>
-                     </div>
+                         <div class="button-wrapper friend-button addfriend-button-wrapper" data-id="{{$user->id}}">
+                             <a href="#" class="button">
+                                 <div class="icon add-friend-icon"></div>
+                                 <p>Request sent</p>
+                             </a>
+                         </div>
                     @else
-                    <!-- indien nog geen vrienden -->
-                    <div class="button-wrapper friend-button addfriend-button-wrapper" data-id="{{$user->id}}">
-                        <a href="#" class="button">
-                            <div class="icon add-friend-icon"></div>
-                            <p>add friend</p>
-                        </a>
-                    </div>
+                        <!-- indien nog geen vrienden -->
+                        <div class="button-wrapper friend-button addfriend-button-wrapper" data-id="{{$user->id}}">
+                            <a href="#" class="button">
+                                <div class="icon add-friend-icon"></div>
+                                <p>add friend</p>
+                            </a>
+                        </div>
                     @endif
 
 
@@ -59,22 +61,22 @@
 
 
                     @if($user->friendRequestIsAccepted($myUser->id,$user->id))
-                    <!-- indien vriend -->
-                    <div class="button-wrapper crossings-location-button-wrapper">  <!-- hidden -->
-                        <a href="#" class="button">
-                            <div class="icon crossings-location-icon"></div>
-                            <p>see where you crossed each other</p>
-                        </a>
-                    </div>
+                        <!-- indien vriend -->
+                        <div class="button-wrapper crossings-location-button-wrapper">  <!-- hidden -->
+                            <a href="#" class="button">
+                                <div class="icon crossings-location-icon"></div>
+                                <p>see where you crossed each other</p>
+                            </a>
+                        </div>
                     @else
-                     <!-- indien nog geen vrienden -->
-                     <div class="button-wrapper crossings-quantity-button-wrapper">
-                         <a href="#" class="button">
-                             <div class="icon crossings-quantity-icon"></div>
-                             <p>you crossed {{($crossingLocations == 1) ? $crossingLocations.' time' : $crossingLocations.' times'}} already</p>
-                         </a>
-                     </div>
-                     <p class="subtext">become friends to see where you have crossed</p>
+                         <!-- indien nog geen vrienden -->
+                         <div class="button-wrapper crossings-quantity-button-wrapper">
+                             <a href="#" class="button">
+                                 <div class="icon crossings-quantity-icon"></div>
+                                 <p>you crossed {{($crossingLocations->count() == 1) ? $crossingLocations->count().' time' : $crossingLocations->count().' times'}} already</p>
+                             </a>
+                         </div>
+                         <p class="subtext">become friends to see where you have crossed</p>
                     @endif
 
                     <!-- indien vriend en crossings map open -->
@@ -83,12 +85,9 @@
                             <p>hide map</p>
                         </a>
                     </div>
-
-                    @else
-
+                @else
                     <div style="height:70px;"></div>
-
-                    @endif
+                @endif
 
                 </div>  <!-- einde div buttons -->
 
@@ -237,6 +236,39 @@
 @section('scripts')
 
     <script>
+        function positionToMap(position) {
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: {lat: position.coords.latitude, lng: position.coords.longitude},
+                zoom: 14,
+                zoomControl:false,
+                scaleControl:false,
+                mapTypeControl:false,
+                streetViewControl:false,
+                fullscreenControl:false
+
+            });
+            var i = 0;
+            @foreach($crossingLocations as $cl)
+            var lat = '{{$cl->latitude}}';
+            var lng = '{{$cl->longitude}}';
+            var marker = new google.maps.Marker({
+                position: {lat:parseFloat(lat),lng:parseFloat(lng)},
+                map: map,
+                title: 'crossing nr '+i
+            });
+            i++;
+            @endforeach
+        }
+
+        function initMap(){
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(positionToMap);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+    </script>
+    <script>
         $(document).on('click', '[data-toggle="lightbox"]', function(event) {
             event.preventDefault();
             $(this).ekkoLightbox({
@@ -342,5 +374,7 @@
         });
     </script>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&callback=initMap"
+            async defer></script>
 
 @endsection
