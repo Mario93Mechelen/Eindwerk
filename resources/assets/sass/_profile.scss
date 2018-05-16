@@ -344,6 +344,7 @@ profile page styling
       height: 350px;
       position: fixed;
       top: 0px;
+      z-index: 0;
     }
 
     .profile_page_content {
@@ -400,6 +401,7 @@ profile page styling
           }
 
           .crossings-hide-map-button-wrapper {
+            position: static;
 
             .button {
 

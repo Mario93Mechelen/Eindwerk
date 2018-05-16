@@ -10237,6 +10237,7 @@ profile page styling
     height: 350px;
     position: fixed;
     top: 0px;
+    z-index: 0;
   }
 
   .profile_page .profile_page_content {
@@ -10298,6 +10299,10 @@ profile page styling
   .profile_page .profile_page_content .upper_section .buttons .subtext {
     text-align: right;
     padding-right: 0;
+  }
+
+  .profile_page .profile_page_content .upper_section .buttons .crossings-hide-map-button-wrapper {
+    position: static;
   }
 
   .profile_page .profile_page_content .photos_section .photo_collection img {
