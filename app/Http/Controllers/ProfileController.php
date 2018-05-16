@@ -17,7 +17,26 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('crossings.overview');
+        $crossingArr = [];
+        $i=0;
+        foreach(Auth::user()->myCrossings as $crossing){
+            $crossingLocations = $crossing->crossingLocationsPerUser(Auth::user()->id);
+            foreach($crossingLocations as $location){
+                $crossinglocation = $location;
+            }
+            $crossingArr[$i] = ['user'=>$crossing,'location'=>$crossinglocation,'count' => $crossingLocations->count()];
+            $i++;
+        }
+
+        if(!empty($crossingArr)){
+            foreach($crossingArr as $key => $row){
+                $countArr[$key] = $row['count'];
+            }
+
+            array_multisort($countArr, SORT_DESC,$crossingArr);
+        }
+        dd($crossingArr);
+        return view('crossings.overview',compact('crossingArr'));
     }
 
     /**

@@ -12,7 +12,7 @@
         <div class="crossings-indicator-wrapper">
             <a href="#" class="crossings-indicator">
                 <div class="crossing_icon"></div>
-                <p>you crossed x people the past month</p>
+                <p>you crossed {{$crossingArr ? ((count($crossingArr) == 1) ? count($crossingArr).' person' : count($crossingArr)) : '0'}} people the past month</p>
             </a>
         </div>
 
@@ -34,46 +34,21 @@
 
              <div id="crossings_overview" class="row list-group">
 
+                 @if($crossingArr)
+                 @foreach($crossingArr as $crossing)
                     <div class="item item-list col-xs-12 col-md-6">
                         <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <img class="list-item-img" src="{{url($crossing['user']->avatar)}}" alt=""/>
                             <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">5 crossings</p>
+                                <h4 class="list-item-name">{{$crossing['user']->first_name.' '.$crossing['user']->last_name}}</h4>
+                                <p class="list-item-distance">{{($crossing['count'] == 1) ? $crossing['count'].' crossing' : $crossing['count'].' crossings'}}</p>
                                 <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="item item-list col-xs-12 col-md-6">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">5 crossings</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item item-list col-xs-12 col-md-6">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">4 crossings</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item item-list col-xs-12 col-md-6">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">3 crossings</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </div>
+                 @endforeach
+                 @endif
+
 
                 </div>
             </div>
