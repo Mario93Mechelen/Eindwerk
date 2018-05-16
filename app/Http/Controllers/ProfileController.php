@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Crossing;
 use App\Friend;
 use Illuminate\Http\Request;
 use App\User;
@@ -82,7 +83,10 @@ class ProfileController extends Controller
     public function show(User $user)
     {
         //Als je surft naar de link /user/eigen-user-id zou je deze link ook wel moeten kunnen zien
-        return view('crossings.userprofile',compact('user'));
+        if($user->id != Auth::user()->id) {
+            $crossingLocations = Crossing::where('crosser_id', Auth::user()->id)->where('crossed_id', $user->id)->first()->crossingLocations;
+        }
+        return view('crossings.userprofile',compact('user','crossingLocations'));
     }
 
 

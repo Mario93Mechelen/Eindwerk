@@ -3,9 +3,6 @@
 @section('content')
 
     <div class="profile_page">
-        @php
-            $crossingLocations = App\Crossing::where('crosser_id',$myUser->id)->where('crossed_id', $user->id)->first()->crossingLocations;
-        @endphp
 
         <div class="cover_image" style="background-image: url('/img/cover_image_default.jpg');"></div>
 
@@ -93,7 +90,6 @@
 
 
                 <p class="user_introtext">{{$user->intro ? $user->intro : (($user == $myUser) ? 'Seems like you still need to give yourself a nice cliché intro' : null)}}</p>
--
 
             </div>  <!-- einde upper section -->
 
@@ -235,7 +231,8 @@
 
 @section('scripts')
 
-    <script>
+    <script>$
+        @if($user != $myUser)
         function positionToMap(position) {
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: position.coords.latitude, lng: position.coords.longitude},
@@ -267,6 +264,7 @@
                 alert("Geolocation is not supported by this browser.");
             }
         }
+        @endif
     </script>
     <script>
         $(document).on('click', '[data-toggle="lightbox"]', function(event) {
