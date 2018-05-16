@@ -70,7 +70,7 @@
                          <div class="button-wrapper crossings-quantity-button-wrapper">
                              <a href="#" class="button">
                                  <div class="icon crossings-quantity-icon"></div>
-                                 <p>you crossed {{($crossingLocations->count() == 1) ? $crossingLocations->count().' time' : $crossingLocations->count().' times'}} already</p>
+                                 <p>you crossed {{$crossingLocations ? (($crossingLocations->count() == 1) ? $crossingLocations->count().' time' : $crossingLocations->count().' times') : '0 times}} already</p>
                              </a>
                          </div>
                          <p class="subtext">become friends to see where you have crossed</p>
