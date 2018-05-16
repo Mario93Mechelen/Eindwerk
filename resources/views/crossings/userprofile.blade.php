@@ -15,7 +15,9 @@
 
                 <h2 class="user_name">{{$user->first_name." ".$user->last_name}}</h2>
 
+
                 <div class="buttons">
+                @if($user != $myUser)
 
                     <!-- indien nog geen vrienden -->
                     <div class="button-wrapper addfriend-button-wrapper">
@@ -58,7 +60,15 @@
                         </a>
                     </div>
 
+                    @else
+
+                    <div style="height:70px;"></div>
+
+                    @endif
+
                 </div>  <!-- einde div buttons -->
+
+
 
                 <p class="user_introtext">{{$user->intro ? $user->intro : 'Seems like you still need to give yourself a nice cliché intro'}}</p>
 

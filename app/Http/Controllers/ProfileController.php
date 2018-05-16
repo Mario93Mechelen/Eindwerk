@@ -60,7 +60,7 @@ class ProfileController extends Controller
     public function edit()
     {
         //gebruik hiervoor de globale $myUser variabele in de view
-        return view('crossings.myprofile');
+        return view('crossings.userprofile');
     }
 
     /**
