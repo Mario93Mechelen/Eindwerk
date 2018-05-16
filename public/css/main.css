@@ -10391,6 +10391,19 @@ Crossings page styling
   color: #002245;
 }
 
+@media (min-width: 990px) {
+  .crossings_page {
+    width: 990px;
+    margin: 0 auto 30px auto;
+  }
+
+  .gridlist-container {
+    width: 960px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 /*
 
 Chat page styling
