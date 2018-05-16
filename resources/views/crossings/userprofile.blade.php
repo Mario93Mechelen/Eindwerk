@@ -27,7 +27,7 @@
 
                     @if($user->friendRequestIsAccepted($myUser->id,$user->id))
                         <!-- indien vriend -->
-                         <div class="button-wrapper friend-button isfriend-button-wrapper">  <!-- hidden -->
+                         <div class="button-wrapper friend-button isfriend-button-wrapper" data-id="{{$user->id}}">  <!-- hidden -->
                              <a href="#" class="button">
                                  <div class="icon friend-icon"></div>
                                  <p>friends</p>
