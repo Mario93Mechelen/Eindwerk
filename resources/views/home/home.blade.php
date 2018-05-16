@@ -53,7 +53,8 @@
                     </div>
                      @endforeach
                      @else
-                        <p>We couldn't find users nearby, did you share your location with us?</p>
+                        <p class="aroundme_no_users">We couldn't find users nearby, did you share your location with
+                            us?</p>
                      @endif
 
                     <!-- for further layout testing -->
