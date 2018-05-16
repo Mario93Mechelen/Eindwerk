@@ -8504,6 +8504,7 @@ body {
   font-family: Metropolis, Arial, sans-serif;
   font-size: 14px;
   color: #000000;
+  background-color: #f4f5f7;
 }
 
 /*
@@ -9456,12 +9457,15 @@ Around me page styling
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #ffffff;
   border-radius: 5px;
   -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
           box-shadow: 0px 5px 15px 0px #aaaaaa;
   margin-top: 15px;
   margin-bottom: 15px;
   position: relative;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .aroundme_page .crossings-indicator .crossing_icon {
@@ -9488,11 +9492,6 @@ Around me page styling
   color: #002245;
 }
 
-.aroundme_page .crossings-indicator {
-  text-decoration: none;
-  cursor: pointer;
-}
-
 .aroundme_page .crossings-indicator:before {
   position: absolute;
   font-family: 'FontAwesome';
@@ -9501,6 +9500,11 @@ Around me page styling
   content: "\F105";
   font-size: 24px;
   color: #0048d9;
+}
+
+.aroundme_page .aroundme_no_users {
+  color: #002245;
+  padding: 15px;
 }
 
 @media (min-width: 990px) {
@@ -9514,6 +9518,11 @@ Around me page styling
     padding-left: 0;
     padding-right: 0;
   }
+
+  .aroundme_page .aroundme_no_users {
+    color: #002245;
+    padding-left: 0px;
+  }
 }
 
 .item-list .item-content {
@@ -9524,6 +9533,7 @@ Around me page styling
   -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
           box-shadow: 0px 5px 15px 0px #aaaaaa;
   margin-bottom: 15px;
+  background-color: #ffffff;
 }
 
 .item-list .item-content .list-item-img {
@@ -10370,6 +10380,7 @@ Crossings page styling
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #ffffff;
   border-radius: 5px;
   -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
           box-shadow: 0px 5px 15px 0px #aaaaaa;

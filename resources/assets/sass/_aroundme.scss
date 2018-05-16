@@ -30,11 +30,14 @@ Around me page styling
     padding: 0px;
     display: flex;
     align-items: center;
+    background-color: $white;
     border-radius: 5px;
     box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
     margin-top: 15px;
     margin-bottom: 15px;
     position: relative;
+    text-decoration: none;
+    cursor: pointer;
 
     .crossing_icon {
       background-image: url('/img/Crossings.png');
@@ -60,11 +63,6 @@ Around me page styling
     }
   }
 
-  .crossings-indicator {
-    text-decoration: none;
-    cursor: pointer;
-  }
-
   .crossings-indicator:before {
     position: absolute;
     font-family: 'FontAwesome';
@@ -73,6 +71,11 @@ Around me page styling
     content: "\f105";
     font-size: 24px;
     color: $primary-color;
+  }
+
+  .aroundme_no_users {
+    color: $dark-color;
+    padding: 15px;
   }
 }
 
@@ -86,7 +89,14 @@ Around me page styling
     padding-left: 0;
     padding-right: 0;
   }
+
+  .aroundme_page .aroundme_no_users {
+    color: $dark-color;
+    padding-left: 0px;
+  }
 }
+
+
 
 
 .item-list {
@@ -96,6 +106,7 @@ Around me page styling
     border-radius: 5px;
     box-shadow: 0px 5px 15px 0px rgba(170,170,170,1);
     margin-bottom: 15px;
+    background-color: $white;
 
     .list-item-img {
       width: 25%;
