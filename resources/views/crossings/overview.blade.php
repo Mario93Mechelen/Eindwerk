@@ -4,6 +4,11 @@
 
     <div class="crossings_page">
 
+        @include('partials.topmap_and_search')
+
+
+        <h2 class="content_title">People I have crossed</h2>
+
         <div class="crossings-indicator-wrapper">
             <a href="#" class="crossings-indicator">
                 <div class="crossing_icon"></div>
