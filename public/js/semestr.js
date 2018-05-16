@@ -88,3 +88,59 @@ $(document).ready(function() {
         $(this).toggleClass("selected");
     });
 });
+
+
+<!-- script voor locatiebepalingen -->
+$(document).ready(function(){
+    var longitude;
+    var latitude;
+    var functionamount = 0;
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+    }
+    function showPosition(position) {
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
+        console.log(latitude+":"+longitude)
+        storeLocation(latitude, longitude, functionamount);
+        functionamount++;
+    }
+
+    getLocation();
+    window.setInterval(getLocation, 300000);
+
+    function storeLocation(latitude,longitude,f){
+        $.ajaxSetup({
+
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+            }
+
+        });
+        $.ajax({
+            method:"POST",
+            url:"/location/store",
+            data:{
+                'longitude': longitude,
+                'latitude': latitude,
+                'amount': f,
+            }
+        }).done(function(response){
+            if(response.code==200) {
+                if(response.res != "no results found") {
+                    console.log(response.res.results[0].address_components[2].long_name);
+                    $('.location_city').html(response.res.results[0].address_components[2].long_name);
+                }else{
+                    $('.location_city').html("seems like we couldn't find your location");
+                }
+            }
+        });
+    }
+})
