@@ -8614,9 +8614,8 @@ header nav .nav_left .nav_groups {
 
   header {
     max-width: 960px;
-    margin: 0 auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    margin: 0 15px;
+    padding: 5px 15px;
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }
@@ -8980,6 +8979,12 @@ header #dropdown-menu-profile a:last-of-type {
 
 .highlighted {
   background-color: #0048d9 !important;
+}
+
+@media (min-width: 990px) {
+  header {
+    margin: 0 auto;
+  }
 }
 
 /*
@@ -9849,6 +9854,17 @@ profile page styling
   background-repeat: no-repeat;
 }
 
+.profile_page .crossings_map {
+  position: absolute;
+  top: 100px;
+  z-index: 10;
+  width: 100%;
+  height: calc(100vh - 100px);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .profile_page .profile_page_content {
   position: relative;
   top: -120px;
@@ -9939,6 +9955,7 @@ profile page styling
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  background-color: #ffffff;
   border-radius: 5px;
   -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
           box-shadow: 0px 5px 15px 0px #aaaaaa;
@@ -10027,6 +10044,32 @@ profile page styling
   width: 100%;
 }
 
+.profile_page .profile_page_content .upper_section .buttons .crossings-hide-map-button-wrapper {
+  width: 50%;
+  position: absolute;
+  top: -130px;
+  z-index: 30;
+}
+
+.profile_page .profile_page_content .upper_section .buttons .crossings-hide-map-button-wrapper .button {
+  height: 40px;
+  padding: 10px;
+}
+
+.profile_page .profile_page_content .upper_section .buttons .crossings-hide-map-button-wrapper .button p {
+  padding-left: 30px;
+}
+
+.profile_page .profile_page_content .upper_section .buttons .crossings-hide-map-button-wrapper .button:before {
+  position: absolute;
+  font-family: 'FontAwesome';
+  top: 6px;
+  left: 20px;
+  content: "\F104";
+  font-size: 24px;
+  color: #0048d9;
+}
+
 .profile_page .profile_page_content .section_title {
   font-size: 28px;
   font-weight: bold;
@@ -10051,12 +10094,12 @@ profile page styling
   height: 50px;
 }
 
-.profile_page .profile_page_content .photos_section .photo_collection img:first-of-type {
+.profile_page .profile_page_content .photos_section .photo_collection a:first-of-type img {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.profile_page .profile_page_content .photos_section .photo_collection img:last-of-type {
+.profile_page .profile_page_content .photos_section .photo_collection a:last-of-type img {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -10190,6 +10233,13 @@ profile page styling
     top: -60px;
   }
 
+  .profile_page .crossings_map {
+    height: 350px;
+    position: fixed;
+    top: 0px;
+    z-index: 0;
+  }
+
   .profile_page .profile_page_content {
     position: relative;
     top: -150px;
@@ -10240,7 +10290,8 @@ profile page styling
   }
 
   .profile_page .profile_page_content .upper_section .buttons .crossings-quantity-button-wrapper,
-  .profile_page .profile_page_content .upper_section .buttons .crossings-location-button-wrapper {
+  .profile_page .profile_page_content .upper_section .buttons .crossings-location-button-wrapper,
+  .profile_page .profile_page_content .upper_section .buttons .crossings-hide-map-button-wrapper {
     width: 50%;
     margin-right: 0;
   }
@@ -10248,6 +10299,10 @@ profile page styling
   .profile_page .profile_page_content .upper_section .buttons .subtext {
     text-align: right;
     padding-right: 0;
+  }
+
+  .profile_page .profile_page_content .upper_section .buttons .crossings-hide-map-button-wrapper {
+    position: static;
   }
 
   .profile_page .profile_page_content .photos_section .photo_collection img {
