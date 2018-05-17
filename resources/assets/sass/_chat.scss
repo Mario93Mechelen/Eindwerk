@@ -25,6 +25,54 @@ Chat page styling
     .chat-list {
       background-color: red;
       width: 100vw;
+
+      .search-bar {
+
+        width: calc(100% - 30px);
+        margin: 0 auto;
+
+        .searchContainer {
+          display: inline-flex;
+          flex: 1 1 300px;
+          border: 0px solid $nav_unselected;
+          font-size: 18px;
+          width: 100%;
+          margin-top: 15px;
+          margin-bottom: 15px;
+
+          ::-webkit-input-placeholder {
+            color: $nav_unselected;
+            font-size: 18px;
+          }
+        }
+
+        .searchBox {
+          border: 0;
+          border-radius: 5px;
+          box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
+          background-color: $white;
+          width: 100%;
+        }
+
+        .searchIcon {
+          padding: 0.8rem;
+          color: $nav_unselected;
+          background-color: $white;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+
+
+        .searchBox_inner {
+          display: inline;
+          border: 0;
+          width: calc(100% - 70px);
+        }
+
+        .searchBox_inner:focus {
+          outline: none;
+        }
+      }
     }
 
     .chat-detail {

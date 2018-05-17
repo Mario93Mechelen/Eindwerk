@@ -5,6 +5,17 @@
 
         <div class="chat-list">  <!-- first section on mobile, left section on desktop -->
 
+            <div class="search-bar">
+
+                <div class="searchContainer">
+                    <div class="searchBox">
+                        <i class="fa fa-search searchIcon"></i>
+                        <input class="searchBox_inner" type="search" name="search" placeholder="search for friends">
+                    </div>
+                </div>
+
+            </div>
+
             <a href="" id="test_to_detail">to detail</a>
         </div>
 

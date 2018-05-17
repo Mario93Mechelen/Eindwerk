@@ -10503,6 +10503,57 @@ Chat page styling
   width: 100vw;
 }
 
+.chat-wrapper .chat-total .chat-list .search-bar {
+  width: calc(100% - 30px);
+  margin: 0 auto;
+}
+
+.chat-wrapper .chat-total .chat-list .search-bar .searchContainer {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 300px;
+          flex: 1 1 300px;
+  border: 0px solid #aaaaaa;
+  font-size: 18px;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.chat-wrapper .chat-total .chat-list .search-bar .searchContainer ::-webkit-input-placeholder {
+  color: #aaaaaa;
+  font-size: 18px;
+}
+
+.chat-wrapper .chat-total .chat-list .search-bar .searchBox {
+  border: 0;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
+          box-shadow: 0px 5px 10px 0px #aaaaaa;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+.chat-wrapper .chat-total .chat-list .search-bar .searchIcon {
+  padding: 0.8rem;
+  color: #aaaaaa;
+  background-color: #ffffff;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.chat-wrapper .chat-total .chat-list .search-bar .searchBox_inner {
+  display: inline;
+  border: 0;
+  width: calc(100% - 70px);
+}
+
+.chat-wrapper .chat-total .chat-list .search-bar .searchBox_inner:focus {
+  outline: none;
+}
+
 .chat-wrapper .chat-total .chat-detail {
   background-color: yellow;
   width: 100vw;
