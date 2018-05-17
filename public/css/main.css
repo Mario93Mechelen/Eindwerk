@@ -10636,6 +10636,10 @@ Chat page styling
   position: relative;
 }
 
+.chat-wrapper .chat-total .chat_to_detail:hover {
+  text-decoration: none;
+}
+
 @media (min-width: 768px) {
   .chat-wrapper {
     display: -webkit-box;

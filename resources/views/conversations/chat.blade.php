@@ -23,7 +23,7 @@
 
 
                 <div class="item item-list col-xs-12">
-                    <a class="item-content" href="">
+                    <a class="item-content chat_to_detail" href="">
                         <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
                         <div class="chat-right">
                             <div class="chat-nametime">
@@ -37,7 +37,7 @@
 
 
                 <div class="item item-list col-xs-12">
-                    <a class="item-content" href="">
+                    <a class="item-content chat_to_detail" href="">
                         <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
                         <div class="chat-right">
                             <div class="chat-nametime">
@@ -51,7 +51,7 @@
 
 
                 <div class="item item-list col-xs-12">
-                    <a class="item-content" href="">
+                    <a class="item-content chat_to_detail" href="">
                         <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
                         <div class="chat-right">
                             <div class="chat-nametime">
@@ -65,11 +65,11 @@
 
             </div>  <!-- end of overview active chats -->
 
-            <a href="" id="test_to_detail">to detail</a>
+            <a href="" class="chat_to_detail">to detail</a>
         </div>
 
         <div class="chat-detail">  <!-- second section on mobile, right section on desktop -->
-            <a href="" id="test_to_list">to list</a>
+            <a href="" class="chat_to_list">to list</a>
 
         </div>
 

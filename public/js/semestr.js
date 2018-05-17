@@ -105,11 +105,11 @@ $(document).ready(function() {
 
 <!-- mobile switch between chat list and detail -->
 $(document).ready(function() {
-    $("#test_to_detail").click(function(e) {
+    $(".chat_to_detail").click(function(e) {
         e.preventDefault();
         $('.chat-detail').animate({left: "-100vw"}, 1000 );
     });
-    $("#test_to_list").click(function(e) {
+    $(".chat_to_list").click(function(e) {
         e.preventDefault();
         $('.chat-detail').animate({left: "0vw"}, 1000 );
     });
