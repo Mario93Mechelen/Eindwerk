@@ -107,16 +107,13 @@ $(document).ready(function() {
 $(document).ready(function() {
     $("#test_to_detail").click(function(e) {
         e.preventDefault();
-        $('.chat-list').animate({width: "0vw"}, 1000 );
+        $('.chat-detail').animate({left: "-100vw"}, 1000 );
     });
     $("#test_to_list").click(function(e) {
         e.preventDefault();
-        $('.chat-list').animate({width: "100vw"}, 1000 );
+        $('.chat-detail').animate({left: "0vw"}, 1000 );
     });
-
 });
-
-
 
 <!-- script voor locatiebepalingen -->
 $(document).ready(function(){

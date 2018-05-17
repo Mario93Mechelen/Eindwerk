@@ -30,6 +30,7 @@ Chat page styling
     .chat-detail {
       background-color: yellow;
       width: 100vw;
+      position: relative;
     }
   }
 }
@@ -54,6 +55,11 @@ Chat page styling
         flex: 0 0 60%;
       }
     }
+  }
+
+  /* testknoppen */
+  #test_to_detail, #test_to_list {
+    display: none;
   }
 }
 

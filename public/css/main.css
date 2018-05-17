@@ -10506,6 +10506,7 @@ Chat page styling
 .chat-wrapper .chat-total .chat-detail {
   background-color: yellow;
   width: 100vw;
+  position: relative;
 }
 
 @media (min-width: 768px) {
@@ -10538,6 +10539,13 @@ Chat page styling
     -webkit-box-flex: 0;
         -ms-flex: 0 0 60%;
             flex: 0 0 60%;
+  }
+
+  /* testknoppen */
+
+  #test_to_detail,
+  #test_to_list {
+    display: none;
   }
 }
 
