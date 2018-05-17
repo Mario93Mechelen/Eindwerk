@@ -115,6 +115,17 @@ $(document).ready(function() {
     });
 });
 
+<!-- hide send message button in chat when no input in textarea -->
+$(document).keyup(function (e) {
+
+    if ($(".new_message").val()) {
+        $(".send_message").show();
+    }
+});
+
+<!--  -->
+
+
 <!-- script voor locatiebepalingen -->
 $(document).ready(function(){
     var longitude;

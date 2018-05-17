@@ -10771,6 +10771,7 @@ Chat page styling
   -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
           box-shadow: 0px 5px 10px 0px #aaaaaa;
   margin-left: 15px;
+  display: none;
 }
 
 .chat-wrapper .chat-total .chat_to_detail:hover {
