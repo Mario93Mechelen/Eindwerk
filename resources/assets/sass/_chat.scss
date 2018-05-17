@@ -5,6 +5,7 @@ Chat page styling
 */
 
 .chat-wrapper {
+  /*display: flex;*/
   position: fixed;
   top: 0;
   height: 100vh;
@@ -16,8 +17,10 @@ Chat page styling
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    height: 100%;
-   /* background-color: green;*/
+    height: calc(100% - 106px);
+    position: fixed;
+    top: 106px;
+    background-color: green;
 
     .chat-list {
     /*  background-color: red;*/
@@ -27,6 +30,29 @@ Chat page styling
     .chat-detail {
      /* background-color: yellow;*/
       width: 100vw;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .chat-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .chat-total {
+      position: static;
+      width: calc(100% - 30px);
+      height: calc(100% - 200px);
+      max-width: 960px;
+
+      .chat-list {
+
+      }
+
+      .chat-detail {
+
+      }
     }
   }
 }

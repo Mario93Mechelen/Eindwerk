@@ -10473,6 +10473,7 @@ Chat page styling
 */
 
 .chat-wrapper {
+  /*display: flex;*/
   position: fixed;
   top: 0;
   height: 100vh;
@@ -10491,8 +10492,10 @@ Chat page styling
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  height: 100%;
-  /* background-color: green;*/
+  height: calc(100% - 106px);
+  position: fixed;
+  top: 106px;
+  background-color: green;
 }
 
 .chat-wrapper .chat-total .chat-list {
@@ -10503,6 +10506,27 @@ Chat page styling
 .chat-wrapper .chat-total .chat-detail {
   /* background-color: yellow;*/
   width: 100vw;
+}
+
+@media (min-width: 768px) {
+  .chat-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+
+  .chat-wrapper .chat-total {
+    position: static;
+    width: calc(100% - 30px);
+    height: calc(100% - 200px);
+    max-width: 960px;
+  }
 }
 
 /*
