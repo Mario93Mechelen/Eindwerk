@@ -123,7 +123,17 @@ $(document).keyup(function (e) {
     }
 });
 
-<!--  -->
+<!-- keep mobile screen on chat detail on submitting of message -->
+$(document).ready(function() {
+    if ($(document).width() < 768) {
+        $(".new_message_form").on('submit', function(e) {
+            e.preventDefault();
+            $('.chat-detail').css('left', "-100vw");
+            $('.new_message').val('');
+            console.log("woehoe");
+            });
+    }
+});
 
 
 <!-- script voor locatiebepalingen -->
