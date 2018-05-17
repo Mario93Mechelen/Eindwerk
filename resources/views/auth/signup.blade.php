@@ -65,12 +65,10 @@
         $('.to-step-2').on('click', function(e){
             e.preventDefault();
             if($('#email_register').val() != "" && $('#email_register').val().indexOf('@')>0 && $('#email_register').val().indexOf('.')>0 && $('#email_register').val().indexOf('@')< $('#email_register').val().indexOf('.')) {
-                if($('#password_register').val() != "" && $('#password_register').val() == $('#password_repeat_register').val()) {
+
                     $('.step1').fadeOut('slow');
                     $('.step2').fadeIn('slow');
-                }else{
-                    $('.error1').html('passwords are not the same lol');
-                }
+
             }else{
                 $('.error1').html('please consider a valid email adress lol');
             }

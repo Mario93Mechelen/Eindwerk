@@ -43,7 +43,7 @@ Route::group(['middleware' => 'auth'], function()
     //conversation
     Route::post('/conversation', 'ConversationController@store');
     Route::get('/conversation/{conversation}', 'ConversationController@show');
-    Route::post('/conversation/{conversation}', 'ConversationController@addChatToConversation');
+    Route::post('/sendchat', 'ConversationController@addChatToConversation');
     Route::get('/chat', 'ConversationController@index');
     Route::post('/profile/conversation','ConversationController@createChatFromProfile');
     Route::post('/getConversation','ConversationController@getConversation');

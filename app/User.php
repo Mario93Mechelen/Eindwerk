@@ -46,7 +46,7 @@ class User extends Authenticatable
 
     public function conversation()
     {
-        return $this->belongsToMany('App\Conversation');
+        return $this->belongsToMany('App\Conversation');//->select('conversations.*')->join('chats','conversations.id','=','chats.conversation_id')->groupBy('chats.conversation_id')->orderBy('chats.created_at');
     }
 
     public function isOnline()

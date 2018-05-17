@@ -35,10 +35,36 @@
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://js.pusher.com/4.1/pusher.min.js"></script>
-<script src="/js/emoji.js"></script>
-<script src="/js/semestr.js"></script>
 <script src="/js/app.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
+<script src="/js/semestr.js"></script>
+<script src="/js/emoji.js"></script>
+<script>
+    // Enable pusher logging - don't include this in production
+    $(document).ready(function(){
+        Pusher.logToConsole = true;
+
+        var pusher = new Pusher('219878673544c0fd8948', {
+            cluster: 'eu',
+            encrypted: true
+        });
+
+        var channel = pusher.subscribe('chat'+'{{$myUser->id}}');
+        channel.bind('new-chat', function(data) {
+            var src="";
+            if(response.conversation[i].sender.avatar.includes('http')){
+                src=response.conversation[i].sender.avatar;
+            }else{
+                src='/'+response.conversation[i].sender.avatar;
+            };
+            var newdiv = '<div class="conversation-message-in"><img src="'+src+'" alt=""><p class="message message-in">'+data.data.chat+'</p></div>';
+            $(newdiv).appendTo('.messages_container').hide().fadeIn(1000);
+            $(".messages_container").animate({ scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
+            console.log(data);
+
+        });
+    })
+</script>
 @yield('scripts')
 
 </body>

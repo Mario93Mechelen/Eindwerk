@@ -83,7 +83,15 @@ class ConversationController extends Controller
     public function getConversation(Request $request)
     {
         $conversation = Conversation::find($request->id)->chats;
-        return response()->json(['code' => 200, 'conversation' => $conversation]);
+        $message = [];
+        $i=0;
+        if(!$conversation->isEmpty()) {
+            foreach ($conversation as $chat) {
+                $message[$i] = ['text' => $chat->body, 'sender' => User::find($chat->sender_id)->toArray(), 'receiver' => User::find($chat->receiver_id)->toArray()];
+                $i++;
+            }
+        }
+        return response()->json(['code' => 200, 'conversation' => $message, 'myId' => Auth::user()->id]);
     }
 
     /**
@@ -105,7 +113,6 @@ class ConversationController extends Controller
     public function addChatToConversation(Request $request)
     {
         $message = $request->message;
-        $sender_id = $request->sender_id;
         $receiver_id = $request->receiver_id;
         $conversation_id = $request->id;
 
@@ -113,10 +120,12 @@ class ConversationController extends Controller
         $chat->body = $message;
         $chat->conversation_id = $conversation_id;
         $chat->receiver_id = $receiver_id;
-        $chat->sender_id = $sender_id;
+        $chat->sender_id = Auth::user()->id;
         $chat->save();
 
-        $this->makeEventObject()->trigger('chat'.$conversation_id,'new-chat',['data' => ['chat' => $message, 'sender_id' => $sender_id, 'receiver_id' => $receiver_id]]);
+        $receiver = User::find($receiver_id);
+
+        $this->makeEventObject()->trigger('chat'.$receiver_id,'new-chat',['data' => ['chat' => $message, 'sender' => Auth::user(), 'conversation_id' => $conversation_id]]);
 
         return response()->json(['code' => 200]);
     }

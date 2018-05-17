@@ -20,13 +20,13 @@
 
             <!-- overview active chats -->
             <div id="chat_overview" class="row list-group">
-
-                @foreach($myUser->conversation as $conversation)
+                @if(!$myUser->conversation->isEmpty())
+                @foreach($myUser->conversation as $key => $conversation)
                     @php
                         $user = $conversation->users()->where('user_id','!=',$myUser->id)->first();
                     @endphp
                     <div class="item item-list col-xs-12">
-                        <a class="item-content chat_to_detail" href="" data-id="{{$conversation->id}}">
+                        <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
                             <img class="chat-avatar" src='{{ asset($user->avatar) }}'>
                             <div class="chat-right">
                                 <div class="chat-nametime">
@@ -37,7 +37,22 @@
                             </div>
                         </a>
                     </div>
+
                 @endforeach
+                @else
+                    <div class="item item-list col-xs-12">
+                        <a class="item-content chat_to_detail">
+                            <img class="chat-avatar" src='{{ asset('/img/Semestr_logo2_gray.png') }}'>
+                            <div class="chat-right">
+                                <div class="chat-nametime">
+                                    <p class="chat-name">Semestr Team</p>
+                                    <p class="chat-time">just now</p>
+                                </div>
+                                <p class="chat-last-message-start">Hello there, seems like your new here, oh a spelling mistake just for you</p>
+                            </div>
+                        </a>
+                    </div>
+                @endif
 
                 <div class="item item-list col-xs-12">
                     <a class="item-content chat_to_detail" href="">
@@ -131,7 +146,7 @@
             </div>
 
             <form class="new_message_form">
-                <textarea class="new_message" rows="4" placeholder="message"></textarea>
+                <textarea class="new_message" id="chat-input" rows="4" placeholder="message"></textarea>
                 <button type="submit" class="send_message"></button>
             </form>
 
