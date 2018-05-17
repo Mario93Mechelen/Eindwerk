@@ -69,9 +69,11 @@
         </div>
 
         <div class="chat-detail">  <!-- second section on mobile, right section on desktop -->
-            <a href="" class="chat_to_list">to list</a>
+
 
             <div class="messages_container">
+                <a href="" class="chat_to_list">to list</a>
+
                 <div class="conversation-datetime">
                     <p>Today, 12:48 PM</p>
                 </div>
@@ -105,7 +107,8 @@
             </div>
 
             <form class="new_message_form">
-                <input type="textarea" class="new_message" placeholder="message">
+                <textarea class="new_message" rows="4" placeholder="message"></textarea>
+                <button type="submit" class="send_message"></button>
             </form>
 
 
