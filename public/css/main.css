@@ -10473,7 +10473,6 @@ Chat page styling
 */
 
 .chat-wrapper {
-  /*display: flex;*/
   position: fixed;
   top: 0;
   height: 100vh;
@@ -10496,15 +10495,16 @@ Chat page styling
   position: fixed;
   top: 106px;
   background-color: green;
+  overflow: hidden;
 }
 
 .chat-wrapper .chat-total .chat-list {
-  /*  background-color: red;*/
+  background-color: red;
   width: 100vw;
 }
 
 .chat-wrapper .chat-total .chat-detail {
-  /* background-color: yellow;*/
+  background-color: yellow;
   width: 100vw;
 }
 
@@ -10526,6 +10526,18 @@ Chat page styling
     width: calc(100% - 30px);
     height: calc(100% - 200px);
     max-width: 960px;
+  }
+
+  .chat-wrapper .chat-total .chat-list {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 40%;
+            flex: 0 0 40%;
+  }
+
+  .chat-wrapper .chat-total .chat-detail {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 60%;
+            flex: 0 0 60%;
   }
 }
 

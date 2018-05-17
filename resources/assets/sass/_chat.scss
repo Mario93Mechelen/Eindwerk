@@ -5,7 +5,6 @@ Chat page styling
 */
 
 .chat-wrapper {
-  /*display: flex;*/
   position: fixed;
   top: 0;
   height: 100vh;
@@ -21,14 +20,15 @@ Chat page styling
     position: fixed;
     top: 106px;
     background-color: green;
+    overflow: hidden;
 
     .chat-list {
-    /*  background-color: red;*/
+      background-color: red;
       width: 100vw;
     }
 
     .chat-detail {
-     /* background-color: yellow;*/
+      background-color: yellow;
       width: 100vw;
     }
   }
@@ -47,11 +47,11 @@ Chat page styling
       max-width: 960px;
 
       .chat-list {
-
+        flex: 0 0 40%;
       }
 
       .chat-detail {
-
+        flex: 0 0 60%;
       }
     }
   }
