@@ -103,6 +103,39 @@ $(document).ready(function() {
 
 });
 
+<!-- mobile switch between chat list and detail -->
+$(document).ready(function() {
+    $(".chat_to_detail").click(function(e) {
+        e.preventDefault();
+        $('.chat-detail').animate({left: "-100vw"}, 1000 );
+        $('.chat_to_list').show();
+    });
+    $(".chat_to_list").click(function(e) {
+        e.preventDefault();
+        $('.chat-detail').animate({left: "0vw"}, 1000 );
+        $('.chat_to_list').hide();
+    });
+});
+
+<!-- hide send message button in chat when no input in textarea -->
+$(document).keyup(function (e) {
+
+    if ($(".new_message").val()) {
+        $(".send_message").show();
+    }
+});
+
+<!-- keep mobile screen on chat detail on submitting of message -->
+$(document).ready(function() {
+    if ($(document).width() < 768) {
+        $(".new_message_form").on('submit', function(e) {
+            e.preventDefault();
+            $('.chat-detail').css('left', "-100vw");
+            $('.new_message').val('');
+            });
+    }
+});
+
 
 <!-- script voor locatiebepalingen -->
 $(document).ready(function(){
