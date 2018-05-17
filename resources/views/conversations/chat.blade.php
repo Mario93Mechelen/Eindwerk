@@ -5,11 +5,11 @@
 
         <div class="chat-list">  <!-- first section on mobile, left section on desktop -->
 
-            <p>argh</p>
+            <a href="" id="test_to_detail">to detail</a>
         </div>
 
         <div class="chat-detail">  <!-- second section on mobile, right section on desktop -->
-            <p>urgh</p>
+            <a href="" id="test_to_list">to list</a>
 
         </div>
 
