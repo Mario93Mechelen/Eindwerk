@@ -65,14 +65,18 @@
 
             </div>  <!-- end of overview active chats -->
 
+            <!--
             <a href="" class="chat_to_detail">to detail</a>
+            -->
         </div>
 
         <div class="chat-detail">  <!-- second section on mobile, right section on desktop -->
 
 
             <div class="messages_container">
+                <!--
                 <a href="" class="chat_to_list">to list</a>
+                -->
 
                 <div class="conversation-datetime">
                     <p>Today, 12:48 PM</p>
@@ -120,9 +124,6 @@
 </div>
 
 
-<!--
-
--->
 
 
 

@@ -130,7 +130,6 @@ $(document).ready(function() {
             e.preventDefault();
             $('.chat-detail').css('left', "-100vw");
             $('.new_message').val('');
-            console.log("woehoe");
             });
     }
 });
