@@ -3,6 +3,10 @@
 
     <div class="chat-total">  <!-- holds all chat logic -->
 
+        <div class="chat-total-title">
+            <h2 class="content_title">Chats</h2>
+        </div>
+
         <div class="chat-list">  <!-- first section on mobile, left section on desktop -->
 
             <div class="search-bar">

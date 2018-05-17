@@ -22,6 +22,10 @@ Chat page styling
     background-color: $offwhite;
     overflow: hidden;
 
+    .chat-total-title {
+      display: none;
+    }
+
     .chat-list {
       background-color: $offwhite;
       width: 100vw;
@@ -128,7 +132,8 @@ Chat page styling
       }
     }
     .chat-detail {
-      background-color: yellow;
+      background-color: $offwhite;
+      border-left: 1px solid $nav_unselected;
       width: 100vw;
       position: relative;
     }
@@ -147,9 +152,31 @@ Chat page styling
       width: calc(100% - 30px);
       height: calc(100% - 200px);
       max-width: 960px;
+      border-radius: 5px;
+      flex-wrap: wrap;
+      align-items: stretch;
+      align-content: flex-start;
+
+      .chat-total-title {
+        display: block;
+        width: 100%;
+        background-color: $white;
+        border-bottom: 1px solid $nav_unselected;
+        height: 70px;
+
+        .content_title {
+          font-size: 32px;
+          color: $dark-color;
+          font-weight: bold;
+          max-width: 960px;
+          padding-top: 20px;
+          padding-left: 15px;
+        }
+      }
 
       .chat-list {
         flex: 0 0 40%;
+        height: calc(100% - 70px);
 
         #chat_overview {
           padding: 15px;
@@ -189,6 +216,7 @@ Chat page styling
 
       .chat-detail {
         flex: 0 0 60%;
+        height: calc(100% - 70px);
       }
     }
   }
