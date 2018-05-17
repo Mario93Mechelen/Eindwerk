@@ -36,7 +36,7 @@ class ProfileController extends Controller
             array_multisort($countArr, SORT_DESC,$crossingArr);
         }
 
-        if(Auth::user()->myCrossings()->where('seen',0)->get()){
+        if(!Auth::user()->myCrossings()->where('seen',0)->get()->isEmpty()){
             Crossing::where('crosser_id',Auth::user()->id)->where('seen', 0)->update(['seen' =>true]);
         }
         return view('crossings.overview',compact('crossingArr'));

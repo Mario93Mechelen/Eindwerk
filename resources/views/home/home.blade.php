@@ -9,7 +9,7 @@
         <h2 class="content_title">People around me</h2>
 
         <div class="crossings-indicator-wrapper">
-            @if(!$myUser->myCrossings()->where('seen',0)->get())->isEmpty())
+            @if(!$myUser->myCrossings()->where('seen',0)->get()->isEmpty())
                 <a href="{{URL::action('ProfileController@index')}}" class="crossings-indicator">
                     <div class="crossing_icon"></div>
                     <p>you crossed some new people</p>
