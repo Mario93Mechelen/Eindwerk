@@ -10478,7 +10478,7 @@ Chat page styling
   height: 100vh;
   width: 100vw;
   z-index: 999999999;
-  background-color: rgba(0, 0, 255, 0.3);
+  background-color: transparent;
 }
 
 .chat-wrapper .chat-total {
@@ -10494,12 +10494,12 @@ Chat page styling
   height: calc(100% - 106px);
   position: fixed;
   top: 106px;
-  background-color: green;
+  background-color: #f4f5f7;
   overflow: hidden;
 }
 
 .chat-wrapper .chat-total .chat-list {
-  background-color: red;
+  background-color: #f4f5f7;
   width: 100vw;
 }
 
@@ -10642,6 +10642,7 @@ Chat page styling
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    background-color: rgba(0, 34, 69, 0.7);
   }
 
   .chat-wrapper .chat-total {
@@ -10655,6 +10656,24 @@ Chat page styling
     -webkit-box-flex: 0;
         -ms-flex: 0 0 40%;
             flex: 0 0 40%;
+  }
+
+  .chat-wrapper .chat-total .chat-list #chat_overview {
+    padding: 15px;
+  }
+
+  .chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content {
+    border-radius: 0px;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    background-color: transparent;
+    border-bottom: 1px solid #aaaaaa;
+    margin-bottom: 7.5px;
+    padding-bottom: 7.5px;
+  }
+
+  .chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content .chat-avatar {
+    border-radius: 5px;
   }
 
   .chat-wrapper .chat-total .chat-detail {

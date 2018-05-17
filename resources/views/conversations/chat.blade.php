@@ -18,7 +18,7 @@
             <div id="chat_overview" class="row list-group">
 
 
-                <div class="item item-list col-xs-12 col-md-6">
+                <div class="item item-list col-xs-12">
                     <a class="item-content" href="">
                         <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
                         <div class="chat-right">
@@ -32,7 +32,7 @@
                 </div>
 
 
-                <div class="item item-list col-xs-12 col-md-6">
+                <div class="item item-list col-xs-12">
                     <a class="item-content" href="">
                         <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
                         <div class="chat-right">
@@ -46,7 +46,7 @@
                 </div>
 
 
-                <div class="item item-list col-xs-12 col-md-6">
+                <div class="item item-list col-xs-12">
                     <a class="item-content" href="">
                         <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
                         <div class="chat-right">

@@ -10,7 +10,7 @@ Chat page styling
   height: 100vh;
   width: 100vw;
   z-index: 999999999;
-  background-color: rgba(blue, 0.3);
+  background-color: transparent;
 
   .chat-total {
     display: flex;
@@ -19,11 +19,11 @@ Chat page styling
     height: calc(100% - 106px);
     position: fixed;
     top: 106px;
-    background-color: green;
+    background-color: $offwhite;
     overflow: hidden;
 
     .chat-list {
-      background-color: red;
+      background-color: $offwhite;
       width: 100vw;
 
       .search-bar {
@@ -140,6 +140,7 @@ Chat page styling
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: rgba($dark-color, 0.7);
 
     .chat-total {
       position: static;
@@ -149,6 +150,41 @@ Chat page styling
 
       .chat-list {
         flex: 0 0 40%;
+
+        #chat_overview {
+          padding: 15px;
+
+          .item-list {
+
+            .item-content {
+              border-radius: 0px;
+              box-shadow: none;
+              background-color: transparent;
+              border-bottom: 1px solid $nav_unselected;
+              margin-bottom: 7.5px;
+              padding-bottom: 7.5px;
+
+              .chat-avatar {
+                border-radius: 5px;
+              }
+
+              .chat-right {
+
+                .chat-nametime {
+
+                  .chat-name {
+                  }
+
+                  .chat-time {
+                  }
+                }
+
+                .chat-last-message-start {
+                }
+              }
+            }
+          }
+        }
       }
 
       .chat-detail {
