@@ -21,6 +21,7 @@ class CreateCrossingsTable extends Migration
             $table->foreign('crossed_id')->references('id')->on('users');
             $table->boolean('meeting')->default(0);
             $table->boolean('contacted')->default(0);
+            $table->boolean('seen')->default(0);
             $table->timestamps();
         });
     }

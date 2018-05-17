@@ -75,7 +75,7 @@ class HomeController extends Controller
 
                 $kms = number_format((float)$kms, 2, ',','');
 
-                if((float)$kms <= (float)$request->distance) {
+                if((float)$kms <= (float)$request->distance*2) {
 
                     $distance[$i] = ['user' => $l->user, 'kms' => $kms];
                     $i++;
