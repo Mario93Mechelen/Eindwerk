@@ -108,10 +108,12 @@ $(document).ready(function() {
     $(".chat_to_detail").click(function(e) {
         e.preventDefault();
         $('.chat-detail').animate({left: "-100vw"}, 1000 );
+        $('.chat_to_list').show();
     });
     $(".chat_to_list").click(function(e) {
         e.preventDefault();
         $('.chat-detail').animate({left: "0vw"}, 1000 );
+        $('.chat_to_list').hide();
     });
 });
 

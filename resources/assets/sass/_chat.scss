@@ -241,6 +241,24 @@ Chat page styling
     .chat_to_detail:hover{
       text-decoration: none;
     }
+
+    .chat_to_list {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      display: none;
+
+      img {
+        background-color: $dark-color;
+        box-sizing: border-box;
+        height: 50px;
+        width: 55px;
+        padding: 15px 20px;
+      }
+      p {
+        display: none;
+      }
+    }
   }
 }
 

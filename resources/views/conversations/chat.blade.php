@@ -74,9 +74,12 @@
 
 
             <div class="messages_container">
-                <!--
-                <a href="" class="chat_to_list">to list</a>
-                -->
+
+                <a href="" class="chat_to_list">
+                    <img src="{{url('img/message_exit.png')}}">
+                    <p>to list</p>
+                </a>
+
 
                 <div class="conversation-datetime">
                     <p>Today, 12:48 PM</p>

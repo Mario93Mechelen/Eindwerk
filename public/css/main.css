@@ -10778,6 +10778,26 @@ Chat page styling
   text-decoration: none;
 }
 
+.chat-wrapper .chat-total .chat_to_list {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+.chat-wrapper .chat-total .chat_to_list img {
+  background-color: #002245;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 50px;
+  width: 55px;
+  padding: 15px 20px;
+}
+
+.chat-wrapper .chat-total .chat_to_list p {
+  display: none;
+}
+
 @media (min-width: 768px) {
   .chat-wrapper {
     display: -webkit-box;
