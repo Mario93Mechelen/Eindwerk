@@ -37,6 +37,7 @@
                  @if($crossingArr)
                  @foreach($crossingArr as $crossing)
                     <div class="item item-list col-xs-12 col-md-6">
+                        <a href="{{URL::action('ProfileController@show',$crossing['user'])}}">
                         <div class="item-content">
                             <img class="list-item-img" src="{{url($crossing['user']->avatar)}}" alt=""/>
                             <div class="caption">
@@ -45,6 +46,7 @@
                                 <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                             </div>
                         </div>
+                        </a>
                     </div>
                  @endforeach
                  @endif
@@ -167,7 +169,7 @@
                         }
                     }).done(function(response){
                         if(response.code==200) {
-                            
+
                         }
                     });
                 }

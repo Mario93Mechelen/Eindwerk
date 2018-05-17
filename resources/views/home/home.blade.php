@@ -42,6 +42,7 @@
                     @if(isset($distance))
                     @foreach($distance as $d)
                     <div class="item item-list col-xs-12 col-md-6">
+                        <a href="{{URL::action('ProfileController@show',$d['user'])}}">
                         <div class="item-content">
                             <img class="list-item-img" src="{{url($d['user']['avatar'] ? $d['user']['avatar'] : '')}}" alt=""/>
                             <div class="caption">
@@ -50,6 +51,7 @@
                                 <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                             </div>
                         </div>
+                        </a>
                     </div>
                      @endforeach
                      @else
