@@ -71,6 +71,44 @@
         <div class="chat-detail">  <!-- second section on mobile, right section on desktop -->
             <a href="" class="chat_to_list">to list</a>
 
+            <div class="messages_container">
+                <div class="conversation-datetime">
+                    <p>Today, 12:48 PM</p>
+                </div>
+
+                <div class="conversation-message-in">
+                    <img src="{{url('img/profile_pic_default.jpg')}}" alt="">
+                    <p class="message message-in">Lorem ipsum is what this is, not really, but something to read anyway.
+                        Why would you not read this? This is awesome. Just like Tesla. Tesla is awesome. And out of
+                        business soon, but hey, who cares?
+                    </p>
+                </div>
+
+                <div class="conversation-message-out">
+                    <p class="message message-out">That's not making any sense. Senseless is what that is. I can type
+                        whatever I want and ha ha ha, nobody knows. Did I tell you about that time in Paris?</p>
+                </div>
+
+                <div class="conversation-message-out">
+                    <p class="message message-out">Oh wait, I don't want to.</p>
+                </div>
+
+                <div class="conversation-message-in">
+                    <img src="{{url('img/profile_pic_default.jpg')}}" alt="">
+                    <p class="message message-in">Yes, I see what you mean, that's cool.</p>
+                </div>
+
+                <div class="conversation-message-in">
+                    <img src="{{url('img/profile_pic_default.jpg')}}" alt="">
+                    <p class="message message-in">I guess, bye!</p>
+                </div>
+            </div>
+
+            <form class="new_message_form">
+                <input type="textarea" class="new_message" placeholder="message">
+            </form>
+
+
         </div>
 
     </div>

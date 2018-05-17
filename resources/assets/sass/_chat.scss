@@ -136,6 +136,42 @@ Chat page styling
       border-left: 1px solid $nav_unselected;
       width: 100vw;
       position: relative;
+
+      .messages_container {
+
+        .conversation-datetime {
+
+        }
+
+        .message {
+
+        }
+
+        .conversation-message-in{
+
+          img {
+
+          }
+
+          .message-in {
+
+          }
+        }
+
+        .conversation-message-out {
+
+          .message-out {
+
+          }
+        }
+      }
+
+      .new_message_form {
+
+        .new_message {
+          
+        }
+      }
     }
 
     .chat_to_detail:hover{
