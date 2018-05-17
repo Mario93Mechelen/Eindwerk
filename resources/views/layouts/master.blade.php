@@ -26,6 +26,8 @@
 
 <main>
     @yield('content')
+
+    @include('conversations.chat')
 </main>
 
 <footer>

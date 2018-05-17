@@ -4,6 +4,38 @@ Chat page styling
 
 */
 
+.chat-wrapper {
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 999999999;
+  background-color: rgba(blue, 0.3);
+
+  .chat-total {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+   /* background-color: green;*/
+
+    .chat-list {
+    /*  background-color: red;*/
+      width: 100vw;
+    }
+
+    .chat-detail {
+     /* background-color: yellow;*/
+      width: 100vw;
+    }
+  }
+}
+
+
+
+
+
+/*
 #chat_overview {
   padding: 15px;
 
@@ -59,3 +91,4 @@ Chat page styling
     }
   }
 }
+*/
