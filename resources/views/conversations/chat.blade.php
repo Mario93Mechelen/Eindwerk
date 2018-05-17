@@ -21,6 +21,23 @@
             <!-- overview active chats -->
             <div id="chat_overview" class="row list-group">
 
+                @foreach($myUser->conversation as $conversation)
+                    @php
+                        $user = $conversation->users()->where('user_id','!=',$myUser->id)->first();
+                    @endphp
+                    <div class="item item-list col-xs-12">
+                        <a class="item-content chat_to_detail" href="" data-id="{{$conversation->id}}">
+                            <img class="chat-avatar" src='{{ asset($user->avatar) }}'>
+                            <div class="chat-right">
+                                <div class="chat-nametime">
+                                    <p class="chat-name">{{$user->first_name." ".$user->last_name}}</p>
+                                    <p class="chat-time">2h ago</p>
+                                </div>
+                                <p class="chat-last-message-start">{{(!($conversation->chats)->isEmpty()) ? $conversation->chats()->orderBy('created_at', 'desc')->first()->body : 'this is the very beginning of your chat history' }}</p>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
 
                 <div class="item item-list col-xs-12">
                     <a class="item-content chat_to_detail" href="">

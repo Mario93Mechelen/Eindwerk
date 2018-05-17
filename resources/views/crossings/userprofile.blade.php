@@ -49,7 +49,7 @@
 
 
                     <!-- message -->
-                    <div class="button-wrapper message-button-wrapper">
+                    <div class="button-wrapper message-button-wrapper" data-id="{{$user->id}}">
                         <a href="#" class="button">
                             <div class="icon message-icon"></div>
                             <p>message</p>
@@ -231,6 +231,31 @@
 
 @section('scripts')
 
+    <script>
+        $('.message-button-wrapper').on('click', function(){
+            var id = $(this).data('id');
+            $.ajaxSetup({
+
+                headers: {
+
+                    'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                }
+
+            });
+            $.ajax({
+                method:"POST",
+                url:"{{URL::action('ConversationController@store')}}",
+                data:{
+                    'id': id,
+                }
+            }).done(function(response){
+                if(response.code==200) {
+                    console.log('new convo was created');
+                }
+            });
+        })
+    </script>
     <script>
         @if($user != $myUser && isset($crossingLocations))
         function positionToMap(position) {

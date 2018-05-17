@@ -80,6 +80,12 @@ class ConversationController extends Controller
         return response()->json(['code' => 200, 'conversation_id' => $conversation_id]);
     }
 
+    public function getConversation(Request $request)
+    {
+        $conversation = Conversation::find($request->id)->chats;
+        return response()->json(['code' => 200, 'conversation' => $conversation]);
+    }
+
     /**
      * Display the specified resource.
      *

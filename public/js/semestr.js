@@ -105,16 +105,18 @@ $(document).ready(function() {
 
 <!-- mobile switch between chat list and detail -->
 $(document).ready(function() {
-    $(".chat_to_detail").click(function(e) {
-        e.preventDefault();
-        $('.chat-detail').animate({left: "-100vw"}, 1000 );
-        $('.chat_to_list').show();
-    });
-    $(".chat_to_list").click(function(e) {
-        e.preventDefault();
-        $('.chat-detail').animate({left: "0vw"}, 1000 );
-        $('.chat_to_list').hide();
-    });
+    if ($(window).width() < 768) {
+        $(".chat_to_detail").click(function (e) {
+            e.preventDefault();
+            $('.chat-detail').animate({left: "-100vw"}, 1000);
+            $('.chat_to_list').show();
+        });
+        $(".chat_to_list").click(function (e) {
+            e.preventDefault();
+            $('.chat-detail').animate({left: "0vw"}, 1000);
+            $('.chat_to_list').hide();
+        });
+    }
 });
 
 <!-- hide send message button in chat when no input in textarea -->
@@ -136,8 +138,39 @@ $(document).ready(function() {
     }
 });
 
+//click and show conversation
+$(document).ready(function(){
+    $('.chat_to_detail').on('click', function(e){
+        e.preventDefault();
+        var id = $(this).data('id');
+        console.log(id);
+        $.ajaxSetup({
 
-<!-- script voor locatiebepalingen -->
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+            }
+
+        });
+        $.ajax({
+            method:"POST",
+            url:"/getConversation",
+            data:{
+                'id':id
+            }
+        }).done(function(response){
+            if(response.code==200) {
+                console.log(response);
+                $('.conversation-message-in').hide();
+                $('.conversation-message-out').hide();
+            }
+        });
+    })
+})
+
+
+//script voor locatiebepalingen
 $(document).ready(function(){
     var longitude;
     var latitude;
