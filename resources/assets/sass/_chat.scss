@@ -138,29 +138,56 @@ Chat page styling
       position: relative;
 
       .messages_container {
+        padding-left: 15px;
+        padding-right: 15px;
 
         .conversation-datetime {
-
+          color: $dark-color;
+          font-size: 12px;
+          font-weight: bold;
+          padding-top: 30px;
+          padding-bottom: 30px;
+          text-align: center;
         }
 
         .message {
-
+          border-radius: 5px;
+          padding: 15px;
+          font-size: 16px;
+          line-height: 1.2;
+          font-weight: normal;
+          box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+          display: inline-block;
+          max-width: 70%;
         }
 
         .conversation-message-in{
+          padding-bottom: 15px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
 
           img {
-
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
           }
 
           .message-in {
-
+            background-color: $white;
+            color: $dark-color;
+            margin-left: 15px;
           }
         }
 
         .conversation-message-out {
+          padding-bottom: 15px;
+          display: flex;
+          justify-content: flex-end;
 
           .message-out {
+            background-color: $primary-color;
+            color: $white;
 
           }
         }
@@ -169,7 +196,7 @@ Chat page styling
       .new_message_form {
 
         .new_message {
-          
+
         }
       }
     }
@@ -262,7 +289,7 @@ Chat page styling
   }
 
   /* testknoppen */
-  #test_to_detail, #test_to_list {
+  .chat_to_detail, .chat_to_list {
     display: none;
   }
 }

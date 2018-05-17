@@ -10636,6 +10636,72 @@ Chat page styling
   position: relative;
 }
 
+.chat-wrapper .chat-total .chat-detail .messages_container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.chat-wrapper .chat-total .chat-detail .messages_container .conversation-datetime {
+  color: #002245;
+  font-size: 12px;
+  font-weight: bold;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  text-align: center;
+}
+
+.chat-wrapper .chat-total .chat-detail .messages_container .message {
+  border-radius: 5px;
+  padding: 15px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: normal;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  display: inline-block;
+  max-width: 70%;
+}
+
+.chat-wrapper .chat-total .chat-detail .messages_container .conversation-message-in {
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.chat-wrapper .chat-total .chat-detail .messages_container .conversation-message-in img {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.chat-wrapper .chat-total .chat-detail .messages_container .conversation-message-in .message-in {
+  background-color: #ffffff;
+  color: #002245;
+  margin-left: 15px;
+}
+
+.chat-wrapper .chat-total .chat-detail .messages_container .conversation-message-out {
+  padding-bottom: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.chat-wrapper .chat-total .chat-detail .messages_container .conversation-message-out .message-out {
+  background-color: #0048d9;
+  color: #ffffff;
+}
+
 .chat-wrapper .chat-total .chat_to_detail:hover {
   text-decoration: none;
 }
@@ -10720,8 +10786,8 @@ Chat page styling
 
   /* testknoppen */
 
-  #test_to_detail,
-  #test_to_list {
+  .chat_to_detail,
+  .chat_to_list {
     display: none;
   }
 }
