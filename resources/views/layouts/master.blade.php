@@ -55,7 +55,7 @@
                 console.log('chat is open');
                 var src = "";
                 if (data.data.sender.avatar.includes('http')) {
-                    src = response.conversation[i].sender.avatar;
+                    src = data.data.sender.avatar;
                 } else {
                     src = '/' + data.data.sender.avatar;
                 }

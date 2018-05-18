@@ -253,10 +253,16 @@
                 if(response.code==200) {
                     $('.hide-chat').show();
                     if(response.existence == 'no'){
-
+                        var src = "";
+                        if (response.receiver.avatar.includes('http')) {
+                            src = response.receiver.avatar;
+                        } else {
+                            src = '/' + response.receiver.avatar;
+                        }
+                        ;
                         console.log('new convo was created');
                         $('.chat_to_detail').removeClass('chat-active');
-                        $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+response.receiver.id+'" data-id="'+response.conversation_id+'"><img class="chat-avatar" src="'+response.receiver.avatar+'"><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+response.receiver.first_name+'" "'+response.receiver.last_name+'</p><p class="chat-time">just now</p></div></div></a></div>')
+                        $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+response.receiver.id+'" data-id="'+response.conversation_id+'"><img class="chat-avatar" src="'+src+'"><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+response.receiver.first_name+' '+response.receiver.last_name+'</p><p class="chat-time">just now</p></div></div></a></div>')
                         $('.conversation-message-in').remove();$('.conversation-message-out').remove();
                     }else{
 
