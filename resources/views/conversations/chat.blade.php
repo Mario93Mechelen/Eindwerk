@@ -44,6 +44,14 @@
                 @foreach($conversations as $key => $conversation)
                     @php
                         $user = $conversation->users()->where('user_id','!=',$myUser->id)->first();
+                        if(!($conversation->chats)->isEmpty()){
+                            $lastChat = $conversation->chats()->orderBy('created_at', 'desc')->first();
+                            if($lastChat->sender_id == $myUser->id){
+                                $text = 'You: '.$lastChat->body;
+                            }else{
+                                $text = App\User::find($lastChat->sender_id)->first_name.': '.$lastChat->body;
+                            }
+                        }
                     @endphp
                     <div class="item item-list col-xs-12">
                         <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
@@ -51,18 +59,8 @@
                             <div class="chat-right">
                                 <div class="chat-nametime">
                                     <p class="chat-name">{{$user->first_name." ".$user->last_name}}</p>
-                                    <p class="chat-time">2h ago</p>
+                                    <p class="chat-time">{{$lastChat->calculateTimeElapsed()}}</p>
                                 </div>
-                                @php
-                                    if(!($conversation->chats)->isEmpty()){
-                                        $lastChat = $conversation->chats()->orderBy('created_at', 'desc')->first();
-                                        if($lastChat->sender_id == $myUser->id){
-                                            $text = 'You: '.$lastChat->body;
-                                        }else{
-                                            $text = App\User::find($lastChat->sender_id)->first_name.': '.$lastChat->body;
-                                        }
-                                    }
-                                @endphp
                                 <p class="chat-last-message-start">{{(!($conversation->chats)->isEmpty()) ? $text : 'this is the very beginning of your chat history' }}</p>
                             </div>
                         </a>
