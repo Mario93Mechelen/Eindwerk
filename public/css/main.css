@@ -10907,6 +10907,10 @@ Settings page styling
   padding-bottom: 15px;
 }
 
+.settings_page .settings_page_content .settings-section {
+  padding: 15px 0px;
+}
+
 .settings_page .settings_page_content .general_settings .distance_unit ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11077,13 +11081,14 @@ Settings page styling
 }
 
 .settings_page .settings_page_content .notification_settings .settings_subsection .settings_item {
-  padding: 10px 10px 0px 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
 }
 
 .settings_page .settings_page_content .notification_settings .settings_subsection .settings_item .item_label {
@@ -11147,9 +11152,5 @@ Settings page styling
   border-width: 0 3px 3px 0;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-
-.settings_page .settings_page_content .notification_settings .settings_subsection .settings_item:last-of-type {
-  padding: 10px;
 }
 

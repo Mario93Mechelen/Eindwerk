@@ -6,7 +6,7 @@
 
         <div class="settings_page_content">
 
-            <div class="general_settings">
+            <div class="general_settings settings-section">
                 <h2 class="section_title">general settings</h2>
 
                 <div class="distance_unit">
@@ -77,7 +77,7 @@
 
             </div>
 
-            <div class="notification_settings">
+            <div class="notification_settings settings-section">
                 <h2 class="section_title">notification settings</h2>
 
                 <form class="settings_subsection notification_email">
@@ -111,7 +111,7 @@
 
             </div>
 
-            <div class="privacy_settings">
+            <div class="privacy_settings settings-section">
                 <h2 class="section_title">privacy settings</h2>
 
             </div>
