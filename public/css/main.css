@@ -10884,3 +10884,483 @@ Chat page styling
   }
 }
 
+/*
+
+Settings page styling
+
+*/
+
+.settings_page {
+  background-color: #f4f5f7;
+}
+
+.settings_page .settings_page_content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.settings_page .settings_page_content .section_title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #002245;
+  padding-bottom: 15px;
+}
+
+.settings_page .settings_page_content .settings-section {
+  padding: 15px 0px;
+}
+
+.settings_page .settings_page_content .general_settings .distance_unit ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  cursor: pointer;
+}
+
+.settings_page .settings_page_content .general_settings .distance_unit ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #002245;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+.settings_page .settings_page_content .general_settings .distance_unit ul li.active {
+  color: #ffffff;
+  background-color: #0048d9;
+}
+
+.settings_page .settings_page_content .general_settings .distance_unit ul li:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.settings_page .settings_page_content .general_settings .distance_unit ul li:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection {
+  margin-top: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  font-weight: bold;
+  color: #002245;
+  font-size: 16px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .subsection_title {
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .subsection_title a {
+  color: #0048d9;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .subsection_title a:hover,
+.settings_page .settings_page_content .general_settings .settings_subsection .subsection_title a:focus {
+  text-decoration: none;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .settings_item {
+  padding: 10px 10px 0px 10px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .settings_item .item_label {
+  display: none;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .settings_item input {
+  color: #aaaaaa;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .settings_item:last-of-type {
+  padding: 10px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .password_dropdown {
+  display: none;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .password_item {
+  padding: 10px;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item .item_label {
+  display: block;
+  font-weight: bold;
+  color: #002245;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item i {
+  color: #aaaaaa;
+  font-size: 30px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item a {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: right;
+  color: #0048d9;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item a:hover,
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item a:focus {
+  text-decoration: none;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_dropdown {
+  display: none;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper {
+  width: 100%;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button {
+  height: 40px;
+  padding: 10px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button p {
+  color: #002245;
+  padding-left: 10px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button:before {
+  position: relative;
+  font-family: 'FontAwesome';
+  top: 18px;
+  left: calc(100% - 32px);
+  color: #0048d9;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .list-hidden:before {
+  content: "\F107";
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .list-shown:before {
+  content: "\F106";
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button:hover,
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button:focus {
+  text-decoration: none;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item img {
+  width: 30px;
+  height: 30px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item .item_label {
+  display: block;
+  padding-left: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item a {
+  color: #0048d9;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item a:hover,
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item a:focus {
+  text-decoration: none;
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection {
+  margin-top: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  font-weight: bold;
+  color: #002245;
+  font-size: 16px;
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection .subsection_title {
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection .settings_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px 10px;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection .settings_item .item_label {
+  display: block;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection .settings_item .checkbox-container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 22px;
+  padding-left: 20px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection .settings_item .checkbox-container input {
+  position: absolute;
+  right: 7px;
+  opacity: 0;
+  z-index: 999999999;
+  cursor: pointer;
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection .settings_item .checkbox-container .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  border: 1px solid #0048d9;
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection .settings_item .checkbox-container .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection .settings_item .checkbox-container input:checked ~ .checkmark {
+  background-color: #0048d9;
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection .settings_item .checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.settings_page .settings_page_content .notification_settings .settings_subsection .settings_item .checkbox-container .checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.settings_page .settings_page_content .privacy_settings .settings_subsection {
+  margin-top: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  font-weight: bold;
+  color: #002245;
+  font-size: 16px;
+}
+
+.settings_page .settings_page_content .privacy_settings .settings_subsection .subsection_title {
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings_page .settings_page_content .privacy_settings .settings_subsection .subsection_title a {
+  color: #0048d9;
+}
+
+.settings_page .settings_page_content .privacy_settings .settings_subsection .subsection_title a:hover,
+.settings_page .settings_page_content .privacy_settings .settings_subsection .subsection_title a:focus {
+  text-decoration: none;
+}
+
+.settings_page .settings_page_content .privacy_settings .settings_subsection .settings_item {
+  padding: 10px;
+}
+
+.settings_page .settings_page_content .privacy_settings .settings_subsection .settings_item .item_text {
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+.settings_page .settings_page_content .privacy_settings .settings_subsection .settings_item .item_text em {
+  font-weight: bold;
+}
+
+.settings_page .settings_page_content .delete_my_profile {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #800000;
+  background-color: #ffffff;
+  padding: 15px;
+  margin: 15px 0px;
+}
+
+.settings_page .settings_page_content .delete_my_profile:hover {
+  text-decoration: none;
+}
+
+.settings_page .pop-up {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 34, 69, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.settings_page .pop-up .pop-up-inner {
+  width: calc(100% - 30px);
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.settings_page .pop-up .pop-up-inner h4 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #002245;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+  padding: 10px;
+}
+
+.settings_page .pop-up .pop-up-inner p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #002245;
+  padding: 10px;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a {
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a.preferred {
+  background-color: #0048d9;
+  color: #ffffff;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a.not-preferred {
+  background-color: #aaaaaa;
+  color: #002245;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a:first-of-type {
+  border-bottom-left-radius: 5px;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a:last-of-type {
+  border-bottom-right-radius: 5px;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a:hover,
+.settings_page .pop-up .pop-up-inner .buttons a:focus {
+  text-decoration: none;
+}
+

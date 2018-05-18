@@ -1,0 +1,453 @@
+/*
+
+Settings page styling
+
+*/
+
+.settings_page {
+  background-color: $offwhite;
+
+  .settings_page_content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px;
+
+    .section_title {
+      font-size: 28px;
+      font-weight: bold;
+      color: $dark-color;
+      padding-bottom: 15px;
+    }
+
+    .settings-section {
+      padding: 15px 0px;
+    }
+
+    .general_settings {
+
+      .distance_unit {
+
+        ul {
+          display: flex;
+          width: 100%;
+          border-radius: 5px;
+          box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+          cursor: pointer;
+
+          li {
+            flex: 1;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: $dark-color;
+            background-color: $white;
+            padding: 15px;
+          }
+
+          li.active {
+            color: $white;
+            background-color: $primary-color;
+          }
+
+          li:first-of-type {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          li:last-of-type {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        }
+      }
+
+      .settings_subsection {
+        margin-top: 15px;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        font-weight: bold;
+        color: $dark-color;
+        font-size: 16px;
+
+        .subsection_title {
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+
+          p {
+
+          }
+
+          a {
+            color: $primary-color;
+          }
+
+          a:hover,
+          a:focus {
+            text-decoration: none;
+          }
+        }
+
+        .settings_item {
+          padding: 10px 10px 0px 10px;
+
+          .item_label {
+            display: none;
+          }
+
+          input {
+            color: $nav_unselected;
+            border: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+          }
+        }
+
+        .settings_item:last-of-type {
+          padding: 10px;
+        }
+
+        .password_dropdown {
+          display: none;
+        }
+
+        .password_item {
+          padding: 10px;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+        }
+
+        .social_item {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+
+          .item_label {
+            display: block;
+            font-weight: bold;
+            color: $dark-color;
+            font-size: 16px;
+            padding-left: 10px;
+          }
+
+          i {
+            color: $nav_unselected;
+            font-size: 30px;
+          }
+
+          a {
+            flex-grow: 1;
+            text-align: right;
+            color: $primary-color;
+          }
+          a:hover,
+          a:focus {
+            text-decoration: none;
+          }
+        }
+
+        .blocked_user_dropdown {
+          display: none;
+        }
+
+        .blocked-users-button-wrapper {
+          width: 100%;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+
+          .button {
+            height: 40px;
+            padding: 10px;
+
+            p {
+              color: $dark-color;
+              padding-left: 10px;
+            }
+          }
+
+          .button:before {
+            position: relative;
+            font-family: 'FontAwesome';
+            top: 18px;
+            left: calc(100% - 32px);
+            color: $primary-color;
+          }
+
+          .list-hidden:before {
+            content: "\f107";
+          }
+
+          .list-shown:before {
+            content: "\f106";
+          }
+
+          .button:hover,
+          .button:focus {
+            text-decoration: none;
+          }
+        }
+
+        .blocked_user_item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+
+          .item_label {
+            display: block;
+            padding-left: 10px;
+            flex-grow: 1;
+          }
+
+          a {
+            color: $primary-color;
+          }
+
+          a:hover,
+          a:focus {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .notification_settings {
+
+      .settings_subsection {
+        margin-top: 15px;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        font-weight: bold;
+        color: $dark-color;
+        font-size: 16px;
+
+        .subsection_title {
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .settings_item {
+          display: flex;
+          justify-content: space-between;
+          padding: 15px 10px;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+
+          .item_label {
+            display: block;
+            flex-grow: 1;
+          }
+
+          .checkbox-container {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            font-size: 22px;
+            padding-left: 20px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            input {
+              position: absolute;
+              right: 7px;
+              opacity: 0;
+              z-index: 999999999;
+              cursor: pointer;
+            }
+
+            .checkmark {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 20px;
+              width: 20px;
+              background-color: $white;
+              border-radius: 5px;
+              border: 1px solid $primary-color;
+            }
+
+            .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+
+            input:checked ~ .checkmark {
+              background-color: $primary-color;
+            }
+
+            input:checked ~ .checkmark:after {
+              display: block;
+            }
+
+            .checkmark:after {
+              left: 6px;
+              top: 2px;
+              width: 6px;
+              height: 12px;
+              border: solid white;
+              border-width: 0 3px 3px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+
+
+        }
+
+      }
+    }
+
+    .privacy_settings {
+
+      .settings_subsection {
+        margin-top: 15px;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        font-weight: bold;
+        color: $dark-color;
+        font-size: 16px;
+
+        .subsection_title {
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+
+          p {
+
+          }
+
+          a {
+            color: $primary-color;
+          }
+
+          a:hover,
+          a:focus {
+            text-decoration: none;
+          }
+        }
+
+        .settings_item {
+          padding: 10px;
+
+          .item_text {
+            font-weight: normal;
+            line-height: 1.2;
+
+            em {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+
+    .delete_my_profile {
+      width: 100%;
+      display: block;
+      border-radius: 5px;
+      box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      color: $error-red;
+      background-color: $white;
+      padding: 15px;
+      margin: 15px 0px;
+    }
+    .delete_my_profile:hover {
+      text-decoration: none;
+    }
+  }
+
+  .pop-up {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($dark-color, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .pop-up-inner {
+      width: calc(100% - 30px);
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 5px;
+      background-color: $white;
+
+      h4 {
+        font-weight: bold;
+        font-size: 18px;
+        color: $dark-color;
+        border-bottom: 1px solid rgba($nav_unselected, 0.5);
+        padding: 10px;
+      }
+
+      p {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 1.2;
+        color: $dark-color;
+        padding: 10px;
+      }
+
+      .buttons {
+        display: flex;
+        width: 100%;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+
+
+        a {
+          width: 50%;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        a.preferred {
+          background-color: $primary-color;
+          color: $white;
+        }
+
+        a.not-preferred {
+          background-color: $nav_unselected;
+          color: $dark-color;
+        }
+
+        a:first-of-type {
+          border-bottom-left-radius: 5px;
+        }
+
+        a:last-of-type {
+          border-bottom-right-radius: 5px;
+        }
+
+        a:hover,
+        a:focus {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

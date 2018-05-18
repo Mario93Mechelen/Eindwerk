@@ -33,7 +33,7 @@ $(document).ready(function(){
     })
 });
 
-<!-- show/hide dropdown menus -->
+<!-- show/hide dropdown menus & labels & pop-ups :-) -->
 $(document).ready(function() {
     $( "#nav_chat" ).click(function() {
         $("#dropdown-menu-profile").hide();
@@ -47,6 +47,109 @@ $(document).ready(function() {
         $( "#nav_profile" ).toggleClass("highlighted");
         $( "#nav_chat" ).removeClass("highlighted");
     });
+
+    /* email section in settings */
+    $("#edit_email").click(function(e) {
+        e.preventDefault();
+        if ($("#edit_email").html() == "edit") {
+            $("#edit_email").html("save");
+        } else {
+            $("#edit_email").html("edit");
+        }
+    });
+
+    /* password section in settings */
+    $(".social_item_connect").click(function(e) {
+        e.preventDefault();
+       if ($(this).html() == "connect") {
+           $(this).html("disconnect");
+       } else {
+           $(this).html("connect");
+       }
+    });
+
+    /* social media section in settings */
+    $("#edit_password").click(function(e) {
+        e.preventDefault();
+        if ($("#edit_password").html() == "edit") {
+            $("#edit_password").html("save");
+            $(".password_dropdown").slideDown();
+        } else {
+            $("#edit_password").html("edit");
+            $(".password_dropdown").slideUp();
+        }
+    });
+
+    /* blocked users section in settings */
+    $(".blocked-users-button-wrapper").click(function(e) {
+        e.preventDefault();
+        if ($(".blocked-users-button-wrapper > a").hasClass("list-hidden")) {
+            $(".blocked-users-button-wrapper > a").removeClass("list-hidden");
+            $(".blocked-users-button-wrapper > a").addClass("list-shown");
+            $(".blocked_user_dropdown").slideDown();
+        } else {
+            $(".blocked-users-button-wrapper > a").removeClass("list-shown");
+            $(".blocked-users-button-wrapper > a").addClass("list-hidden");
+            $(".blocked_user_dropdown").slideUp();
+        }
+    });
+
+    /*  gps data pop-up in settings page */
+
+    $(".location-link").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-data-off").toggleClass("hidden");
+    });
+
+
+    /*  delete profile pop-up in settings page */
+    $(".delete_my_profile").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-delete-profile").toggleClass("hidden");
+    });
+
+    /* cancel buttons  */
+    $(".pop-up-data-off .preferred").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-data-off").toggleClass("hidden");
+    });
+
+    $(".pop-up-delete-profile .preferred").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-delete-profile").toggleClass("hidden");
+    });
+
+    /* other buttons */
+    $(".pop-up-data-off .turn-on-off").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-data-off").toggleClass("hidden");
+        if ($(".location-link").html() == "active") {
+            $(".location-link").html("inactive");
+            $(".location-link").css("color", "#800000");
+        } else {
+            $(".location-link").html("active");
+            $(".location-link").css("color", "#0048d9");
+        }
+        $(".pop-up-data-off a").toggleClass("preferred");
+        $(".pop-up-data-off a").toggleClass("not-preferred");
+        if ($(".pop-up-data-off a:first").html() == "turn off") {
+            $(".pop-up-data-off a:first").html("turn on");
+        } else {
+            $(".pop-up-data-off a:first").html("turn off");
+        }
+
+    });
+
+    /* delete button */
+    $(".pop-up-delete-profile .not-preferred").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-delete-profile").toggleClass("hidden");
+        /* EVERYTHING ENDS!!! */
+    });
+
+
+
+
 });
 
 $(document).mouseup(function (e){
@@ -112,6 +215,17 @@ $(document).ready(function() {
     });
 
 });
+
+<!-- switch active distance unit -->
+$(document).ready(function() {
+   $(".distance_unit > ul > li").click(function() {
+       if($(this).hasClass("active")) {
+       } else {
+           $(".distance_unit > ul > li").toggleClass("active");
+       }
+   })
+});
+
 
 <!-- mobile switch between chat list and detail -->
 $(document).ready(function() {
