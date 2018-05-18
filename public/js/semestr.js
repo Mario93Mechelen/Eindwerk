@@ -33,7 +33,7 @@ $(document).ready(function(){
     })
 });
 
-<!-- show/hide dropdown menus & labels -->
+<!-- show/hide dropdown menus & labels & pop-ups :-) -->
 $(document).ready(function() {
     $( "#nav_chat" ).click(function() {
         $("#dropdown-menu-profile").hide();
@@ -94,6 +94,19 @@ $(document).ready(function() {
         }
     });
 
+    /*  gps data pop-up in settings page */
+
+    $(".location-link").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-data-off").toggleClass("hidden");
+    });
+
+
+    /*  delete profile pop-up in settings page */
+    $(".delete_my_profile").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-delete-profile").toggleClass("hidden");
+    });
 
 });
 

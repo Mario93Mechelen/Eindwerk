@@ -151,7 +151,7 @@
                 <form class="settings_subsection privacy_location">
                     <h4 class="subsection_title">
                         <p>location services</p>
-                        <a href="">active</a>
+                        <a class= "location-link" href="">active</a>
                     </h4>
 
                     <div class="settings_item">
@@ -179,6 +179,29 @@
 
             </div>
 
+        </div>
+
+        <div class="pop-up pop-up-data-off hidden">
+            <div class="pop-up-inner">
+                <h4>are you sure you want to turn of use of gps data?</h4>
+                <p>remember that this will severely impact your Semestr experience in a negative way.</p>
+                <div class="buttons">
+                    <a class="not-preferred" href="">turn off</a>
+                    <a class="preferred" href="">cancel</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="pop-up pop-up-delete-profile hidden">
+            <div class="pop-up-inner">
+                <h4>are you sure you want to delete your profile and all associated data?</h4>
+                <p>remember that this action is irreversable and will also delete all your pictures, conversations,
+                    crossings and friends you've made during your time on Semestr.</p>
+                <div class="buttons">
+                    <a class="not-preferred" href="">delete</a>
+                    <a class="preferred" href="">cancel</a>
+                </div>
+            </div>
         </div>
 
     </div>

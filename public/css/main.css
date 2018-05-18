@@ -11245,7 +11245,8 @@ Settings page styling
   color: #0048d9;
 }
 
-.settings_page .settings_page_content .privacy_settings .settings_subsection .subsection_title a:hover {
+.settings_page .settings_page_content .privacy_settings .settings_subsection .subsection_title a:hover,
+.settings_page .settings_page_content .privacy_settings .settings_subsection .subsection_title a:focus {
   text-decoration: none;
 }
 
@@ -11279,6 +11280,81 @@ Settings page styling
 }
 
 .settings_page .settings_page_content .delete_my_profile:hover {
+  text-decoration: none;
+}
+
+.settings_page .pop-up {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 34, 69, 0.7);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.settings_page .pop-up .pop-up-inner {
+  width: calc(100% - 30px);
+  max-width: 320px;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+.settings_page .pop-up .pop-up-inner h4 {
+  font-weight: bold;
+  font-size: 18px;
+  color: #002245;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+  padding: 10px;
+}
+
+.settings_page .pop-up .pop-up-inner p {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.2;
+  color: #002245;
+  padding: 10px;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a {
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a.preferred {
+  background-color: #0048d9;
+  color: #ffffff;
+  border-bottom-right-radius: 5px;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a.not-preferred {
+  background-color: #aaaaaa;
+  color: #002245;
+  border-bottom-left-radius: 5px;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a:hover,
+.settings_page .pop-up .pop-up-inner .buttons a:focus {
   text-decoration: none;
 }
 

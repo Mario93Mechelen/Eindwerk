@@ -337,7 +337,8 @@ Settings page styling
             color: $primary-color;
           }
 
-          a:hover {
+          a:hover,
+          a:focus {
             text-decoration: none;
           }
         }
@@ -373,6 +374,74 @@ Settings page styling
     }
     .delete_my_profile:hover {
       text-decoration: none;
+    }
+  }
+
+  .pop-up {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba($dark-color, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .pop-up-inner {
+      width: calc(100% - 30px);
+      max-width: 320px;
+      margin: 0 auto;
+      border-radius: 5px;
+      background-color: $white;
+
+      h4 {
+        font-weight: bold;
+        font-size: 18px;
+        color: $dark-color;
+        border-bottom: 1px solid rgba($nav_unselected, 0.5);
+        padding: 10px;
+      }
+
+      p {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 1.2;
+        color: $dark-color;
+        padding: 10px;
+      }
+
+      .buttons {
+        display: flex;
+        width: 100%;
+        font-weight: bold;
+        font-size: 18px;
+        text-align: center;
+
+
+        a {
+          width: 50%;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        a.preferred {
+          background-color: $primary-color;
+          color: $white;
+          border-bottom-right-radius: 5px;
+        }
+
+        a.not-preferred {
+          background-color: $nav_unselected;
+          color: $dark-color;
+          border-bottom-left-radius: 5px;
+        }
+
+        a:hover,
+        a:focus {
+          text-decoration: none;
+        }
+      }
     }
   }
 }
