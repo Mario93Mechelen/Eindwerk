@@ -39,6 +39,7 @@ $(document).ready(function() {
         $("#dropdown-menu-profile").hide();
         $( "#nav_profile" ).removeClass("highlighted");
         $('.hide-chat').show();
+        $('body').css('overflow','hidden');
     });
     $( "#nav_profile" ).click(function() {
         $("#dropdown-menu-profile").toggle();
@@ -60,6 +61,7 @@ $(document).mouseup(function (e){
     if (!container2.is(e.target) && container2.has(e.target).length === 0){
         $(".hide-chat").hide();
         $( "#nav_chat" ).removeClass("highlighted");
+        $('body').css('overflow','scroll');
     }
 });
 
