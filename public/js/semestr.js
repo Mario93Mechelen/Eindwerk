@@ -69,6 +69,22 @@ $(document).ready(function() {
            $(".password_dropdown").slideUp();
        }
     });
+
+    /* blocked users section in settings */
+    $(".blocked-users-button-wrapper").click(function(e) {
+        e.preventDefault();
+        if ($(".blocked-users-button-wrapper > a").hasClass("list-hidden")) {
+            $(".blocked-users-button-wrapper > a").removeClass("list-hidden");
+            $(".blocked-users-button-wrapper > a").addClass("list-shown");
+            $(".blocked_user_dropdown").slideDown();
+        } else {
+            $(".blocked-users-button-wrapper > a").removeClass("list-shown");
+            $(".blocked-users-button-wrapper > a").addClass("list-hidden");
+            $(".blocked_user_dropdown").slideUp();
+        }
+    });
+
+
 });
 
 $(document).mouseup(function (e){

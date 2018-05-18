@@ -11047,8 +11047,13 @@ Settings page styling
   text-decoration: none;
 }
 
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_dropdown {
+  display: none;
+}
+
 .settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper {
   width: 100%;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
 }
 
 .settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button {
@@ -11065,12 +11070,56 @@ Settings page styling
   position: relative;
   font-family: 'FontAwesome';
   top: 18px;
-  left: calc(100% - 30px);
-  content: "\F105";
+  left: calc(100% - 32px);
   color: #0048d9;
 }
 
-.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button:hover {
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .list-hidden:before {
+  content: "\F107";
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .list-shown:before {
+  content: "\F106";
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button:hover,
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button:focus {
+  text-decoration: none;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item img {
+  width: 30px;
+  height: 30px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item .item_label {
+  display: block;
+  padding-left: 10px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item a {
+  color: #0048d9;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item a:hover,
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked_user_item a:focus {
   text-decoration: none;
 }
 

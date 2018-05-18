@@ -82,11 +82,32 @@
 
                 <div class="settings_subsection general_blocked_users">
                     <div class="button-wrapper blocked-users-button-wrapper">
-                        <a href="#" class="button">
+                        <a href="#" class="button list-hidden">
                             <p>blocked users</p>
                         </a>
                     </div>
+                    <div class="blocked_user_dropdown">
+
+                        <!-- dit zijn nog placeholders, moet nog uitgeloopt worden -->
+                        <div class="settings_item blocked_user_item">
+                            <img  src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <p class="item_label">Amber Heard</p>
+                            <a href="">unblock</a>
+                        </div>
+                        <div class="settings_item blocked_user_item">
+                            <img  src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <p class="item_label">Amber Heard</p>
+                            <a href="">unblock</a>
+                        </div>
+                        <div class="settings_item blocked_user_item">
+                            <img  src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <p class="item_label">Amber Heard</p>
+                            <a href="">unblock</a>
+                        </div>
+
+                    </div>
                 </div>
+
 
             </div>
 

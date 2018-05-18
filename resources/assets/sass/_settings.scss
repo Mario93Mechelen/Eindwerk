@@ -150,8 +150,13 @@ Settings page styling
           }
         }
 
+        .blocked_user_dropdown {
+          display: none;
+        }
+
         .blocked-users-button-wrapper {
           width: 100%;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
 
           .button {
             height: 40px;
@@ -167,12 +172,48 @@ Settings page styling
             position: relative;
             font-family: 'FontAwesome';
             top: 18px;
-            left: calc(100% - 30px);
-            content: "\f105";
+            left: calc(100% - 32px);
             color: $primary-color;
           }
 
-          .button:hover {
+          .list-hidden:before {
+            content: "\f107";
+          }
+
+          .list-shown:before {
+            content: "\f106";
+          }
+
+          .button:hover,
+          .button:focus {
+            text-decoration: none;
+          }
+        }
+
+        .blocked_user_item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 10px;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+
+          img {
+            width: 30px;
+            height: 30px;
+          }
+
+          .item_label {
+            display: block;
+            padding-left: 10px;
+            flex-grow: 1;
+          }
+
+          a {
+            color: $primary-color;
+          }
+
+          a:hover,
+          a:focus {
             text-decoration: none;
           }
         }
