@@ -47,6 +47,28 @@ $(document).ready(function() {
         $( "#nav_profile" ).toggleClass("highlighted");
         $( "#nav_chat" ).removeClass("highlighted");
     });
+
+    /* email section in settings */
+    $("#edit_email").click(function(e) {
+        e.preventDefault();
+        if ($("#edit_email").html() == "edit") {
+            $("#edit_email").html("save");
+        } else {
+            $("#edit_email").html("edit");
+        }
+    });
+
+    /* password section in settings */
+    $("#edit_password").click(function(e) {
+        e.preventDefault();
+       if ($("#edit_password").html() == "edit") {
+           $("#edit_password").html("save");
+           $(".password_dropdown").slideDown();
+       } else {
+           $("#edit_password").html("edit");
+           $(".password_dropdown").slideUp();
+       }
+    });
 });
 
 $(document).mouseup(function (e){

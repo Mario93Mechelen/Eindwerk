@@ -10975,7 +10975,8 @@ Settings page styling
   color: #0048d9;
 }
 
-.settings_page .settings_page_content .general_settings .settings_subsection .subsection_title a:hover {
+.settings_page .settings_page_content .general_settings .settings_subsection .subsection_title a:hover,
+.settings_page .settings_page_content .general_settings .settings_subsection .subsection_title a:focus {
   text-decoration: none;
 }
 
@@ -10998,6 +10999,15 @@ Settings page styling
 
 .settings_page .settings_page_content .general_settings .settings_subsection .settings_item:last-of-type {
   padding: 10px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .password_dropdown {
+  display: none;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .password_item {
+  padding: 10px;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
 }
 
 .settings_page .settings_page_content .general_settings .settings_subsection .social_item {
@@ -11029,6 +11039,12 @@ Settings page styling
       -ms-flex-positive: 1;
           flex-grow: 1;
   text-align: right;
+  color: #0048d9;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item a:hover,
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item a:focus {
+  text-decoration: none;
 }
 
 .settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper {

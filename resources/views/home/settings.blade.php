@@ -19,7 +19,7 @@
                 <form class="settings_subsection general_email">
                     <h4 class="subsection_title">
                         <p>email</p>
-                        <a href="">edit</a>
+                        <a id="edit_email" href="">edit</a>
                     </h4>
 
                     <div class="settings_item">
@@ -31,13 +31,28 @@
                 <form class="settings_subsection general_password">
                     <h4 class="subsection_title">
                         <p>password</p>
-                        <a href="">edit</a>
+                        <a id="edit_password" href="">edit</a>
                     </h4>
 
-                    <div class="settings_item">
-                        <p class="item_label">password</p>
-                        <input type="password" value="yowdude">
+                    <div class="password_dropdown">
+
+                        <div class="settings_item password_item">
+                            <p class="item_label">current password</p>
+                            <input type="text" value="current password">
+                        </div>
+
+                        <div class="settings_item password_item">
+                            <p class="item_label">new password</p>
+                            <input type="text" value="new password">
+                        </div>
+
+                        <div class="settings_item password_item">
+                            <p class="item_label">new password repeat</p>
+                            <input type="text" value="new password repeat">
+                        </div>
+
                     </div>
+
                 </form>
 
                 <form class="settings_subsection general_social">

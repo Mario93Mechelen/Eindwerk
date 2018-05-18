@@ -84,7 +84,8 @@ Settings page styling
             color: $primary-color;
           }
 
-          a:hover {
+          a:hover,
+          a:focus {
             text-decoration: none;
           }
         }
@@ -110,6 +111,15 @@ Settings page styling
           padding: 10px;
         }
 
+        .password_dropdown {
+          display: none;
+        }
+
+        .password_item {
+          padding: 10px;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+        }
+
         .social_item {
           display: flex;
           align-items: center;
@@ -132,6 +142,11 @@ Settings page styling
           a {
             flex-grow: 1;
             text-align: right;
+            color: $primary-color;
+          }
+          a:hover,
+          a:focus {
+            text-decoration: none;
           }
         }
 
