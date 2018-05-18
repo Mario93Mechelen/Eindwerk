@@ -105,6 +105,31 @@ Settings page styling
         .settings_item:last-of-type {
           padding: 10px;
         }
+
+        .social_item {
+          display: flex;
+          align-items: center;
+          padding: 10px;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+
+          .item_label {
+            display: block;
+            font-weight: bold;
+            color: $dark-color;
+            font-size: 16px;
+            padding-left: 10px;
+          }
+
+          i {
+            color: $nav_unselected;
+            font-size: 30px;
+          }
+
+          a {
+            flex-grow: 1;
+            text-align: right;
+          }
+        }
       }
     }
 

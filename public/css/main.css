@@ -10996,3 +10996,34 @@ Settings page styling
   padding: 10px;
 }
 
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item .item_label {
+  display: block;
+  font-weight: bold;
+  color: #002245;
+  font-size: 16px;
+  padding-left: 10px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item i {
+  color: #aaaaaa;
+  font-size: 30px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .social_item a {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: right;
+}
+
