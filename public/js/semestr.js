@@ -125,8 +125,10 @@ $(document).ready(function() {
         $(".pop-up-data-off").toggleClass("hidden");
         if ($(".location-link").html() == "active") {
             $(".location-link").html("inactive");
+            $(".location-link").css("color", "#800000");
         } else {
             $(".location-link").html("active");
+            $(".location-link").css("color", "#0048d9");
         }
         $(".pop-up-data-off a").toggleClass("preferred");
         $(".pop-up-data-off a").toggleClass("not-preferred");
