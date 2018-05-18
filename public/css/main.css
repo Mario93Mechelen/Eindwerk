@@ -10884,3 +10884,64 @@ Chat page styling
   }
 }
 
+/*
+
+Settings page styling
+
+*/
+
+.settings_page {
+  background-color: #f4f5f7;
+}
+
+.settings_page .settings_page_content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.settings_page .settings_page_content .section_title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #002245;
+  padding-bottom: 15px;
+}
+
+.settings_page .settings_page_content .general_settings .distance_unit ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  cursor: pointer;
+}
+
+.settings_page .settings_page_content .general_settings .distance_unit ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #002245;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+.settings_page .settings_page_content .general_settings .distance_unit ul li.active {
+  color: #ffffff;
+  background-color: #0048d9;
+}
+
+.settings_page .settings_page_content .general_settings .distance_unit ul li:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.settings_page .settings_page_content .general_settings .distance_unit ul li:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+

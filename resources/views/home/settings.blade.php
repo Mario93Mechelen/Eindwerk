@@ -2,9 +2,33 @@
 
 @section('content')
 
-    <div id="settings_page">
+    <div class="settings_page">
 
-        <p>yo!</p>
+        <div class="settings_page_content">
+
+            <div class="general_settings">
+                <h2 class="section_title">general settings</h2>
+
+                <div class="distance_unit">
+                    <ul>
+                        <li class="active">kilometers</li>
+                        <li>miles</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="notification_settings">
+                <h2 class="section_title">notification settings</h2>
+
+            </div>
+
+            <div class="privacy_settings">
+                <h2 class="section_title">privacy settings</h2>
+
+            </div>
+
+        </div>
 
     </div>
 

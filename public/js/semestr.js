@@ -113,6 +113,17 @@ $(document).ready(function() {
 
 });
 
+<!-- switch active distance unit -->
+$(document).ready(function() {
+   $(".distance_unit > ul > li").click(function() {
+       if($(this).hasClass("active")) {
+       } else {
+           $(".distance_unit > ul > li").toggleClass("active");
+       }
+   })
+});
+
+
 <!-- mobile switch between chat list and detail -->
 $(document).ready(function() {
     if ($(window).width() < 768) {
