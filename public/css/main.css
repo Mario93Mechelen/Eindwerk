@@ -11027,3 +11027,30 @@ Settings page styling
   text-align: right;
 }
 
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper {
+  width: 100%;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button {
+  height: 40px;
+  padding: 10px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button p {
+  color: #002245;
+  padding-left: 10px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button:before {
+  position: relative;
+  font-family: 'FontAwesome';
+  top: 18px;
+  left: calc(100% - 30px);
+  content: "\F105";
+  color: #0048d9;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .blocked-users-button-wrapper .button:hover {
+  text-decoration: none;
+}
+

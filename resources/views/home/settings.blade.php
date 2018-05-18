@@ -67,6 +67,14 @@
 
                 </form>  <!-- einde social info -->
 
+                <div class="settings_subsection general_blocked_users">
+                    <div class="button-wrapper blocked-users-button-wrapper">
+                        <a href="#" class="button">
+                            <p>blocked users</p>
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
             <div class="notification_settings">

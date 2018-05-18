@@ -130,6 +130,33 @@ Settings page styling
             text-align: right;
           }
         }
+
+        .blocked-users-button-wrapper {
+          width: 100%;
+
+          .button {
+            height: 40px;
+            padding: 10px;
+
+            p {
+              color: $dark-color;
+              padding-left: 10px;
+            }
+          }
+
+          .button:before {
+            position: relative;
+            font-family: 'FontAwesome';
+            top: 18px;
+            left: calc(100% - 30px);
+            content: "\f105";
+            color: $primary-color;
+          }
+
+          .button:hover {
+            text-decoration: none;
+          }
+        }
       }
     }
 
