@@ -186,7 +186,7 @@
                 <h4>are you sure you want to turn of use of gps data?</h4>
                 <p>remember that this will severely impact your Semestr experience in a negative way.</p>
                 <div class="buttons">
-                    <a class="not-preferred" href="">turn off</a>
+                    <a class="turn-on-off not-preferred" href="">turn off</a>
                     <a class="preferred" href="">cancel</a>
                 </div>
             </div>
@@ -198,7 +198,7 @@
                 <p>remember that this action is irreversable and will also delete all your pictures, conversations,
                     crossings and friends you've made during your time on Semestr.</p>
                 <div class="buttons">
-                    <a class="not-preferred" href="">delete</a>
+                    <a class="delete not-preferred" href="">delete</a>
                     <a class="preferred" href="">cancel</a>
                 </div>
             </div>

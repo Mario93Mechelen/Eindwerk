@@ -11344,13 +11344,19 @@ Settings page styling
 .settings_page .pop-up .pop-up-inner .buttons a.preferred {
   background-color: #0048d9;
   color: #ffffff;
-  border-bottom-right-radius: 5px;
 }
 
 .settings_page .pop-up .pop-up-inner .buttons a.not-preferred {
   background-color: #aaaaaa;
   color: #002245;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a:first-of-type {
   border-bottom-left-radius: 5px;
+}
+
+.settings_page .pop-up .pop-up-inner .buttons a:last-of-type {
+  border-bottom-right-radius: 5px;
 }
 
 .settings_page .pop-up .pop-up-inner .buttons a:hover,

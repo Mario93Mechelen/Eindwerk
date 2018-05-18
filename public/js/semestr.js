@@ -108,6 +108,43 @@ $(document).ready(function() {
         $(".pop-up-delete-profile").toggleClass("hidden");
     });
 
+    /* cancel buttons  */
+    $(".pop-up-data-off .preferred").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-data-off").toggleClass("hidden");
+    });
+
+    $(".pop-up-delete-profile .preferred").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-delete-profile").toggleClass("hidden");
+    });
+
+    /* other buttons */
+
+    $(".pop-up-data-off .turn-on-off").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-data-off").toggleClass("hidden");
+        if ($(".location-link").html() == "active") {
+            $(".location-link").html("inactive");
+        } else {
+            $(".location-link").html("active");
+        }
+        $(".pop-up-data-off a").toggleClass("preferred");
+        $(".pop-up-data-off a").toggleClass("not-preferred");
+        if ($(".pop-up-data-off a:first").html() == "turn off") {
+            $(".pop-up-data-off a:first").html("turn on");
+        } else {
+            $(".pop-up-data-off a:first").html("turn off");
+        }
+
+    });
+
+    $(".pop-up-delete-profile .not-preferred").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-delete-profile").toggleClass("hidden");
+    });
+
+
 });
 
 $(document).mouseup(function (e){

@@ -428,13 +428,19 @@ Settings page styling
         a.preferred {
           background-color: $primary-color;
           color: $white;
-          border-bottom-right-radius: 5px;
         }
 
         a.not-preferred {
           background-color: $nav_unselected;
           color: $dark-color;
+        }
+
+        a:first-of-type {
           border-bottom-left-radius: 5px;
+        }
+
+        a:last-of-type {
+          border-bottom-right-radius: 5px;
         }
 
         a:hover,
