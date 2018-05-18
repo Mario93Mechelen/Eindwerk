@@ -53,6 +53,7 @@ class ConversationController extends Controller
                     //if we have a common conversation, this is our id
                     $reindexed = array_values($same_ids);
                     $conversation_id = $reindexed;
+                    $exists = 'yes';
                 }else{
                     //we both have conversations but not a common one
                     $conversation = new Conversation();
@@ -60,6 +61,7 @@ class ConversationController extends Controller
                     $conversation->users()->attach($id);
                     $conversation->users()->attach($myId);
                     $conversation_id = $conversation->id;
+                    $exists = 'no';
                 }
             }else{
                 //I have conversations but the user I clicked doesn't
@@ -68,6 +70,7 @@ class ConversationController extends Controller
                 $conversation->users()->attach($id);
                 $conversation->users()->attach($myId);
                 $conversation_id = $conversation->id;
+                    $exists = 'no';
             }
         }else{
             //We both don't have conversations
@@ -76,8 +79,10 @@ class ConversationController extends Controller
             $conversation->users()->attach($id);
             $conversation->users()->attach($myId);
             $conversation_id = $conversation->id;
+                    $exists = 'no';
         }
-        return response()->json(['code' => 200, 'conversation_id' => $conversation_id]);
+        $receiver = User::find($id);
+        return response()->json(['code' => 200, 'conversation_id' => $conversation_id,'existence' => $exists, 'receiver' => $receiver]);
     }
 
     public function getConversation(Request $request)

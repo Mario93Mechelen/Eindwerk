@@ -251,9 +251,67 @@
                 }
             }).done(function(response){
                 if(response.code==200) {
-                    console.log('new convo was created');
+                    $('.hide-chat').show();
+                    if(response.existence == 'no'){
+
+                        console.log('new convo was created');
+                        $('.chat_to_detail').removeClass('chat-active');
+                        $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+response.receiver.id+'" data-id="'+response.conversation_id+'"><img class="chat-avatar" src="'+response.receiver.avatar+'"><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+response.receiver.first_name+'" "'+response.receiver.last_name+'</p><p class="chat-time">just now</p></div></div></a></div>')
+                        $('.conversation-message-in').remove();$('.conversation-message-out').remove();
+                    }else{
+
+                        console.log('fetching existing convo');
+                        console.log(response.receiver);
+                        console.log(response);
+                        console.log(response.conversation_id[0]);
+                        $('.chat_to_detail').removeClass('chat-active');
+                        $('*[data-id="'+response.conversation_id+'"]').addClass('ur-anus-will-be-probed');
+                        $('*[data-id="'+response.conversation_id+'"]').addClass('chat-active');
+                        getChats(response.conversation_id[0]);
+                    }
                 }
             });
+            function getChats(id){
+                $.ajaxSetup({
+
+                    headers: {
+
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+                    }
+
+                });
+                $.ajax({
+                    method:"POST",
+                    url:"/getConversation",
+                    data:{
+                        'id':id
+                    }
+                }).done(function(response){
+                    if(response.code==200) {
+                        console.log(response);
+                        $('.conversation-message-in').remove();
+                        $('.conversation-message-out').remove();
+                        if(response.conversation.length>0) {
+                            for(var i=0;i<response.conversation.length;i++) {
+                                var src='';
+                                if(response.conversation[i].sender.avatar.includes('http')){
+                                    src=response.conversation[i].sender.avatar;
+                                }else{
+                                    src='/'+response.conversation[i].sender.avatar;
+                                };
+                                if (response.myId != response.conversation[i].sender.id) {
+                                    var newdiv = '<div class="conversation-message-in"><img src="' + src + '" alt=""><p class="message message-in">' + response.conversation[i].text + '</p></div>';
+                                    $('.messages_container').append(newdiv);
+                                } else {
+                                    var newdiv = '<div class="conversation-message-out"><p class="message message-out">' + response.conversation[i].text + '</p></div>';
+                                    $('.messages_container').append(newdiv);
+                                };
+                            }
+                        }
+                    }
+                });
+            }
         })
     </script>
     <script>
