@@ -49,7 +49,7 @@
                             if($lastChat->sender_id == $myUser->id){
                                 $text = 'You: '.$lastChat->body;
                             }else{
-                                $text = App\User::find($lastChat->sender_id)->first_name.': '.$lastChat->body;
+                                $text = $lastChat->body;
                             }
                         }
                     @endphp

@@ -51,16 +51,28 @@
 
         var channel = pusher.subscribe('chat'+'{{$myUser->id}}');
         channel.bind('new-chat', function(data) {
-            var src="";
-            if(response.conversation[i].sender.avatar.includes('http')){
-                src=response.conversation[i].sender.avatar;
+            if($('*[data-id="'+data.data.conversation_id+'"]').hasClass('chat-active')) {
+                console.log('chat is open');
+                var src = "";
+                if (data.data.sender.avatar.includes('http')) {
+                    src = response.conversation[i].sender.avatar;
+                } else {
+                    src = '/' + data.data.sender.avatar;
+                }
+                ;
+                var newdiv = '<div class="conversation-message-in"><img src="' + src + '" alt=""><p class="message message-in">' + data.data.chat + '</p></div>';
+                $(newdiv).appendTo('.messages_container').hide().fadeIn(1000);
+                $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
+                console.log(data);
             }else{
-                src='/'+response.conversation[i].sender.avatar;
-            };
-            var newdiv = '<div class="conversation-message-in"><img src="'+src+'" alt=""><p class="message message-in">'+data.data.chat+'</p></div>';
-            $(newdiv).appendTo('.messages_container').hide().fadeIn(1000);
-            $(".messages_container").animate({ scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
-            console.log(data);
+                console.log('chat is closed');
+                var div = $('*[data-id="'+data.data.conversation_id+'"]').parent().html();
+                var composedDiv = '<div class="item item-list col-xs-12">'+div+'</div>';
+                $('*[data-id="'+data.data.conversation_id+'"]').parent().remove();
+                $('#chat_overview').prepend(composedDiv);
+                $('*[data-id="'+data.data.conversation_id+'"]').find('.chat-time').html('just now');
+                $('*[data-id="'+data.data.conversation_id+'"]').find('.chat-last-message-start').html(data.data.chat);
+            }
 
         });
     })
