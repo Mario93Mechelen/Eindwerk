@@ -1,5 +1,5 @@
 
-<div class="chat-wrapper">  <!-- default hidden / this div holds overlay for desktop, keeps header space untouched for mobile -->
+<div class="chat-wrapper hide-chat">  <!-- default hidden / this div holds overlay for desktop, keeps header space untouched for mobile -->
 
     <div class="chat-total">  <!-- holds all chat logic -->
 
