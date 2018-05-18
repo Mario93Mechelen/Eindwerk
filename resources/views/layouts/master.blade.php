@@ -66,12 +66,22 @@
                 console.log(data);
             }else{
                 console.log('chat is closed');
-                var div = $('*[data-id="'+data.data.conversation_id+'"]').parent().html();
-                var composedDiv = '<div class="item item-list col-xs-12">'+div+'</div>';
-                $('*[data-id="'+data.data.conversation_id+'"]').parent().remove();
-                $('#chat_overview').prepend(composedDiv);
-                $('*[data-id="'+data.data.conversation_id+'"]').find('.chat-time').html('just now');
-                $('*[data-id="'+data.data.conversation_id+'"]').find('.chat-last-message-start').html(data.data.chat);
+                if($('*[data-id="'+data.data.conversation_id+'"]').length) {
+                    var div = $('*[data-id="' + data.data.conversation_id + '"]').parent().html();
+                    var composedDiv = '<div class="item item-list col-xs-12">' + div + '</div>';
+                    $('*[data-id="' + data.data.conversation_id + '"]').parent().remove();
+                    $('#chat_overview').prepend(composedDiv);
+                    $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-time').html('just now');
+                    $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-last-message-start').html(data.data.chat);
+                }else{
+                    if (data.data.sender.avatar.includes('http')) {
+                        src = data.data.sender.avatar;
+                    } else {
+                        src = '/' + data.data.sender.avatar;
+                    }
+                    ;
+                    $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+data.data.sender.id+'" data-id="'+data.data.conversation_id+'"><img class="chat-avatar" src="'+src+'"><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+data.data.sender.first_name+' '+data.data.sender.last_name+'</p><p class="chat-time">just now</p></div></div></a></div>');
+                }
             }
 
         });
