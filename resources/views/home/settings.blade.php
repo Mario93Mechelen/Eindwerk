@@ -61,21 +61,21 @@
                     <div class="settings_item social_item">
                         <i class="fab fa-facebook"></i>
                         <p class="item_label">facebook</p>
-                        <a href="">disconnect</a>
+                        <a class="social_item_connect" href="">disconnect</a>
                     </div>
 
                     <!-- twitter -->
                     <div class="settings_item social_item">
                         <i class="fab fa-twitter"></i>
                         <p class="item_label">twitter</p>
-                        <a href="">connect</a>
+                        <a class="social_item_connect" href="">connect</a>
                     </div>
 
                     <!-- instagram -->
                     <div class="settings_item social_item">
                         <i class="fab fa-instagram"></i>
                         <p class="item_label">instagram</p>
-                        <a href="">connect</a>
+                        <a class="social_item_connect" href="">connect</a>
                     </div>
 
                 </form>  <!-- einde social info -->

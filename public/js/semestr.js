@@ -33,7 +33,7 @@ $(document).ready(function(){
     })
 });
 
-<!-- show/hide dropdown menus -->
+<!-- show/hide dropdown menus & labels -->
 $(document).ready(function() {
     $( "#nav_chat" ).click(function() {
         $("#dropdown-menu-profile").hide();
@@ -59,15 +59,25 @@ $(document).ready(function() {
     });
 
     /* password section in settings */
+    $(".social_item_connect").click(function(e) {
+        e.preventDefault();
+       if ($(this).html() == "connect") {
+           $(this).html("disconnect");
+       } else {
+           $(this).html("connect");
+       }
+    });
+
+    /* social media section in settings */
     $("#edit_password").click(function(e) {
         e.preventDefault();
-       if ($("#edit_password").html() == "edit") {
-           $("#edit_password").html("save");
-           $(".password_dropdown").slideDown();
-       } else {
-           $("#edit_password").html("edit");
-           $(".password_dropdown").slideUp();
-       }
+        if ($("#edit_password").html() == "edit") {
+            $("#edit_password").html("save");
+            $(".password_dropdown").slideDown();
+        } else {
+            $("#edit_password").html("edit");
+            $(".password_dropdown").slideUp();
+        }
     });
 
     /* blocked users section in settings */
