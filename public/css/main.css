@@ -10945,3 +10945,54 @@ Settings page styling
   border-bottom-right-radius: 5px;
 }
 
+.settings_page .settings_page_content .general_settings .settings_subsection {
+  margin-top: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  font-weight: bold;
+  color: #002245;
+  font-size: 16px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .subsection_title {
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .subsection_title a {
+  color: #0048d9;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .subsection_title a:hover {
+  text-decoration: none;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .settings_item {
+  padding: 10px 10px 0px 10px;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .settings_item .item_label {
+  display: none;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .settings_item input {
+  color: #aaaaaa;
+  border: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
+
+.settings_page .settings_page_content .general_settings .settings_subsection .settings_item:last-of-type {
+  padding: 10px;
+}
+

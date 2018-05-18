@@ -16,6 +16,32 @@
                     </ul>
                 </div>
 
+                <form class="settings_subsection general_email">
+                    <h4 class="subsection_title">
+                        <p>email</p>
+                        <a href="">edit</a>
+                    </h4>
+
+                    <!-- email -->
+                    <div class="settings_item">
+                        <p class="item_label">email</p>
+                        <input type="email" value="amber_heard@loveyou.com">
+                    </div>
+                </form>
+
+                <form class="settings_subsection general_password">
+                    <h4 class="subsection_title">
+                        <p>password</p>
+                        <a href="">edit</a>
+                    </h4>
+
+                    <!-- email -->
+                    <div class="settings_item">
+                        <p class="item_label">password</p>
+                        <input type="password" value="yowdude">
+                    </div>
+                </form>
+
             </div>
 
             <div class="notification_settings">

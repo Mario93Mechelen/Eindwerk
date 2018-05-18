@@ -56,6 +56,56 @@ Settings page styling
           }
         }
       }
+
+      .settings_subsection {
+        margin-top: 15px;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        font-weight: bold;
+        color: $dark-color;
+        font-size: 16px;
+
+        .subsection_title {
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+
+          p {
+
+          }
+
+          a {
+            color: $primary-color;
+          }
+
+          a:hover {
+            text-decoration: none;
+          }
+        }
+
+        .settings_item {
+          padding: 10px 10px 0px 10px;
+
+          .item_label {
+            display: none;
+          }
+
+          input {
+            color: $nav_unselected;
+            border: none;
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+          }
+        }
+
+        .settings_item:last-of-type {
+          padding: 10px;
+        }
+      }
     }
 
   }
