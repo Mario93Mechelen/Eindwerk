@@ -21,7 +21,27 @@
             <!-- overview active chats -->
             <div id="chat_overview" class="row list-group">
                 @if(!$myUser->conversation->isEmpty())
-                @foreach($myUser->conversation as $key => $conversation)
+                    @php
+                        $chatsArr = [];
+                        $i=0;
+                        foreach($myUser->conversation as $conversation){
+                            $chat = $conversation->chats()->orderBy('created_at', 'desc')->first();
+                            if(!is_null($chat)){
+                                $chatsArr[$i] = $chat;
+                                $i++;
+                            }
+                         }
+                        foreach($chatsArr as $key => $row){
+                            $dateArr[$key] = $row['created_at'];
+                        }
+                        array_multisort($dateArr, SORT_DESC,$chatsArr);
+                        $j=0;
+                        foreach($chatsArr as $chat){
+                            $conversations[$j] = $chat->conversation;
+                            $j++;
+                        }
+                    @endphp
+                @foreach($conversations as $key => $conversation)
                     @php
                         $user = $conversation->users()->where('user_id','!=',$myUser->id)->first();
                     @endphp
@@ -33,7 +53,17 @@
                                     <p class="chat-name">{{$user->first_name." ".$user->last_name}}</p>
                                     <p class="chat-time">2h ago</p>
                                 </div>
-                                <p class="chat-last-message-start">{{(!($conversation->chats)->isEmpty()) ? $conversation->chats()->orderBy('created_at', 'desc')->first()->body : 'this is the very beginning of your chat history' }}</p>
+                                @php
+                                    if(!($conversation->chats)->isEmpty()){
+                                        $lastChat = $conversation->chats()->orderBy('created_at', 'desc')->first();
+                                        if($lastChat->sender_id == $myUser->id){
+                                            $text = 'You: '.$lastChat->body;
+                                        }else{
+                                            $text = App\User::find($lastChat->sender_id)->first_name.': '.$lastChat->body;
+                                        }
+                                    }
+                                @endphp
+                                <p class="chat-last-message-start">{{(!($conversation->chats)->isEmpty()) ? $text : 'this is the very beginning of your chat history' }}</p>
                             </div>
                         </a>
                     </div>
