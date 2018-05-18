@@ -80,6 +80,35 @@
             <div class="notification_settings">
                 <h2 class="section_title">notification settings</h2>
 
+                <form class="settings_subsection notification_email">
+                    <h4 class="subsection_title">
+                        <p>email notifications</p>
+                    </h4>
+
+                    <!-- email notifications -->
+                    <div class="settings_item">
+                        <p class="item_label">new messages</p>
+                        <div class="checkbox-container">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                        </div>
+                    </div>
+                    <div class="settings_item">
+                        <p class="item_label">friend requests</p>
+                        <div class="checkbox-container">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                        </div>
+                    </div>
+                    <div class="settings_item">
+                        <p class="item_label">group messages</p>
+                        <div class="checkbox-container">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </div>
+                    </div>
+                </form>
+
             </div>
 
             <div class="privacy_settings">

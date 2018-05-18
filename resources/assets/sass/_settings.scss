@@ -160,5 +160,98 @@ Settings page styling
       }
     }
 
+    .notification_settings {
+
+      .settings_subsection {
+        margin-top: 15px;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        font-weight: bold;
+        color: $dark-color;
+        font-size: 16px;
+
+        .subsection_title {
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+          padding: 10px;
+          display: flex;
+          justify-content: space-between;
+        }
+
+        .settings_item {
+          padding: 10px 10px 0px 10px;
+          display: flex;
+          justify-content: space-between;
+
+          .item_label {
+            display: block;
+            flex-grow: 1;
+          }
+
+          .checkbox-container {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            font-size: 22px;
+            padding-left: 20px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+
+            input {
+              position: absolute;
+              right: 7px;
+              opacity: 0;
+              z-index: 999999999;
+              cursor: pointer;
+            }
+
+            .checkmark {
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 20px;
+              width: 20px;
+              background-color: $white;
+              border-radius: 5px;
+              border: 1px solid $primary-color;
+            }
+
+            .checkmark:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+
+            input:checked ~ .checkmark {
+              background-color: $primary-color;
+            }
+
+            input:checked ~ .checkmark:after {
+              display: block;
+            }
+
+            .checkmark:after {
+              left: 6px;
+              top: 2px;
+              width: 6px;
+              height: 12px;
+              border: solid white;
+              border-width: 0 3px 3px 0;
+              -webkit-transform: rotate(45deg);
+              -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+            }
+          }
+
+
+        }
+
+        .settings_item:last-of-type {
+          padding: 10px;
+        }
+      }
+    }
   }
 }
