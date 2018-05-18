@@ -267,11 +267,7 @@
                     }else{
 
                         console.log('fetching existing convo');
-                        console.log(response.receiver);
-                        console.log(response);
-                        console.log(response.conversation_id[0]);
                         $('.chat_to_detail').removeClass('chat-active');
-                        $('*[data-id="'+response.conversation_id+'"]').addClass('ur-anus-will-be-probed');
                         $('*[data-id="'+response.conversation_id+'"]').addClass('chat-active');
                         getChats(response.conversation_id[0]);
                     }

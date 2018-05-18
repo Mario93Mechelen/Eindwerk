@@ -80,11 +80,56 @@
                         src = '/' + data.data.sender.avatar;
                     }
                     ;
-                    $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+data.data.sender.id+'" data-id="'+data.data.conversation_id+'"><img class="chat-avatar" src="'+src+'"><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+data.data.sender.first_name+' '+data.data.sender.last_name+'</p><p class="chat-time">just now</p></div></div></a></div>');
+                    $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+data.data.sender.id+'" data-id="'+data.data.conversation_id+'"><img class="chat-avatar" src="'+src+'"><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+data.data.sender.first_name+' '+data.data.sender.last_name+'</p><p class="chat-time">just now</p></div><p class="chat-last-message-start">'+data.data.chat+'</p></div></a></div>');
+                    $('.chat_to_detail').on('click', function(e){
+                        e.preventDefault();
+                        getChats(data.data.conversation_id);
+                    })
                 }
             }
 
         });
+        function getChats(id){
+            $.ajaxSetup({
+
+                headers: {
+
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+                }
+
+            });
+            $.ajax({
+                method:"POST",
+                url:"/getConversation",
+                data:{
+                    'id':id
+                }
+            }).done(function(response){
+                if(response.code==200) {
+                    console.log(response);
+                    $('.conversation-message-in').remove();
+                    $('.conversation-message-out').remove();
+                    if(response.conversation.length>0) {
+                        for(var i=0;i<response.conversation.length;i++) {
+                            var src='';
+                            if(response.conversation[i].sender.avatar.includes('http')){
+                                src=response.conversation[i].sender.avatar;
+                            }else{
+                                src='/'+response.conversation[i].sender.avatar;
+                            };
+                            if (response.myId != response.conversation[i].sender.id) {
+                                var newdiv = '<div class="conversation-message-in"><img src="' + src + '" alt=""><p class="message message-in">' + response.conversation[i].text + '</p></div>';
+                                $('.messages_container').append(newdiv);
+                            } else {
+                                var newdiv = '<div class="conversation-message-out"><p class="message message-out">' + response.conversation[i].text + '</p></div>';
+                                $('.messages_container').append(newdiv);
+                            };
+                        }
+                    }
+                }
+            });
+        }
     })
 </script>
 @yield('scripts')
