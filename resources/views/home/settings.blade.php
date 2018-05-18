@@ -22,7 +22,6 @@
                         <a href="">edit</a>
                     </h4>
 
-                    <!-- email -->
                     <div class="settings_item">
                         <p class="item_label">email</p>
                         <input type="email" value="amber_heard@loveyou.com">
@@ -35,7 +34,6 @@
                         <a href="">edit</a>
                     </h4>
 
-                    <!-- email -->
                     <div class="settings_item">
                         <p class="item_label">password</p>
                         <input type="password" value="yowdude">
@@ -113,6 +111,35 @@
 
             <div class="privacy_settings settings-section">
                 <h2 class="section_title">privacy settings</h2>
+
+                <form class="settings_subsection privacy_location">
+                    <h4 class="subsection_title">
+                        <p>location services</p>
+                        <a href="">active</a>
+                    </h4>
+
+                    <div class="settings_item">
+                        <p class="item_text">in order to make sure you get the optimal experience while using
+                            Semestr, the app requires access to your current location. Your exact location will
+                            <em>never</em> be shared with other users, only an estimated distance between you and
+                            other users will be shown.</p>
+                    </div>
+                </form>
+
+                <form class="settings_subsection privacy_data">
+                    <h4 class="subsection_title">
+                        <p>my data</p>
+                        <a href="">request data</a>
+                    </h4>
+
+                    <div class="settings_item">
+                        <p class="item_text">Semestr stores your data securely and abbording to the latest standards. If you wish to see which of your data has been stored, you can simply request a copy
+                            of your personal data file. We will contact you when your report is ready for download.</p>
+                    </div>
+                </form>
+
+                <a class="delete_my_profile">delete my profile</a>
+
 
             </div>
 
