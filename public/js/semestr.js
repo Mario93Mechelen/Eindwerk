@@ -120,7 +120,6 @@ $(document).ready(function() {
     });
 
     /* other buttons */
-
     $(".pop-up-data-off .turn-on-off").click(function(e) {
         e.preventDefault();
         $(".pop-up-data-off").toggleClass("hidden");
@@ -139,10 +138,14 @@ $(document).ready(function() {
 
     });
 
+    /* delete button */
     $(".pop-up-delete-profile .not-preferred").click(function(e) {
         e.preventDefault();
         $(".pop-up-delete-profile").toggleClass("hidden");
+        /* EVERYTHING ENDS!!! */
     });
+
+
 
 
 });
