@@ -38,6 +38,16 @@ header {
           img {
             height: 30px;
           }
+
+          .new-message-indicator {
+            height: 15px;
+            width: 15px;
+            background-color: $error-red;
+            border-radius: 20px;
+            position: absolute;
+            top: 12px;
+            left: 38px;
+          }
         }
       }
 
@@ -166,6 +176,11 @@ header {
             }
 
             img {
+            }
+
+            .new-message-indicator {
+              top: 2px;
+              left: 36px;
             }
           }
         }

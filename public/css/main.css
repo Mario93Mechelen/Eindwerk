@@ -8542,6 +8542,16 @@ header nav .nav_right .nav_chat a img {
   height: 30px;
 }
 
+header nav .nav_right .nav_chat a .new-message-indicator {
+  height: 15px;
+  width: 15px;
+  background-color: #800000;
+  border-radius: 20px;
+  position: absolute;
+  top: 12px;
+  left: 38px;
+}
+
 header nav .nav_right .nav_profile {
   display: inline-block;
   float: right;
@@ -8659,6 +8669,11 @@ header nav .nav_left .nav_groups {
     font-size: 14px;
     font-weight: normal;
     padding-left: 10px;
+  }
+
+  header nav .nav_right .nav_chat a .new-message-indicator {
+    top: 2px;
+    left: 36px;
   }
 
   header nav .nav_right .nav_profile {

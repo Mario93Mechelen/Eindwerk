@@ -8,6 +8,7 @@
                 <li class="nav_chat" id="nav_chat">
                     <a href="#">
                         <img src='{{ asset('img/Chat.png') }}'>
+                        <div class="new-message-indicator hidden"></div>
                         <p>chats</p>
                     </a>
                 </li>
