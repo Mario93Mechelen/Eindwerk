@@ -105,7 +105,7 @@
                                 <p class="chat-name">Amber Heard</p>
                                 <p class="chat-time">2h ago</p>
                             </div>
-                            <p class="chat-last-message-start">You: Hey, thanks for dropping by the other...</p>
+                            <p class="chat-last-message-start">ja</p>
                         </div>
                     </a>
                 </div>

@@ -10594,8 +10594,6 @@ Chat page styling
   height: auto;
   -ms-flex-item-align: center;
       align-self: center;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
 }
 
 .chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content .online-indicator {
@@ -10632,6 +10630,7 @@ Chat page styling
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  width: 100%;
 }
 
 .chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content .chat-right .chat-nametime {
@@ -10657,6 +10656,9 @@ Chat page styling
 
 .chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content .chat-right .chat-nametime .chat-time {
   color: #aaaaaa;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content .chat-right .chat-last-message-start {

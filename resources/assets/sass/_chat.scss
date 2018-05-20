@@ -94,8 +94,6 @@ Chat page styling
               width: 25%;
               height: auto;
               align-self: center;
-              border-bottom-left-radius: 5px;
-              border-top-left-radius: 5px;
             }
 
             .online-indicator {
@@ -123,6 +121,7 @@ Chat page styling
               flex-direction: column;
               align-items: flex-start;
               justify-content: flex-start;
+              width: 100%;
 
               .chat-nametime {
                 display: flex;
@@ -138,6 +137,7 @@ Chat page styling
 
                 .chat-time {
                   color: $nav_unselected;
+                  flex: 0 0 auto;
                 }
               }
 
