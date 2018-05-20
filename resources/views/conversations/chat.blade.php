@@ -58,7 +58,7 @@
                                     }
                                 }
                             @endphp
-                            <div class="item item-list col-xs-12">
+                            <div class="item item-list col-xs-12" style="background-color:{{$conversation->chats()->where('receiver_id',$myUser->id)->where('seen',0)->first() ? '#0048d9' : null}}">
                                 <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
                                     <div class="active-chat-item-indicator {{($key == 0) ? null : 'hidden' }}"></div>
                                     <img class="chat-avatar" src='{{ asset($user->avatar) }}'>
@@ -68,7 +68,7 @@
                                             <p class="chat-name">{{$user->first_name." ".$user->last_name}}</p>
                                             <p class="chat-time">{{$lastChat->calculateTimeElapsed()}}</p>
                                         </div>
-                                        <p class="chat-last-message-start">{{ substr($text,0,47).'...'  }}</p>
+                                        <p class="chat-last-message-start">{{ (strlen($text)>50) ? substr($text,0,47).'...' : $text }}</p>
                                     </div>
                                 </a>
                             </div>

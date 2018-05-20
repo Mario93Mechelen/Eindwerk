@@ -274,6 +274,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.chat_to_detail').on('click', function(e){
         e.preventDefault();
+        $(this).parent().removeAttr('style');
         $('.chat_to_detail').removeClass('chat-active');
         $('.active-chat-item-indicator').addClass('hidden');
         $(this).find('.active-chat-item-indicator').removeClass('hidden');
@@ -281,6 +282,7 @@ $(document).ready(function(){
         var id = $(this).data('id');
         console.log(id);
         getChatsById(id);
+        updateSeenStatus($(this).data('id'));
     })
 });
 
@@ -326,6 +328,29 @@ function getChatsById(id){
     });
 }
 
+function updateSeenStatus(convid){
+    $.ajaxSetup({
+
+        headers: {
+
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+        }
+
+    });
+    $.ajax({
+        method:"POST",
+        url:"/updateSeenStatus",
+        data:{
+            'convid':convid
+        }
+    }).done(function(response){
+        if(response.code==200) {
+            $('.new-message-indicator').addClass('hidden');;
+        }
+    });
+}
+
 //send chats
 $(document).ready(function(){
     $("#chat-input").emojioneArea({
@@ -346,7 +371,7 @@ $(document).ready(function(){
             },
             change: function(editor,event){
                 input = this.getText();
-            }
+            },
         }
     });
     $('#emoji-face').click(function () {

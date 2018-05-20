@@ -8,7 +8,7 @@
                 <li class="nav_chat" id="nav_chat">
                     <a href="#">
                         <img src='{{ asset('img/Chat.png') }}'>
-                        <div class="new-message-indicator hidden"></div>
+                        <div class="new-message-indicator {{App\Chat::where('receiver_id',$myUser->id)->where('seen',0)->first() ? null : 'hidden'}}"></div>
                         <p>chats</p>
                     </a>
                 </li>

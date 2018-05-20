@@ -115,6 +115,16 @@ class ConversationController extends Controller
         }
     }
 
+    public function updateSeenStatus(Request $request)
+    {
+        $chats = Chat::where('receiver_id',Auth::user()->id)->where('conversation_id',$request->convid)->where('seen',0)->get();
+        foreach($chats as $chat){
+            $chat->seen  = 1;
+            $chat->save();
+        }
+        return response()->json(['code'=>200]);
+    }
+
     public function addChatToConversation(Request $request)
     {
         $message = $request->message;

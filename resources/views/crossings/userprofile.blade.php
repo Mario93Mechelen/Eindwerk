@@ -269,18 +269,20 @@
 
                         console.log('fetching existing convo');
                         if($('*[data-id="' + response.conversation_id + '"]').length) {
+                            console.log('the conversation is in this container');
                             $('.chat_to_detail').removeClass('chat-active');
                             $('.active-chat-item-indicator').addClass('hidden');
                             var div = $('*[data-id="' + response.conversation_id + '"]').parent().html();
                             var composedDiv = '<div class="item item-list col-xs-12">' + div + '</div>';
-                            $('*[data-id="' + data.data.conversation_id + '"]').parent().remove();
+                            $('*[data-id="' + response.conversation_id + '"]').parent().remove();
                             $('#chat_overview').prepend(composedDiv);
-                            $('*[data-id="' + data.data.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
+                            $('*[data-id="' + response.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
                             getChats(response.conversation_id[0]);
                         }else{
                             $('.active-chat-item-indicator').addClass('hidden');
                             $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+response.receiver.id+'" data-id="'+response.conversation_id+'"><div class="active-chat-item-indicator"></div><img class="chat-avatar" src="'+src+'"><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+response.receiver.first_name+' '+response.receiver.last_name+'</p><p class="chat-time">just now</p></div></div></a></div>')
-                            $('.conversation-message-in').remove();$('.conversation-message-out').remove();
+                            $('.conversation-message-in').remove();
+                            $('.conversation-message-out').remove();
                         }
 
                     }
