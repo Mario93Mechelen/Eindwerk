@@ -8550,6 +8550,7 @@ header nav .nav_right .nav_chat a .new-message-indicator {
   position: absolute;
   top: 12px;
   left: 38px;
+  border: 1px solid #ffffff;
 }
 
 header nav .nav_right .nav_profile {
@@ -10595,6 +10596,24 @@ Chat page styling
       align-self: center;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
+}
+
+.chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content .online-indicator {
+  height: 15px;
+  width: 15px;
+  border-radius: 20px;
+  position: absolute;
+  top: -6px;
+  left: 10px;
+  border: 1px solid #ffffff;
+}
+
+.chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content .online {
+  background-color: #006400;
+}
+
+.chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content .offline {
+  background-color: #800000;
 }
 
 .chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content .chat-right {

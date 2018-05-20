@@ -56,6 +56,7 @@
                     <div class="item item-list col-xs-12">
                         <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
                             <img class="chat-avatar" src='{{ asset($user->avatar) }}'>
+                            <div class="online-indicator offline"></div>
                             <div class="chat-right">
                                 <div class="chat-nametime">
                                     <p class="chat-name">{{$user->first_name." ".$user->last_name}}</p>

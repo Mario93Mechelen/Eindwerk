@@ -98,6 +98,24 @@ Chat page styling
               border-top-left-radius: 5px;
             }
 
+            .online-indicator {
+              height: 15px;
+              width: 15px;
+              border-radius: 20px;
+              position: absolute;
+              top: -6px;
+              left: 10px;
+              border: 1px solid $white;
+            }
+
+            .online {
+              background-color: $online-green;
+            }
+
+            .offline {
+              background-color: $error-red;
+            }
+
             .chat-right {
               color: $dark-color;
               padding: 10px;
