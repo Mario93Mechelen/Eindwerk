@@ -55,9 +55,9 @@
                     @endphp
                     <div class="item item-list col-xs-12">
                         <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
-                            <div class="active-chat-item-indicator hidden"></div>
+                            <div class="active-chat-item-indicator {{($key == 0) ? null : 'hidden' }}"></div>
                             <img class="chat-avatar" src='{{ asset($user->avatar) }}'>
-                            <div class="online-indicator offline"></div>
+                            <div class="online-indicator {{$user->isOnline() ? 'online' : 'offline'}}"></div>
                             <div class="chat-right">
                                 <div class="chat-nametime">
                                     <p class="chat-name">{{$user->first_name." ".$user->last_name}}</p>

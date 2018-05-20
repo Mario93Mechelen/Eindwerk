@@ -262,55 +262,69 @@ $(document).ready(function() {
     }
 });
 
+//get chats on page load
+$(document).ready(function(){
+   if($('.chat-active').length){
+       var id = $('.chat-active').data('id');
+       getChatsById(id);
+   }
+});
+
 //click and show conversation
 $(document).ready(function(){
     $('.chat_to_detail').on('click', function(e){
         e.preventDefault();
         $('.chat_to_detail').removeClass('chat-active');
+        $('.active-chat-item-indicator').addClass('hidden');
+        $(this).find('.active-chat-item-indicator').removeClass('hidden');
         $(this).addClass('chat-active');
         var id = $(this).data('id');
         console.log(id);
-        $.ajaxSetup({
-
-            headers: {
-
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
-
-            }
-
-        });
-        $.ajax({
-            method:"POST",
-            url:"/getConversation",
-            data:{
-                'id':id
-            }
-        }).done(function(response){
-            if(response.code==200) {
-                console.log(response);
-                $('.conversation-message-in').remove();
-                $('.conversation-message-out').remove();
-                if(response.conversation.length>0) {
-                    for(var i=0;i<response.conversation.length;i++) {
-                        var src='';
-                        if(response.conversation[i].sender.avatar.includes('http')){
-                            src=response.conversation[i].sender.avatar;
-                        }else{
-                            src='/'+response.conversation[i].sender.avatar;
-                        };
-                        if (response.myId != response.conversation[i].sender.id) {
-                            var newdiv = '<div class="conversation-message-in"><img src="' + src + '" alt=""><p class="message message-in">' + response.conversation[i].text + '</p></div>';
-                            $('.messages_container').append(newdiv);
-                        } else {
-                            var newdiv = '<div class="conversation-message-out"><p class="message message-out">' + response.conversation[i].text + '</p></div>';
-                            $('.messages_container').append(newdiv);
-                        };
-                    }
-                }
-            }
-        });
+        getChatsById(id);
     })
 });
+
+function getChatsById(id){
+    $.ajaxSetup({
+
+        headers: {
+
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+        }
+
+    });
+    $.ajax({
+        method:"POST",
+        url:"/getConversation",
+        data:{
+            'id':id
+        }
+    }).done(function(response){
+        if(response.code==200) {
+            console.log(response);
+            $('.conversation-message-in').remove();
+            $('.conversation-message-out').remove();
+            if(response.conversation.length>0) {
+                for(var i=0;i<response.conversation.length;i++) {
+                    var src='';
+                    if(response.conversation[i].sender.avatar.includes('http')){
+                        src=response.conversation[i].sender.avatar;
+                    }else{
+                        src='/'+response.conversation[i].sender.avatar;
+                    };
+                    if (response.myId != response.conversation[i].sender.id) {
+                        var newdiv = '<div class="conversation-message-in"><img src="' + src + '" alt=""><p class="message message-in">' + response.conversation[i].text + '</p></div>';
+                        $('.messages_container').append(newdiv);
+                    } else {
+                        var newdiv = '<div class="conversation-message-out"><p class="message message-out">' + response.conversation[i].text + '</p></div>';
+                        $('.messages_container').append(newdiv);
+                    };
+                }
+            }
+        }
+    });
+}
 
 //send chats
 $(document).ready(function(){
@@ -321,6 +335,7 @@ $(document).ready(function(){
         events: {
             keyup: function (editor, event) {
                 input = this.getText();
+                $(".send_message").show();
                 if(event.keyCode == 13){
                     input = this.getText();
                     var receiver_id = $('.chat-active').data('user');
@@ -331,9 +346,6 @@ $(document).ready(function(){
             },
             change: function(editor,event){
                 input = this.getText();
-                if(input != ""){
-                    $(".send_message").show();
-                }
             }
         }
     });
