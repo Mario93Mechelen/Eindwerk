@@ -346,7 +346,8 @@ function updateSeenStatus(convid){
         }
     }).done(function(response){
         if(response.code==200) {
-            $('.new-message-indicator').addClass('hidden');;
+            $('.new-message-indicator').addClass('hidden');
+            $('*[data-id="' + convid + '"]').parent().removeAttr('style');
         }
     });
 }
@@ -365,9 +366,13 @@ $(document).ready(function(){
                     input = this.getText();
                     var receiver_id = $('.chat-active').data('user');
                     var conversation_id = $('.chat-active').data('id');
+                    updateSeenStatus(conversation_id);
                     saveChat(input,receiver_id,conversation_id);
                     this.setText("");
                 }
+            },
+            click: function(editor,event){
+                updateSeenStatus($('.chat-active').data('id'));
             },
             change: function(editor,event){
                 input = this.getText();
