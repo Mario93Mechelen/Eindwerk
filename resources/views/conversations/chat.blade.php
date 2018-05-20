@@ -31,6 +31,7 @@
                                 $i++;
                             }
                          }
+                         if($chatsArr){
                         foreach($chatsArr as $key => $row){
                             $dateArr[$key] = $row['created_at'];
                         }
@@ -40,35 +41,40 @@
                             $conversations[$j] = $chat->conversation;
                             $j++;
                         }
-                    @endphp
-                @foreach($conversations as $key => $conversation)
-                    @php
-                        $user = $conversation->users()->where('user_id','!=',$myUser->id)->first();
-                        if(!($conversation->chats)->isEmpty()){
-                            $lastChat = $conversation->chats()->orderBy('created_at', 'desc')->first();
-                            if($lastChat->sender_id == $myUser->id){
-                                $text = 'You: '.$lastChat->body;
-                            }else{
-                                $text = $lastChat->body;
-                            }
+                        }else{
+                            $conversations = null;
                         }
                     @endphp
-                    <div class="item item-list col-xs-12">
-                        <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
-                            <div class="active-chat-item-indicator {{($key == 0) ? null : 'hidden' }}"></div>
-                            <img class="chat-avatar" src='{{ asset($user->avatar) }}'>
-                            <div class="online-indicator {{$user->isOnline() ? 'online' : 'offline'}}"></div>
-                            <div class="chat-right">
-                                <div class="chat-nametime">
-                                    <p class="chat-name">{{$user->first_name." ".$user->last_name}}</p>
-                                    <p class="chat-time">{{$lastChat->calculateTimeElapsed()}}</p>
-                                </div>
-                                <p class="chat-last-message-start">{{(!($conversation->chats)->isEmpty()) ? $text : 'this is the very beginning of your chat history' }}</p>
+                    @if(!is_null($conversations))
+                        @foreach($conversations as $key => $conversation)
+                            @php
+                                $user = $conversation->users()->where('user_id','!=',$myUser->id)->first();
+                                if(!($conversation->chats)->isEmpty()){
+                                    $lastChat = $conversation->chats()->orderBy('created_at', 'desc')->first();
+                                    if($lastChat->sender_id == $myUser->id){
+                                        $text = 'You: '.$lastChat->body;
+                                    }else{
+                                        $text = $lastChat->body;
+                                    }
+                                }
+                            @endphp
+                            <div class="item item-list col-xs-12">
+                                <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
+                                    <div class="active-chat-item-indicator {{($key == 0) ? null : 'hidden' }}"></div>
+                                    <img class="chat-avatar" src='{{ asset($user->avatar) }}'>
+                                    <div class="online-indicator {{$user->isOnline() ? 'online' : 'offline'}}"></div>
+                                    <div class="chat-right">
+                                        <div class="chat-nametime">
+                                            <p class="chat-name">{{$user->first_name." ".$user->last_name}}</p>
+                                            <p class="chat-time">{{$lastChat->calculateTimeElapsed()}}</p>
+                                        </div>
+                                        <p class="chat-last-message-start">{{(!($conversation->chats)->isEmpty()) ? $text : 'this is the very beginning of your chat history' }}</p>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                    </div>
 
-                @endforeach
+                        @endforeach
+                    @endif
                 @else
                     <div class="item item-list col-xs-12">
                         <a class="item-content chat_to_detail">
@@ -85,49 +91,6 @@
                     </div>
                 @endif
 
-                <div class="item item-list col-xs-12">
-                    <a class="item-content chat_to_detail" href="">
-                        <div class="active-chat-item-indicator"></div>
-                        <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
-                        <div class="chat-right">
-                            <div class="chat-nametime">
-                                <p class="chat-name">Amber Heard</p>
-                                <p class="chat-time">2h ago</p>
-                            </div>
-                            <p class="chat-last-message-start">You: Hey, thanks for dropping by the other...</p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="item item-list col-xs-12">
-                    <a class="item-content chat_to_detail" href="">
-                        <div class="active-chat-item-indicator hidden"></div>
-                        <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
-                        <div class="chat-right">
-                            <div class="chat-nametime">
-                                <p class="chat-name">Amber Heard</p>
-                                <p class="chat-time">2h ago</p>
-                            </div>
-                            <p class="chat-last-message-start">ja</p>
-                        </div>
-                    </a>
-                </div>
-
-
-                <div class="item item-list col-xs-12">
-                    <a class="item-content chat_to_detail" href="">
-                        <div class="active-chat-item-indicator hidden"></div>
-                        <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
-                        <div class="chat-right">
-                            <div class="chat-nametime">
-                                <p class="chat-name">Amber Heard</p>
-                                <p class="chat-time">2h ago</p>
-                            </div>
-                            <p class="chat-last-message-start">You: Hey, thanks for dropping by the other...</p>
-                        </div>
-                    </a>
-                </div>
 
             </div>  <!-- end of overview active chats -->
 
@@ -152,30 +115,9 @@
                 </div>
 
                 <div class="conversation-message-in">
-                    <img src="{{url('img/profile_pic_default.jpg')}}" alt="">
-                    <p class="message message-in">Lorem ipsum is what this is, not really, but something to read anyway.
-                        Why would you not read this? This is awesome. Just like Tesla. Tesla is awesome. And out of
-                        business soon, but hey, who cares?
+                    <img src="{{url('/img/Semestr_logo2_gray.png')}}" alt="">
+                    <p class="message message-in">Hey, it seems like you didn't make friends yet? Don't worry, we got you covered here at Semestr. There's plenty of fish in the see, ahum, we mean students in the library off course ;)
                     </p>
-                </div>
-
-                <div class="conversation-message-out">
-                    <p class="message message-out">That's not making any sense. Senseless is what that is. I can type
-                        whatever I want and ha ha ha, nobody knows. Did I tell you about that time in Paris?</p>
-                </div>
-
-                <div class="conversation-message-out">
-                    <p class="message message-out">Oh wait, I don't want to.</p>
-                </div>
-
-                <div class="conversation-message-in">
-                    <img src="{{url('img/profile_pic_default.jpg')}}" alt="">
-                    <p class="message message-in">Yes, I see what you mean, that's cool.</p>
-                </div>
-
-                <div class="conversation-message-in">
-                    <img src="{{url('img/profile_pic_default.jpg')}}" alt="">
-                    <p class="message message-in">I guess, bye!</p>
                 </div>
             </div>
 
