@@ -351,6 +351,16 @@ Chat page styling
               }
             }
           }
+
+          .active-chat-item-indicator {
+            width: 5px;
+            height: calc(100% - 18px);
+            background-color: $primary-color;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            border-radius: 2px;
+          }
         }
       }
 

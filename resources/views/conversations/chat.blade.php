@@ -55,6 +55,7 @@
                     @endphp
                     <div class="item item-list col-xs-12">
                         <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
+                            <div class="active-chat-item-indicator hidden"></div>
                             <img class="chat-avatar" src='{{ asset($user->avatar) }}'>
                             <div class="online-indicator offline"></div>
                             <div class="chat-right">
@@ -71,6 +72,7 @@
                 @else
                     <div class="item item-list col-xs-12">
                         <a class="item-content chat_to_detail">
+                            <div class="active-chat-item-indicator hidden"></div>
                             <img class="chat-avatar" src='{{ asset('/img/Semestr_logo2_gray.png') }}'>
                             <div class="chat-right">
                                 <div class="chat-nametime">
@@ -85,6 +87,7 @@
 
                 <div class="item item-list col-xs-12">
                     <a class="item-content chat_to_detail" href="">
+                        <div class="active-chat-item-indicator"></div>
                         <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
                         <div class="chat-right">
                             <div class="chat-nametime">
@@ -99,6 +102,7 @@
 
                 <div class="item item-list col-xs-12">
                     <a class="item-content chat_to_detail" href="">
+                        <div class="active-chat-item-indicator hidden"></div>
                         <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
                         <div class="chat-right">
                             <div class="chat-nametime">
@@ -113,6 +117,7 @@
 
                 <div class="item item-list col-xs-12">
                     <a class="item-content chat_to_detail" href="">
+                        <div class="active-chat-item-indicator hidden"></div>
                         <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
                         <div class="chat-right">
                             <div class="chat-nametime">

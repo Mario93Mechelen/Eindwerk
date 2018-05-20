@@ -10905,6 +10905,16 @@ Chat page styling
     border-radius: 5px;
   }
 
+  .chat-wrapper .chat-total .chat-list #chat_overview .active-chat-item-indicator {
+    width: 5px;
+    height: calc(100% - 18px);
+    background-color: #0048d9;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-radius: 2px;
+  }
+
   .chat-wrapper .chat-total .chat-detail {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 60%;
