@@ -68,7 +68,7 @@
                                             <p class="chat-name">{{$user->first_name." ".$user->last_name}}</p>
                                             <p class="chat-time">{{$lastChat->calculateTimeElapsed()}}</p>
                                         </div>
-                                        <p class="chat-last-message-start">{{(!($conversation->chats)->isEmpty()) ? $text : 'this is the very beginning of your chat history' }}</p>
+                                        <p class="chat-last-message-start">{{ substr($text,0,47).'...'  }}</p>
                                     </div>
                                 </a>
                             </div>
