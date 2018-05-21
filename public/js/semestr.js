@@ -156,11 +156,13 @@ $(document).ready(function() {
             allInputs.attr("readonly", false);
             allInputs.attr("disabled", false);
             $(".user_introtext").attr("contenteditable", true);
+            $(".change-image").toggleClass("hidden");
         } else {
             $(".edit-profile-button-label").html("edit profile");
             allInputs.attr("readonly", true);
             allInputs.attr("disabled", true);
             $(".user_introtext").attr("contenteditable", false);
+            $(".change-image").toggleClass("hidden");
         }
 
     });
