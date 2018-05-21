@@ -105,7 +105,7 @@
                 </div>  <!-- einde div buttons -->
 
 
-                <p class="user_introtext">{{$user->intro ? $user->intro : (($user == $myUser) ? 'Seems like you still need to give yourself a nice cliché intro' : null)}}</p>
+                <p class="user_introtext edit-button-target">{{$user->intro ? $user->intro : (($user == $myUser) ? 'Seems like you still need to give yourself a nice cliché intro' : null)}}</p>
 
             </div>  <!-- einde upper section -->
 
@@ -139,13 +139,13 @@
                         <!-- geboortedatum -->
                         <div class="aboutme_item">
                             <p class="item_label">birth date</p>
-                            <input type="date" value="{{$user->birthday}}" readonly>
+                            <input type="date" value="{{$user->birthday}}" class="edit-button-target" readonly>
                         </div>
 
                         <!-- geslacht -->
                         <div class="aboutme_item">
                             <p class="item_label">gender</p>
-                            <select disabled>
+                            <select class="edit-button-target" disabled>
                                 <option value="male" {{($user->gender =='male') ? 'selected' : null }}>male</option>
                                 <option value="female" {{($user->gender =='female') ? 'selected' : null }}>female</option>
                                 <option value="other" {{($user->gender =='other' || $user->gender=="") ? 'selected' : null }}>other</option>
@@ -155,7 +155,7 @@
                         <!-- thuisplaats -->
                         <div class="aboutme_item">
                             <p class="item_label">home</p>
-                            <input type="text" value="{{$user->home}}" readonly>
+                            <input type="text" value="{{$user->home}}" class="edit-button-target" readonly>
                         </div>
 
                     </form>  <!-- einde basic info -->
@@ -168,19 +168,19 @@
                         <!-- school thuis -->
                         <div class="aboutme_item">
                             <p class="item_label">school at home</p>
-                            <input type="text" value="{{$user->home_school}}" readonly>
+                            <input type="text" value="{{$user->home_school}}" class="edit-button-target" readonly>
                         </div>
 
                         <!-- school buitenland -->
                         <div class="aboutme_item">
                             <p class="item_label">school abroad</p>
-                            <input type="text" value="{{$user->abroad_school}}" readonly>
+                            <input type="text" value="{{$user->abroad_school}}" class="edit-button-target" readonly>
                         </div>
 
                         <!-- huidige studie -->
                         <div class="aboutme_item">
                             <p class="item_label">study</p>
-                            <input type="text" value="{{$user->study}}" readonly>
+                            <input type="text" value="{{$user->study}}" class="edit-button-target" readonly>
                         </div>
 
                     </form>  <!-- einde education info -->

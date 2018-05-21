@@ -258,24 +258,21 @@ $(document).ready(function() {
     /* edit profile button */
     $(".edit-profile-button-wrapper").click (function(e) {
         e.preventDefault();
-        var allInputs = $( ":input" );
         if ($(".edit-profile-button-label").html() == "edit profile") {
             $(".edit-profile-button-label").html("save changes");
             $(".edit-profile-icon").css("background-image", "url('/img/Save_icon_White.png')");
-            allInputs.attr("readonly", false);
-            allInputs.attr("disabled", false);
+            $(".edit-button-target").attr("readonly", false);
+            $(".edit-button-target").attr("disabled", false);
             $(".user_introtext").attr("contenteditable", true);
-            allInputs.css("background-color", "rgba(128,0,0, 0.2)");
-            $(".user_introtext").css("background-color", "rgba(128,0,0, 0.2)");
+            $(".edit-button-target").css("background-color", "rgba(128,0,0, 0.2)");
             $(".change-image").toggleClass("hidden");
         } else {
             $(".edit-profile-button-label").html("edit profile");
             $(".edit-profile-icon").css("background-image", "url('/img/Edit_icon_White.png')");
-            allInputs.attr("readonly", true);
-            allInputs.attr("disabled", true);
-            $(".user_introtext").attr("contenteditable", false);
-            allInputs.css("background-color", "transparent");
-            $(".user_introtext").css("background-color", "transparent");
+            $(".edit-button-target").attr("readonly", true);
+            $(".edit-button-target").attr("disabled", true);
+            $(".edit-button-target").attr("contenteditable", false);
+            $(".edit-button-target").css("background-color", "transparent");
             $(".change-image").toggleClass("hidden");
         }
 
