@@ -248,6 +248,7 @@ $(document).ready(function() {
         }).done(function(response){
             if(response.code==200) {
                 console.log('we pulled the plug on you m8');
+                console.log('hasta la vista, baby');
             }
         });
         $(".pop-up-delete-profile").toggleClass("hidden");

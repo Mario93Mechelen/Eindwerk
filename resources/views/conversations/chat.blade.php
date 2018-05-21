@@ -58,7 +58,7 @@
                                     }
                                 }
                             @endphp
-                            <div class="item item-list col-xs-12" style="background-color:{{$conversation->chats()->where('receiver_id',$myUser->id)->where('seen',0)->first() ? '#0048d9' : null}}">
+                            <div class="item item-list col-xs-12" style="background-color:{{$conversation->chats()->where('receiver_id',$myUser->id)->where('seen',0)->first() ? "rgba(0, 72, 217, 0.2)" : null}}">
                                 <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
                                     <div class="active-chat-item-indicator {{($key == 0) ? null : 'hidden' }}"></div>
                                     <img class="chat-avatar" src='{{ asset($user->avatar) }}'>
