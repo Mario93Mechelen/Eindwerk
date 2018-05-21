@@ -6,6 +6,10 @@
 
         <div class="cover_image" style="background-image: url('/img/cover_image_default.jpg');"></div>
 
+        <div class="change-image change-cover_image hidden">
+            <i class="far fa-image"></i>
+        </div>
+
         <div class="crossings_map hidden" style="background-image: url('/img/header_bg_01.jpg');">
             <div id="map" style="position:absolute !important; height:100%;width:100%;"></div>
         </div>
@@ -15,6 +19,10 @@
             <div class="upper_section">
 
                 <img class="profile_image" src="{{url($user->avatar)}}" alt="">
+
+                <div class="change-image change-profile_image hidden">
+                    <i class="far fa-image"></i>
+                </div>
 
                 <h2 class="user_name">{{$user->first_name." ".$user->last_name}}</h2>
 
