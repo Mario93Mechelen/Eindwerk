@@ -16,7 +16,7 @@ class CreateFriendsTable extends Migration
         Schema::create('friends', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('friend_sender')->unsigned();
-            $table->integer('friend_receiver')->unsigned();;
+            $table->integer('friend_receiver')->unsigned();
             $table->foreign('friend_sender')->references('id')->on('users');
             $table->foreign('friend_receiver')->references('id')->on('users');
             $table->enum('request_type',['sent','pending','friends','none'])->default('none');

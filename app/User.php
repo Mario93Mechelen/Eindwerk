@@ -68,4 +68,9 @@ class User extends Authenticatable
     {
         return Crossing::where('crosser_id',$myId)->where('crossed_id',$this->id)->first()->crossingLocations;
     }
+
+    public function setting()
+    {
+        return $this->hasOne('App\Setting');
+    }
 }

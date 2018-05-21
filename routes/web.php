@@ -39,6 +39,10 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/profile/edit','ProfileController@edit');
     Route::get('/profile/settings','ProfileController@settings');
     Route::post('/users', 'ProfileController@sendFriendRequest');
+    Route::post('/updateEmail', 'SettingController@updateEmail');
+    Route::post('/updateEmailNotifications', 'SettingController@updateEmailNotifications');
+    Route::post('/updatePassword', 'SettingController@updatePassword');
+    Route::post('/updateDistance', 'SettingController@updateDistance');
 
 
     //conversation
