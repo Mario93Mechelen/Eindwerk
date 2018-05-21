@@ -43,6 +43,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::post('/updateEmailNotifications', 'SettingController@updateEmailNotifications');
     Route::post('/updatePassword', 'SettingController@updatePassword');
     Route::post('/updateDistance', 'SettingController@updateDistance');
+    Route::post('/deletelife', 'SettingController@deleteAllInfo');
 
 
     //conversation

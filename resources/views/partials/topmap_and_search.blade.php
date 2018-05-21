@@ -24,7 +24,7 @@
                     <div class="radiusSliderContainer">
                         <input type="range" min="1" max="9" value="9" class="slider radiusSlider" id="radiusSlider">
                     </div>
-                    <div id="selectedRadius">100km</div>
+                    <div id="selectedRadius">{{($myUser->setting->distance == 'km') ? '100 km' : '60 miles'}}</div>
                 </div>
                 <div class="searchButtonOptionInterests">
                     <h6>interests</h6>

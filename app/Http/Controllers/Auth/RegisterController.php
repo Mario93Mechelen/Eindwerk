@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Setting;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -80,6 +81,9 @@ class RegisterController extends Controller
             $user->token = $request->_token;
             $user->avatar = "img/Default_pictures_Man.png";
             $user->save();
+            $setting = new Setting();
+            $setting->user_id = $user->id;
+            $setting->save();
             Auth::login($user, true);
             return redirect('/');
         }

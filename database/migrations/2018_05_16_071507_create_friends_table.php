@@ -15,10 +15,10 @@ class CreateFriendsTable extends Migration
     {
         Schema::create('friends', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('friend_sender')->unsigned();
-            $table->integer('friend_receiver')->unsigned();
-            $table->foreign('friend_sender')->references('id')->on('users');
-            $table->foreign('friend_receiver')->references('id')->on('users');
+            $table->integer('friend_sender')->unsigned()->index();
+            $table->integer('friend_receiver')->unsigned()->index();
+            $table->foreign('friend_sender')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('friend_receiver')->references('id')->on('users')->onDelete('cascade');
             $table->enum('request_type',['sent','pending','friends','none'])->default('none');
             $table->timestamps();
         });

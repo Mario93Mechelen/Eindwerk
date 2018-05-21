@@ -72,6 +72,19 @@ class SettingController extends Controller
         }
         return response()->json(['code' => 200]);
     }
+
+    public function deleteAllInfo()
+    {
+        if(Auth::user()->conversation){
+            $conversations = Auth::user()->conversation;
+            foreach($conversations as $conversation){
+                $conversation->delete();
+            }
+        }
+        User::find(Auth::user()->id)->delete();
+        Auth::logout();
+        return response()->json(['code' => 200]);
+    }
     /**
      * Show the form for creating a new resource.
      *

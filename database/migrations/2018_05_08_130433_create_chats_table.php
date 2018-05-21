@@ -15,9 +15,12 @@ class CreateChatsTable extends Migration
     {
         Schema::create('chats', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('conversation_id');
-            $table->integer('sender_id');
-            $table->integer('receiver_id');
+            $table->integer('conversation_id')->unsigned()->index();
+            $table->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
+            $table->integer('sender_id')->unsigned()->index();
+            $table->integer('receiver_id')->unsigned()->index();
+            $table->foreign('sender_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('receiver_id')->references('id')->on('users')->onDelete('cascade');
             $table->text('body');
             $table->boolean('seen')->default(0);
             $table->timestamps();

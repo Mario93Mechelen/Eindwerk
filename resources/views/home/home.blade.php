@@ -53,7 +53,7 @@
                             <img class="list-item-img" src="{{url($d['user']['avatar'] ? $d['user']['avatar'] : '')}}" alt=""/>
                             <div class="caption">
                                 <h4 class="list-item-name">{{$d['user']['first_name']." ".$d['user']['last_name']}}</h4>
-                                <p class="list-item-distance">{{$d['kms']}} km away</p>
+                                <p class="list-item-distance">{{$d['kms']}} {{($myUser->setting->distance == "km") ? 'km' : 'miles'}} away</p>
                                 <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
                             </div>
                         </div>
@@ -231,7 +231,11 @@
                 }else if (rate == 9){
                     distance = 100;
                 }
-                $('#selectedRadius').html(distance+'km');
+                if('{{$myUser->setting->distance == 'km'}}') {
+                    $('#selectedRadius').html(distance + 'km');
+                }else{
+                    $('#selectedRadius').html(distance/1.6 + 'miles')
+                }
                 console.log(distance);
                 clearTimeout(slidingTimer);
                 slidingTimer = setTimeout(doneSliding(distance), doneSlidingInterval);
