@@ -35,8 +35,14 @@ class HomeController extends Controller
                 $kms = ($miles * 1.609344);
 
                 $kms = number_format((float)$kms, 2, ',','');
+                $miles = number_format((float)$miles, 2, ',','');
 
-                $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                if(Auth::user()->setting == 'mile'){
+                    $distance[$i] = ['user' => $l->user, 'kms' => $miles];
+                }else{
+                    $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                }
+
                 $i++;
             }
 
@@ -57,6 +63,9 @@ class HomeController extends Controller
         $location = Location::where('user_id',$user->id)->first();
         $locations = Location::where('user_id','!=', $user->id)->get();
         $reqdistance = floatval($request->distance);
+        if(Auth::user()->setting->distance == 'km'){
+            $reqdistance = $reqdistance/1.609344;
+        }
         if(!is_null($location) && !is_null($locations)) {
             $i = 0;
             $distance = [];
@@ -73,9 +82,14 @@ class HomeController extends Controller
 
                 $kms = ($miles * 1.609344);
 
-                $kms = number_format((float)$kms, 2, ',','');
-
-                if((float)$kms <= (float)$request->distance) {
+                if(Auth::user()->setting == 'mile'){
+                    $kms = number_format((float)$miles, 2, ',','');
+                    $distance[$i] = ['user' => $l->user, 'kms' => $miles];
+                }else{
+                    $kms = number_format((float)$kms, 2, ',','');
+                    $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                }
+                if((float)$kms <= (float)$reqdistance) {
 
                     $distance[$i] = ['user' => $l->user, 'kms' => $kms];
                     $i++;

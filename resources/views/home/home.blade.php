@@ -231,7 +231,11 @@
                 }else if (rate == 9){
                     distance = 100;
                 }
-                $('#selectedRadius').html(distance+'km');
+                if('{{$myUser->setting->distance == 'km'}}') {
+                    $('#selectedRadius').html(distance + 'km');
+                }else{
+                    $('#selectedRadius').html(distance/1.6 + 'miles')
+                }
                 console.log(distance);
                 clearTimeout(slidingTimer);
                 slidingTimer = setTimeout(doneSliding(distance), doneSlidingInterval);
