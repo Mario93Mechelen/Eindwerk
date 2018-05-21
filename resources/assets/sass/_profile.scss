@@ -28,6 +28,30 @@ profile page styling
     background-repeat: no-repeat;
   }
 
+  .change-image {
+    position: absolute;
+    font-size: 24px;
+    background-color: $primary-color;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+  }
+
+  .change-cover_image {
+    top: 125px;
+    right: 20px;
+  }
+
+  .change-profile_image {
+    top: 85px;
+  }
+
   .profile_page_content {
     position: relative;
     top: -120px;
@@ -183,6 +207,20 @@ profile page styling
             content: "\f104";
             font-size: 24px;
             color: $primary-color;
+          }
+        }
+
+        .edit-profile-button-wrapper {
+
+          .button {
+
+            p {
+              color: $error-red;
+            }
+
+            .icon {
+              background-color: $error-red;
+            }
           }
         }
       }
@@ -350,6 +388,16 @@ profile page styling
       position: fixed;
       top: 0px;
       z-index: 0;
+    }
+
+    .change-cover_image {
+      top: 75px;
+      right: 20px;
+    }
+
+    .change-profile_image {
+      top: 15px;
+      left: 25px;
     }
 
     .profile_page_content {
