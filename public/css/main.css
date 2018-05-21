@@ -10064,6 +10064,10 @@ profile page styling
   background-image: url("/img/Crossings.png");
 }
 
+.profile_page .profile_page_content .upper_section .buttons .button-wrapper .button .edit-profile-icon {
+  background-image: url("/img/Edit_icon_White.png");
+}
+
 .profile_page .profile_page_content .upper_section .buttons .button-wrapper .button p {
   display: block;
   font-size: 16px;
