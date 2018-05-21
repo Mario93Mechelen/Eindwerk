@@ -9903,7 +9903,7 @@ profile page styling
 .profile_page .change-image {
   position: absolute;
   font-size: 24px;
-  background-color: #0048d9;
+  background-color: rgba(0, 72, 217, 0.5);
   color: white;
   width: 50px;
   height: 50px;
@@ -10216,6 +10216,7 @@ profile page styling
   -moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
+  width: 100%;
 }
 
 .profile_page .profile_page_content .aboutme_section .aboutme_subsection .aboutme_item:last-of-type {

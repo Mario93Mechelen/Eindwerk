@@ -243,6 +243,8 @@ $(document).ready(function() {
             allInputs.attr("readonly", false);
             allInputs.attr("disabled", false);
             $(".user_introtext").attr("contenteditable", true);
+            allInputs.css("background-color", "rgba(128,0,0, 0.2)");
+            $(".user_introtext").css("background-color", "rgba(128,0,0, 0.2)");
             $(".change-image").toggleClass("hidden");
         } else {
             $(".edit-profile-button-label").html("edit profile");
@@ -250,6 +252,8 @@ $(document).ready(function() {
             allInputs.attr("readonly", true);
             allInputs.attr("disabled", true);
             $(".user_introtext").attr("contenteditable", false);
+            allInputs.css("background-color", "transparent");
+            $(".user_introtext").css("background-color", "transparent");
             $(".change-image").toggleClass("hidden");
         }
 
