@@ -261,12 +261,14 @@ $(document).ready(function() {
         var allInputs = $( ":input" );
         if ($(".edit-profile-button-label").html() == "edit profile") {
             $(".edit-profile-button-label").html("save changes");
+            $(".edit-profile-icon").css("background-image", "url('/img/Save_icon_White.png')");
             allInputs.attr("readonly", false);
             allInputs.attr("disabled", false);
             $(".user_introtext").attr("contenteditable", true);
             $(".change-image").toggleClass("hidden");
         } else {
             $(".edit-profile-button-label").html("edit profile");
+            $(".edit-profile-icon").css("background-image", "url('/img/Edit_icon_White.png')");
             allInputs.attr("readonly", true);
             allInputs.attr("disabled", true);
             $(".user_introtext").attr("contenteditable", false);
