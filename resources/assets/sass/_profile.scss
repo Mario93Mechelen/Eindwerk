@@ -185,6 +185,20 @@ profile page styling
             color: $primary-color;
           }
         }
+
+        .edit-profile-button-wrapper {
+
+          .button {
+
+            p {
+              color: $error-red;
+            }
+
+            .icon {
+              background-color: $error-red;
+            }
+          }
+        }
       }
     }
 

@@ -83,6 +83,14 @@
                         </a>
                     </div>
                 @else
+                    <!-- edit knop op eigen profile page -->
+                    <div class="button-wrapper edit-profile-button-wrapper">
+                        <a href="#" class="button">
+                            <div class="icon edit-profile-icon"></div>
+                            <p>edit profile</p>
+                        </a>
+                    </div>
+
                     <div style="height:70px;"></div>
                 @endif
 

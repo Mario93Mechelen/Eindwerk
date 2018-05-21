@@ -10105,6 +10105,14 @@ profile page styling
   color: #0048d9;
 }
 
+.profile_page .profile_page_content .upper_section .buttons .edit-profile-button-wrapper .button p {
+  color: #800000;
+}
+
+.profile_page .profile_page_content .upper_section .buttons .edit-profile-button-wrapper .button .icon {
+  background-color: #800000;
+}
+
 .profile_page .profile_page_content .section_title {
   font-size: 28px;
   font-weight: bold;
