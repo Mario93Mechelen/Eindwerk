@@ -54,9 +54,34 @@ $(document).ready(function() {
         if ($("#edit_email").html() == "edit") {
             $("#edit_email").html("save");
         } else {
+            var email = $('#email-settings').val();
+            saveEmail(email);
             $("#edit_email").html("edit");
         }
     });
+    function saveEmail(email){
+        $.ajaxSetup({
+
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+            }
+
+        });
+        $.ajax({
+            method:"POST",
+            url:"/updateEmail",
+            data:{
+                'email':email
+            }
+        }).done(function(response){
+            if(response.code==200) {
+                console.log('email saved')
+                $('#email-settings').val(email);
+            }
+        });
+    }
 
     /* password section in settings */
     $(".social_item_connect").click(function(e) {
@@ -75,10 +100,71 @@ $(document).ready(function() {
             $("#edit_password").html("save");
             $(".password_dropdown").slideDown();
         } else {
+            var old_password = $('#settings-oldpassword').val();
+            var new_password1 = $('.new_password1').val();
+            var new_password2 = $('.new_password2').val();
+            if(new_password1 == new_password2){
+                savePassword(old_password,new_password2);
+            }
             $("#edit_password").html("edit");
             $(".password_dropdown").slideUp();
         }
     });
+
+    function savePassword(oldp,newp){
+        $.ajaxSetup({
+
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+            }
+
+        });
+        $.ajax({
+            method:"POST",
+            url:"/updatePassword",
+            data:{
+                'oldp':oldp,
+                'newp':newp
+            }
+        }).done(function(response){
+            if(response.code==200) {
+                console.log('password saved')
+            }
+        });
+    }
+
+    $('.email_notifications').on('click', function(){
+       var id = $(this).attr('id');
+       var val = $(this).is(":checked");
+       console.log(val);
+       updateEmailNotifications(id,val);
+    });
+
+    function updateEmailNotifications(id,val){
+        $.ajaxSetup({
+
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+            }
+
+        });
+        $.ajax({
+            method:"POST",
+            url:"/updateEmailNotifications",
+            data:{
+                'id':id,
+                'val':val
+            }
+        }).done(function(response){
+            if(response.code==200) {
+                console.log('notification saved')
+            }
+        });
+    }
 
     /* blocked users section in settings */
     $(".blocked-users-button-wrapper").click(function(e) {
@@ -221,10 +307,36 @@ $(document).ready(function() {
    $(".distance_unit > ul > li").click(function() {
        if($(this).hasClass("active")) {
        } else {
+           var distance = $(this).html();
+           console.log(distance);
+           changeDistance(distance);
            $(".distance_unit > ul > li").toggleClass("active");
        }
    })
 });
+
+function changeDistance(distance){
+    $.ajaxSetup({
+
+        headers: {
+
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+        }
+
+    });
+    $.ajax({
+        method:"POST",
+        url:"/updateDistance",
+        data:{
+            'distance':distance
+        }
+    }).done(function(response){
+        if(response.code==200) {
+            console.log('distance settings updated');
+        }
+    });
+}
 
 
 <!-- mobile switch between chat list and detail -->

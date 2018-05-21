@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Setting;
 
 use Socialite;
 
@@ -83,7 +84,7 @@ class LoginController extends Controller
     }
 
     public function handleProviderCallbackFacebook(){
-        $user = Socialite::driver('facebook')->fields(['languages', 'first_name', 'last_name', 'email', 'gender', 'birthday'])->user();
+        $user = Socialite::driver('facebook')->fields(['languages', 'first_name', 'last_name', 'email', 'gender', 'birthday','link'])->user();
         if(!User::where('email',$user->user["email"])->first()) {
             $appUser = new User();
             $appUser->first_name = $user->user["first_name"];
@@ -94,6 +95,11 @@ class LoginController extends Controller
             $appUser->avatar = str_replace("normal","large",$user->avatar);
             $appUser->token = $user->token;
             $appUser->save();
+            $setting = new Setting();
+            $setting->user_id = $appUser->id;
+            $setting->facebook = $user->profileUrl;
+            $setting->save();
+
         }else{
             $appUser = User::where('email',$user->user["email"])->first();
         }
