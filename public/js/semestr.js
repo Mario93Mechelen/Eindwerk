@@ -147,7 +147,23 @@ $(document).ready(function() {
         /* EVERYTHING ENDS!!! */
     });
 
+    /* edit profile button */
+    $(".edit-profile-button-wrapper").click (function(e) {
+        e.preventDefault();
+        var allInputs = $( ":input" );
+        if ($(".edit-profile-button-label").html() == "edit profile") {
+            $(".edit-profile-button-label").html("save changes");
+            allInputs.attr("readonly", false);
+            allInputs.attr("disabled", false);
+            $(".user_introtext").attr("contenteditable", true);
+        } else {
+            $(".edit-profile-button-label").html("edit profile");
+            allInputs.attr("readonly", true);
+            allInputs.attr("disabled", true);
+            $(".user_introtext").attr("contenteditable", false);
+        }
 
+    });
 
 
 });

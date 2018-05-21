@@ -87,7 +87,7 @@
                     <div class="button-wrapper edit-profile-button-wrapper">
                         <a href="#" class="button">
                             <div class="icon edit-profile-icon"></div>
-                            <p>edit profile</p>
+                            <p class="edit-profile-button-label">edit profile</p>
                         </a>
                     </div>
 
