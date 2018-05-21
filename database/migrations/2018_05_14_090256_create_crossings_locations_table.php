@@ -15,7 +15,8 @@ class CreateCrossingsLocationsTable extends Migration
     {
         Schema::create('crossings_locations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('crossing_id');
+            $table->integer('crossing_id')->unsigned()->index();
+            $table->foreign('crossing_id')->references('id')->on('crossings')->onDelete('cascade');
             $table->double('latitude');
             $table->double('longitude');
             $table->timestamps();

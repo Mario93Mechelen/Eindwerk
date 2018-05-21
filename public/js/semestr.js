@@ -205,6 +205,7 @@ $(document).ready(function() {
         $(".pop-up-delete-profile").toggleClass("hidden");
     });
 
+
     /* other buttons */
     $(".pop-up-data-off .turn-on-off").click(function(e) {
         e.preventDefault();
@@ -229,7 +230,28 @@ $(document).ready(function() {
     /* delete button */
     $(".pop-up-delete-profile .not-preferred").click(function(e) {
         e.preventDefault();
+        $.ajaxSetup({
+
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+            }
+
+        });
+        $.ajax({
+            method:"POST",
+            url:"/deletelife",
+            data:{
+                'message':'do-it'
+            }
+        }).done(function(response){
+            if(response.code==200) {
+                console.log('we pulled the plug on you m8');
+            }
+        });
         $(".pop-up-delete-profile").toggleClass("hidden");
+        window.location.href = '/login';
         /* EVERYTHING ENDS!!! */
     });
 
