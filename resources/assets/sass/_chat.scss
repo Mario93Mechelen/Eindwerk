@@ -256,7 +256,8 @@ Chat page styling
       }
     }
 
-    .chat_to_detail:hover{
+    .chat_to_detail:hover,
+    .chat_to_detail:focus {
       text-decoration: none;
     }
 

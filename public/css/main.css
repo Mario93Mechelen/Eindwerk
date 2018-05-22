@@ -10996,7 +10996,8 @@ Chat page styling
   display: none;
 }
 
-.chat-wrapper .chat-total .chat_to_detail:hover {
+.chat-wrapper .chat-total .chat_to_detail:hover,
+.chat-wrapper .chat-total .chat_to_detail:focus {
   text-decoration: none;
 }
 
