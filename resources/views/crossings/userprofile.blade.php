@@ -4,7 +4,7 @@
 
     <div class="profile_page">
 
-        <div class="cover_image" style="background-image: url({{$user->profile->path_cover ? url($user->profile->path_cover) : '/img/cover_image_default.jpg'}});"></div>
+        <div class="cover_image" style="background-image: url({{$user->profile->path_cover ? url($user->profile->path_cover) : '/img/cover_image_default.jpg'}});"><div class="too-large hidden" style="background-color:white;margin:auto;width:250px;position:relative;text-align:center;top:100px;"><p style="color:red;padding:50px;">Please upload a smaller image</p></div></div>
 
 
         <form class="change-image change-cover_image hidden" style="cursor:pointer" method="post" action="{{URL::action('ProfileController@updateCover')}}" enctype="multipart/form-data">
@@ -490,7 +490,11 @@
     <!-- FORMS -->
     <script>
         $('input[type="file"]').on('change', function(){
-           $(this).parent().submit();
+            if(this.files[0].size<=4000000) {
+                $(this).parent().submit();
+            }else{
+                $('.too-large').removeClass('hidden');
+            }
         });
     </script>
 
