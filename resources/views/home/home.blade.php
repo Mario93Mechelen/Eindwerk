@@ -47,14 +47,14 @@
                     <!-- item -->
                     @if(isset($distance))
                     @foreach($distance as $d)
-                    <div class="item item-list col-xs-12 col-md-6">
+                    <div class="item item-home item-list col-xs-12 col-md-6">
                         <a href="{{URL::action('ProfileController@show',$d['user'])}}">
                         <div class="item-content">
                             <img class="list-item-img" src="{{url($d['user']['avatar'] ? $d['user']['avatar'] : '')}}" alt=""/>
                             <div class="caption">
-                                <h4 class="list-item-name">{{$d['user']['first_name']." ".$d['user']['last_name']}}</h4>
+                                <h4 class="list-item-name list-item-name-home">{{$d['user']['first_name']." ".$d['user']['last_name']}}</h4>
                                 <p class="list-item-distance">{{$d['kms']}} {{($myUser->setting->distance == "km") ? 'km' : 'miles'}} away</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                <p class="list-item-intro">{{$d['user']['intro']}}</p>
                             </div>
                         </div>
                         </a>
@@ -64,50 +64,6 @@
                         <p class="aroundme_no_users">We couldn't find users nearby, did you share your location with
                             us?</p>
                      @endif
-
-                    <!-- for further layout testing -->
-
-                    <div class="item item-list col-xs-12 col-md-6">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">2km away</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item item-list col-xs-12 col-md-6">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">2km away</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item item-list col-xs-12 col-md-6">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">2km away</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item item-list col-xs-12 col-md-6">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-distance">2km away</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </div>
-
 
 
                 </div>
@@ -155,7 +111,7 @@
            console.log(name);
            if(name != "" && e.keyCode!=8) {
                console.log('other keys are pressed');
-               $('.list-item-name').each(function () {
+               $('.list-item-name-home').each(function () {
                    console.log($(this).html());
                    if (!$(this).html().toLowerCase().includes(name)) {
                        $(this).parent().parent().parent().hide();
@@ -163,7 +119,7 @@
                });
            }else if(e.keyCode == 8){
                console.log('backspace pressed');
-                $('.list-item-name').each(function () {
+                $('.list-item-name-home').each(function () {
                     console.log($(this).html());
                     if ($(this).html().toLowerCase().includes(name)) {
                         $(this).parent().parent().parent().show();
@@ -258,7 +214,7 @@
                         }
                     }).done(function(response){
                         if(response.code==200) {
-                            $('.item').each(function(){
+                            $('.item-home').each(function(){
                                 $(this).remove();
                             });
                             for(i=0;i<response.distance.length;i++){
