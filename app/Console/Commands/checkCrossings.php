@@ -7,6 +7,7 @@ use Illuminate\Console\Command;
 use App\User;
 use App\Crossing;
 use App\Location;
+use Illuminate\Support\Facades\Log;
 
 class checkCrossings extends Command
 {
@@ -43,6 +44,7 @@ class checkCrossings extends Command
     {
         $locations = Location::all();
         foreach($locations as $location) {
+            Log::debug('starting loop');
             if($location->user->isOnline()) {
                 $otherLocations = Location::where('user_id', '!=', $location->user_id)->get();
                 foreach ($otherLocations as $otherLocation) {
