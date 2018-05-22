@@ -6,8 +6,16 @@
 
         @include('partials.topmap_and_search')
 
+        <div class="friends_page_content">
 
+            <div class="friends-request-toggle">
+                <ul>
+                    <li class="see-friends active">friends</li>
+                    <li class="see-requests">requests</li>
+                </ul>
+            </div>
 
+        </div>
 
     </div>
 
