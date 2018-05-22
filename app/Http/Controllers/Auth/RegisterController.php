@@ -86,7 +86,7 @@ class RegisterController extends Controller
             $setting->user_id = $user->id;
             $setting->save();
             $profile = new Profile();
-            $profile->user_id = $appUser->id;
+            $profile->user_id = $user->id;
             $profile->save();
             Auth::login($user, true);
             return redirect('/');
