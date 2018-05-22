@@ -485,7 +485,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.chat_to_detail').on('click', function(e){
         e.preventDefault();
-        $(this).parent().removeAttr('style');
+        $(this).find(".chat-name").removeAttr('style');
         $('.chat_to_detail').removeClass('chat-active');
         $('.active-chat-item-indicator').addClass('hidden');
         $(this).find('.active-chat-item-indicator').removeClass('hidden');
