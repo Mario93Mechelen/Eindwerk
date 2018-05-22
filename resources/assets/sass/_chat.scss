@@ -4,6 +4,10 @@ Chat page styling
 
 */
 
+.hide-chat {
+  display: none;
+}
+
 .chat-wrapper {
   position: fixed;
   top: 0;
@@ -282,6 +286,11 @@ Chat page styling
 }
 
 @media (min-width: 768px) {
+
+  .chat-wrapper.hide-chat {
+    display: none;
+  }
+
   .chat-wrapper {
     display: flex;
     justify-content: center;

@@ -27,9 +27,9 @@ window.onresize = function() {
 
 //hide/show chat screen
 $(document).ready(function(){
-    $('.hide-chat').hide();
+    // $('.hide-chat').hide();
     $('.dropdown-item-chat').on('click', function(){
-        $('.hide-chat').show();
+        $('.hide-chat').css("display", "flex");
     })
 });
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
     $( "#nav_chat" ).click(function() {
         $("#dropdown-menu-profile").hide();
         $( "#nav_profile" ).removeClass("highlighted");
-        $('.hide-chat').show();
+        $('.hide-chat').css("display", "flex");
         $('body').css('overflow','hidden');
     });
     $( "#nav_profile" ).click(function() {
