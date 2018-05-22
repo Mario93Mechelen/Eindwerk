@@ -92,6 +92,14 @@
             }
 
         });
+
+        var channel2 = pusher.subscribe('friend_request'+'{{$myUser->id}}');
+        channel2.bind('new-request', function(data) {
+            if(data.data.request == "sent"){
+                console.log(data);
+                $('.indicator-friends').removeClass('hidden');
+            }
+        });
         function getChats(id){
             $.ajaxSetup({
 

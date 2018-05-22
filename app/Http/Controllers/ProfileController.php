@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Image;
+use Pusher\Pusher;
 
 class ProfileController extends Controller
 {
@@ -172,6 +173,8 @@ class ProfileController extends Controller
             $friend->request_type = 'pending';
             $friend->save();
             $buttonText = 'request sent';
+
+            $this->makeEventObject()->trigger('friend_request'.$id,'new-request',['data' => ['request' => 'sent']]);
         }else{
             if($friend){
                 Friend::where('friend_sender', Auth::user()->id)->where('friend_receiver',$request->id)->where('request_type','friends')->delete();
@@ -185,6 +188,21 @@ class ProfileController extends Controller
         };
 
         return response()->json(['code' => 200, 'text' => $buttonText]);
+    }
+
+    private function makeEventObject()
+    {
+        $options = array(
+            'cluster' => 'eu', // Cluster
+            'encrypted' => true,
+        );
+
+        return new Pusher(
+            env('PUSHER_APP_KEY'), // public key
+            env('PUSHER_APP_SECRET'), // Secret
+            env('PUSHER_APP_ID'), // App_id
+            $options
+        );
     }
 
     /**
