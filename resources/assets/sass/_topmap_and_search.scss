@@ -45,7 +45,7 @@
     .searchBox_inner {
       display: inline;
       border: 0;
-      width: 150px;
+      width: calc(100% - 50px);
     }
 
     .searchBox_inner:focus {

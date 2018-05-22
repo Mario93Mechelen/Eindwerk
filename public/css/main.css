@@ -9053,7 +9053,7 @@ header #dropdown-menu-profile a:last-of-type {
 .map-top .search-bar .searchBox_inner {
   display: inline;
   border: 0;
-  width: 150px;
+  width: calc(100% - 50px);
 }
 
 .map-top .search-bar .searchBox_inner:focus {
