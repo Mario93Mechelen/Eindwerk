@@ -10602,6 +10602,10 @@ friends page styling
   font-size: 12px;
 }
 
+.friends_page .friends_page_content .requests_container {
+  display: none;
+}
+
 .friends_page .friends_page_content .requests_container .item-content .caption {
   display: -webkit-box;
   display: -ms-flexbox;
