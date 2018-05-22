@@ -8870,6 +8870,18 @@ header #dropdown-menu-profile a:last-of-type {
   border-bottom: 1px solid transparent;
 }
 
+.indicator-friends {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  z-index: 500;
+  background-color: #800000;
+  border-radius: 25px;
+  top: 10px;
+  right: 10px;
+  border: 1px solid #ffffff;
+}
+
 @media (min-width: 768px) {
   header .dropdown-menu {
     display: -webkit-box;
@@ -8991,6 +9003,10 @@ header #dropdown-menu-profile a:last-of-type {
 
   header #dropdown-menu-profile a:last-of-type {
     border-bottom: 1px solid transparent;
+  }
+
+  .indicator-friends {
+    top: 0px;
   }
 }
 
