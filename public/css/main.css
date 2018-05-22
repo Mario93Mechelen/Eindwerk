@@ -9526,7 +9526,7 @@ Around me page styling
 @media (min-width: 990px) {
   #aroundme_overview {
     width: 990px;
-    margin: 0 auto 30px auto;
+    /* margin: 0 auto 30px auto; */
   }
 
   .gridlist-container {
@@ -9537,7 +9537,7 @@ Around me page styling
 
   .aroundme_page .aroundme_no_users {
     color: #002245;
-    padding-left: 0px;
+    /* padding-left: 0px; */
   }
 }
 

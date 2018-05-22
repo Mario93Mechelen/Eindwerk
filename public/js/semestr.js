@@ -27,7 +27,6 @@ window.onresize = function() {
 
 //hide/show chat screen
 $(document).ready(function(){
-    // $('.hide-chat').hide();
     $('.dropdown-item-chat').on('click', function(){
         $('.hide-chat').css("display", "flex");
     })
