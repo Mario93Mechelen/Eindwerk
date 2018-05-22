@@ -53,14 +53,7 @@
         channel.bind('new-chat', function(data) {
             if($('*[data-id="'+data.data.conversation_id+'"]').hasClass('chat-active')) {
                 console.log('chat is open');
-                var src = "";
-                if (data.data.sender.avatar.includes('http')) {
-                    src = data.data.sender.avatar;
-                } else {
-                    src = '/' + data.data.sender.avatar;
-                }
-                ;
-                var newdiv = '<div class="conversation-message-in"><img src="' + src + '" alt=""><p class="message message-in">' + data.data.chat + '</p></div>';
+                var newdiv = '<div class="conversation-message-in"><img src="' + data.data.sender.avatar + '" alt=""><p class="message message-in">' + data.data.chat + '</p></div>';
                 $(newdiv).appendTo('.messages_container').hide().fadeIn(1000);
                 $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
                 console.log(data);
@@ -76,14 +69,8 @@
                     $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-time').html('just now');
                     $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-last-message-start').html(data.data.chat);
                 }else{
-                    if (data.data.sender.avatar.includes('http')) {
-                        src = data.data.sender.avatar;
-                    } else {
-                        src = '/' + data.data.sender.avatar;
-                    }
-                    ;
                     $('.active-chat-item-indicator').addClass('hidden');
-                    $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+data.data.sender.id+'" data-id="'+data.data.conversation_id+'"><div class="active-chat-item-indicator"></div><img class="chat-avatar" src="'+src+'"><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+data.data.sender.first_name+' '+data.data.sender.last_name+'</p><p class="chat-time">just now</p></div><p class="chat-last-message-start">'+data.data.chat+'</p></div></a></div>');
+                    $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+data.data.sender.id+'" data-id="'+data.data.conversation_id+'"><div class="active-chat-item-indicator"></div><img class="chat-avatar" src="'+data.data.sender.avatar+'"><div class="online-indicator online"></div><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+data.data.sender.first_name+' '+data.data.sender.last_name+'</p><p class="chat-time">just now</p></div><p class="chat-last-message-start">'+data.data.chat+'</p></div></a></div>');
                     $('.chat_to_detail').on('click', function(e){
                         e.preventDefault();
                         getChats(data.data.conversation_id);

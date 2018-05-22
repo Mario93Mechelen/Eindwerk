@@ -273,18 +273,11 @@
             }).done(function(response){
                 if(response.code==200) {
                     $('.hide-chat').show();
-                    var src = "";
-                    if (response.receiver.avatar.includes('http')) {
-                        src = response.receiver.avatar;
-                    } else {
-                        src = '/' + response.receiver.avatar;
-                    }
-                    ;
                     if(response.existence == 'no'){
                         console.log('new convo was created');
                         $('.chat_to_detail').removeClass('chat-active');
                         $('.active-chat-item-indicator').addClass('hidden');
-                        $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+response.receiver.id+'" data-id="'+response.conversation_id+'"><div class="active-chat-item-indicator"></div><img class="chat-avatar" src="'+src+'"><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+response.receiver.first_name+' '+response.receiver.last_name+'</p><p class="chat-time">just now</p></div></div></a></div>')
+                        $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+response.receiver.id+'" data-id="'+response.conversation_id+'"><div class="active-chat-item-indicator"></div><img class="chat-avatar" src="'+response.receiver.avatar+'"><div class="online-indicator online"></div><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+response.receiver.first_name+' '+response.receiver.last_name+'</p><p class="chat-time">just now</p></div></div></a></div>')
                         $('.conversation-message-in').remove();$('.conversation-message-out').remove();
                     }else {
 
@@ -301,7 +294,7 @@
                             getChats(response.conversation_id[0]);
                         }else{
                             $('.active-chat-item-indicator').addClass('hidden');
-                            $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+response.receiver.id+'" data-id="'+response.conversation_id+'"><div class="active-chat-item-indicator"></div><img class="chat-avatar" src="'+src+'"><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+response.receiver.first_name+' '+response.receiver.last_name+'</p><p class="chat-time">just now</p></div></div></a></div>')
+                            $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="'+response.receiver.id+'" data-id="'+response.conversation_id+'"><div class="active-chat-item-indicator"></div><img class="chat-avatar" src="'+response.receiver.avatar+'"><div class="online-indicator online"></div><div class="chat-right"><div class="chat-nametime"><p class="chat-name">'+response.receiver.first_name+' '+response.receiver.last_name+'</p><p class="chat-time">just now</p></div></div></a></div>')
                             $('.conversation-message-in').remove();
                             $('.conversation-message-out').remove();
                         }
@@ -332,14 +325,8 @@
                         $('.conversation-message-out').remove();
                         if(response.conversation.length>0) {
                             for(var i=0;i<response.conversation.length;i++) {
-                                var src='';
-                                if(response.conversation[i].sender.avatar.includes('http')){
-                                    src=response.conversation[i].sender.avatar;
-                                }else{
-                                    src='/'+response.conversation[i].sender.avatar;
-                                };
                                 if (response.myId != response.conversation[i].sender.id) {
-                                    var newdiv = '<div class="conversation-message-in"><img src="' + src + '" alt=""><p class="message message-in">' + response.conversation[i].text + '</p></div>';
+                                    var newdiv = '<div class="conversation-message-in"><img src="' + response.conversation[i].sender.avatar + '" alt=""><p class="message message-in">' + response.conversation[i].text + '</p></div>';
                                     $('.messages_container').append(newdiv);
                                 } else {
                                     var newdiv = '<div class="conversation-message-out"><p class="message message-out">' + response.conversation[i].text + '</p></div>';
