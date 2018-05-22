@@ -27,9 +27,8 @@ window.onresize = function() {
 
 //hide/show chat screen
 $(document).ready(function(){
-    $('.hide-chat').hide();
     $('.dropdown-item-chat').on('click', function(){
-        $('.hide-chat').show();
+        $('.hide-chat').css("display", "flex");
     })
 });
 
@@ -38,7 +37,7 @@ $(document).ready(function() {
     $( "#nav_chat" ).click(function() {
         $("#dropdown-menu-profile").hide();
         $( "#nav_profile" ).removeClass("highlighted");
-        $('.hide-chat').show();
+        $('.hide-chat').css("display", "flex");
         $('body').css('overflow','hidden');
     });
     $( "#nav_profile" ).click(function() {
@@ -338,7 +337,7 @@ $(document).mouseup(function (e){
 <!-- toggle search filter -->
 $(document).ready(function() {
     $(".searchButton").click(function() {
-        $(".searchButtonOptions").toggleClass("hidden");
+        $(".searchButtonOptions").slideToggle();
         $(".searchButton").toggleClass("searchButtonRadiusFix");
         $(".searchBox").toggleClass("searchBoxRadiusFix");
 
@@ -485,7 +484,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('.chat_to_detail').on('click', function(e){
         e.preventDefault();
-        $(this).parent().removeAttr('style');
+        $(this).find(".chat-name").removeAttr('style');
         $('.chat_to_detail').removeClass('chat-active');
         $('.active-chat-item-indicator').addClass('hidden');
         $(this).find('.active-chat-item-indicator').removeClass('hidden');
