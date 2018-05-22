@@ -14,7 +14,7 @@ class FriendController extends Controller
      */
     public function index()
     {
-        //
+        return view('crossings.friends');
     }
 
     /**

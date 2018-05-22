@@ -396,6 +396,24 @@ $(document).ready(function() {
    })
 });
 
+<!-- switch between friends and requests -->
+$(document).ready(function() {
+    $(".see-friends").click(function() {
+        $(".see-friends").addClass("active");
+        $(".see-requests").removeClass("active");
+        $(".requests_container").slideUp();
+        $(".friends_container").slideDown();
+    })
+    $(".see-requests").click(function() {
+        $(".see-requests").addClass("active");
+        $(".see-friends").removeClass("active");
+        $(".requests_container").slideDown();
+        $(".friends_container").slideUp();
+    })
+});
+
+
+
 function changeDistance(distance){
     $.ajaxSetup({
 

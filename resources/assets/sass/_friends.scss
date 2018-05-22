@@ -1,0 +1,126 @@
+/*
+
+friends page styling
+
+*/
+
+.friends_page {
+
+
+  .friends_page_content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px;
+
+
+    .friends-request-toggle {
+
+      ul {
+        display: flex;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        cursor: pointer;
+
+        li {
+          flex: 1;
+          font-size: 16px;
+          font-weight: bold;
+          text-align: center;
+          color: $dark-color;
+          background-color: $white;
+          padding: 15px;
+        }
+
+        li.active {
+          color: $white;
+          background-color: $primary-color;
+        }
+
+        li:first-of-type {
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+
+        li:last-of-type {
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+
+    .friends_container, .requests_container {
+      padding-top: 30px;
+
+      a:hover,
+      a:focus {
+        text-decoration: none;
+      }
+
+      .list-item-since {
+        color: $nav_unselected;
+        font-size: 12px;
+      }
+    }
+
+    .requests_container {
+      display: none;
+
+      .item-content {
+
+        .caption {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 100%;
+        }
+      }
+
+      .friend-request-buttons {
+        width: 100%;
+
+        ul {
+          display: flex;
+          width: 100%;
+          border-radius: 5px;
+          box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+          cursor: pointer;
+
+          li {
+            flex: 1;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: $dark-color;
+            background-color: $white;
+            padding: 10px 5px;
+          }
+
+          li.active {
+            color: $white;
+            background-color: $primary-color;
+          }
+
+          li:first-of-type {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+
+          li:last-of-type {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+        }
+
+
+      }
+    }
+  }
+}
+
+@media(min-width: 768px) {
+  .friends_page {
+    position: relative;
+    top: -57px;
+  }
+}
