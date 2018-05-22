@@ -4,7 +4,7 @@
 
     <div class="profile_page">
 
-        <div class="cover_image" style="background-image: url({{$user->profile->path_cover ? url($user->profile->path_cover : '/img/cover_image_default.jpg'}});"></div>
+        <div class="cover_image" style="background-image: url({{$user->profile->path_cover ? url($user->profile->path_cover) : '/img/cover_image_default.jpg'}});"></div>
 
 
         <form class="change-image change-cover_image hidden" style="cursor:pointer" method="post" action="{{URL::action('ProfileController@updateCover')}}" enctype="multipart/form-data">
