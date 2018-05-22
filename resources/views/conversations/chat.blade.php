@@ -58,7 +58,7 @@
                                     }
                                 }
                             @endphp
-                            <div class="item item-list col-xs-12">
+                            <div class="item item-chat item-list col-xs-12">
                                 <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
                                     <div class="active-chat-item-indicator {{($key == 0) ? null : 'hidden' }}"></div>
                                     <img class="chat-avatar" src='{{ asset($user->avatar) }}'>

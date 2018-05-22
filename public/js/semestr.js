@@ -395,6 +395,29 @@ $(document).ready(function() {
    })
 });
 
+//search friends chat
+$('.chat-list .searchBox_inner').on('keyup', function(e){
+    var name = $(this).val().toLowerCase();
+    console.log(name);
+    if(name != "" && e.keyCode!=8) {
+        console.log('other keys are pressed');
+        $('.chat-name').each(function () {
+            console.log($(this).html());
+            if (!$(this).html().toLowerCase().includes(name)) {
+                $(this).parent().parent().parent().parent().hide();
+            }
+        });
+    }else if(e.keyCode == 8){
+        console.log('backspace pressed');
+        $('.chat-name').each(function () {
+            console.log($(this).html());
+            if ($(this).html().toLowerCase().includes(name)) {
+                $(this).parent().parent().parent().parent().show();
+            }
+        });
+    }
+});
+
 <!-- switch between friends and requests -->
 $(document).ready(function() {
     $(".see-friends").click(function() {
