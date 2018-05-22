@@ -84,7 +84,7 @@ class ProfileController extends Controller
         }
 
         $profile = Auth::user()->profile;
-        $profile->path_cover = $filename;
+        $profile->path_cover = '/img/uploads/'.$filename;
         $profile->save();
 
         return redirect()->back();
@@ -114,7 +114,7 @@ class ProfileController extends Controller
         }
 
         $user = Auth::user();
-        $user->avatar = $filename;
+        $user->avatar = '/img/uploads/'.$filename;
         $user->save();
 
         return redirect()->back();

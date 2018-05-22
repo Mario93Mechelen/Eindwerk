@@ -52,14 +52,8 @@
                 <li class="nav_profile" id="nav_profile">
                     <a href="#">
                         @php
-                            $avatar = $myUser->avatar;
-                            if (strpos($avatar, 'http') !== false) {
-                                $filename = $avatar;
-                            }else{
-                                $filename = '/img/'.$avatar;
-                            }
                         @endphp
-                        <p>{{$myUser->first_name}}</p><div class="profile_pic" style="background-image: url({{url($filename)}})"></div>
+                        <p>{{$myUser->first_name}}</p><div class="profile_pic" style="background-image: url({{$myUser->avatar}})"></div>
                     </a>
                 </li>
 

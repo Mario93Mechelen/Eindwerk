@@ -4,7 +4,7 @@
 
     <div class="profile_page">
 
-        <div class="cover_image" style="background-image: url({{$myUser->profile->path_cover ? '/img/'.$myUser->profile->path_cover : '/img/cover_image_default.jpg'}});"></div>
+        <div class="cover_image" style="background-image: url({{$user->profile->path_cover ? url($user->profile->path_cover : '/img/cover_image_default.jpg'}});"></div>
 
 
         <form class="change-image change-cover_image hidden" style="cursor:pointer" method="post" action="{{URL::action('ProfileController@updateCover')}}" enctype="multipart/form-data">
@@ -20,16 +20,8 @@
         <div class="profile_page_content">
 
             <div class="upper_section">
-                @php
-                    $avatar = $user->avatar;
-                    if (strpos($avatar, 'http') !== false) {
-                        $filename = $avatar;
-                    }else{
-                        $filename = '/img/'.$avatar;
-                    }
-                @endphp
 
-                <img class="profile_image" src="{{url($filename)}}" alt="">
+                <img class="profile_image" src="{{url($user->avatar)}}" alt="">
 
                 <form class="change-image change-profile_image hidden" style="cursor:pointer" method="post" action="{{URL::action('ProfileController@updateProfilepic')}}" enctype="multipart/form-data">
                     {{csrf_field()}}
