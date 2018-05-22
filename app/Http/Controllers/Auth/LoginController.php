@@ -10,6 +10,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Setting;
+use App\Profile;
 
 use Socialite;
 
@@ -99,6 +100,9 @@ class LoginController extends Controller
             $setting->user_id = $appUser->id;
             $setting->facebook = $user->profileUrl;
             $setting->save();
+            $profile = new Profile();
+            $profile->user_id = $appUser->id;
+            $profile->save();
 
         }else{
             $appUser = User::where('email',$user->user["email"])->first();

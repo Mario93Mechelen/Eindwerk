@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Crossing;
 use App\Friend;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
@@ -61,6 +62,62 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function updateCover(Request $request)
+    {
+        $filename = Auth::user()->profile->path_cover;
+        if ($request->cover_image) {
+            if(!is_null($filename) && $filename != '' && Storage::disk('public')->exists($filename)) {
+                \Storage::disk('public')->delete($filename);
+            }
+
+            $file = $request->file('cover_image');
+            $originalName = str_replace(' ', '-', str_replace('(', '', str_replace(')', '', $file->getClientOriginalName())));
+            $filename = time().$originalName;
+            Storage::disk('public')->put($filename, file_get_contents($file->getRealPath()));
+        }elseif($request->remove_image=="on") {
+            if(!is_null($filename) && $filename != '' && Storage::disk('public')->exists($filename)) {
+                \Storage::disk('public')->delete($filename);
+            }
+            $filename = null;
+        }
+
+        $profile = Auth::user()->profile;
+        $profile->path_cover = $filename;
+        $profile->save();
+
+        return redirect()->back();
+
+    }
+
+    public function updateProfilepic(Request $request)
+    {
+        $filename = Auth::user()->avatar;
+        if (strpos($filename, 'http') !== false) {
+            $filename = null;
+        }
+        if ($request->profile_image) {
+            if(!is_null($filename) && $filename != '' && Storage::disk('public')->exists($filename)) {
+                \Storage::disk('public')->delete($filename);
+            }
+
+            $file = $request->file('profile_image');
+            $originalName = str_replace(' ', '-', str_replace('(', '', str_replace(')', '', $file->getClientOriginalName())));
+            $filename = time().$originalName;
+            Storage::disk('public')->put($filename, file_get_contents($file->getRealPath()));
+        }elseif($request->remove_image=="on") {
+            if(!is_null($filename) && $filename != '' && Storage::disk('public')->exists($filename)) {
+                \Storage::disk('public')->delete($filename);
+            }
+            $filename = null;
+        }
+
+        $user = Auth::user();
+        $user->avatar = $filename;
+        $user->save();
+
+        return redirect()->back();
     }
 
     public function sendFriendRequest(Request $request)

@@ -4,11 +4,14 @@
 
     <div class="profile_page">
 
-        <div class="cover_image" style="background-image: url('/img/cover_image_default.jpg');"></div>
+        <div class="cover_image" style="background-image: url({{$myUser->profile->path_cover ? '/img/'.$myUser->profile->path_cover : '/img/cover_image_default.jpg'}});"></div>
 
-        <div class="change-image change-cover_image hidden">
-            <i class="far fa-image"></i>
-        </div>
+
+        <form class="change-image change-cover_image hidden" style="cursor:pointer" method="post" action="{{URL::action('ProfileController@updateCover')}}" enctype="multipart/form-data">
+            {{csrf_field()}}
+            <label for="cover_image"><i class="far fa-image"></i></label>
+            <input type="file" id="cover_image" name="cover_image" style="display:none">
+        </form>
 
         <div class="crossings_map hidden" style="background-image: url('/img/header_bg_01.jpg');">
             <div id="map" style="position:absolute !important; height:100%;width:100%;"></div>
@@ -17,18 +20,28 @@
         <div class="profile_page_content">
 
             <div class="upper_section">
+                @php
+                    $avatar = $user->avatar;
+                    if (strpos($avatar, 'http') !== false) {
+                        $filename = $avatar;
+                    }else{
+                        $filename = '/img/'.$avatar;
+                    }
+                @endphp
 
-                <img class="profile_image" src="{{url($user->avatar)}}" alt="">
+                <img class="profile_image" src="{{url($filename)}}" alt="">
 
-                <div class="change-image change-profile_image hidden">
-                    <i class="far fa-image"></i>
-                </div>
+                <form class="change-image change-profile_image hidden" style="cursor:pointer" method="post" action="{{URL::action('ProfileController@updateProfilepic')}}" enctype="multipart/form-data">
+                    {{csrf_field()}}
+                    <label for="profile_image"><i class="far fa-image"></i></label>
+                    <input type="file" name="profile_image" id="profile_image" style="display:none">
+                </form>
 
                 <h2 class="user_name">{{$user->first_name." ".$user->last_name}}</h2>
 
 
                 <div class="buttons">
-                @if($user != $myUser)
+                @if($user->id != $myUser->id)
 
                     @if($user->friendRequestIsAccepted($myUser->id,$user->id))
                         <!-- indien vriend -->
@@ -492,6 +505,13 @@
                 }
 
             });
+        });
+    </script>
+
+    <!-- FORMS -->
+    <script>
+        $('input[type="file"]').on('change', function(){
+           $(this).parent().submit();
         });
     </script>
 

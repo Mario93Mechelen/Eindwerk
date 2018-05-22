@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Setting;
 use App\User;
+use App\Profile;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -84,6 +85,9 @@ class RegisterController extends Controller
             $setting = new Setting();
             $setting->user_id = $user->id;
             $setting->save();
+            $profile = new Profile();
+            $profile->user_id = $appUser->id;
+            $profile->save();
             Auth::login($user, true);
             return redirect('/');
         }
