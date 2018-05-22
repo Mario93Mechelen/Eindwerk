@@ -52,11 +52,9 @@
                 <li class="nav_profile" id="nav_profile">
                     <a href="#">
                         <p>{{$myUser->first_name}}</p><div class="profile_pic" style="background-image: url({{$myUser->avatar}})"></div>
-<<<<<<< HEAD
+
                         <div class="indicator-friends {{App\Friend::where('friend_receiver',$myUser->id)->where('request_type','pending')->first() ? null : 'hidden'}}" ></div>
-=======
-                        <div class="indicator-friends {{App\Friend::where('friend_receiver',$myUser->id)->where('request_type','sent')->first() ? null : 'hidden'}}" style="width:15px;height:15px;position:relative;z-index:500;background:#800000;border-radius:50%;bottom:14px;right:5px;border:1px solid white"></div>
->>>>>>> 942e7b00c953733232d2e289751856b7fd3e9eab
+
                     </a>
                 </li>
 
