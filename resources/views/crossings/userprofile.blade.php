@@ -152,13 +152,13 @@
                         <!-- geboortedatum -->
                         <div class="aboutme_item">
                             <p class="item_label">birth date</p>
-                            <input type="date" value="{{$user->birthday}}" class="edit-button-target" readonly>
+                            <input type="date" value="{{$user->birthday}}" class="edit-button-target birthdate" readonly>
                         </div>
 
                         <!-- geslacht -->
                         <div class="aboutme_item">
                             <p class="item_label">gender</p>
-                            <select class="edit-button-target" disabled>
+                            <select class="edit-button-target gender-select" disabled>
                                 <option value="male" {{($user->gender =='male') ? 'selected' : null }}>male</option>
                                 <option value="female" {{($user->gender =='female') ? 'selected' : null }}>female</option>
                                 <option value="other" {{($user->gender =='other' || $user->gender=="") ? 'selected' : null }}>other</option>
@@ -168,7 +168,7 @@
                         <!-- thuisplaats -->
                         <div class="aboutme_item">
                             <p class="item_label">home</p>
-                            <input type="text" value="{{$user->home}}" class="edit-button-target" readonly>
+                            <input type="text" value="{{$user->home}}" class="edit-button-target home" readonly>
                         </div>
 
                     </form>  <!-- einde basic info -->
@@ -181,19 +181,19 @@
                         <!-- school thuis -->
                         <div class="aboutme_item">
                             <p class="item_label">school at home</p>
-                            <input type="text" value="{{$user->home_school}}" class="edit-button-target" readonly>
+                            <input type="text" value="{{$user->home_school}}" class="edit-button-target school_home" readonly>
                         </div>
 
                         <!-- school buitenland -->
                         <div class="aboutme_item">
                             <p class="item_label">school abroad</p>
-                            <input type="text" value="{{$user->abroad_school}}" class="edit-button-target" readonly>
+                            <input type="text" value="{{$user->abroad_school}}" class="edit-button-target school_abroad" readonly>
                         </div>
 
                         <!-- huidige studie -->
                         <div class="aboutme_item">
                             <p class="item_label">study</p>
-                            <input type="text" value="{{$user->study}}" class="edit-button-target" readonly>
+                            <input type="text" value="{{$user->study}}" class="edit-button-target study" readonly>
                         </div>
 
                     </form>  <!-- einde education info -->

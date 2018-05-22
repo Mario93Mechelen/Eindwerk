@@ -35,6 +35,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/crossings', 'ProfileController@index');
     Route::post('updateCover','ProfileController@updateCover');
     Route::post('/updateProfilepic','ProfileController@updateProfilepic');
+    Route::post('/updateProfile', 'ProfileController@updateProfile');
     //other peoples profiles
     Route::get('/users/{user}', 'ProfileController@show');
     //my profile

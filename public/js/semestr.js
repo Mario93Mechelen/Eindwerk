@@ -274,11 +274,48 @@ $(document).ready(function() {
             $(".edit-button-target").attr("disabled", true);
             $(".edit-button-target").attr("contenteditable", false);
             $(".edit-button-target").css("background-color", "transparent");
+            var intro = $('.user_introtext').html();
+            var birthdate = $('.birthdate').val();
+            var gender = $('.gender-select').val();
+            var home = $('.home').val();
+            var school_home = $('.school_home').val();
+            var school_abroad = $('.school_abroad').val();
+            var study = $('.study').val();
+            console.log(intro+birthdate+gender+home+school_abroad+school_home+study);
+            saveProfile(intro,birthdate,gender,home,school_home,school_abroad,study);
             $(".change-image").toggleClass("hidden");
         }
 
     });
 
+    function saveProfile(intro,birthdate,gender,home,school_home,school_abroad,study){
+        $.ajaxSetup({
+
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+            }
+
+        });
+        $.ajax({
+            method:"POST",
+            url:"/updateProfile",
+            data:{
+                'intro':intro,
+                'birthdate':birthdate,
+                'gender':gender,
+                'home':home,
+                'school_home':school_home,
+                'school_abroad':school_abroad,
+                'study': study
+            }
+        }).done(function(response){
+            if(response.code==200) {
+                console.log('profile updated');
+            }
+        });
+    }
 
 });
 

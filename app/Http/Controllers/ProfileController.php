@@ -120,6 +120,28 @@ class ProfileController extends Controller
         return redirect()->back();
     }
 
+    public function updateProfile(Request $request)
+    {
+        $intro = $request->intro;
+        $home = $request->home;
+        $study = $request->study;
+        $school_home = $request->school_home;
+        $school_abroad = $request->school_abroad;
+        $gender = $request->gender;
+        $birthdate = $request->birthdate;
+        $user = User::find(Auth::user()->id);
+        //$user->update(['intro'=>$intro,'home'=>$home,'study'=>$study,'gender'=>$gender,'home_school'=>$school_home,'abroad_school'=>$school_abroad,'birthdate'=>$birthdate]);
+        $user->intro = $intro;
+        $user->home = $home;
+        $user->study = $study;
+        $user->home_school = $school_home;
+        $user->abroad_school  = $school_abroad;
+        $user->gender = $gender;
+        $user->birthday = $birthdate;
+        $user->save();
+        return response()->json(['code' => 200]);
+    }
+
     public function sendFriendRequest(Request $request)
     {
         $friendSent = Friend::where('friend_sender', Auth::user()->id)->where('friend_receiver',$request->id)->where('request_type','sent')->first();
