@@ -107,7 +107,15 @@ class ProfileController extends Controller
             $originalName = str_replace(' ', '-', str_replace('(', '', str_replace(')', '', $file->getClientOriginalName())));
             $filename = time().$originalName;
             $path = public_path('img/uploads/'.$filename);
-            Image::make($file->getRealPath())->resize(200,null,function($constraint){$constraint->aspectRatio();})->crop(200,200)->save($path);
+            $data = getimagesize($file);
+            $width = $data[0];
+            $height = $data[1];
+            if($width>$height){
+                Image::make($file->getRealPath())->crop($height,$height)->save($path);
+            }else{
+                Image::make($file->getRealPath())->crop($width,$width)->save($path);
+            }
+
             //Storage::disk('public')->put($filename,file_get_contents($file->getRealPath()));
             //$file->save($filename);
         }elseif($request->remove_image=="on") {
