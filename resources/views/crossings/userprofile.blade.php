@@ -160,7 +160,7 @@
                         <!-- thuisplaats -->
                         <div class="aboutme_item">
                             <p class="item_label">home</p>
-                            <input type="text" value="{{$user->home}}" class="edit-button-target home" readonly>
+                            <input type="text" value="{{$user->home}}" placeholder="" id="home" class="edit-button-target home" readonly>
                         </div>
 
                     </form>  <!-- einde basic info -->
@@ -173,13 +173,13 @@
                         <!-- school thuis -->
                         <div class="aboutme_item">
                             <p class="item_label">school at home</p>
-                            <input type="text" value="{{$user->home_school}}" id="school_home" class="edit-button-target school_home" readonly>
+                            <input type="text" value="{{$user->home_school}}" placeholder="" id="school_home" class="edit-button-target school_home" readonly>
                         </div>
 
                         <!-- school buitenland -->
                         <div class="aboutme_item">
                             <p class="item_label">school abroad</p>
-                            <input type="text" value="{{$user->abroad_school}}" class="edit-button-target school_abroad" readonly>
+                            <input type="text" value="{{$user->abroad_school}}" placeholder="" id="school_abroad" class="edit-button-target school_abroad" readonly>
                         </div>
 
                         <!-- huidige studie -->
@@ -511,13 +511,15 @@
         $(document).ready(function(){
             var input = document.getElementById('school_home');
             var autocomplete = new google.maps.places.Autocomplete(input);
+            var input2 = document.getElementById('school_abroad');
+            var autocomplete = new google.maps.places.Autocomplete(input2);
+            var input3 = document.getElementById('home');
+            var autocomplete = new google.maps.places.Autocomplete(input3);
         })
     </script>
 
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&libraries=places"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&callback=initMap"
-            async defer></script>
 
 
 @endsection
