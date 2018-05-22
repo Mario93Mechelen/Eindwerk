@@ -59,7 +59,7 @@
                                 $filename = '/img/'.$avatar;
                             }
                         @endphp
-                        <p>{{$myUser->first_name}}</p><div class="profile_pic" style="background-image: url({{url($filename}})"></div>
+                        <p>{{$myUser->first_name}}</p><div class="profile_pic" style="background-image: url({{url($filename)}})"></div>
                     </a>
                 </li>
 
