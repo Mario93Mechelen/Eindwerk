@@ -64,6 +64,11 @@ class User extends Authenticatable
         return Friend::where('friend_sender',$myId)->where('friend_receiver',$userId)->where('request_type','friends')->first();
     }
 
+    public function friends()
+    {
+        return $this->belongsToMany('App\User','friends','friend_sender','friend_receiver');
+    }
+
     public function crossingLocationsPerUser($myId)
     {
         return Crossing::where('crosser_id',$myId)->where('crossed_id',$this->id)->first()->crossingLocations;

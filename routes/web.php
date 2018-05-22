@@ -50,6 +50,8 @@ Route::group(['middleware' => 'auth'], function()
 
     //friends
     Route::get('/friends','FriendController@index');
+    Route::post('/friends/accept','FriendController@accept');
+    Route::post('/friends/deleteRequest', 'FriendController@deleteRequest');
 
     //conversation
     Route::post('/conversation', 'ConversationController@store');

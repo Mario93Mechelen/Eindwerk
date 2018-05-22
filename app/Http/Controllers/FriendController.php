@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Friend;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class FriendController extends Controller
@@ -14,7 +15,27 @@ class FriendController extends Controller
      */
     public function index()
     {
-        return view('crossings.friends');
+        $friend_requests = Auth::user()->friends()->where('request_type','pending')->get();
+        $friends = Auth::user()->friends()->where('request_type','friends')->get();
+        return view('crossings.friends',compact('friend_requests','friends'));
+    }
+
+    public function accept(Request $request)
+    {
+        $myFriend = Friend::where('friend_sender', Auth::user()->id)->where('friend_receiver',$request->id)->first();
+        $myFriend->request_type = 'friends';
+        $myFriend->save();
+        $yourFriend = Friend::where('friend_sender', $request->id)->where('friend_receiver',Auth::user()->id)->first();
+        $yourFriend->request_type = 'friends';
+        $yourFriend->save();
+        return response()->json(['code' => 200,'me' => $myFriend,'you' => $yourFriend]);
+    }
+
+    public function deleteRequest(Request $request)
+    {
+        Friend::where('friend_sender', Auth::user()->id)->where('friend_receiver',$request->id)->delete();
+        Friend::where('friend_sender', $request->id)->where('friend_receiver',Auth::user()->id)->delete();
+        return response()->json(['code' => 200]);
     }
 
     /**

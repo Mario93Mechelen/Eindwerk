@@ -353,7 +353,7 @@
         })
     </script>
     <script>
-        @if($user != $myUser && isset($crossingLocations))
+        @if($user->id != $myUser->id && isset($crossingLocations))
         function positionToMap(position) {
             var map = new google.maps.Map(document.getElementById('map'), {
                 center: {lat: position.coords.latitude, lng: position.coords.longitude},

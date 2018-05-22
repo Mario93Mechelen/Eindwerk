@@ -16,51 +16,29 @@
             </div>
 
             <div class="friends_container row list-group">
-                <div class="item item-list col-xs-12 col-md-6">
-                    <a href="">
+                @foreach($friends as $friend)
+                <div class="item item-friend item-list col-xs-12 col-md-6" data-user="{{$friend->id}}">
+                    <a href="{{URL::action('ProfileController@show',$friend)}}">
                         <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <img class="list-item-img" src="{{url($friend->avatar)}}" alt=""/>
                             <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-since">friends since 14 January 2016</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                <h4 class="list-item-name list-item-name-friend">{{$friend->first_name.' '.$friend->last_name}}</h4>
+                                <p class="list-item-since">friends since {{$friend->updated_at->format('d m Y')}}</p>
+                                <p class="list-item-intro">{{$friend->intro}}</p>
                             </div>
                         </div>
                     </a>
                 </div>
-                <div class="item item-list col-xs-12 col-md-6">
-                    <a href="">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-since">friends since 14 January 2016</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item item-list col-xs-12 col-md-6">
-                    <a href="">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <p class="list-item-since">friends since 14 January 2016</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                @endforeach
             </div>
 
             <div class="requests_container row list-group">
-                <div class="item item-list col-xs-12 col-md-6">
-                    <a href="">
+                @foreach($friend_requests as $fr)
+                <div class="item item-friend item-list col-xs-12 col-md-6" data-user="{{$fr->id}}">
                         <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <img class="list-item-img" src="{{url($fr->avatar)}}" alt=""/>
                             <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
+                                <h4 class="list-item-name list-item-name-friend">{{$fr->first_name.' '.$fr->last_name}}</h4>
                                 <div class="friend-request-buttons">
                                     <ul>
                                         <li class="friend-request-accept active">accept</li>
@@ -69,40 +47,9 @@
                                 </div>
                             </div>
                         </div>
-                    </a>
                 </div>
-                <div class="item item-list col-xs-12 col-md-6">
-                    <a href="">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <div class="friend-request-buttons">
-                                    <ul>
-                                        <li class="friend-request-accept active">accept</li>
-                                        <li class="friend-request-decline">decline</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="item item-list col-xs-12 col-md-6">
-                    <a href="">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">Amber Heard</h4>
-                                <div class="friend-request-buttons">
-                                    <ul>
-                                        <li class="friend-request-accept active">accept</li>
-                                        <li class="friend-request-decline">decline</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                @endforeach
+
 
             </div>
 
@@ -122,7 +69,7 @@
             console.log(name);
             if(name != "" && e.keyCode!=8) {
                 console.log('other keys are pressed');
-                $('.list-item-name').each(function () {
+                $('.list-item-name-friend').each(function () {
                     console.log($(this).html());
                     if (!$(this).html().toLowerCase().includes(name)) {
                         $(this).parent().parent().parent().hide();
@@ -130,7 +77,7 @@
                 });
             }else if(e.keyCode == 8){
                 console.log('backspace pressed');
-                $('.list-item-name').each(function () {
+                $('.list-item-name-friend').each(function () {
                     console.log($(this).html());
                     if ($(this).html().toLowerCase().includes(name)) {
                         $(this).parent().parent().parent().show();
@@ -229,6 +176,69 @@
                 }
 
             });
+        });
+    </script>
+
+    <!-- scripts accept decline friends-->
+    <script>
+        $(document).ready(function(){
+            $('.friend-request-accept').on('click', function(){
+               var userid = $(this).closest('.item-friend').data('user');
+               console.log(userid);
+               accept(userid);
+            });
+
+            $('.friend-request-decline').on('click', function(){
+                var userid = $(this).closest('.item-friend').data('user');
+                console.log(userid);
+                declineRequest(userid);
+            })
+
+            function accept(id){
+                $.ajaxSetup({
+
+                    headers: {
+
+                        'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                    }
+
+                });
+                $.ajax({
+                    method:"POST",
+                    url:"{{URL::action('FriendController@accept')}}",
+                    data:{
+                        'id': id,
+                    }
+                }).done(function(response){
+                    if(response.code==200) {
+                        window.location.reload();
+                    }
+                });
+            }
+
+            function declineRequest(id){
+                $.ajaxSetup({
+
+                    headers: {
+
+                        'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                    }
+
+                });
+                $.ajax({
+                    method:"POST",
+                    url:"{{URL::action('FriendController@deleteRequest')}}",
+                    data:{
+                        'id': id,
+                    }
+                }).done(function(response){
+                    if(response.code==200) {
+                        window.location.reload();
+                    }
+                });
+            }
         });
     </script>
 
