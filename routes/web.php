@@ -48,6 +48,8 @@ Route::group(['middleware' => 'auth'], function()
     Route::post('/updateDistance', 'SettingController@updateDistance');
     Route::post('/deletelife', 'SettingController@deleteAllInfo');
 
+    //friends
+    Route::get('/friends','FriendController@index');
 
     //conversation
     Route::post('/conversation', 'ConversationController@store');
