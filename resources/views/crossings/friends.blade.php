@@ -15,6 +15,99 @@
                 </ul>
             </div>
 
+            <div class="friends_container row list-group">
+                <div class="item item-list col-xs-12 col-md-6">
+                    <a href="">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-since">friends since 14 January 2016</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="item item-list col-xs-12 col-md-6">
+                    <a href="">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-since">friends since 14 January 2016</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="item item-list col-xs-12 col-md-6">
+                    <a href="">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <p class="list-item-since">friends since 14 January 2016</p>
+                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="requests_container row list-group">
+                <div class="item item-list col-xs-12 col-md-6">
+                    <a href="">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <div class="friend-request-buttons">
+                                    <ul>
+                                        <li class="friend-request-accept active">accept</li>
+                                        <li class="friend-request-decline">decline</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="item item-list col-xs-12 col-md-6">
+                    <a href="">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <div class="friend-request-buttons">
+                                    <ul>
+                                        <li class="friend-request-accept active">accept</li>
+                                        <li class="friend-request-decline">decline</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="item item-list col-xs-12 col-md-6">
+                    <a href="">
+                        <div class="item-content">
+                            <img class="list-item-img" src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
+                            <div class="caption">
+                                <h4 class="list-item-name">Amber Heard</h4>
+                                <div class="friend-request-buttons">
+                                    <ul>
+                                        <li class="friend-request-accept active">accept</li>
+                                        <li class="friend-request-decline">decline</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+
+
         </div>
 
     </div>

@@ -10584,6 +10584,79 @@ friends page styling
   border-bottom-right-radius: 5px;
 }
 
+.friends_page .friends_page_content .friends_container,
+.friends_page .friends_page_content .requests_container {
+  padding-top: 30px;
+}
+
+.friends_page .friends_page_content .friends_container a:hover,
+.friends_page .friends_page_content .friends_container a:focus,
+.friends_page .friends_page_content .requests_container a:hover,
+.friends_page .friends_page_content .requests_container a:focus {
+  text-decoration: none;
+}
+
+.friends_page .friends_page_content .friends_container .list-item-since,
+.friends_page .friends_page_content .requests_container .list-item-since {
+  color: #aaaaaa;
+  font-size: 12px;
+}
+
+.friends_page .friends_page_content .requests_container .item-content .caption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+}
+
+.friends_page .friends_page_content .requests_container .friend-request-buttons {
+  width: 100%;
+}
+
+.friends_page .friends_page_content .requests_container .friend-request-buttons ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  cursor: pointer;
+}
+
+.friends_page .friends_page_content .requests_container .friend-request-buttons ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #002245;
+  background-color: #ffffff;
+  padding: 10px 5px;
+}
+
+.friends_page .friends_page_content .requests_container .friend-request-buttons ul li.active {
+  color: #ffffff;
+  background-color: #0048d9;
+}
+
+.friends_page .friends_page_content .requests_container .friend-request-buttons ul li:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.friends_page .friends_page_content .requests_container .friend-request-buttons ul li:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 @media (min-width: 768px) {
   .friends_page {
     position: relative;
