@@ -68,7 +68,7 @@
             console.log(name);
             if(name != "" && e.keyCode!=8) {
                 console.log('other keys are pressed');
-                $('.list-item-name').each(function () {
+                $('.list-item-name-home').each(function () {
                     console.log($(this).html());
                     if (!$(this).html().toLowerCase().includes(name)) {
                         $(this).parent().parent().parent().hide();
@@ -76,7 +76,7 @@
                 });
             }else if(e.keyCode == 8){
                 console.log('backspace pressed');
-                $('.list-item-name').each(function () {
+                $('.list-item-name-home').each(function () {
                     console.log($(this).html());
                     if ($(this).html().toLowerCase().includes(name)) {
                         $(this).parent().parent().parent().show();
