@@ -173,7 +173,7 @@
                         <!-- school thuis -->
                         <div class="aboutme_item">
                             <p class="item_label">school at home</p>
-                            <input type="text" value="{{$user->home_school}}" class="edit-button-target school_home" readonly>
+                            <input type="text" value="{{$user->home_school}}" id="school_home" class="edit-button-target school_home" readonly>
                         </div>
 
                         <!-- school buitenland -->
@@ -507,7 +507,17 @@
         });
     </script>
 
+    <script>
+        $(document).ready(function(){
+            var input = document.getElementById('school_home');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+        })
+    </script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&libraries=places"></script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&callback=initMap"
             async defer></script>
+
 
 @endsection

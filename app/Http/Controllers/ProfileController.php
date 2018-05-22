@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Image;
 
 class ProfileController extends Controller
 {
@@ -105,7 +106,10 @@ class ProfileController extends Controller
             $file = $request->file('profile_image');
             $originalName = str_replace(' ', '-', str_replace('(', '', str_replace(')', '', $file->getClientOriginalName())));
             $filename = time().$originalName;
-            Storage::disk('public')->put($filename, file_get_contents($file->getRealPath()));
+            $path = public_path('img/uploads/'.$filename);
+            Image::make($file->getRealPath())->resize(200,null,function($constraint){$constraint->aspectRatio();})->crop(200,200)->save($path);
+            //Storage::disk('public')->put($filename,file_get_contents($file->getRealPath()));
+            //$file->save($filename);
         }elseif($request->remove_image=="on") {
             if(!is_null($filename) && $filename != '' && Storage::disk('public')->exists($filename)) {
                 \Storage::disk('public')->delete($filename);
