@@ -9078,6 +9078,7 @@ header #dropdown-menu-profile a:last-of-type {
 }
 
 .map-top .search-bar .searchButtonOptions {
+  display: none;
   width: 100%;
   margin: 0 auto;
   border-top-left-radius: 0px;

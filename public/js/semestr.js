@@ -337,7 +337,7 @@ $(document).mouseup(function (e){
 <!-- toggle search filter -->
 $(document).ready(function() {
     $(".searchButton").click(function() {
-        $(".searchButtonOptions").toggleClass("hidden");
+        $(".searchButtonOptions").slideToggle();
         $(".searchButton").toggleClass("searchButtonRadiusFix");
         $(".searchBox").toggleClass("searchBoxRadiusFix");
 
