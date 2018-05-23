@@ -54,6 +54,13 @@
             if($('.chat-wrapper').is(':visible')) {
                 if ($('*[data-id="' + data.data.conversation_id + '"]').hasClass('chat-active')) {
                     console.log('chat is open');
+                    var div = $('*[data-id="' + data.data.conversation_id + '"]').parent().html();
+                    var composedDiv = '<div class="item item-list col-xs-12">' + div + '</div>';
+                    $('*[data-id="' + data.data.conversation_id + '"]').parent().remove();
+                    $('#chat_overview').prepend(composedDiv);
+                    $('*[data-id="' + data.data.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
+                    $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-time').html('just now');
+                    $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-last-message-start').html(data.data.chat);
                     var newdiv = '<div class="conversation-message-in"><img src="' + data.data.sender.avatar + '" alt=""><p class="message message-in">' + data.data.chat + '</p></div>';
                     $(newdiv).appendTo('.messages_container').hide().fadeIn(1000);
                     $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
@@ -82,6 +89,13 @@
                 $('.new-message-indicator').removeClass('hidden');
                 if ($('*[data-id="' + data.data.conversation_id + '"]').hasClass('chat-active')) {
                     console.log('chat is open');
+                    var div = $('*[data-id="' + data.data.conversation_id + '"]').parent().html();
+                    var composedDiv = '<div class="item item-list col-xs-12">' + div + '</div>';
+                    $('*[data-id="' + data.data.conversation_id + '"]').parent().remove();
+                    $('#chat_overview').prepend(composedDiv);
+                    $('*[data-id="' + data.data.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
+                    $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-time').html('just now');
+                    $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-last-message-start').html(data.data.chat);
                     var newdiv = '<div class="conversation-message-in"><img src="' + data.data.sender.avatar + '" alt=""><p class="message message-in">' + data.data.chat + '</p></div>';
                     $(newdiv).appendTo('.messages_container').hide().fadeIn(1000);
                     $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
