@@ -64,6 +64,10 @@
                     var newdiv = '<div class="conversation-message-in"><img src="' + data.data.sender.avatar + '" alt=""><p class="message message-in">' + data.data.chat + '</p></div>';
                     $(newdiv).appendTo('.messages_container').hide().fadeIn(1000);
                     $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
+                    $('.chat_to_detail').on('click', function (e) {
+                        e.preventDefault();
+                        getChats(data.data.conversation_id);
+                    })
                     console.log(data);
                 } else {
                     console.log('chat is closed');
@@ -99,6 +103,10 @@
                     var newdiv = '<div class="conversation-message-in"><img src="' + data.data.sender.avatar + '" alt=""><p class="message message-in">' + data.data.chat + '</p></div>';
                     $(newdiv).appendTo('.messages_container').hide().fadeIn(1000);
                     $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
+                    $('.chat_to_detail').on('click', function (e) {
+                        e.preventDefault();
+                        getChats(data.data.conversation_id);
+                    })
                     console.log(data);
                 } else {
                     console.log('chat is closed');
