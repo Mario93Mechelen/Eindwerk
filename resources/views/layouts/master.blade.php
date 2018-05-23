@@ -119,6 +119,10 @@
                         $('*[data-id="' + data.data.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
                         $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-time').html('just now');
                         $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-last-message-start').html(data.data.chat);
+                        $('.chat_to_detail').on('click', function (e) {
+                            e.preventDefault();
+                            getChats(data.data.conversation_id);
+                        })
                     } else {
                         $('.active-chat-item-indicator').addClass('hidden');
                         $('#chat_overview').prepend('<div class="item item-list col-xs-12"><a class="item-content chat_to_detail chat-active" href="" data-user="' + data.data.sender.id + '" data-id="' + data.data.conversation_id + '"><div class="active-chat-item-indicator"></div><img class="chat-avatar" src="' + data.data.sender.avatar + '"><div class="online-indicator online"></div><div class="chat-right"><div class="chat-nametime"><p class="chat-name">' + data.data.sender.first_name + ' ' + data.data.sender.last_name + '</p><p class="chat-time">just now</p></div><p class="chat-last-message-start">' + data.data.chat + '</p></div></a></div>');
