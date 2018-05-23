@@ -10,7 +10,7 @@
         <form class="change-image change-cover_image hidden" style="cursor:pointer" method="post" action="{{URL::action('ProfileController@updateCover')}}" enctype="multipart/form-data">
             {{csrf_field()}}
             <label for="cover_image"><i class="far fa-image"></i></label>
-            <input type="file" id="cover_image" name="cover_image" style="display:none">
+            <input type="file" accept="image/*" id="cover_image" name="cover_image" style="display:none">
         </form>
 
         <div class="crossings_map hidden" style="background-image: url('/img/header_bg_01.jpg');">
@@ -26,7 +26,7 @@
                 <form class="change-image change-profile_image hidden" style="cursor:pointer" method="post" action="{{URL::action('ProfileController@updateProfilepic')}}" enctype="multipart/form-data">
                     {{csrf_field()}}
                     <label for="profile_image"><i class="far fa-image"></i></label>
-                    <input type="file" name="profile_image" id="profile_image" style="display:none">
+                    <input type="file" accept="image/*" name="profile_image" id="profile_image" style="display:none">
                 </form>
 
                 <h2 class="user_name">{{$user->first_name." ".$user->last_name}}</h2>
