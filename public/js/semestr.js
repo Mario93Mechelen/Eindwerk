@@ -500,6 +500,8 @@ $(document).ready(function(){
    if($('.chat-active').length){
        var id = $('.chat-active').data('id');
        getChatsById(id);
+
+       $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
    }
 });
 
@@ -516,6 +518,8 @@ $(document).ready(function(){
         console.log(id);
         getChatsById(id);
         updateSeenStatus($(this).data('id'));
+
+        $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
     })
 });
 
