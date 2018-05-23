@@ -651,10 +651,10 @@ $(document).ready(function(){
                 console.log('message sent');
                 var newdiv = '<div class="conversation-message-out"><p class="message message-out">' + input + '</p></div>';
                 $('.messages_container').append(newdiv);
+                $('.messages_container').scrollTop($('.messages_container')[0].scrollHeight);
             }
         })
     };
-    $('.messages_container').scrollTop($('.messages_container')[0].scrollHeight);
 });
 
 //script voor locatiebepalingen
