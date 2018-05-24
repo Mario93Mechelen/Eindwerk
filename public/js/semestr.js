@@ -84,17 +84,32 @@ $(document).ready(function() {
         });
     }
 
-    /* password section in settings */
+    /* social media section in settings */
+    /* eerst bij laden van pagina kleur iconen juist zetten */
+    $(".social_item_connect").each(function() {
+        if ($(this).html() == "connect") {
+            $(this).parent().find("i").css("color", "#aaaaaa");
+        } else {
+            $(this).parent().find("i").css("color", "#0048d9");
+        }
+    });
+
+
+
+    /* dan reageren op kliks */
     $(".social_item_connect").click(function(e) {
         e.preventDefault();
        if ($(this).html() == "connect") {
            $(this).html("disconnect");
+           $(this).parent().find("i").css("color", "#0048d9");
        } else {
            $(this).html("connect");
+           $(this).parent().find("i").css("color", "#aaaaaa");
        }
     });
 
-    /* social media section in settings */
+
+    /* password section in settings */
     $("#edit_password").click(function(e) {
         e.preventDefault();
         if ($("#edit_password").html() == "edit") {
