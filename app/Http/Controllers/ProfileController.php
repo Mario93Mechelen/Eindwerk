@@ -287,4 +287,8 @@ class ProfileController extends Controller
     public function settings() {
         return view('home.settings');
     }
+
+    public function school() {
+        return view('school.school');
+    }
 }
