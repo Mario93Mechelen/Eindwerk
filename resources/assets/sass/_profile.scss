@@ -52,6 +52,15 @@ profile page styling
     top: 85px;
   }
 
+  .delete-image {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    font-size: 14px;
+    top: -50px;
+    left: 3px;
+  }
+
   .profile_page_content {
     position: relative;
     top: -120px;
@@ -474,6 +483,11 @@ profile page styling
     .change-profile_image {
       top: 15px;
       left: 25px;
+    }
+
+    .delete-image {
+      top: -78px;
+      left: 3px;
     }
 
     .profile_page_content {
