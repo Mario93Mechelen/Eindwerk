@@ -86,7 +86,7 @@ class User extends Authenticatable
 
     public function blocked()
     {
-        return $this->belongsToMany('App\BlockedUser','blocked_users','block_sender','block_receiver');
+        return $this->belongsToMany('App\User','blocked_users','block_sender','block_receiver');
     }
 
     public function blockedBy($myId)

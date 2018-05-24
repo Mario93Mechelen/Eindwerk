@@ -88,22 +88,13 @@
                     </div>
                     <div class="blocked_user_dropdown">
 
-                        <!-- dit zijn nog placeholders, moet nog uitgeloopt worden -->
-                        <div class="settings_item blocked_user_item">
-                            <img  src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <p class="item_label">Amber Heard</p>
-                            <a href="">unblock</a>
-                        </div>
-                        <div class="settings_item blocked_user_item">
-                            <img  src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <p class="item_label">Amber Heard</p>
-                            <a href="">unblock</a>
-                        </div>
-                        <div class="settings_item blocked_user_item">
-                            <img  src="{{url('img/profile_pic_default.jpg')}}" alt=""/>
-                            <p class="item_label">Amber Heard</p>
-                            <a href="">unblock</a>
-                        </div>
+                        @foreach($myUser->blocked as $b)
+                            <div class="settings_item blocked_user_item">
+                                <img  src="{{url($b->avatar)}}" alt=""/>
+                                <p class="item_label">{{$b->first_name.' '.$b->last_name}}</p>
+                                <a href="" class="unblock-me" data-user="{{$b->id}}">unblock</a>
+                            </div>
+                        @endforeach
 
                     </div>
                 </div>

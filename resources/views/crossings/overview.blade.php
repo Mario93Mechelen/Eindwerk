@@ -44,7 +44,7 @@
                                 <div class="caption">
                                     <h4 class="list-item-name">{{$crossing['user']->first_name.' '.$crossing['user']->last_name}}</h4>
                                     <p class="list-item-distance">{{($crossing['count'] == 1) ? $crossing['count'].' crossing' : $crossing['count'].' crossings'}}</p>
-                                    <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                    <p class="list-item-intro">{{$crossing->intro}}</p>
                                 </div>
                             </div>
                             </a>

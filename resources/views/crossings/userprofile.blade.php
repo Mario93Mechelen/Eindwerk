@@ -256,7 +256,7 @@
                 <p>remember that this will remove this user from your Semestr app and you will not be able to
                     communicate with each other again, unless you unblock the user in your settings page.</p>
                 <div class="buttons">
-                    <a class="block-user-confirm preferred" href="">block user</a>
+                    <a class="block-user-confirm preferred" data-user="{{$user->id}}" href="">block user</a>
                     <a class="block-user-cancel not-preferred" href="">cancel</a>
                 </div>
             </div>

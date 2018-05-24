@@ -249,10 +249,37 @@ $(document).ready(function() {
             }
         }).done(function(response){
             if(response.code==200) {
-                window.location.href == '/';
+                window.location.href = '/';
             }
         });
 
+    });
+
+    $('.unblock-me').on('click', function(e){
+        e.preventDefault();
+        var id = $(this).data('user');
+        var el = $(this).parent();
+        $.ajaxSetup({
+
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+            }
+
+        });
+        $.ajax({
+            method:"POST",
+            url:"/deleteBlockedUser",
+            data:{
+                'id':id,
+            }
+        }).done(function(response){
+            if(response.code==200) {
+                el.remove();
+
+            }
+        });
     });
 
     $(".block-user-cancel").click(function(e) {
