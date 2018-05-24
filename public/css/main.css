@@ -9946,6 +9946,15 @@ profile page styling
   top: 85px;
 }
 
+.profile_page .delete-image {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
+  top: -50px;
+  left: 3px;
+}
+
 .profile_page .profile_page_content {
   position: relative;
   top: -120px;
@@ -10423,6 +10432,11 @@ profile page styling
   .profile_page .change-profile_image {
     top: 15px;
     left: 25px;
+  }
+
+  .profile_page .delete-image {
+    top: -78px;
+    left: 3px;
   }
 
   .profile_page .profile_page_content {

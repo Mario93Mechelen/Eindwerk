@@ -119,12 +119,12 @@
                 <h2 class="section_title">photos</h2>
 
                 <div class="photo_collection">
-                    <a href="{{url('img/user_photo_example1.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""></a>
-                    <a href="{{url('img/user_photo_example2.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""></a>
-                    <a href="{{url('img/user_photo_example3.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""></a>
-                    <a href="{{url('img/user_photo_example1.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""></a>
-                    <a href="{{url('img/user_photo_example2.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""></a>
-                    <a href="{{url('img/user_photo_example3.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""></a>
+                    <a href="{{url('img/user_photo_example1.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
+                    <a href="{{url('img/user_photo_example2.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
+                    <a href="{{url('img/user_photo_example3.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
+                    <a href="{{url('img/user_photo_example1.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
+                    <a href="{{url('img/user_photo_example2.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
+                    <a href="{{url('img/user_photo_example3.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
                 </div>
 
 
