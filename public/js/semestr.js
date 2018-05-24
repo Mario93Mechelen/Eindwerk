@@ -205,6 +205,18 @@ $(document).ready(function() {
     });
 
 
+    /*  block user button & pop-up in profile page */
+    $(".block_user").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-block-user").toggleClass("hidden");
+    });
+
+    $(".block-user-confirm").click(function(e) {
+        e.preventDefault();
+        /* hier zorgen dat user in blocked komt en redirecten naar home page */
+    });
+
+
     /* other buttons */
     $(".pop-up-data-off .turn-on-off").click(function(e) {
         e.preventDefault();

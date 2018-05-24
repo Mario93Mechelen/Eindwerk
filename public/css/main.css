@@ -10300,16 +10300,16 @@ profile page styling
   color: #ffffff;
 }
 
-.profile_page .profile_page_content .report_abuse {
+.profile_page .profile_page_content .block_user {
   padding: 15px 0px;
 }
 
-.profile_page .profile_page_content .report_abuse p {
+.profile_page .profile_page_content .block_user p {
   color: #aaaaaa;
   text-align: center;
 }
 
-.profile_page .profile_page_content .report_abuse p a {
+.profile_page .profile_page_content .block_user p a {
   color: #aaaaaa;
   text-decoration: underline;
 }
