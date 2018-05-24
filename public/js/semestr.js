@@ -52,6 +52,8 @@ $(document).ready(function() {
         e.preventDefault();
         if ($("#edit_email").html() == "edit") {
             $("#edit_email").html("save");
+            $("#email-settings").focus();
+            $("#email-settings")[0].selectionStart = $("#email-settings")[0].selectionEnd = $("#email-settings").val().length;
         } else {
             var email = $('#email-settings').val();
             saveEmail(email);
@@ -236,6 +238,11 @@ $(document).ready(function() {
             }
         });
 
+    });
+
+    $(".block-user-cancel").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-block-user").toggleClass("hidden");
     });
 
 
