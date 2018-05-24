@@ -239,11 +239,23 @@
 
             <div class="report_abuse">
 
-                <p>see something suspicious? <a href="">report it</a></p>
+                <p>you would rather not have any contact with this user? <a href="">block user</a></p>
 
             </div>
 
         </div>  <!-- einde profile page content -->
+
+        <div class="pop-up pop-up-block-user hidden">
+            <div class="pop-up-inner">
+                <h4>are you sure you want to block this user?</h4>
+                <p>remember that this will remove this user from your Semestr app and you will not be able to
+                    communicate with each other again, unless you unblock the user in your settings page.</p>
+                <div class="buttons">
+                    <a class="block user preferred" href="">turn off</a>
+                    <a class="not-preferred" href="">cancel</a>
+                </div>
+            </div>
+        </div>
 
 
     </div>  <!-- einde profile page -->
