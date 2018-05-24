@@ -237,11 +237,13 @@
 
             </div>  <!-- einde interests section -->
 
-            <div class="block_user">
+            @if($user->id != $myUser->id)
+                <div class="block_user">
 
-                <p>you would rather not have any contact with this user? <a href="">block user</a></p>
+                    <p>you would rather not have any contact with this user? <a href="">block user</a></p>
 
-            </div>
+                </div>
+            @endif
 
         </div>  <!-- einde profile page content -->
 
