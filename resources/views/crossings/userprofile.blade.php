@@ -257,7 +257,7 @@
                     communicate with each other again, unless you unblock the user in your settings page.</p>
                 <div class="buttons">
                     <a class="block-user-confirm preferred" href="">block user</a>
-                    <a class="not-preferred" href="">cancel</a>
+                    <a class="block-user-cancel not-preferred" href="">cancel</a>
                 </div>
             </div>
         </div>

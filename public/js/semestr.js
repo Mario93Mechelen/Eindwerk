@@ -216,6 +216,11 @@ $(document).ready(function() {
         /* hier zorgen dat user in blocked komt en redirecten naar home page */
     });
 
+    $(".block-user-cancel").click(function(e) {
+        e.preventDefault();
+        $(".pop-up-block-user").toggleClass("hidden");
+    });
+
 
     /* other buttons */
     $(".pop-up-data-off .turn-on-off").click(function(e) {
