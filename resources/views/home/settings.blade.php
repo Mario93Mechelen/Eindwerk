@@ -61,21 +61,21 @@
                     <div class="settings_item social_item">
                         <i class="fab fa-facebook"></i>
                         <p class="item_label">facebook</p>
-                        <a class="social_item_connect" href="">{{$myUser->setting->facebook ? 'disconnect' : 'connect'}}</a>
+                        <a class="social_item_connect" data-socialtype="facebook" href="{{$myUser->setting->facebook ? null : '/login/facebook'}}">{{$myUser->setting->facebook ? 'disconnect' : 'connect'}}</a>
                     </div>
 
                     <!-- twitter -->
                     <div class="settings_item social_item">
                         <i class="fab fa-twitter"></i>
                         <p class="item_label">twitter</p>
-                        <a class="social_item_connect" href="">{{$myUser->setting->twitter ? 'disconnect' : 'connect'}}</a>
+                        <a class="social_item_connect" data-socialtype="twitter" href="{{$myUser->setting->twitter ? null : '/login/twitter'}}">{{$myUser->setting->twitter ? 'disconnect' : 'connect'}}</a>
                     </div>
 
                     <!-- instagram -->
                     <div class="settings_item social_item">
                         <i class="fab fa-instagram"></i>
                         <p class="item_label">instagram</p>
-                        <a class="social_item_connect" href="">{{$myUser->setting->instagram ? 'disconnect' : 'connect'}}</a>
+                        <a class="social_item_connect" data-socialtype="instagram" href="{{$myUser->setting->instagram ? null : '/login/instagram'}}">{{$myUser->setting->instagram ? 'disconnect' : 'connect'}}</a>
                     </div>
 
                 </form>  <!-- einde social info -->

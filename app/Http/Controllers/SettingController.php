@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Setting;
+use GuzzleHttp\Client;
+use Laravel\Socialite\Facades\Socialite;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +20,62 @@ class SettingController extends Controller
     public function index()
     {
         //
+    }
+
+    public function redirectToProviderTwitter(){
+        return Socialite::driver('twitter')->redirect();
+    }
+
+    public function handleProviderCallbackTwitter(){
+        $user = Socialite::driver('twitter')->user();
+        $setting = Auth::user()->setting;
+        $setting->twitter = 'https://twitter.com/'.$user->nickname;
+        $setting->save();
+        return redirect('/profile/settings');
+    }
+
+    public function redirectToProviderInstagram(){
+        return redirect('https://api.instagram.com/oauth/authorize/?client_id='.env("INSTAGRAM_CLIENT_ID").'&redirect_uri='.env("INSTAGRAM_REDIRECT_URI").'&response_type=code');
+    }
+
+    public function handleProviderCallbackInstagram(){
+        if(request()->has('code')){
+            $code= request()->code;
+            $client = new Client([
+                'base_uri' => 'https://api.instagram.com',
+                'timeout' => 2.0,
+            ]);
+            $params =[
+                'form_params' => [
+                    'client_id' =>  env("INSTAGRAM_CLIENT_ID"),
+                    'client_secret' => env("INSTAGRAM_CLIENT_SECRET"),
+                    'code' => $code,
+                    'grant_type' => 'authorization_code',
+                    'redirect_uri' => env("INSTAGRAM_REDIRECT_URI"),
+                ]
+            ];
+            $res = $client->request('POST','/oauth/access_token',$params);
+            $res = \GuzzleHttp\json_decode($res->getBody());
+            $setting = Auth::user()->setting;
+            $setting->instagram = 'https://www.instagram.com/'.$res->user->username;
+            $setting->save();
+        }
+        return redirect('/profile/settings');
+    }
+
+    public function disconnectSocialMedia(Request $request)
+    {
+        $social = $request->social;
+        $setting = Auth::user()->setting;
+        if($social == 'facebook'){
+            $setting->facebook = '';
+        }elseif($social=='twitter'){
+            $setting->twitter = '';
+        }else{
+            $setting->instagram = '';
+        }
+        $setting->save();
+        return response()->json(['code' => 200]);
     }
 
     public function updateEmail(Request $request)

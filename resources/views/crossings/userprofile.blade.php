@@ -199,22 +199,28 @@
 
                         <!-- facebook -->
                         <div class="aboutme_item social_item {{$user->setting->facebook ? 'connected' : 'disconnected'}}">
-                            <i class="fab fa-facebook"></i>
-                            <p class="item_label">facebook</p>
+                            <a target="_blank" href="{{$user->setting->facebook ? $user->setting->facebook : '#'}}">
+                                <i class="fab fa-facebook"></i>
+                                <p class="item_label">facebook</p>
+                            </a>
                             <input type="text" value="www.facebook.com/someuser" readonly hidden>
                         </div>
 
                         <!-- twitter -->
                         <div class="aboutme_item social_item {{$user->setting->twitter ? 'connected' : 'disconnected'}}">
-                            <i class="fab fa-twitter"></i>
-                            <p class="item_label">twitter</p>
+                            <a target="_blank" href="{{$user->setting->twitter ? $user->setting->twitter : '#'}}">
+                                <i class="fab fa-twitter"></i>
+                                <p class="item_label">twitter</p>
+                            </a>
                             <input type="text" value="www.twitter.com/someuser" readonly hidden>
                         </div>
 
                         <!-- instagram -->
                         <div class="aboutme_item social_item {{$user->setting->instagram ? 'connected' : 'disconnected'}}">
-                            <i class="fab fa-instagram"></i>
-                            <p class="item_label">instagram</p>
+                            <a target="_blank" href="{{$user->setting->instagram ? $user->setting->instagram : '#'}}">
+                                <i class="fab fa-instagram"></i>
+                                <p class="item_label">instagram</p>
+                            </a>
                             <input type="text" value="www.instagram.com/someuser" readonly hidden>
                         </div>
 

@@ -15,8 +15,8 @@ Route::get('/login', 'Auth\LoginController@index')->name('login');
 Route::post('/login', 'Auth\LoginController@login');
 
 Route::get('/login/facebook','Auth\LoginController@redirectToProviderFacebook');
-Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallbackFacebook');
-Route::get('logout', 'Auth\LoginController@logout');
+Route::get('/login/facebook/callback', 'Auth\LoginController@handleProviderCallbackFacebook');
+Route::get('/logout', 'Auth\LoginController@logout');
 
 //signup
 Route::get('/signup', 'Auth\RegisterController@index');
@@ -27,6 +27,13 @@ Route::get('/vue', 'SpaController@index');
 
 Route::group(['middleware' => 'auth'], function()
 {
+    //connect
+    Route::get('/login/twitter','SettingController@redirectToProviderTwitter');
+    Route::get('/login/twitter/callback', 'SettingController@handleProviderCallbackTwitter');
+
+    Route::get('/login/instagram','SettingController@redirectToProviderInstagram');
+    Route::get('/login/callback/instagram', 'SettingController@handleProviderCallbackInstagram');
+
     //home
     Route::get('/', 'HomeController@index');
     Route::post('/filterDistance', 'HomeController@filterDistance');
@@ -47,6 +54,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::post('/updatePassword', 'SettingController@updatePassword');
     Route::post('/updateDistance', 'SettingController@updateDistance');
     Route::post('/deletelife', 'SettingController@deleteAllInfo');
+    Route::post('/disconnectSocialMedia', 'SettingController@disconnectSocialMedia');
 
     //friends
     Route::get('/friends','FriendController@index');

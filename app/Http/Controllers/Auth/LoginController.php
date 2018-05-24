@@ -43,7 +43,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest')->except('logout','redirectToProviderFacebook','handleProviderCallbackFacebook');
     }
 
     public function index()
@@ -84,30 +84,38 @@ class LoginController extends Controller
         }
     }
 
-    public function handleProviderCallbackFacebook(){
-        $user = Socialite::driver('facebook')->fields(['languages', 'first_name', 'last_name', 'email', 'gender', 'birthday','link'])->user();
-        if(!User::where('email',$user->user["email"])->first()) {
-            $appUser = new User();
-            $appUser->first_name = $user->user["first_name"];
-            $appUser->last_name = $user->user["last_name"];
-            $appUser->gender = isset($user->user["gender"]) ? $user->user["gender"] : 'other';
-            $appUser->birthday = isset($user->user["birthday"]) ? \Carbon\Carbon::parse($user->user["birthday"]) : null;
-            $appUser->email = $user->user["email"];
-            $appUser->avatar = str_replace("normal","large",$user->avatar);
-            $appUser->token = $user->token;
-            $appUser->save();
-            $setting = new Setting();
-            $setting->user_id = $appUser->id;
+    public function handleProviderCallbackFacebook()
+    {
+        $user = Socialite::driver('facebook')->fields(['languages', 'first_name', 'last_name', 'email', 'gender', 'birthday', 'link'])->user();
+        if (Auth::check()) {
+            $setting = Auth::user()->setting;
             $setting->facebook = $user->profileUrl;
             $setting->save();
-            $profile = new Profile();
-            $profile->user_id = $appUser->id;
-            $profile->save();
+            return redirect('/profile/settings');
+        } else {
+            if (!User::where('email', $user->user["email"])->first()) {
+                $appUser = new User();
+                $appUser->first_name = $user->user["first_name"];
+                $appUser->last_name = $user->user["last_name"];
+                $appUser->gender = isset($user->user["gender"]) ? $user->user["gender"] : 'other';
+                $appUser->birthday = isset($user->user["birthday"]) ? \Carbon\Carbon::parse($user->user["birthday"]) : null;
+                $appUser->email = $user->user["email"];
+                $appUser->avatar = str_replace("normal", "large", $user->avatar);
+                $appUser->token = $user->token;
+                $appUser->save();
+                $setting = new Setting();
+                $setting->user_id = $appUser->id;
+                $setting->facebook = $user->profileUrl;
+                $setting->save();
+                $profile = new Profile();
+                $profile->user_id = $appUser->id;
+                $profile->save();
 
-        }else{
-            $appUser = User::where('email',$user->user["email"])->first();
+            } else {
+                $appUser = User::where('email', $user->user["email"])->first();
+            }
+            Auth::login($appUser, true);
+            return redirect('/');
         }
-        Auth::login($appUser,true);
-        return redirect('/');
     }
 }

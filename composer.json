@@ -12,7 +12,10 @@
         "laravel/homestead": "^7.3",
         "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
-        "pusher/pusher-php-server": "^3.0"
+        "php-http/guzzle6-adapter": "^1.1",
+        "php-http/message": "^1.6",
+        "pusher/pusher-php-server": "^3.0",
+        "vinkla/instagram": "^8.0"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

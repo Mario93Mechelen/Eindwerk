@@ -95,11 +95,13 @@ $(document).ready(function() {
     });
     /* dan reageren op kliks */
     $(".social_item_connect").click(function(e) {
-        e.preventDefault();
        if ($(this).html() == "connect") {
            $(this).html("disconnect");
            $(this).parent().find("i").css("color", "#0048d9");
        } else {
+           e.preventDefault();
+           var socialtype = $(this).data('socialtype');
+           disconnectSocialMedia(socialtype);
            $(this).html("connect");
            $(this).parent().find("i").css("color", "#aaaaaa");
        }
@@ -112,6 +114,29 @@ $(document).ready(function() {
             $(this).find("i").css("color", "#aaaaaa");
         }
     });
+
+    function disconnectSocialMedia(socialtype){
+            $.ajaxSetup({
+
+                headers: {
+
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+                }
+
+            });
+            $.ajax({
+                method:"POST",
+                url:"/disconnectSocialMedia",
+                data:{
+                    'social':socialtype
+                }
+            }).done(function(response){
+                if(response.code==200) {
+                    console.log('changed social media setting');
+                }
+            });
+    };
 
     /* password section in settings */
     $("#edit_password").click(function(e) {
