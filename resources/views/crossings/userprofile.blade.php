@@ -498,21 +498,27 @@
         });
     </script>
 
-    <script>
-        $(document).ready(function(){
-            var input = document.getElementById('school_home');
-            var autocomplete = new google.maps.places.Autocomplete(input);
-            var input2 = document.getElementById('school_abroad');
-            var autocomplete = new google.maps.places.Autocomplete(input2);
-            var input3 = document.getElementById('home');
-            var autocomplete = new google.maps.places.Autocomplete(input3);
-        })
-    </script>
 
     @if($myUser->id != $user->id)
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&callback=initMap" async defer></script>
     @else
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&libraries=places"></script>
+        <script>
+            $(document).ready(function(){
+                var input = document.getElementById('school_home');
+                var autocomplete = new google.maps.places.Autocomplete(input,{
+                    types:['establishment'],
+                });
+                var input2 = document.getElementById('school_abroad');
+                var autocomplete = new google.maps.places.Autocomplete(input2,{
+                    types:['establishment'],
+                });
+                var input3 = document.getElementById('home');
+                var autocomplete = new google.maps.places.Autocomplete(input3,{
+                    types:['(cities)'],
+                });
+            })
+        </script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&libraries=places" async defer></script>
     @endif
 
 
