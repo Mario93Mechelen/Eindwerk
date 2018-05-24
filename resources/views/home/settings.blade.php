@@ -68,14 +68,14 @@
                     <div class="settings_item social_item">
                         <i class="fab fa-twitter"></i>
                         <p class="item_label">twitter</p>
-                        <a class="social_item_connect" href="">connect</a>
+                        <a class="social_item_connect" href="">{{$myUser->setting->twitter ? 'disconnect' : 'connect'}}</a>
                     </div>
 
                     <!-- instagram -->
                     <div class="settings_item social_item">
                         <i class="fab fa-instagram"></i>
                         <p class="item_label">instagram</p>
-                        <a class="social_item_connect" href="">connect</a>
+                        <a class="social_item_connect" href="">{{$myUser->setting->instagram ? 'disconnect' : 'connect'}}</a>
                     </div>
 
                 </form>  <!-- einde social info -->

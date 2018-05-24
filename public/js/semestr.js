@@ -93,9 +93,6 @@ $(document).ready(function() {
             $(this).parent().find("i").css("color", "#0048d9");
         }
     });
-
-
-
     /* dan reageren op kliks */
     $(".social_item_connect").click(function(e) {
         e.preventDefault();
@@ -107,7 +104,14 @@ $(document).ready(function() {
            $(this).parent().find("i").css("color", "#aaaaaa");
        }
     });
-
+    /* en ook op de profielpagina */
+    $(".aboutme_social-info .social_item").each(function() {
+        if ($(this).hasClass("connected")) {
+            $(this).find("i").css("color", "#0048d9");
+        } else {
+            $(this).find("i").css("color", "#aaaaaa");
+        }
+    });
 
     /* password section in settings */
     $("#edit_password").click(function(e) {

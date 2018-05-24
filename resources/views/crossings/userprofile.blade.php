@@ -198,21 +198,21 @@
                         <h4 class="subsection_title">social</h4>
 
                         <!-- facebook -->
-                        <div class="aboutme_item social_item">
+                        <div class="aboutme_item social_item {{$user->setting->facebook ? 'connected' : 'disconnected'}}">
                             <i class="fab fa-facebook"></i>
                             <p class="item_label">facebook</p>
                             <input type="text" value="www.facebook.com/someuser" readonly hidden>
                         </div>
 
                         <!-- twitter -->
-                        <div class="aboutme_item social_item">
+                        <div class="aboutme_item social_item {{$user->setting->twitter ? 'connected' : 'disconnected'}}">
                             <i class="fab fa-twitter"></i>
                             <p class="item_label">twitter</p>
                             <input type="text" value="www.twitter.com/someuser" readonly hidden>
                         </div>
 
                         <!-- instagram -->
-                        <div class="aboutme_item social_item">
+                        <div class="aboutme_item social_item {{$user->setting->instagram ? 'connected' : 'disconnected'}}">
                             <i class="fab fa-instagram"></i>
                             <p class="item_label">instagram</p>
                             <input type="text" value="www.instagram.com/someuser" readonly hidden>
