@@ -161,6 +161,7 @@
                         <div class="aboutme_item">
                             <p class="item_label">home</p>
                             <input type="text" value="{{$user->home}}" placeholder="" id="home" class="edit-button-target home" readonly>
+                            <p style="color:red;display:none;" class="error-selection">please select an option from the list</p>
                         </div>
 
                     </form>  <!-- einde basic info -->
@@ -174,12 +175,14 @@
                         <div class="aboutme_item">
                             <p class="item_label">school at home</p>
                             <input type="text" value="{{$user->home_school}}" placeholder="" id="school_home" class="edit-button-target school_home" readonly>
+                            <p style="color:red;display:none;" class="error-selection">please select an option from the list</p>
                         </div>
 
                         <!-- school buitenland -->
                         <div class="aboutme_item">
                             <p class="item_label">school abroad</p>
                             <input type="text" value="{{$user->abroad_school}}" placeholder="" id="school_abroad" class="edit-button-target school_abroad" readonly>
+                            <p style="color:red;display:none;" class="error-selection">please select an option from the list</p>
                         </div>
 
                         <!-- huidige studie -->
@@ -509,13 +512,73 @@
                     types:['establishment'],
                 });
                 var input2 = document.getElementById('school_abroad');
-                var autocomplete = new google.maps.places.Autocomplete(input2,{
+                var autocomplete2 = new google.maps.places.Autocomplete(input2,{
                     types:['establishment'],
                 });
                 var input3 = document.getElementById('home');
-                var autocomplete = new google.maps.places.Autocomplete(input3,{
+                var autocomplete3 = new google.maps.places.Autocomplete(input3,{
                     types:['(cities)'],
                 });
+
+                forceSelection(input,autocomplete);
+                forceSelection(input2,autocomplete2);
+                forceSelection(input3,autocomplete3);
+
+
+                function forceSelection(input,autocomplete){
+                    var selected = false;
+                    var downWasPressed = false;
+                    var enterOrTabWasPressed = false;
+                    input.addEventListener('keydown', function(e){
+                        if (e.keyCode === 40) {
+                            downWasPressed = true;
+                        };
+                    });
+
+                    google.maps.event.addDomListener(input, 'keydown', function(e) {
+                        e.cancelBubble = true;
+
+                        // If enter key, or tab key
+                        if (e.keyCode === 13 || e.keyCode === 9) {
+                            // If user isn't navigating using arrows and this hasn't ran yet
+                            if (!downWasPressed && !e.hasRanOnce) {
+                                google.maps.event.trigger(e.target, 'keydown', {
+                                    keyCode: 40,
+                                    hasRanOnce: true,
+                                });
+                                downWasPressed = true;
+                            }
+                        }
+                    });
+
+                    google.maps.event.addDomListener(input, 'focusout', function(e) {
+                        e.cancelBubble = true;
+                            // If user isn't navigating using arrows and this hasn't ran yet
+                            if (!downWasPressed) {
+                                google.maps.event.trigger(e.target, 'keydown', {
+                                    keyCode: 40,
+                                });
+                                downWasPressed = true;
+                            }
+
+                    });
+
+                    input.addEventListener('focus', function(e){
+                        input.value = '';
+                        downWasPressed = false;
+                        enterOrTabWasPressed = false;
+                        console.log(downWasPressed+' enter: '+enterOrTabWasPressed);
+                    });
+
+                    // place_changed GoogleMaps listener when we do submit
+                    google.maps.event.addListener(autocomplete, 'place_changed', function() {
+
+                        // Get the place info from the autocomplete Api
+                        const place = autocomplete.getPlace();
+
+                    });
+                }
+
             })
         </script>
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&libraries=places" async defer></script>
