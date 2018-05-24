@@ -62,6 +62,10 @@ Route::group(['middleware' => 'auth'], function()
     Route::post('/getConversation','ConversationController@getConversation');
     Route::post('/updateSeenStatus', 'ConversationController@updateSeenStatus');
 
+    //blocked
+    Route::post('/blockUser', 'ProfileController@blockUser');
+    Route::post('/deleteBlockedUser', 'ProfileController@deleteBlockedUser');
+
     //Locations
     Route::post('/location/getLocation','LocationController@getLocation');
     Route::post('/location/store','LocationController@store');

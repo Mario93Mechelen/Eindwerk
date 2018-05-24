@@ -83,4 +83,27 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Profile');
     }
+
+    public function blocked()
+    {
+        return $this->belongsToMany('App\BlockedUser','blocked_users','block_sender','block_receiver');
+    }
+
+    public function blockedBy($myId)
+    {
+        if(BlockedUser::where('block_receiver',$myId)->where('block_sender',$this->id)->first()){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function isBlocked($myId)
+    {
+        if(BlockedUser::where('block_sender',$myId)->where('block_receiver',$this->id)->first()){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }

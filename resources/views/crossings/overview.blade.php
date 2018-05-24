@@ -12,7 +12,7 @@
         <div class="crossings-indicator-wrapper">
             <a href="#" class="crossings-indicator">
                 <div class="crossing_icon"></div>
-                <p>you crossed {{$crossingArr ? ((count($crossingArr) == 1) ? count($crossingArr).' person' : count($crossingArr)) : '0'}} people the past month</p>
+                <p>you crossed {{$crossingArr ? ((count($crossingArr) == 1) ? count($crossingArr).' person' : count($crossingArr).'people') : '0 people'}} the past month</p>
             </a>
         </div>
 
@@ -36,18 +36,20 @@
 
                  @if($crossingArr)
                  @foreach($crossingArr as $crossing)
-                    <div class="item item-list col-xs-12 col-md-6">
-                        <a href="{{URL::action('ProfileController@show',$crossing['user'])}}">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url($crossing['user']->avatar)}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name">{{$crossing['user']->first_name.' '.$crossing['user']->last_name}}</h4>
-                                <p class="list-item-distance">{{($crossing['count'] == 1) ? $crossing['count'].' crossing' : $crossing['count'].' crossings'}}</p>
-                                <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                    @if(!$crossing['user']->isBlocked($myUser->id)&&!$crossing['user']->blockedBy($myUser->id))
+                        <div class="item item-list col-xs-12 col-md-6">
+                            <a href="{{URL::action('ProfileController@show',$crossing['user'])}}">
+                            <div class="item-content">
+                                <img class="list-item-img" src="{{url($crossing['user']->avatar)}}" alt=""/>
+                                <div class="caption">
+                                    <h4 class="list-item-name">{{$crossing['user']->first_name.' '.$crossing['user']->last_name}}</h4>
+                                    <p class="list-item-distance">{{($crossing['count'] == 1) ? $crossing['count'].' crossing' : $crossing['count'].' crossings'}}</p>
+                                    <p class="list-item-intro">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                                </div>
                             </div>
+                            </a>
                         </div>
-                        </a>
-                    </div>
+                    @endif
                  @endforeach
                  @endif
 

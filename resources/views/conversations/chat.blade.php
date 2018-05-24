@@ -44,6 +44,7 @@
                         }else{
                             $conversations = null;
                         }
+                        $count = 0;
                     @endphp
                     @if(!is_null($conversations))
                         @foreach($conversations as $key => $conversation)
@@ -58,9 +59,10 @@
                                     }
                                 }
                             @endphp
+                            @if(!$user->isBlocked($myUser->id)&&!$user->blockedBy($myUser->id))
                             <div class="item item-chat item-list col-xs-12">
-                                <a class="item-content chat_to_detail {{($key == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
-                                    <div class="active-chat-item-indicator {{($key == 0) ? null : 'hidden' }}"></div>
+                                <a class="item-content chat_to_detail {{($count == 0) ? 'chat-active' : null }}" href="" data-user="{{$user->id}}" data-id="{{$conversation->id}}">
+                                    <div class="active-chat-item-indicator {{($count == 0) ? null : 'hidden' }}"></div>
                                     <img class="chat-avatar" src='{{ asset($user->avatar) }}'>
                                     <div class="online-indicator {{$user->isOnline() ? 'online' : 'offline'}}"></div>
                                     <div class="chat-right">
@@ -72,7 +74,10 @@
                                     </div>
                                 </a>
                             </div>
-
+                                @php
+                                    $count++;
+                                @endphp
+                            @endif
                         @endforeach
                     @endif
                 @else
