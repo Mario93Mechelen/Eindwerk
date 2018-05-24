@@ -4,7 +4,7 @@
 
     <div class="school_page">
 
-        urgh
+        <div class="cover_image"></div>
 
     </div>  <!-- einde school page -->
 
