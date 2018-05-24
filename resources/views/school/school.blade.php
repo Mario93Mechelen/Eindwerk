@@ -19,6 +19,14 @@
                 </ul>
             </div>
 
+            <p class="school_introtext edit-button-target">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae congue dolor, in placerat sapien. Nam porta suscipit tortor non dapibus. Etiam quis felis ut.</p>
+
+            <div class="button-wrapper members-button-wrapper">
+                <a href="#" class="button">
+                    <div class="icon member-icon"></div>
+                    <p>list of members</p>
+                </a>
+            </div>
 
 
 

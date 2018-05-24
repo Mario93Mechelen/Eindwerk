@@ -70,6 +70,60 @@ school page styling
         }
       }
     }
+
+    .school_introtext {
+      color: $nav_selected;
+      font-size: 14px;
+      text-align: center;
+      padding: 30px 30px 20px 30px;
+      line-height: 1.2em;
+    }
+
+    .button-wrapper {
+      width: 100%;
+      box-sizing: border-box;
+
+      .button {
+
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        margin-top: 15px;
+        margin-bottom: 15px;
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+
+        .icon {
+          background-size: 20px 20px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: $primary-color;
+          width: 40px;
+          height: 40px;
+          padding: 10px;
+          box-sizing: border-box;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+
+        .member-icon {background-image: url('/img/memberlist.png');}
+
+        p {
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+          color: $dark-color;
+        }
+      }
+    }
   }
 }
 

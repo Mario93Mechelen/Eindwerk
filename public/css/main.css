@@ -11321,6 +11321,69 @@ school page styling
   border-bottom-right-radius: 5px;
 }
 
+.school_page .school_page_content .school_introtext {
+  color: #333333;
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 30px 20px 30px;
+  line-height: 1.2em;
+}
+
+.school_page .school_page_content .button-wrapper {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.school_page .school_page_content .button-wrapper .button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.school_page .school_page_content .button-wrapper .button .icon {
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #0048d9;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.school_page .school_page_content .button-wrapper .button .member-icon {
+  background-image: url("/img/memberlist.png");
+}
+
+.school_page .school_page_content .button-wrapper .button p {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #002245;
+}
+
 /* desktop */
 
 @media (min-width: 768px) {
