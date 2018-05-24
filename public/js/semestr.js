@@ -104,6 +104,7 @@ $(document).ready(function() {
            disconnectSocialMedia(socialtype);
            $(this).html("connect");
            $(this).parent().find("i").css("color", "#aaaaaa");
+           $(this).attr('href', '/login/'+socialtype);
        }
     });
     /* en ook op de profielpagina */
