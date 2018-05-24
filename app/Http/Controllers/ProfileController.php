@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BlockedUser;
 use App\Crossing;
 use App\Friend;
 use Illuminate\Support\Facades\Storage;
@@ -22,13 +23,15 @@ class ProfileController extends Controller
     {
         $crossingArr = [];
         $i=0;
-        foreach(Auth::user()->myCrossings as $crossing){
-            $crossingLocations = $crossing->crossingLocationsPerUser(Auth::user()->id);
-            foreach($crossingLocations as $location){
-                $crossinglocation = $location;
+        foreach(Auth::user()->myCrossings as $crossing) {
+            if (!$crossing->isBlocked(Auth::user()->id) && !$crossing->blockedBy(Auth::user()->id)){
+                $crossingLocations = $crossing->crossingLocationsPerUser(Auth::user()->id);
+                foreach ($crossingLocations as $location) {
+                    $crossinglocation = $location;
+                }
+                $crossingArr[$i] = ['user' => $crossing, 'location' => $crossinglocation, 'count' => $crossingLocations->count()];
+                $i++;
             }
-            $crossingArr[$i] = ['user'=>$crossing,'location'=>$crossinglocation,'count' => $crossingLocations->count()];
-            $i++;
         }
 
         if(!empty($crossingArr)){
@@ -205,6 +208,23 @@ class ProfileController extends Controller
         );
     }
 
+    public function blockUser(Request $request)
+    {
+        $id = $request->id;
+        $blockedUser = new BlockedUser();
+        $blockedUser->block_sender = Auth::user()->id;
+        $blockedUser->block_receiver = $id;
+        $blockedUser->save();
+        return response()->json(['code' => 200]);
+    }
+
+    public function deleteBlockedUser(Request $request)
+    {
+        $id = $request->id;
+        BlockedUser::where('block_sender',Auth::user()->id)->where('block_receiver', $id)->first()->delete();
+        return response()->json(['code' => 200, 'id' => $id]);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -213,6 +233,12 @@ class ProfileController extends Controller
      */
     public function show(User $user)
     {
+        if($user->isBlocked(Auth::user()->id) || $user->blockedBy(Auth::user()->id)){
+            return redirect('/');
+        };
+        /*if($user->blockedBy(Auth::user()->id)){
+          dd($user);
+        };*/
         //Als je surft naar de link /user/eigen-user-id zou je deze link ook wel moeten kunnen zien
         if($user->id != Auth::user()->id) {
             if(Crossing::where('crosser_id', Auth::user()->id)->where('crossed_id', $user->id)->first()) {

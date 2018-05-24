@@ -235,6 +235,28 @@ $(document).ready(function() {
     $(".block-user-confirm").click(function(e) {
         e.preventDefault();
         /* hier zorgen dat user in blocked komt en redirecten naar home page */
+        var id = $(this).data('user');
+        $.ajaxSetup({
+
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+            }
+
+        });
+        $.ajax({
+            method:"POST",
+            url:"/blockUser",
+            data:{
+                'id':id,
+            }
+        }).done(function(response){
+            if(response.code==200) {
+                window.location.href == '/';
+            }
+        });
+
     });
 
     $(".block-user-cancel").click(function(e) {

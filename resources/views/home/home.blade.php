@@ -47,18 +47,21 @@
                     <!-- item -->
                     @if(isset($distance))
                     @foreach($distance as $d)
-                    <div class="item item-home item-list col-xs-12 col-md-6">
-                        <a href="{{URL::action('ProfileController@show',$d['user'])}}">
-                        <div class="item-content">
-                            <img class="list-item-img" src="{{url($d['user']['avatar'] ? $d['user']['avatar'] : '')}}" alt=""/>
-                            <div class="caption">
-                                <h4 class="list-item-name list-item-name-home">{{$d['user']['first_name']." ".$d['user']['last_name']}}</h4>
-                                <p class="list-item-distance">{{$d['kms']}} {{($myUser->setting->distance == "km") ? 'km' : 'miles'}} away</p>
-                                <p class="list-item-intro">{{$d['user']['intro']}}</p>
+                        @if(!$d['user']->isBlocked($myUser->id) && !$d['user']->blockedBy($myUser->id))
+                            <div class="item item-home item-list col-xs-12 col-md-6">
+                                <a href="{{URL::action('ProfileController@show',$d['user'])}}">
+                                <div class="item-content">
+                                    <img class="list-item-img" src="{{url($d['user']['avatar'] ? $d['user']['avatar'] : '')}}" alt=""/>
+                                    <div class="caption">
+                                        <h4 class="list-item-name list-item-name-home">{{$d['user']['first_name']." ".$d['user']['last_name']}}</h4>
+                                        <p class="list-item-distance">{{$d['kms']}} {{($myUser->setting->distance == "km") ? 'km' : 'miles'}} away</p>
+                                        <p class="list-item-intro">{{$d['user']['intro']}}</p>
+                                    </div>
+                                </div>
+                                </a>
                             </div>
-                        </div>
-                        </a>
-                    </div>
+
+                        @endif
                      @endforeach
                      @else
                         <p class="aroundme_no_users">We couldn't find users nearby, did you share your location with
