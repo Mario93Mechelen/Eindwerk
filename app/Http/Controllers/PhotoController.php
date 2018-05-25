@@ -56,14 +56,13 @@ class PhotoController extends Controller
 
         if($type=="profile"){
           $bind = Profile::class;
-          $profile = Profile::find($id);
         };
 
-        $profile->photos()->create([
-            'path' => $filename,
-        ]);
-
-
+        $photo = new Photo();
+        $photo->path = $filename;
+        $photo->photoable_type = $bind;
+        $photo->photoable_id = $id;
+        $photo->save();
     }
 
     public function deletePhoto(Request $request)
