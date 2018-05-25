@@ -59,7 +59,7 @@ class PhotoController extends Controller
         };
 
         $photo = new Photo();
-        $photo->path = $filename;
+        $photo->path = '/img/uploads/'.$filename;
         $photo->photoable_type = $bind;
         $photo->photoable_id = $id;
         $photo->save();
