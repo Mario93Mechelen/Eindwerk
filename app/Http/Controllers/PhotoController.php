@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Photo;
 use App\Profile;
+use Image;
 use Illuminate\Http\Request;
 
 class PhotoController extends Controller
@@ -51,7 +52,7 @@ class PhotoController extends Controller
             Image::make($file->getRealPath())->crop($height,$height)->save($path);
         }else{
             Image::make($file->getRealPath())->crop($width,$width)->save($path);
-        }
+        };
 
         if($type=="profile"){
           $bind = Profile::class;
@@ -61,8 +62,7 @@ class PhotoController extends Controller
         $profile->photos()->create([
             'path' => $filename,
         ]);
-        
-        return redirect()->back();
+
 
     }
 
