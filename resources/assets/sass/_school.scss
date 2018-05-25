@@ -422,10 +422,56 @@ school page styling
         }
       }
     }
+
+    .member-list {
+
+      position: absolute;
+      top: 140px;
+      width: calc(100% - 30px);
+      display: none;
+      z-index: 7000000;
+
+      .member-list-inner {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          font-weight: bold;
+          color: $white;
+          font-size: 18px;
+          padding-bottom: 30px;
+        }
+
+        .item-member {
+          position: static;
+          padding-left: 0px;
+          padding-right: 0px;
+
+          .item-content,
+          .item-content:hover
+          .item-content:focus {
+            display: flex;
+            text-decoration: none;
+
+            .member-avatar {
+              width: 50px;
+              height: 50px;
+            }
+
+            .member-right {
+              font-weight: bold;
+              color: $dark-color;
+              font-size: 14px;
+              padding: 10px;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
-.overlay {
+.overlay, .overlay2 {
   display: none;
   width: 100vw;
   height: 100vh;

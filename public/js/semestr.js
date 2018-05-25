@@ -200,6 +200,20 @@ $(document).ready(function() {
         $(".overlay").hide();
     });
 
+    /* toggle member list mobile */
+    $(".member-list-button").click(function(e) {
+        e.preventDefault();
+        $(".member-list").show();
+        $(".overlay2").show();
+    });
+
+    $(".overlay2").click(function(e) {
+        $("#member-list").hide();
+        $(".overlay2").hide();
+        console.log("hey man");
+    });
+
+
 
     function savePassword(oldp,newp){
         $.ajaxSetup({

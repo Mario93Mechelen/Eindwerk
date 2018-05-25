@@ -22,7 +22,7 @@
             <p class="school_introtext edit-button-target">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus vitae congue dolor, in placerat sapien. Nam porta suscipit tortor non dapibus. Etiam quis felis ut.</p>
 
             <div class="button-wrapper members-button-wrapper">
-                <a href="#" class="button">
+                <a href="#" class="button member-list-button">
                     <div class="icon member-icon"></div>
                     <p>list of members</p>
                 </a>
@@ -297,9 +297,50 @@
                     </div>
                 </div>  <!-- einde post -->
 
-            </div>  <!-- einde student feef section -->
+            </div>  <!-- einde student feed section -->
 
+            <div class="member-list" id="member-list">
 
+                <div class="member-list-inner">
+
+                    <h2>member list</h2>
+
+                    <div class="item item-member item-list col-xs-12">
+                        <a class="item-content">
+                            <img class="member-avatar" src="/img/profile_pic_default.jpg">
+                            <div class="member-right">
+                                <div class="member-name">
+                                    <p class="member-name">Amber Heard</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item item-member item-list col-xs-12">
+                        <a class="item-content">
+                            <img class="member-avatar" src="/img/profile_pic_default.jpg">
+                            <div class="member-right">
+                                <div class="member-name">
+                                    <p class="member-name">Amber Heard</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item item-member item-list col-xs-12">
+                        <a class="item-content">
+                            <img class="member-avatar" src="/img/profile_pic_default.jpg">
+                            <div class="member-right">
+                                <div class="member-name">
+                                    <p class="member-name">Amber Heard</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>  <!-- einde member list section -->
 
 
         </div>  <!-- einde school page content -->
@@ -307,6 +348,7 @@
     </div>  <!-- einde school page -->
 
     <div class="overlay"></div>
+    <div class="overlay2"></div>
 
 @endsection
 

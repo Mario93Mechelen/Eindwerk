@@ -11774,7 +11774,61 @@ school page styling
   text-decoration: none;
 }
 
-.overlay {
+.school_page .school_page_content .member-list {
+  position: absolute;
+  top: 140px;
+  width: calc(100% - 30px);
+  display: none;
+  z-index: 7000000;
+}
+
+.school_page .school_page_content .member-list .member-list-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.school_page .school_page_content .member-list .member-list-inner h2 {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 18px;
+  padding-bottom: 30px;
+}
+
+.school_page .school_page_content .member-list .member-list-inner .item-member {
+  position: static;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.school_page .school_page_content .member-list .member-list-inner .item-member .item-content,
+.school_page .school_page_content .member-list .member-list-inner .item-member .item-content:hover .item-content:focus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+}
+
+.school_page .school_page_content .member-list .member-list-inner .item-member .item-content .member-avatar,
+.school_page .school_page_content .member-list .member-list-inner .item-member .item-content:hover .item-content:focus .member-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.school_page .school_page_content .member-list .member-list-inner .item-member .item-content .member-right,
+.school_page .school_page_content .member-list .member-list-inner .item-member .item-content:hover .item-content:focus .member-right {
+  font-weight: bold;
+  color: #002245;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.overlay,
+.overlay2 {
   display: none;
   width: 100vw;
   height: 100vh;
