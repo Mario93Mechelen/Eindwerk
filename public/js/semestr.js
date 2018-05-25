@@ -186,12 +186,14 @@ $(document).ready(function() {
     $(".new-post-bottom .send").click(function(e) {
         e.preventDefault();
         $(".new-post-bottom").slideUp();
+        $(".new-post-button-wrapper input").val("");
     });
 
     /* cancel new post */
     $(".new-post-bottom .cancel").click(function(e) {
         e.preventDefault();
         $(".new-post-bottom").slideUp();
+        $(".new-post-button-wrapper input").val("");
     });
 
 
