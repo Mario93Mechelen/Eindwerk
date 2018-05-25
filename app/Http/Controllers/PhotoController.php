@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Photo;
+use App\Profile;
 use Illuminate\Http\Request;
 
 class PhotoController extends Controller
@@ -33,15 +34,42 @@ class PhotoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $type, $id)
     {
-        //
+        $request->validate([
+            'photo' => 'required|image',
+        ]);
+
+        $file = $request->file('photo');
+        $originalName = str_replace(' ', '-', str_replace('(', '', str_replace(')', '', $file->getClientOriginalName())));
+        $filename = time().$originalName;
+        $path = public_path('img/uploads/'.$filename);
+        $data = getimagesize($file);
+        $width = $data[0];
+        $height = $data[1];
+        if($width>$height){
+            Image::make($file->getRealPath())->crop($height,$height)->save($path);
+        }else{
+            Image::make($file->getRealPath())->crop($width,$width)->save($path);
+        }
+
+        if($type=="profile"){
+          $bind = Profile::class;
+          $profile = Profile::find($id);
+        };
+
+        $profile->photos()->create([
+            'path' => $filename,
+        ]);
+        
+        return redirect()->back();
+
     }
 
     public function deletePhoto(Request $request)
     {
         $id = $request->id;
-        Photo::find($id)->delete();
+        Photo::find($id)->destroy();
         return response()->json(['code' => 200]);
     }
 
