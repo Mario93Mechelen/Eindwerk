@@ -11384,7 +11384,8 @@ school page styling
   color: #002245;
 }
 
-.school_page .school_page_content .school-info-section .post {
+.school_page .school_page_content .school-info-section .post,
+.school_page .school_page_content .student-feed-section .post {
   margin-top: 15px;
   background-color: #ffffff;
   border-radius: 10px;
@@ -11395,13 +11396,15 @@ school page styling
   font-size: 16px;
 }
 
-.school_page .school_page_content .school-info-section .post .post-top {
+.school_page .school_page_content .school-info-section .post .post-top,
+.school_page .school_page_content .student-feed-section .post .post-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.school_page .school_page_content .school-info-section .post .post-top .post-img {
+.school_page .school_page_content .school-info-section .post .post-top .post-img,
+.school_page .school_page_content .student-feed-section .post .post-top .post-img {
   width: 50px;
   height: 50px;
   margin: 15px;
@@ -11410,7 +11413,8 @@ school page styling
   border-radius: 5px;
 }
 
-.school_page .school_page_content .school-info-section .post .post-top .post-top-right {
+.school_page .school_page_content .school-info-section .post .post-top .post-top-right,
+.school_page .school_page_content .student-feed-section .post .post-top .post-top-right {
   color: #002245;
   padding: 15px 15px 15px 0px;
   display: -webkit-box;
@@ -11428,28 +11432,33 @@ school page styling
           justify-content: flex-start;
 }
 
-.school_page .school_page_content .school-info-section .post .post-top .post-top-right .post-name {
+.school_page .school_page_content .school-info-section .post .post-top .post-top-right .post-name,
+.school_page .school_page_content .student-feed-section .post .post-top .post-top-right .post-name {
   font-weight: bold;
   font-size: 20px;
 }
 
-.school_page .school_page_content .school-info-section .post .post-top .post-top-right .post-time {
+.school_page .school_page_content .school-info-section .post .post-top .post-top-right .post-time,
+.school_page .school_page_content .student-feed-section .post .post-top .post-top-right .post-time {
   color: #aaaaaa;
   font-size: 12px;
 }
 
-.school_page .school_page_content .school-info-section .post .post-mid {
+.school_page .school_page_content .school-info-section .post .post-mid,
+.school_page .school_page_content .student-feed-section .post .post-mid {
   padding: 0px 15px 15px 15px;
   border-bottom: 1px solid rgba(170, 170, 170, 0.5);
   line-height: 1.2;
 }
 
-.school_page .school_page_content .school-info-section .post .post-mid .post-message {
+.school_page .school_page_content .school-info-section .post .post-mid .post-message,
+.school_page .school_page_content .student-feed-section .post .post-mid .post-message {
   font-weight: normal;
   color: #002245;
 }
 
-.school_page .school_page_content .school-info-section .post .post-bottom {
+.school_page .school_page_content .school-info-section .post .post-bottom,
+.school_page .school_page_content .student-feed-section .post .post-bottom {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11459,36 +11468,43 @@ school page styling
   border-bottom: 1px solid rgba(170, 170, 170, 0.5);
 }
 
-.school_page .school_page_content .school-info-section .post .post-bottom a {
+.school_page .school_page_content .school-info-section .post .post-bottom a,
+.school_page .school_page_content .student-feed-section .post .post-bottom a {
   padding: 15px;
   color: #0048d9;
 }
 
 .school_page .school_page_content .school-info-section .post .post-bottom a:hover,
-.school_page .school_page_content .school-info-section .post .post-bottom a:focus {
+.school_page .school_page_content .school-info-section .post .post-bottom a:focus,
+.school_page .school_page_content .student-feed-section .post .post-bottom a:hover,
+.school_page .school_page_content .student-feed-section .post .post-bottom a:focus {
   text-decoration: none;
   color: #0048d9;
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-comments {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comments,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comments {
   display: none;
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comment {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   border-bottom: 1px solid rgba(170, 170, 170, 0.5);
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-img {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-img,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comment .post-comment-img {
   width: 30px;
   height: 30px;
   margin: 15px;
   border-radius: 5px;
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-right {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-right,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comment .post-comment-right {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11505,20 +11521,23 @@ school page styling
   padding: 15px 15px 15px 0px;
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-right .post-comment-name {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-right .post-comment-name,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comment .post-comment-right .post-comment-name {
   font-weight: bold;
   font-size: 16px;
   padding-bottom: 5px;
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-right .post-comment-message {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-right .post-comment-message,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comment .post-comment-right .post-comment-message {
   font-weight: normal;
   color: #002245;
   font-size: 12px;
   line-height: 1.2;
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment {
   background-color: #aaaaaa;
   padding: 15px;
   display: -webkit-box;
@@ -11528,13 +11547,15 @@ school page styling
   border-bottom-left-radius: 10px;
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment .post-new-comment-img {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment .post-new-comment-img,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment .post-new-comment-img {
   width: 30px;
   height: 30px;
   border-radius: 5px;
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment form {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment form,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment form {
   padding-left: 15px;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -11544,7 +11565,8 @@ school page styling
   display: flex;
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment form input {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment form input,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment form input {
   border: none;
   outline: inherit;
   -webkit-box-flex: 1;
@@ -11553,9 +11575,11 @@ school page styling
   height: 30px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  padding-left: 10px;
 }
 
-.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment form button {
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment form button,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment form button {
   border: none;
   outline: inherit;
   background-image: url("/img/checkmark.png");
@@ -11570,6 +11594,10 @@ school page styling
           box-sizing: border-box;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.school_page .school_page_content .student-feed-section {
+  display: none;
 }
 
 /* desktop */

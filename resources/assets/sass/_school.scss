@@ -125,7 +125,7 @@ school page styling
       }
     }
 
-    .school-info-section {
+    .school-info-section, .student-feed-section {
 
       .post {
         margin-top: 15px;
@@ -259,6 +259,7 @@ school page styling
                 height: 30px;
                 border-top-left-radius: 5px;
                 border-bottom-left-radius: 5px;
+                padding-left: 10px;
               }
 
               button {
@@ -280,6 +281,10 @@ school page styling
           }
         }
       }
+    }
+
+    .student-feed-section {
+      display: none;
     }
   }
 }

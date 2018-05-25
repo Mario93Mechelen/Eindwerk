@@ -131,6 +131,23 @@ $(document).ready(function() {
         }
     });
 
+    /* school info vs student feed toggle */
+    $(".see-school-info").click(function(e) {
+        e.preventDefault();
+        $(this).addClass("active");
+        $(".see-student-feed").removeClass("active");
+        $(".school-info-section").toggle();
+        $(".student-feed-section").toggle();
+    });
+    $(".see-student-feed").click(function(e) {
+        e.preventDefault();
+        $(this).addClass("active");
+        $(".see-school-info").removeClass("active");
+        $(".school-info-section").toggle();
+        $(".student-feed-section").toggle();
+    });
+
+
     /* show & hide comments of a post */
     $(".show-hide-post-comments").click(function(e) {
         e.preventDefault();

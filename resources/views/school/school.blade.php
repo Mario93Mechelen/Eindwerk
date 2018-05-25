@@ -79,7 +79,13 @@
                     </div>
                 </div>
 
-            </div>
+            </div>  <!-- einde school info section -->
+
+            <div class="student-feed-section">
+
+                fggg
+
+            </div>  <!-- einde student feef section -->
 
 
 
