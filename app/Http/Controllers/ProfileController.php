@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 use App\BlockedUser;
 use App\Crossing;
 use App\Friend;
+use App\Photo;
+use App\Profile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Image;
 use Pusher\Pusher;
+use GuzzleHttp\Client;
 
 class ProfileController extends Controller
 {
@@ -67,6 +70,33 @@ class ProfileController extends Controller
     public function store(Request $request)
     {
         //
+    }
+
+    public function getInstagramPhotos(Request $request)
+    {
+        if(count(Auth::user()->profile->photos)<10) {
+            $count = count(Auth::user()->profile->photos);
+            $client = new Client([
+                'base_uri' => 'https://api.instagram.com',
+                'timeout' => 2.0,
+            ]);
+            $res = $client->request('GET', '/v1/users/self/media/recent?access_token=' . Auth::user()->setting->access_token);
+            $res = \GuzzleHttp\json_decode($res->getBody());
+            foreach ($res->data as $data) {
+                if(!Photo::where('path',$data->images->standard_resolution->url)->first()) {
+                    $photo = new Photo();
+                    $photo->path = $data->images->standard_resolution->url;
+                    $photo->photoable_id = Auth::user()->profile->id;
+                    $photo->photoable_type = Profile::class;
+                    $photo->save();
+                    $count++;
+                    if ($count == 10) {
+                        break;
+                    }
+                }
+            }
+        }
+        return redirect()->back();
     }
 
     public function updateCover(Request $request)

@@ -21,6 +21,8 @@ class CreateSettingsTable extends Migration
             $table->text('facebook')->nullable();
             $table->text('twitter')->nullable();
             $table->text('instagram')->nullable();
+            $table->integer('instagram_userID')->nullable();
+            $table->text('access_token')->nullable();
             $table->boolean('email_messages')->default(0);
             $table->boolean('email_friends')->default(0);
             $table->boolean('email_groups')->default(0);

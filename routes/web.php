@@ -55,6 +55,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::post('/updateDistance', 'SettingController@updateDistance');
     Route::post('/deletelife', 'SettingController@deleteAllInfo');
     Route::post('/disconnectSocialMedia', 'SettingController@disconnectSocialMedia');
+    Route::get('/getPhotos/instagram','ProfileController@getInstagramPhotos');
 
     //friends
     Route::get('/friends','FriendController@index');

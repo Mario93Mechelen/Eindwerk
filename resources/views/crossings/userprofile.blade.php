@@ -117,14 +117,14 @@
             <div class="photos_section">
 
                 <h2 class="section_title">photos</h2>
-
+                <div class="photo-uploads">
+                    <a href="{{$user->setting->instagram ? '/getPhotos/instagram' : '#'}}" class="button {{$user->setting->instagram ? 'instagram-photos' : null}}">Get instagram photos</a>
+                    <a href="#" class="button dropzone-photos">Upload photos</a>
+                </div>
                 <div class="photo_collection">
-                    <a href="{{url('img/user_photo_example1.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
-                    <a href="{{url('img/user_photo_example2.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
-                    <a href="{{url('img/user_photo_example3.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
-                    <a href="{{url('img/user_photo_example1.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example1.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
-                    <a href="{{url('img/user_photo_example2.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example2.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
-                    <a href="{{url('img/user_photo_example3.jpg')}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url('img/user_photo_example3.jpg')}}" alt=""><div class="change-image delete-image hidden" data-photo=""><i class="fas fa-times"></i></div></a>
+                    @foreach($user->profile->photos as $photo)
+                        <a href="{{url($photo->path)}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url($photo->path)}}" alt=""><div class="change-image delete-image hidden" data-photo="{{$photo->id}}"><i class="fas fa-times"></i></div></a>
+                    @endforeach
                 </div>
 
 
@@ -520,6 +520,11 @@
             }
         });
     </script>
+
+    @if($myUser->id == $user->id)
+        <script>
+        </script>
+    @endif
 
 
     @if($myUser->id != $user->id)

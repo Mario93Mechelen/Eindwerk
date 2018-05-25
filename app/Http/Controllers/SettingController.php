@@ -58,6 +58,8 @@ class SettingController extends Controller
             $res = \GuzzleHttp\json_decode($res->getBody());
             $setting = Auth::user()->setting;
             $setting->instagram = 'https://www.instagram.com/'.$res->user->username;
+            $setting->instagram_userID = $res->user->id;
+            $setting->access_token = $res->access_token;
             $setting->save();
         }
         return redirect('/profile/settings');
@@ -73,6 +75,7 @@ class SettingController extends Controller
             $setting->twitter = '';
         }else{
             $setting->instagram = '';
+            $setting->instagram_userID = '';
         }
         $setting->save();
         return response()->json(['code' => 200]);
