@@ -11606,12 +11606,21 @@ school page styling
   width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 0px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
 }
 
 .school_page .school_page_content .student-feed-section .new-post-button-wrapper .button {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 30px 0px;
   padding: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11621,12 +11630,11 @@ school page styling
           align-items: center;
   background-color: #ffffff;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
-          box-shadow: 0px 5px 15px 0px #aaaaaa;
-  position: relative;
   text-decoration: none;
   cursor: pointer;
+  width: 100%;
   max-width: none;
+  margin: 0;
 }
 
 .school_page .school_page_content .student-feed-section .new-post-button-wrapper .button .new-post-img {
@@ -11641,6 +11649,104 @@ school page styling
       -ms-flex-positive: 1;
           flex-grow: 1;
   color: #aaaaaa;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures {
+  padding: 15px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures a:link,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures a:visited,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures a:hover,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures a:active,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures a:focus {
+  text-decoration: none;
+  color: #002245;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures .img-in-post-wrapper {
+  margin-bottom: -30px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures .img-in-post-wrapper .img-in-post {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures .img-in-post-wrapper .delete-image {
+  position: relative;
+  top: -55px;
+  right: -32px;
+  font-size: 12px;
+  background-color: rgba(0, 72, 217, 0.5);
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a {
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a.preferred {
+  background-color: #0048d9;
+  color: #ffffff;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a.not-preferred {
+  background-color: #aaaaaa;
+  color: #002245;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a:first-of-type {
+  border-bottom-left-radius: 5px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a:last-of-type {
+  border-bottom-right-radius: 5px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a:hover,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a:focus {
+  text-decoration: none;
 }
 
 /* desktop */
