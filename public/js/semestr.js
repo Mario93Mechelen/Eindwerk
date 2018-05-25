@@ -467,6 +467,8 @@ $(document).ready(function() {
             $(".user_introtext").attr("contenteditable", true);
             $(".edit-button-target").css("background-color", "rgba(128,0,0, 0.2)");
             $(".change-image").toggleClass("hidden");
+            $(".photo-uploads").toggleClass("hidden");
+            $(".image-uploadzone").toggleClass("hidden");
         } else {
             $(".edit-profile-button-label").html("edit profile");
             $(".edit-profile-icon").css("background-image", "url('/img/Edit_icon_White.png')");
@@ -484,6 +486,8 @@ $(document).ready(function() {
             console.log(intro+birthdate+gender+home+school_abroad+school_home+study);
             saveProfile(intro,birthdate,gender,home,school_home,school_abroad,study);
             $(".change-image").toggleClass("hidden");
+            $(".photo-uploads").toggleClass("hidden");
+            $(".image-uploadzone").toggleClass("hidden");
         }
 
     });

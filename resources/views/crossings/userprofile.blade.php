@@ -117,7 +117,7 @@
             <div class="photos_section">
 
                 <h2 class="section_title">photos</h2>
-                <div class="photo-uploads">
+                <div class="photo-uploads hidden">
                     <a href="{{$user->setting->instagram ? '/getPhotos/instagram' : '#'}}" class="button {{$user->setting->instagram ? 'instagram-photos' : null}}">Get instagram photos</a>
                     <a href="#" class="button dropzone-photos">Upload photos</a>
                 </div>
@@ -130,7 +130,7 @@
                     @endforeach
                     @endif
                 </div>
-                <div class="image-uploadzone">
+                <div class="image-uploadzone hidden">
                     <form id="addphotos" class="dropzone" action="{{URL::action('PhotoController@store', ['type' => 'profile', 'id' => $user->profile->id])}}" method="post">
                         {{ csrf_field() }}
                         <div class="dropzone-previews"></div>
