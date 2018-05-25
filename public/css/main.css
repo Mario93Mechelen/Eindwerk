@@ -10191,17 +10191,17 @@ profile page styling
   display: flex;
 }
 
-.profile_page .profile_page_content .photos_section .photo_collection img {
+.profile_page .profile_page_content .photos_section .photo_collection div > a > img {
   width: 50px;
   height: 50px;
 }
 
-.profile_page .profile_page_content .photos_section .photo_collection a:first-of-type img {
+.profile_page .profile_page_content .photos_section .photo_collection div:first-of-type a > img {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.profile_page .profile_page_content .photos_section .photo_collection a:last-of-type img {
+.profile_page .profile_page_content .photos_section .photo_collection div:last-of-type a > img {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
@@ -10520,7 +10520,7 @@ profile page styling
     position: static;
   }
 
-  .profile_page .profile_page_content .photos_section .photo_collection img {
+  .profile_page .profile_page_content .photos_section .photo_collection div > a > img {
     width: 80px;
     height: 80px;
   }
