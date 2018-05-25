@@ -1,0 +1,761 @@
+/*
+
+school page styling
+
+*/
+
+.school_page {
+  background-color: $offwhite;
+
+  .cover_image{
+    width: 100%;
+    height: 250px;
+    background-image: url('/img/cover_image_default.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .school_page_content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 15px;
+
+    .upper_section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .school_name {
+        color: $dark-color;
+        font-size: 28px;
+        font-weight: bold;
+        padding: 30px 15px;
+        text-align: center;
+      }
+    }
+
+    .school-list-toggle {
+
+      ul {
+        display: flex;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        cursor: pointer;
+
+        li {
+          flex: 1;
+          font-size: 16px;
+          font-weight: bold;
+          text-align: center;
+          color: $dark-color;
+          background-color: $white;
+          padding: 15px;
+        }
+
+        li.active {
+          color: $white;
+          background-color: $primary-color;
+        }
+
+        li:first-of-type {
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+
+        li:last-of-type {
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+
+    .school_introtext {
+      color: $nav_selected;
+      font-size: 14px;
+      text-align: center;
+      padding: 30px 30px 20px 30px;
+      line-height: 1.2em;
+    }
+
+    .button-wrapper {
+      width: 100%;
+      box-sizing: border-box;
+
+      .button {
+
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: 0px;
+        display: flex;
+        align-items: center;
+        background-color: $white;
+        border-radius: 5px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        margin-top: 0px;
+        margin-bottom: 60px;
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+        max-width: 300px;
+
+        .icon {
+          background-size: 20px 20px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: $primary-color;
+          width: 40px;
+          height: 40px;
+          padding: 10px;
+          box-sizing: border-box;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+
+        .member-icon {background-image: url('/img/memberlist.png');}
+
+        p {
+          display: block;
+          font-size: 16px;
+          font-weight: bold;
+          padding-left: 10px;
+          padding-right: 10px;
+          color: $dark-color;
+        }
+      }
+    }
+
+    .school-info-section, .student-feed-section {
+
+      .post {
+        margin-top: 15px;
+        margin-bottom: 30px;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        font-weight: bold;
+        color: $dark-color;
+        font-size: 16px;
+
+        .post-top {
+          display: flex;
+
+          .post-img {
+            width: 50px;
+            height: 50px;
+            margin: 15px;
+            box-sizing: border-box;
+            border-radius: 5px;
+          }
+
+          .post-top-right {
+            color: $dark-color;
+            padding: 15px 15px 15px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .post-name {
+              font-weight: bold;
+              font-size: 18px;
+            }
+
+            .post-time {
+              color: $nav_unselected;
+              font-size: 12px;
+            }
+          }
+        }
+
+        .post-mid {
+          padding: 0px 15px 15px 15px;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+          line-height: 1.2;
+
+          .post-message {
+            font-weight: normal;
+            color: $dark-color;
+          }
+        }
+
+        .post-bottom {
+          display: flex;
+          justify-content: flex-end;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+
+          a {
+            padding: 15px;
+            color: $primary-color;
+          }
+
+          a:hover,
+          a:focus {
+            text-decoration: none;
+            color: $primary-color;
+          }
+        }
+
+        .post-comment-section {
+
+          .post-comments {
+            display: none;
+          }
+
+          .post-comment {
+            display: flex;
+            border-bottom: 1px solid rgba($nav_unselected, 0.5);
+
+            .post-comment-img {
+              width: 30px;
+              height: 30px;
+              margin: 15px;
+              border-radius: 5px;
+            }
+
+            .post-comment-right {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-start;
+              padding: 15px 15px 15px 0px;
+
+              .post-comment-name {
+                font-weight: bold;
+                font-size: 16px;
+                padding-bottom: 5px;
+              }
+
+              .post-comment-message {
+                font-weight: normal;
+                color: $dark-color;
+                font-size: 12px;
+                line-height: 1.2;
+              }
+            }
+          }
+
+          .post-new-comment {
+            background-color: $nav_unselected;
+            padding: 15px;
+            display: flex;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+
+            .post-new-comment-img {
+              width: 30px;
+              height: 30px;
+              border-radius: 5px;
+            }
+
+            form {
+              padding-left: 15px;
+              flex-grow: 1;
+              display: flex;
+              width: 100%;
+
+              input {
+                border: none;
+                outline: inherit;
+                flex-grow: 1;
+                width: 100%;
+                height: 30px;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                padding-left: 10px;
+              }
+
+              button {
+                border: none;
+                outline: inherit;
+                background-image: url('/img/checkmark.png');
+                background-size: 15px 15px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-color: $primary-color;
+                width: 30px;
+                height: 30px;
+                padding: 0px;
+                box-sizing: border-box;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .student-feed-section {
+      display: none;
+
+      .new-post-button-wrapper {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        margin: 30px 0px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        position: relative;
+        z-index: 7000000;
+
+        .button {
+          box-sizing: border-box;
+          padding: 0px;
+          display: flex;
+          align-items: center;
+          background-color: $white;
+          border-radius: 5px;
+
+          text-decoration: none;
+          cursor: pointer;
+          width: 100%;
+          max-width: none;
+          margin: 0;
+
+          .new-post-img {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            margin: 10px;
+          }
+
+          input,
+          input:focus {
+            flex-grow: 1;
+            color: $dark-color;
+            border: none;
+            outline: none;
+          }
+
+          input::placeholder {
+            color: $nav_unselected;
+          }
+        }
+
+        .new-post-bottom {
+          display: none;
+
+          .add-pictures {
+            padding: 15px;
+            background-color: $white;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            a:link,
+            a:visited,
+            a:hover,
+            a:active,
+            a:focus {
+              text-decoration: none;
+              color: $dark-color;
+              font-size: 12px;
+              font-weight: bold;
+              margin: 5px;
+            }
+
+            .img-in-post-wrapper {
+              margin-bottom: -30px;
+
+              .img-in-post {
+                width: 50px;
+                height: 50px;
+                border-radius: 5px;
+                margin: 5px;
+              }
+
+              .delete-image {
+                position: relative;
+                top: -55px;
+                right: -32px;
+                font-size: 12px;
+                background-color: rgba($primary-color, 0.5);
+                color: white;
+                width: 20px;
+                height: 20px;
+                border-radius: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+
+
+        .buttons {
+          display: flex;
+          width: 100%;
+          font-weight: bold;
+          font-size: 18px;
+          text-align: center;
+
+          a {
+            width: 50%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+          }
+
+          a.preferred {
+            background-color: $primary-color;
+            color: $white;
+          }
+
+          a.not-preferred {
+            background-color: $nav_unselected;
+            color: $dark-color;
+          }
+
+          a:first-of-type {
+            border-bottom-left-radius: 5px;
+          }
+
+          a:last-of-type {
+            border-bottom-right-radius: 5px;
+          }
+
+          a:hover,
+          a:focus {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+
+  .member-list {
+
+    position: absolute;
+    top: 140px;
+    left: 15px;
+    width: calc(100% - 30px);
+    display: none;
+    z-index: 7000000;
+
+    .member-list-inner {
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        font-weight: bold;
+        color: $white;
+        font-size: 18px;
+        padding-bottom: 30px;
+      }
+
+      .item-member {
+        position: static;
+        padding-left: 0px;
+        padding-right: 0px;
+
+        .item-content,
+        .item-content:hover
+        .item-content:focus {
+          display: flex;
+          text-decoration: none;
+
+          .member-avatar {
+            width: 50px;
+            height: 50px;
+          }
+
+          .member-right {
+            font-weight: bold;
+            color: $dark-color;
+            font-size: 14px;
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.overlay, .overlay2 {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($dark-color, 0.7);
+  z-index: 5000000;
+}
+
+
+/* desktop */
+@media(min-width: 768px) {
+  .school_page {
+
+
+    .cover_image{
+      height: 350px;
+      position: relative;
+      top: -60px;
+    }
+
+    .school_page_content_wrapper {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .school_page_content {
+      position: relative;
+      top: -60px;
+      max-width: 560px;
+      margin: 0px;
+
+
+      .upper_section {
+        align-items: flex-start;
+
+
+        .school_name {
+          text-align: left;
+          padding-left: 0px;
+        }
+      }
+
+      .school-list-toggle {
+        ul {
+
+          li {
+
+          }
+
+          li.active {
+
+          }
+
+          li:first-of-type {
+
+          }
+
+          li:last-of-type {
+
+          }
+        }
+      }
+
+      .school_introtext {
+        text-align: left;
+        padding-left: 0px;
+      }
+
+      .members-button-wrapper {
+        display: none;
+
+        .button {
+
+          .icon {
+          }
+
+          .member-icon {}
+
+          p {
+
+          }
+        }
+      }
+
+      .school-info-section, .student-feed-section {
+
+        .post {
+
+          .post-top {
+
+            .post-img {
+
+            }
+
+            .post-top-right {
+
+
+              .post-name {
+
+              }
+
+              .post-time {
+
+              }
+            }
+          }
+
+          .post-mid {
+
+            .post-message {
+
+            }
+          }
+
+          .post-bottom {
+
+            a {
+
+            }
+
+            a:hover,
+            a:focus {
+
+            }
+          }
+
+          .post-comment-section {
+
+            .post-comments {
+
+            }
+
+            .post-comment {
+
+
+              .post-comment-img {
+
+              }
+
+              .post-comment-right {
+
+
+                .post-comment-name {
+
+                }
+
+                .post-comment-message {
+
+                }
+              }
+            }
+
+            .post-new-comment {
+
+
+              .post-new-comment-img {
+              }
+
+              form {
+
+
+                input {
+
+                }
+
+                button {
+
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .student-feed-section {
+
+        .new-post-button-wrapper {
+
+          .button {
+
+            .new-post-img {
+
+            }
+
+            input,
+            input:focus {
+
+            }
+
+            input::placeholder {
+
+            }
+          }
+
+          .new-post-bottom {
+
+            .add-pictures {
+
+
+              a:link,
+              a:visited,
+              a:hover,
+              a:active,
+              a:focus {
+
+              }
+
+              .img-in-post-wrapper {
+
+                .img-in-post {
+                }
+
+                .delete-image {
+                }
+              }
+            }
+          }
+
+
+          .buttons {
+
+            a {
+            }
+
+            a.preferred {
+            }
+
+            a.not-preferred {
+            }
+
+            a:first-of-type {
+            }
+
+            a:last-of-type {
+            }
+
+            a:hover,
+            a:focus {
+            }
+          }
+        }
+      }
+    }
+    .member-list {
+      display: block;
+      float: right;
+      position: static;
+      width: 280px;
+      padding-right: 15px;
+
+      .member-list-inner {
+
+        h2 {
+          color: $dark-color;
+        }
+
+        .item-member {
+
+          .item-content,
+          .item-content:hover
+          .item-content:focus {
+
+            .member-avatar {
+
+            }
+
+            .member-right {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 990px) {
+  .school_page .member-list {
+    padding-right: 0px;
+  }
+}

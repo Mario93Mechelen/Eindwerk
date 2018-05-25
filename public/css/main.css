@@ -11239,6 +11239,677 @@ Chat page styling
 
 /*
 
+school page styling
+
+*/
+
+.school_page {
+  background-color: #f4f5f7;
+}
+
+.school_page .cover_image {
+  width: 100%;
+  height: 250px;
+  background-image: url("/img/cover_image_default.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.school_page .school_page_content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 15px;
+}
+
+.school_page .school_page_content .upper_section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.school_page .school_page_content .upper_section .school_name {
+  color: #002245;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 30px 15px;
+  text-align: center;
+}
+
+.school_page .school_page_content .school-list-toggle ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  cursor: pointer;
+}
+
+.school_page .school_page_content .school-list-toggle ul li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #002245;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+.school_page .school_page_content .school-list-toggle ul li.active {
+  color: #ffffff;
+  background-color: #0048d9;
+}
+
+.school_page .school_page_content .school-list-toggle ul li:first-of-type {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.school_page .school_page_content .school-list-toggle ul li:last-of-type {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.school_page .school_page_content .school_introtext {
+  color: #333333;
+  font-size: 14px;
+  text-align: center;
+  padding: 30px 30px 20px 30px;
+  line-height: 1.2em;
+}
+
+.school_page .school_page_content .button-wrapper {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.school_page .school_page_content .button-wrapper .button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  margin-top: 0px;
+  margin-bottom: 60px;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  max-width: 300px;
+}
+
+.school_page .school_page_content .button-wrapper .button .icon {
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #0048d9;
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.school_page .school_page_content .button-wrapper .button .member-icon {
+  background-image: url("/img/memberlist.png");
+}
+
+.school_page .school_page_content .button-wrapper .button p {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #002245;
+}
+
+.school_page .school_page_content .school-info-section .post,
+.school_page .school_page_content .student-feed-section .post {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  font-weight: bold;
+  color: #002245;
+  font-size: 16px;
+}
+
+.school_page .school_page_content .school-info-section .post .post-top,
+.school_page .school_page_content .student-feed-section .post .post-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.school_page .school_page_content .school-info-section .post .post-top .post-img,
+.school_page .school_page_content .student-feed-section .post .post-top .post-img {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.school_page .school_page_content .school-info-section .post .post-top .post-top-right,
+.school_page .school_page_content .student-feed-section .post .post-top .post-top-right {
+  color: #002245;
+  padding: 15px 15px 15px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.school_page .school_page_content .school-info-section .post .post-top .post-top-right .post-name,
+.school_page .school_page_content .student-feed-section .post .post-top .post-top-right .post-name {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.school_page .school_page_content .school-info-section .post .post-top .post-top-right .post-time,
+.school_page .school_page_content .student-feed-section .post .post-top .post-top-right .post-time {
+  color: #aaaaaa;
+  font-size: 12px;
+}
+
+.school_page .school_page_content .school-info-section .post .post-mid,
+.school_page .school_page_content .student-feed-section .post .post-mid {
+  padding: 0px 15px 15px 15px;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+  line-height: 1.2;
+}
+
+.school_page .school_page_content .school-info-section .post .post-mid .post-message,
+.school_page .school_page_content .student-feed-section .post .post-mid .post-message {
+  font-weight: normal;
+  color: #002245;
+}
+
+.school_page .school_page_content .school-info-section .post .post-bottom,
+.school_page .school_page_content .student-feed-section .post .post-bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+}
+
+.school_page .school_page_content .school-info-section .post .post-bottom a,
+.school_page .school_page_content .student-feed-section .post .post-bottom a {
+  padding: 15px;
+  color: #0048d9;
+}
+
+.school_page .school_page_content .school-info-section .post .post-bottom a:hover,
+.school_page .school_page_content .school-info-section .post .post-bottom a:focus,
+.school_page .school_page_content .student-feed-section .post .post-bottom a:hover,
+.school_page .school_page_content .student-feed-section .post .post-bottom a:focus {
+  text-decoration: none;
+  color: #0048d9;
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comments,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comments {
+  display: none;
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 1px solid rgba(170, 170, 170, 0.5);
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-img,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comment .post-comment-img {
+  width: 30px;
+  height: 30px;
+  margin: 15px;
+  border-radius: 5px;
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-right,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comment .post-comment-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 15px 15px 15px 0px;
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-right .post-comment-name,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comment .post-comment-right .post-comment-name {
+  font-weight: bold;
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-comment .post-comment-right .post-comment-message,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-comment .post-comment-right .post-comment-message {
+  font-weight: normal;
+  color: #002245;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment {
+  background-color: #aaaaaa;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment .post-new-comment-img,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment .post-new-comment-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment form,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment form {
+  padding-left: 15px;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment form input,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment form input {
+  border: none;
+  outline: inherit;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  width: 100%;
+  height: 30px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding-left: 10px;
+}
+
+.school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment form button,
+.school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment form button {
+  border: none;
+  outline: inherit;
+  background-image: url("/img/checkmark.png");
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #0048d9;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.school_page .school_page_content .student-feed-section {
+  display: none;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 30px 0px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  position: relative;
+  z-index: 7000000;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button .new-post-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input:focus {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  color: #002245;
+  border: none;
+  outline: none;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input::-webkit-input-placeholder {
+  color: #aaaaaa;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input:-ms-input-placeholder {
+  color: #aaaaaa;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input::-ms-input-placeholder {
+  color: #aaaaaa;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input::placeholder {
+  color: #aaaaaa;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom {
+  display: none;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures {
+  padding: 15px;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures a:link,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures a:visited,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures a:hover,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures a:active,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures a:focus {
+  text-decoration: none;
+  color: #002245;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 5px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures .img-in-post-wrapper {
+  margin-bottom: -30px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures .img-in-post-wrapper .img-in-post {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures .img-in-post-wrapper .delete-image {
+  position: relative;
+  top: -55px;
+  right: -32px;
+  font-size: 12px;
+  background-color: rgba(0, 72, 217, 0.5);
+  color: white;
+  width: 20px;
+  height: 20px;
+  border-radius: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a {
+  width: 50%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a.preferred {
+  background-color: #0048d9;
+  color: #ffffff;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a.not-preferred {
+  background-color: #aaaaaa;
+  color: #002245;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a:first-of-type {
+  border-bottom-left-radius: 5px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a:last-of-type {
+  border-bottom-right-radius: 5px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a:hover,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a:focus {
+  text-decoration: none;
+}
+
+.school_page .member-list {
+  position: absolute;
+  top: 140px;
+  left: 15px;
+  width: calc(100% - 30px);
+  display: none;
+  z-index: 7000000;
+}
+
+.school_page .member-list .member-list-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.school_page .member-list .member-list-inner h2 {
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 18px;
+  padding-bottom: 30px;
+}
+
+.school_page .member-list .member-list-inner .item-member {
+  position: static;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.school_page .member-list .member-list-inner .item-member .item-content,
+.school_page .member-list .member-list-inner .item-member .item-content:hover .item-content:focus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+}
+
+.school_page .member-list .member-list-inner .item-member .item-content .member-avatar,
+.school_page .member-list .member-list-inner .item-member .item-content:hover .item-content:focus .member-avatar {
+  width: 50px;
+  height: 50px;
+}
+
+.school_page .member-list .member-list-inner .item-member .item-content .member-right,
+.school_page .member-list .member-list-inner .item-member .item-content:hover .item-content:focus .member-right {
+  font-weight: bold;
+  color: #002245;
+  font-size: 14px;
+  padding: 10px;
+}
+
+.overlay,
+.overlay2 {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 34, 69, 0.7);
+  z-index: 5000000;
+}
+
+/* desktop */
+
+@media (min-width: 768px) {
+  .school_page .cover_image {
+    height: 350px;
+    position: relative;
+    top: -60px;
+  }
+
+  .school_page .school_page_content_wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .school_page .school_page_content {
+    position: relative;
+    top: -60px;
+    max-width: 560px;
+    margin: 0px;
+  }
+
+  .school_page .school_page_content .upper_section {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .school_page .school_page_content .upper_section .school_name {
+    text-align: left;
+    padding-left: 0px;
+  }
+
+  .school_page .school_page_content .school_introtext {
+    text-align: left;
+    padding-left: 0px;
+  }
+
+  .school_page .school_page_content .members-button-wrapper {
+    display: none;
+  }
+
+  .school_page .member-list {
+    display: block;
+    float: right;
+    position: static;
+    width: 280px;
+    padding-right: 15px;
+  }
+
+  .school_page .member-list .member-list-inner h2 {
+    color: #002245;
+  }
+}
+
+@media (min-width: 990px) {
+  .school_page .member-list {
+    padding-right: 0px;
+  }
+}
+
+/*
+
 Settings page styling
 
 */

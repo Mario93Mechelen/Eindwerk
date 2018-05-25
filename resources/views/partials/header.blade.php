@@ -73,7 +73,7 @@
                     }}'><p>Semestr</p></a></li>
                     <li class="nav_aroundme"><a href="{{URL::action('HomeController@index')}}">around me</a></li>
                     <li class="nav_crossings"><a href="{{URL::action('ProfileController@index')}}">crossings</a></li>
-                    <li class="nav_groups"><a href="#">groups</a></li>
+                    <li class="nav_groups"><a href="{{URL::action('ProfileController@school')}}">school</a></li>
                 </ul>
             </div>
         </nav>

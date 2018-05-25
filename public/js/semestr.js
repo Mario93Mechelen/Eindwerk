@@ -157,6 +157,94 @@ $(document).ready(function() {
         }
     });
 
+    /* school info vs student feed toggle */
+    $(".see-school-info").click(function(e) {
+        e.preventDefault();
+        $(this).addClass("active");
+        $(".see-student-feed").removeClass("active");
+        $(".school-info-section").toggle();
+        $(".student-feed-section").toggle();
+        $(".school_introtext").toggle();
+        if(window.innerWidth < 768) {
+            $(".members-button-wrapper").toggle();
+        }
+    });
+    $(".see-student-feed").click(function(e) {
+        e.preventDefault();
+        $(this).addClass("active");
+        $(".see-school-info").removeClass("active");
+        $(".school-info-section").toggle();
+        $(".student-feed-section").toggle();
+        $(".school_introtext").toggle();
+        if(window.innerWidth < 768) {
+            $(".members-button-wrapper").toggle();
+        }
+    });
+
+
+    /* show & hide comments of a post */
+    $(".show-hide-post-comments").click(function(e) {
+        e.preventDefault();
+        $(this).parent().parent().find(".post-comments").slideToggle();
+        if ( $(this).html() == "show comments" ) {
+            $(this).html("hide comments");
+        } else {
+            $(this).html("show comments");
+        }
+    });
+
+    /* create new post */
+    $(".new-post-button-wrapper .button").click(function(e) {
+        e.preventDefault();
+        $(".new-post-bottom").slideDown();
+        $(".overlay").show();
+        $(".new-post-button-wrapper").css("box-shadow", "none");
+    });
+
+    /* add picture to post */
+    $(".new-post-add-picture").click(function(e) {
+        e.preventDefault();
+        console.log("add picture hombrero");
+    });
+
+    /* delete picture from post */
+    $(".delete-image").click(function(e) {
+        e.preventDefault();
+        $(this).parent().hide();  /* dit is niet de manier, maar toont al wat er moet gebeuren */
+        console.log("delete picture hombrero");
+    });
+
+    /* send new post */
+    $(".new-post-bottom .send").click(function(e) {
+        e.preventDefault();
+        $(".new-post-bottom").slideUp();
+        $(".new-post-button-wrapper input").val("");
+        $(".overlay").hide();
+    });
+
+    /* cancel new post */
+    $(".new-post-bottom .cancel").click(function(e) {
+        e.preventDefault();
+        $(".new-post-bottom").slideUp();
+        $(".new-post-button-wrapper input").val("");
+        $(".overlay").hide();
+    });
+
+    /* toggle member list mobile */
+    $(".member-list-button").click(function(e) {
+        e.preventDefault();
+        $(".member-list").show();
+        $(".overlay2").show();
+    });
+
+    $(".overlay2").click(function(e) {
+        $("#member-list").hide();
+        $(".overlay2").hide();
+        console.log("hey man");
+    });
+
+
+
     function savePassword(oldp,newp){
         $.ajaxSetup({
 

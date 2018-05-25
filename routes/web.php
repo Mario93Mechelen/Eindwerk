@@ -80,4 +80,7 @@ Route::group(['middleware' => 'auth'], function()
     //Locations
     Route::post('/location/getLocation','LocationController@getLocation');
     Route::post('/location/store','LocationController@store');
+
+    //school
+    Route::get('/school','ProfileController@school');
 });
