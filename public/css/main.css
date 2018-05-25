@@ -11894,10 +11894,17 @@ school page styling
     float: right;
     position: static;
     width: 280px;
+    padding-right: 15px;
   }
 
   .school_page .member-list .member-list-inner h2 {
     color: #002245;
+  }
+}
+
+@media (min-width: 990px) {
+  .school_page .member-list {
+    padding-right: 0px;
   }
 }
 

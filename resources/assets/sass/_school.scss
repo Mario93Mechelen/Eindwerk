@@ -727,6 +727,7 @@ school page styling
       float: right;
       position: static;
       width: 280px;
+      padding-right: 15px;
 
       .member-list-inner {
 
@@ -750,5 +751,11 @@ school page styling
         }
       }
     }
+  }
+}
+
+@media (min-width: 990px) {
+  .school_page .member-list {
+    padding-right: 0px;
   }
 }
