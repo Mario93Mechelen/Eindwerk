@@ -178,25 +178,29 @@
                 <div class="button-wrapper new-post-button-wrapper">
                     <a href="#" class="button">
                         <img class="new-post-img" src="/img/profile_pic_default.jpg" alt=""/>
-                        <p>create new post</p>
+                        <input placeholder="create new post">
                     </a>
 
-                    <div class="add-pictures">
-                        <a href="">+ Add picture</a>
-                        <div class="img-in-post-wrapper">
-                            <img class="img-in-post" src="/img/profile_pic_default.jpg" alt=""/>
-                            <div class="change-image delete-image" data-photo=""><i class="fas fa-times"></i></div>
-                        </div>
-                        <div class="img-in-post-wrapper">
-                            <img class="img-in-post" src="/img/profile_pic_default.jpg" alt=""/>
-                            <div class="change-image delete-image" data-photo=""><i class="fas fa-times"></i></div>
-                        </div>
+                    <div class="new-post-bottom">
+                        <div class="add-pictures">
+                            <a class="new-post-add-picture" href="">+ Add picture</a>
+                            <div class="img-in-post-wrapper">
+                                <img class="img-in-post" src="/img/profile_pic_default.jpg" alt=""/>
+                                <div class="change-image delete-image" data-photo=""><i class="fas fa-times"></i></div>
+                            </div>
+                            <div class="img-in-post-wrapper">
+                                <img class="img-in-post" src="/img/profile_pic_default.jpg" alt=""/>
+                                <div class="change-image delete-image" data-photo=""><i class="fas fa-times"></i></div>
+                            </div>
 
+                        </div>
+                        <div class="buttons">
+                            <a class="send preferred" href="">send</a>
+                            <a class="cancel not-preferred" href="">cancel</a>
+                        </div>
                     </div>
-                    <div class="buttons">
-                        <a class="send preferred" href="">send</a>
-                        <a class="cancel not-preferred" href="">cancel</a>
-                    </div>
+
+
                 </div>
 
                 <div class="post student-feed-post">

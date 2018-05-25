@@ -317,58 +317,70 @@ school page styling
             margin: 10px;
           }
 
-          p {
+          input,
+          input:focus {
             flex-grow: 1;
+            color: $dark-color;
+            border: none;
+            outline: none;
+          }
+
+          input::placeholder {
             color: $nav_unselected;
           }
         }
 
-        .add-pictures {
-          padding: 15px;
-          background-color: $white;
-          display: flex;
-          align-items: flex-start;
-          justify-content: flex-start;
+        .new-post-bottom {
+          display: none;
 
-          a:link,
-          a:visited,
-          a:hover,
-          a:active,
-          a:focus {
-            text-decoration: none;
-            color: $dark-color;
-            font-size: 12px;
-            font-weight: bold;
-            margin: 5px;
-          }
+          .add-pictures {
+            padding: 15px;
+            background-color: $white;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
 
-          .img-in-post-wrapper {
-            margin-bottom: -30px;
-
-            .img-in-post {
-              width: 50px;
-              height: 50px;
-              border-radius: 5px;
+            a:link,
+            a:visited,
+            a:hover,
+            a:active,
+            a:focus {
+              text-decoration: none;
+              color: $dark-color;
+              font-size: 12px;
+              font-weight: bold;
               margin: 5px;
             }
 
-            .delete-image {
-              position: relative;
-              top: -55px;
-              right: -32px;
-              font-size: 12px;
-              background-color: rgba($primary-color, 0.5);
-              color: white;
-              width: 20px;
-              height: 20px;
-              border-radius: 25px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              cursor: pointer;
+            .img-in-post-wrapper {
+              margin-bottom: -30px;
+
+              .img-in-post {
+                width: 50px;
+                height: 50px;
+                border-radius: 5px;
+                margin: 5px;
+              }
+
+              .delete-image {
+                position: relative;
+                top: -55px;
+                right: -32px;
+                font-size: 12px;
+                background-color: rgba($primary-color, 0.5);
+                color: white;
+                width: 20px;
+                height: 20px;
+                border-radius: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+              }
             }
           }
         }
+
 
         .buttons {
           display: flex;

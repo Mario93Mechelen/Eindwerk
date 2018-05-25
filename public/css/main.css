@@ -11644,14 +11644,37 @@ school page styling
   margin: 10px;
 }
 
-.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button p {
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input:focus {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  color: #002245;
+  border: none;
+  outline: none;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input::-webkit-input-placeholder {
   color: #aaaaaa;
 }
 
-.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures {
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input:-ms-input-placeholder {
+  color: #aaaaaa;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input::-ms-input-placeholder {
+  color: #aaaaaa;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button input::placeholder {
+  color: #aaaaaa;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom {
+  display: none;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures {
   padding: 15px;
   background-color: #ffffff;
   display: -webkit-box;
@@ -11665,11 +11688,11 @@ school page styling
           justify-content: flex-start;
 }
 
-.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures a:link,
-.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures a:visited,
-.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures a:hover,
-.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures a:active,
-.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures a:focus {
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures a:link,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures a:visited,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures a:hover,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures a:active,
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures a:focus {
   text-decoration: none;
   color: #002245;
   font-size: 12px;
@@ -11677,18 +11700,18 @@ school page styling
   margin: 5px;
 }
 
-.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures .img-in-post-wrapper {
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures .img-in-post-wrapper {
   margin-bottom: -30px;
 }
 
-.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures .img-in-post-wrapper .img-in-post {
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures .img-in-post-wrapper .img-in-post {
   width: 50px;
   height: 50px;
   border-radius: 5px;
   margin: 5px;
 }
 
-.school_page .school_page_content .student-feed-section .new-post-button-wrapper .add-pictures .img-in-post-wrapper .delete-image {
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .new-post-bottom .add-pictures .img-in-post-wrapper .delete-image {
   position: relative;
   top: -55px;
   right: -32px;

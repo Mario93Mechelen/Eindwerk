@@ -163,6 +163,38 @@ $(document).ready(function() {
         }
     });
 
+    /* create new post */
+    $(".new-post-button-wrapper .button").click(function(e) {
+        e.preventDefault();
+        $(".new-post-bottom").slideDown();
+    });
+
+    /* add picture to post */
+    $(".new-post-add-picture").click(function(e) {
+        e.preventDefault();
+        console.log("add picture hombrero");
+    });
+
+    /* delete picture from post */
+    $(".delete-image").click(function(e) {
+        e.preventDefault();
+        $(this).parent().hide();  /* dit is niet de manier, maar toont al wat er moet gebeuren */
+        console.log("delete picture hombrero");
+    });
+
+    /* send new post */
+    $(".new-post-bottom .send").click(function(e) {
+        e.preventDefault();
+        $(".new-post-bottom").slideUp();
+    });
+
+    /* cancel new post */
+    $(".new-post-bottom .cancel").click(function(e) {
+        e.preventDefault();
+        $(".new-post-bottom").slideUp();
+    });
+
+
     function savePassword(oldp,newp){
         $.ajaxSetup({
 
