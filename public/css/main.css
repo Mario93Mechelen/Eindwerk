@@ -11776,15 +11776,16 @@ school page styling
   text-decoration: none;
 }
 
-.school_page .school_page_content .member-list {
+.school_page .member-list {
   position: absolute;
   top: 140px;
+  left: 15px;
   width: calc(100% - 30px);
   display: none;
   z-index: 7000000;
 }
 
-.school_page .school_page_content .member-list .member-list-inner {
+.school_page .member-list .member-list-inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11794,35 +11795,35 @@ school page styling
           flex-direction: column;
 }
 
-.school_page .school_page_content .member-list .member-list-inner h2 {
+.school_page .member-list .member-list-inner h2 {
   font-weight: bold;
   color: #ffffff;
   font-size: 18px;
   padding-bottom: 30px;
 }
 
-.school_page .school_page_content .member-list .member-list-inner .item-member {
+.school_page .member-list .member-list-inner .item-member {
   position: static;
   padding-left: 0px;
   padding-right: 0px;
 }
 
-.school_page .school_page_content .member-list .member-list-inner .item-member .item-content,
-.school_page .school_page_content .member-list .member-list-inner .item-member .item-content:hover .item-content:focus {
+.school_page .member-list .member-list-inner .item-member .item-content,
+.school_page .member-list .member-list-inner .item-member .item-content:hover .item-content:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   text-decoration: none;
 }
 
-.school_page .school_page_content .member-list .member-list-inner .item-member .item-content .member-avatar,
-.school_page .school_page_content .member-list .member-list-inner .item-member .item-content:hover .item-content:focus .member-avatar {
+.school_page .member-list .member-list-inner .item-member .item-content .member-avatar,
+.school_page .member-list .member-list-inner .item-member .item-content:hover .item-content:focus .member-avatar {
   width: 50px;
   height: 50px;
 }
 
-.school_page .school_page_content .member-list .member-list-inner .item-member .item-content .member-right,
-.school_page .school_page_content .member-list .member-list-inner .item-member .item-content:hover .item-content:focus .member-right {
+.school_page .member-list .member-list-inner .item-member .item-content .member-right,
+.school_page .member-list .member-list-inner .item-member .item-content:hover .item-content:focus .member-right {
   font-weight: bold;
   color: #002245;
   font-size: 14px;
@@ -11850,13 +11851,25 @@ school page styling
     top: -60px;
   }
 
+  .school_page .school_page_content_wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
   .school_page .school_page_content {
     position: relative;
     top: -60px;
+    max-width: 560px;
+    margin: 0px;
   }
 
   .school_page .school_page_content .upper_section {
-    max-width: 640px;
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: flex-start;
@@ -11867,12 +11880,7 @@ school page styling
     padding-left: 0px;
   }
 
-  .school_page .school_page_content .school-list-toggle {
-    max-width: 640px;
-  }
-
   .school_page .school_page_content .school_introtext {
-    max-width: 640px;
     text-align: left;
     padding-left: 0px;
   }
@@ -11881,19 +11889,14 @@ school page styling
     display: none;
   }
 
-  .school_page .school_page_content .school-info-section,
-  .school_page .school_page_content .student-feed-section {
-    max-width: 640px;
-    float: left;
-  }
-
-  .school_page .school_page_content .member-list {
+  .school_page .member-list {
     display: block;
+    float: right;
     position: static;
-    width: 290px;
+    width: 280px;
   }
 
-  .school_page .school_page_content .member-list .member-list-inner h2 {
+  .school_page .member-list .member-list-inner h2 {
     color: #002245;
   }
 }

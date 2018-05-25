@@ -6,6 +6,7 @@
 
         <div class="cover_image"></div>
 
+        <div class="school_page_content_wrapper">
         <div class="school_page_content">
 
             <div class="upper_section">
@@ -299,53 +300,53 @@
 
             </div>  <!-- einde student feed section -->
 
-            <div class="member-list" id="member-list">
-
-                <div class="member-list-inner">
-
-                    <h2>member list</h2>
-
-                    <div class="item item-member item-list col-xs-12">
-                        <a class="item-content">
-                            <img class="member-avatar" src="/img/profile_pic_default.jpg">
-                            <div class="member-right">
-                                <div class="member-name">
-                                    <p class="member-name">Amber Heard</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="item item-member item-list col-xs-12">
-                        <a class="item-content">
-                            <img class="member-avatar" src="/img/profile_pic_default.jpg">
-                            <div class="member-right">
-                                <div class="member-name">
-                                    <p class="member-name">Amber Heard</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                    <div class="item item-member item-list col-xs-12">
-                        <a class="item-content">
-                            <img class="member-avatar" src="/img/profile_pic_default.jpg">
-                            <div class="member-right">
-                                <div class="member-name">
-                                    <p class="member-name">Amber Heard</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-
-                </div>
-
-            </div>  <!-- einde member list section -->
-
-
         </div>  <!-- einde school page content -->
 
+        <div class="member-list" id="member-list">
+
+            <div class="member-list-inner">
+
+                <h2>member list</h2>
+
+                <div class="item item-member item-list col-xs-12">
+                    <a class="item-content">
+                        <img class="member-avatar" src="/img/profile_pic_default.jpg">
+                        <div class="member-right">
+                            <div class="member-name">
+                                <p class="member-name">Amber Heard</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="item item-member item-list col-xs-12">
+                    <a class="item-content">
+                        <img class="member-avatar" src="/img/profile_pic_default.jpg">
+                        <div class="member-right">
+                            <div class="member-name">
+                                <p class="member-name">Amber Heard</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="item item-member item-list col-xs-12">
+                    <a class="item-content">
+                        <img class="member-avatar" src="/img/profile_pic_default.jpg">
+                        <div class="member-right">
+                            <div class="member-name">
+                                <p class="member-name">Amber Heard</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>  <!-- einde member list section -->
+
     </div>  <!-- einde school page -->
+    </div>
 
     <div class="overlay"></div>
     <div class="overlay2"></div>
