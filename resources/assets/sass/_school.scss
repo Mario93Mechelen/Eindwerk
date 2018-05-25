@@ -124,6 +124,163 @@ school page styling
         }
       }
     }
+
+    .school-info-section {
+
+      .post {
+        margin-top: 15px;
+        background-color: $white;
+        border-radius: 10px;
+        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        font-weight: bold;
+        color: $dark-color;
+        font-size: 16px;
+
+        .post-top {
+          display: flex;
+
+          .post-img {
+            width: 50px;
+            height: 50px;
+            margin: 15px;
+            box-sizing: border-box;
+            border-radius: 5px;
+          }
+
+          .post-top-right {
+            color: $dark-color;
+            padding: 15px 15px 15px 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+
+            .post-name {
+              font-weight: bold;
+              font-size: 20px;
+            }
+
+            .post-time {
+              color: $nav_unselected;
+              font-size: 12px;
+            }
+          }
+        }
+
+        .post-mid {
+          padding: 0px 15px 15px 15px;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+          line-height: 1.2;
+
+          .post-message {
+            font-weight: normal;
+            color: $dark-color;
+          }
+        }
+
+        .post-bottom {
+          display: flex;
+          justify-content: flex-end;
+          border-bottom: 1px solid rgba($nav_unselected, 0.5);
+
+          a {
+            padding: 15px;
+            color: $primary-color;
+          }
+
+          a:hover,
+          a:focus {
+            text-decoration: none;
+            color: $primary-color;
+          }
+        }
+
+        .post-comment-section {
+
+          .post-comments {
+            display: none;
+          }
+
+          .post-comment {
+            display: flex;
+            border-bottom: 1px solid rgba($nav_unselected, 0.5);
+
+            .post-comment-img {
+              width: 30px;
+              height: 30px;
+              margin: 15px;
+              border-radius: 5px;
+            }
+
+            .post-comment-right {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              justify-content: flex-start;
+              padding: 15px 15px 15px 0px;
+
+              .post-comment-name {
+                font-weight: bold;
+                font-size: 16px;
+                padding-bottom: 5px;
+              }
+
+              .post-comment-message {
+                font-weight: normal;
+                color: $dark-color;
+                font-size: 12px;
+                line-height: 1.2;
+              }
+            }
+          }
+
+          .post-new-comment {
+            background-color: $nav_unselected;
+            padding: 15px;
+            display: flex;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+
+            .post-new-comment-img {
+              width: 30px;
+              height: 30px;
+              border-radius: 5px;
+            }
+
+            form {
+              padding-left: 15px;
+              flex-grow: 1;
+              display: flex;
+
+              input {
+                border: none;
+                outline: inherit;
+                flex-grow: 1;
+                height: 30px;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+              }
+
+              button {
+                border: none;
+                outline: inherit;
+                background-image: url('/img/checkmark.png');
+                background-size: 20px 20px;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-color: $primary-color;
+                width: 30px;
+                height: 30px;
+                padding: 0px;
+                box-sizing: border-box;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 

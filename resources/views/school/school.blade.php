@@ -43,34 +43,39 @@
                             message might look like, you know. Yeah boiii.</p>
                     </div>
                     <div class="post-bottom post-section">
-                        <a href="">show comments</a>
+                        <a href="" class="show-hide-post-comments">show comments</a>
                     </div>
-                    <div class="post-bottom post-section post-comment-section">
-                        <div class="post-comment"> <!-- to be hidden -->
-                            <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                            <div class="post-comment-top-right">
-                                <h4 class="post-comment-name">Amber's Sister</h4>
-                                <p class="post-comment-message">I concur with that statement, this comment is just
-                                    here to acknowledge what was written before.</p>
+                    <div class="post-comment-section post-section">
+
+                        <div class="post-comments">
+                            <div class="post-comment">
+                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
+                                <div class="post-comment-right">
+                                    <h4 class="post-comment-name">Amber's Sister</h4>
+                                    <p class="post-comment-message">I concur with that statement, this comment is just
+                                        here to acknowledge what was written before.</p>
+                                </div>
+                            </div>
+                            <div class="post-comment">
+                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
+                                <div class="post-comment-right">
+                                    <h4 class="post-comment-name">Amber's Sister</h4>
+                                    <p class="post-comment-message">I concur with that statement, this comment is just
+                                        here to acknowledge what was written before.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="post-comment"> <!-- to be hidden -->
-                            <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                            <div class="post-comment-top-right">
-                                <h4 class="post-comment-name">Amber's Sister</h4>
-                                <p class="post-comment-message">I concur with that statement, this comment is just
-                                    here to acknowledge what was written before.</p>
-                            </div>
-                        </div>
+
                         <div class="post-new-comment">
-                            <form>
+
                                 <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
                                 <form>
                                     <input type="text">
                                     <button type="submit"></button>
                                 </form>
-                            </form>
+
                         </div>
+
                     </div>
                 </div>
 

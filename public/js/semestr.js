@@ -131,6 +131,17 @@ $(document).ready(function() {
         }
     });
 
+    /* show & hide comments of a post */
+    $(".show-hide-post-comments").click(function(e) {
+        e.preventDefault();
+        $(this).parent().parent().find(".post-comments").slideToggle();
+        if ( $(this).html() == "show comments" ) {
+            $(this).html("hide comments");
+        } else {
+            $(this).html("show comments");
+        }
+    });
+
     function savePassword(oldp,newp){
         $.ajaxSetup({
 
