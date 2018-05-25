@@ -167,6 +167,8 @@ $(document).ready(function() {
     $(".new-post-button-wrapper .button").click(function(e) {
         e.preventDefault();
         $(".new-post-bottom").slideDown();
+        $(".overlay").show();
+        $(".new-post-button-wrapper").css("box-shadow", "none");
     });
 
     /* add picture to post */
@@ -187,6 +189,7 @@ $(document).ready(function() {
         e.preventDefault();
         $(".new-post-bottom").slideUp();
         $(".new-post-button-wrapper input").val("");
+        $(".overlay").hide();
     });
 
     /* cancel new post */
@@ -194,6 +197,7 @@ $(document).ready(function() {
         e.preventDefault();
         $(".new-post-bottom").slideUp();
         $(".new-post-button-wrapper input").val("");
+        $(".overlay").hide();
     });
 
 

@@ -11616,6 +11616,8 @@ school page styling
   margin: 30px 0px;
   -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
           box-shadow: 0px 5px 15px 0px #aaaaaa;
+  position: relative;
+  z-index: 7000000;
 }
 
 .school_page .school_page_content .student-feed-section .new-post-button-wrapper .button {
@@ -11770,6 +11772,17 @@ school page styling
 .school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a:hover,
 .school_page .school_page_content .student-feed-section .new-post-button-wrapper .buttons a:focus {
   text-decoration: none;
+}
+
+.overlay {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 34, 69, 0.7);
+  z-index: 5000000;
 }
 
 /* desktop */

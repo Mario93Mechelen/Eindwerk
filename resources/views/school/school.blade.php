@@ -306,6 +306,8 @@
 
     </div>  <!-- einde school page -->
 
+    <div class="overlay"></div>
+
 @endsection
 
 @section('scripts')
