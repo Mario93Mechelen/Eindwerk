@@ -11198,7 +11198,7 @@ Chat page styling
     padding: 15px;
   }
 
-  .chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content {
+  .chat-wrapper .chat-total .chat-list #chat_overview .item-chat .item-content {
     border-radius: 0px;
     -webkit-box-shadow: none;
             box-shadow: none;
@@ -11208,7 +11208,7 @@ Chat page styling
     padding-bottom: 7.5px;
   }
 
-  .chat-wrapper .chat-total .chat-list #chat_overview .item-list .item-content .chat-avatar {
+  .chat-wrapper .chat-total .chat-list #chat_overview .item-chat .item-content .chat-avatar {
     border-radius: 5px;
   }
 
