@@ -138,6 +138,8 @@ $(document).ready(function() {
         $(".see-student-feed").removeClass("active");
         $(".school-info-section").toggle();
         $(".student-feed-section").toggle();
+        $(".school_introtext").toggle();
+        $(".members-button-wrapper").toggle();
     });
     $(".see-student-feed").click(function(e) {
         e.preventDefault();
@@ -145,6 +147,8 @@ $(document).ready(function() {
         $(".see-school-info").removeClass("active");
         $(".school-info-section").toggle();
         $(".student-feed-section").toggle();
+        $(".school_introtext").toggle();
+        $(".members-button-wrapper").toggle();
     });
 
 

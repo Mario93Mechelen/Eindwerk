@@ -93,11 +93,12 @@ school page styling
         background-color: $white;
         border-radius: 5px;
         box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: 0px;
+        margin-bottom: 60px;
         position: relative;
         text-decoration: none;
         cursor: pointer;
+        max-width: 300px;
 
         .icon {
           background-size: 20px 20px;
@@ -129,6 +130,7 @@ school page styling
 
       .post {
         margin-top: 15px;
+        margin-bottom: 30px;
         background-color: $white;
         border-radius: 10px;
         box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
@@ -157,7 +159,7 @@ school page styling
 
             .post-name {
               font-weight: bold;
-              font-size: 20px;
+              font-size: 18px;
             }
 
             .post-time {
@@ -266,7 +268,7 @@ school page styling
                 border: none;
                 outline: inherit;
                 background-image: url('/img/checkmark.png');
-                background-size: 20px 20px;
+                background-size: 15px 15px;
                 background-repeat: no-repeat;
                 background-position: center;
                 background-color: $primary-color;
