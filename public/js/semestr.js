@@ -139,7 +139,9 @@ $(document).ready(function() {
         $(".school-info-section").toggle();
         $(".student-feed-section").toggle();
         $(".school_introtext").toggle();
-        $(".members-button-wrapper").toggle();
+        if(window.innerWidth < 768) {
+            $(".members-button-wrapper").toggle();
+        }
     });
     $(".see-student-feed").click(function(e) {
         e.preventDefault();
@@ -148,7 +150,9 @@ $(document).ready(function() {
         $(".school-info-section").toggle();
         $(".student-feed-section").toggle();
         $(".school_introtext").toggle();
-        $(".members-button-wrapper").toggle();
+        if(window.innerWidth < 768) {
+            $(".members-button-wrapper").toggle();
+        }
     });
 
 

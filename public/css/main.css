@@ -11854,6 +11854,48 @@ school page styling
     position: relative;
     top: -60px;
   }
+
+  .school_page .school_page_content .upper_section {
+    max-width: 640px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+
+  .school_page .school_page_content .upper_section .school_name {
+    text-align: left;
+    padding-left: 0px;
+  }
+
+  .school_page .school_page_content .school-list-toggle {
+    max-width: 640px;
+  }
+
+  .school_page .school_page_content .school_introtext {
+    max-width: 640px;
+    text-align: left;
+    padding-left: 0px;
+  }
+
+  .school_page .school_page_content .members-button-wrapper {
+    display: none;
+  }
+
+  .school_page .school_page_content .school-info-section,
+  .school_page .school_page_content .student-feed-section {
+    max-width: 640px;
+    float: left;
+  }
+
+  .school_page .school_page_content .member-list {
+    display: block;
+    position: static;
+    width: 290px;
+  }
+
+  .school_page .school_page_content .member-list .member-list-inner h2 {
+    color: #002245;
+  }
 }
 
 /*
