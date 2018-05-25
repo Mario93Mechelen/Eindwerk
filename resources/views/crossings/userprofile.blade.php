@@ -122,9 +122,20 @@
                     <a href="#" class="button dropzone-photos">Upload photos</a>
                 </div>
                 <div class="photo_collection">
+                    @if(!$user->profile->photos->isEmpty())
                     @foreach($user->profile->photos as $photo)
-                        <a href="{{url($photo->path)}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url($photo->path)}}" alt=""><div class="change-image delete-image hidden" data-photo="{{$photo->id}}"><i class="fas fa-times"></i></div></a>
+                        <div>
+                        <a href="{{url($photo->path)}}" data-toggle="lightbox" data-gallery="example-gallery"><img class="userphoto" src="{{url($photo->path)}}" alt=""></a><div class="change-image delete-image hidden" data-photo="{{$photo->id}}"><i class="fas fa-times"></i></div>
+                        </div>
                     @endforeach
+                    @endif
+                </div>
+                <div class="image-uploadzone">
+                    <form id="addphotos" class="dropzone" action="{{URL::action('PhotoController@store', ['type' => 'profile', 'id' => $user->profile->id])}}" method="post">
+                        {{ csrf_field() }}
+                        <div class="dropzone-previews"></div>
+                    </form>
+                    <a href="{{url()->current()}}" class="btn btn-primary pull-right" title="bevestig foto's">Bevestig</a>
                 </div>
 
 
@@ -522,7 +533,44 @@
     </script>
 
     @if($myUser->id == $user->id)
+        <script src="/js/dropzone.min.js" type="text/javascript"></script>
         <script>
+            Dropzone.options.addphotos = {
+                paramName: 'photo',
+                maxFilesize: 3, //3MB
+                acceptedFiles: '.jpg, .jpeg, .png, .bmp, .gif',
+                maxFiles: '{{10-count($myUser->profile->photos)}}'
+            }
+
+        </script>
+
+        <script>
+            $('.delete-image').on('click', function(e){
+                e.preventDefault();
+                var id = $(this).data('photo');
+                console.log(id);
+                var el = $(this).parent();
+                $.ajaxSetup({
+
+                    headers: {
+
+                        'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                    }
+
+                });
+                $.ajax({
+                    method:"POST",
+                    url:"{{URL::action('PhotoController@deletePhoto')}}",
+                    data:{
+                        'id': id,
+                    }
+                }).done(function(response){
+                    if(response.code==200) {
+                        el.remove();
+                    }
+                });
+            })
         </script>
     @endif
 

@@ -56,6 +56,8 @@ Route::group(['middleware' => 'auth'], function()
     Route::post('/deletelife', 'SettingController@deleteAllInfo');
     Route::post('/disconnectSocialMedia', 'SettingController@disconnectSocialMedia');
     Route::get('/getPhotos/instagram','ProfileController@getInstagramPhotos');
+    Route::post('/photos/store', 'PhotoController@store');
+    Route::post('/photo/delete', 'PhotoController@deletePhoto');
 
     //friends
     Route::get('/friends','FriendController@index');
