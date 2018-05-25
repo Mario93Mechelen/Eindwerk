@@ -314,9 +314,15 @@ profile page styling
           padding: 10px;
         }
 
-        .social_item {
+        .social_item a,
+        .social_item a:link,
+        .social_item a:visited,
+        .social_item a:hover,
+        .social_item a:active,
+        .social_item a:focus {
           display: flex;
           align-items: center;
+          text-decoration: none;
 
           .item_label {
             font-weight: bold;

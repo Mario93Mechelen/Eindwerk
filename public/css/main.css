@@ -10249,23 +10249,39 @@ profile page styling
   padding: 10px;
 }
 
-.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item {
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:link,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:visited,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:hover,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:active,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:focus {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-decoration: none;
 }
 
-.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item .item_label {
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a .item_label,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:link .item_label,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:visited .item_label,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:hover .item_label,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:active .item_label,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:focus .item_label {
   font-weight: bold;
   color: #002245;
   font-size: 16px;
   padding-left: 10px;
 }
 
-.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item i {
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a i,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:link i,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:visited i,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:hover i,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:active i,
+.profile_page .profile_page_content .aboutme_section .aboutme_subsection .social_item a:focus i {
   color: #aaaaaa;
   font-size: 30px;
 }
