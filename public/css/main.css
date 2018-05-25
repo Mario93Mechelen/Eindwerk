@@ -11602,6 +11602,47 @@ school page styling
   display: none;
 }
 
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper {
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 30px 0px;
+  padding: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  max-width: none;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button .new-post-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.school_page .school_page_content .student-feed-section .new-post-button-wrapper .button p {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  color: #aaaaaa;
+}
+
 /* desktop */
 
 @media (min-width: 768px) {

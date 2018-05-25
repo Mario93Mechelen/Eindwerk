@@ -287,6 +287,38 @@ school page styling
 
     .student-feed-section {
       display: none;
+
+      .new-post-button-wrapper {
+        width: 100%;
+        box-sizing: border-box;
+
+        .button {
+          box-sizing: border-box;
+          margin: 30px 0px;
+          padding: 0px;
+          display: flex;
+          align-items: center;
+          background-color: $white;
+          border-radius: 5px;
+          box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+          position: relative;
+          text-decoration: none;
+          cursor: pointer;
+          max-width: none;
+
+          .new-post-img {
+            width: 30px;
+            height: 30px;
+            border-radius: 5px;
+            margin: 10px;
+          }
+
+          p {
+            flex-grow: 1;
+            color: $nav_unselected;
+          }
+        }
+      }
     }
   }
 }
