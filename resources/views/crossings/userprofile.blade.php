@@ -130,12 +130,16 @@
                     @endforeach
                     @endif
                 </div>
+                <div class="image-uploadzone-wrapper">
                 <div class="image-uploadzone">
                     <form id="addphotos" class="dropzone" action="{{URL::action('PhotoController@store', ['type' => 'profile', 'id' => $user->profile->id])}}" method="post">
                         {{ csrf_field() }}
                         <div class="dropzone-previews"></div>
                     </form>
-                    <a href="{{url()->current()}}" class="btn btn-primary pull-right" title="bevestig foto's">Bevestig</a>
+                    <a href="{{url()->current()}}" class="btn btn-primary pull-right photo-upload-confirm"
+                       title="bevestig
+                    foto's">Confirm</a>
+                </div>
                 </div>
 
 

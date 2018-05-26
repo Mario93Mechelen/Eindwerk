@@ -10179,7 +10179,7 @@ profile page styling
   padding-bottom: 15px;
 }
 
-.profile_page .profile_page_content .image-uploadzone {
+.profile_page .profile_page_content .image-uploadzone-wrapper {
   display: none;
 }
 
@@ -10215,6 +10215,49 @@ profile page styling
 }
 
 .profile_page .profile_page_content .photo-uploads a:hover {
+  background-color: #0048d9;
+  color: #ffffff;
+}
+
+.profile_page .profile_page_content .image-uploadzone {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.profile_page .profile_page_content .image-uploadzone #addphotos {
+  width: 100%;
+}
+
+.profile_page .profile_page_content .image-uploadzone a:link,
+.profile_page .profile_page_content .image-uploadzone a:visited,
+.profile_page .profile_page_content .image-uploadzone a:hover,
+.profile_page .profile_page_content .image-uploadzone a:active,
+.profile_page .profile_page_content .image-uploadzone a:focus {
+  text-decoration: none;
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+  color: #0048d9;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: block;
+  width: 50%;
+  float: right;
+  text-align: center;
+}
+
+.profile_page .profile_page_content .image-uploadzone a:hover {
   background-color: #0048d9;
   color: #ffffff;
 }

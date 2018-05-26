@@ -486,13 +486,13 @@ $(document).ready(function() {
             saveProfile(intro,birthdate,gender,home,school_home,school_abroad,study);
             $(".change-image").toggleClass("hidden");
             $(".photo-uploads").toggleClass("hidden");
-
+            $(".image-uploadzone-wrapper").slideUp();
         }
     });
 
     $(".button-upload-photos").click (function(e) {
         e.preventDefault();
-        $(".image-uploadzone").slideToggle();
+        $(".image-uploadzone-wrapper").slideToggle();
     });
 
 
