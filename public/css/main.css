@@ -10179,6 +10179,10 @@ profile page styling
   padding-bottom: 15px;
 }
 
+.profile_page .profile_page_content .image-uploadzone {
+  display: none;
+}
+
 .profile_page .profile_page_content .photos_section {
   padding: 15px 0px;
 }

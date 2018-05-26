@@ -468,7 +468,6 @@ $(document).ready(function() {
             $(".edit-button-target").css("background-color", "rgba(128,0,0, 0.2)");
             $(".change-image").toggleClass("hidden");
             $(".photo-uploads").toggleClass("hidden");
-            $(".image-uploadzone").toggleClass("hidden");
         } else {
             $(".edit-profile-button-label").html("edit profile");
             $(".edit-profile-icon").css("background-image", "url('/img/Edit_icon_White.png')");
@@ -487,10 +486,15 @@ $(document).ready(function() {
             saveProfile(intro,birthdate,gender,home,school_home,school_abroad,study);
             $(".change-image").toggleClass("hidden");
             $(".photo-uploads").toggleClass("hidden");
-            $(".image-uploadzone").toggleClass("hidden");
-        }
 
+        }
     });
+
+    $(".button-upload-photos").click (function(e) {
+        e.preventDefault();
+        $(".image-uploadzone").slideToggle();
+    });
+
 
     function saveProfile(intro,birthdate,gender,home,school_home,school_abroad,study){
         $.ajaxSetup({
