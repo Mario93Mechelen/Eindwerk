@@ -10,7 +10,7 @@
         <div class="school_page_content">
 
             <div class="upper_section">
-                <h2 class="school_name">{{$myUser->school->name}}</h2>
+                <h2 class="school_name">{{$myUser->school ? $myUser->school->name : 'please fill in school_abroad at your profile'}}</h2>
             </div>
 
             <div class="school-list-toggle">
@@ -30,147 +30,52 @@
             </div>
 
             <div class="school-info-section">
-
-                <div class="post school-info-post">
-                    <div class="post-top post-section">
-                        <img class="post-img" src="/img/profile_pic_default.jpg" alt=""/>
-                        <div class="post-top-right">
-                            <h4 class="post-name">Amber Heard</h4>
-                            <p class="post-time">2 hours ago</p>
-                        </div>
-                    </div>
-                    <div class="post-mid post-section">
-                        <p class="post-message">This is a post message, which was typed as an example of what a post
-                            message might look like, you know. Yeah boiii.</p>
-                    </div>
-                    <div class="post-bottom post-section">
-                        <a href="" class="show-hide-post-comments">show comments</a>
-                    </div>
-                    <div class="post-comment-section post-section">
-
-                        <div class="post-comments">
-                            <div class="post-comment">
-                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="post-comment-right">
-                                    <h4 class="post-comment-name">Amber's Sister</h4>
-                                    <p class="post-comment-message">I concur with that statement, this comment is just
-                                        here to acknowledge what was written before.</p>
+                @if(!$myUser->school->posts()->where('type','school')->get()->isEmpty())
+                    @foreach($myUser->school->posts()->where('type','school')->get() as $post)
+                        <div class="post school-info-post">
+                            <div class="post-top post-section">
+                                <img class="post-img" src="/img/profile_pic_default.jpg" alt=""/>
+                                <div class="post-top-right">
+                                    <h4 class="post-name">{{$myUser->school->name}}</h4>
+                                    <p class="post-time">2 hours ago</p>
                                 </div>
                             </div>
-                            <div class="post-comment">
-                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="post-comment-right">
-                                    <h4 class="post-comment-name">Amber's Sister</h4>
-                                    <p class="post-comment-message">I concur with that statement, this comment is just
-                                        here to acknowledge what was written before.</p>
-                                </div>
+                            <div class="post-mid post-section">
+                                <p class="post-message">{{$post->body}}</p>
                             </div>
-                        </div>
-
-                        <div class="post-new-comment">
-                                <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <form>
-                                    <input type="text">
-                                    <button type="submit"></button>
-                                </form>
-                        </div>
-
-                    </div>
-                </div>  <!-- einde post -->
-
-                <div class="post school-info-post">
-                    <div class="post-top post-section">
-                        <img class="post-img" src="/img/profile_pic_default.jpg" alt=""/>
-                        <div class="post-top-right">
-                            <h4 class="post-name">Amber Heard</h4>
-                            <p class="post-time">2 hours ago</p>
-                        </div>
-                    </div>
-                    <div class="post-mid post-section">
-                        <p class="post-message">This is a post message, which was typed as an example of what a post
-                            message might look like, you know. Yeah boiii.</p>
-                    </div>
-                    <div class="post-bottom post-section">
-                        <a href="" class="show-hide-post-comments">show comments</a>
-                    </div>
-                    <div class="post-comment-section post-section">
-
-                        <div class="post-comments">
-                            <div class="post-comment">
-                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="post-comment-right">
-                                    <h4 class="post-comment-name">Amber's Sister</h4>
-                                    <p class="post-comment-message">I concur with that statement, this comment is just
-                                        here to acknowledge what was written before.</p>
-                                </div>
+                            <div class="post-bottom post-section">
+                                <a href="" class="show-hide-post-comments">show comments</a>
                             </div>
-                            <div class="post-comment">
-                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="post-comment-right">
-                                    <h4 class="post-comment-name">Amber's Sister</h4>
-                                    <p class="post-comment-message">I concur with that statement, this comment is just
-                                        here to acknowledge what was written before.</p>
+                            <div class="post-comment-section post-section">
+
+                                <div class="post-comments">
+                                    @if(!$post->comments->isEmpty())
+                                        @foreach($post->comments as $comment)
+                                            <div class="post-comment">
+                                                <img class="post-comment-img" src="{{url($comment->user->avatar)}}" alt=""/>
+                                                <div class="post-comment-right">
+                                                    <h4 class="post-comment-name">{{$comment->user->first_name.' '.$comment->user->last_,ame}}</h4>
+                                                    <p class="post-comment-message">{{$comment->body}}</p>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="post-new-comment">
-                            <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                            <form>
-                                <input type="text">
-                                <button type="submit"></button>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>  <!-- einde post -->
-
-                <div class="post school-info-post">
-                    <div class="post-top post-section">
-                        <img class="post-img" src="/img/profile_pic_default.jpg" alt=""/>
-                        <div class="post-top-right">
-                            <h4 class="post-name">Amber Heard</h4>
-                            <p class="post-time">2 hours ago</p>
-                        </div>
-                    </div>
-                    <div class="post-mid post-section">
-                        <p class="post-message">This is a post message, which was typed as an example of what a post
-                            message might look like, you know. Yeah boiii.</p>
-                    </div>
-                    <div class="post-bottom post-section">
-                        <a href="" class="show-hide-post-comments">show comments</a>
-                    </div>
-                    <div class="post-comment-section post-section">
-
-                        <div class="post-comments">
-                            <div class="post-comment">
-                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="post-comment-right">
-                                    <h4 class="post-comment-name">Amber's Sister</h4>
-                                    <p class="post-comment-message">I concur with that statement, this comment is just
-                                        here to acknowledge what was written before.</p>
+                                <div class="post-new-comment">
+                                        <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
+                                        <form>
+                                            <input type="text"  class="commit-comment-student-feed">
+                                            <button type="submit" class="commit-comment-school-feed"></button>
+                                        </form>
                                 </div>
-                            </div>
-                            <div class="post-comment">
-                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="post-comment-right">
-                                    <h4 class="post-comment-name">Amber's Sister</h4>
-                                    <p class="post-comment-message">I concur with that statement, this comment is just
-                                        here to acknowledge what was written before.</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="post-new-comment">
-                            <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                            <form>
-                                <input type="text">
-                                <button type="submit"></button>
-                            </form>
-                        </div>
+                            </div>
+                        </div>  <!-- einde post -->
+                    @endforeach
+                @endif
 
-                    </div>
-                </div>  <!-- einde post -->
+
 
             </div>  <!-- einde school info section -->
 
@@ -203,100 +108,51 @@
 
 
                 </div>
-
-                <div class="post student-feed-post">
-                    <div class="post-top post-section">
-                        <img class="post-img" src="/img/profile_pic_default.jpg" alt=""/>
-                        <div class="post-top-right">
-                            <h4 class="post-name">Amber Heard</h4>
-                            <p class="post-time">2 hours ago</p>
-                        </div>
-                    </div>
-                    <div class="post-mid post-section">
-                        <p class="post-message">This is a post message, which was typed as an example of what a post
-                            message might look like, you know. Yeah boiii.</p>
-                    </div>
-                    <div class="post-bottom post-section">
-                        <a href="" class="show-hide-post-comments">show comments</a>
-                    </div>
-                    <div class="post-comment-section post-section">
-
-                        <div class="post-comments">
-                            <div class="post-comment">
-                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="post-comment-right">
-                                    <h4 class="post-comment-name">Amber's Sister</h4>
-                                    <p class="post-comment-message">I concur with that statement, this comment is just
-                                        here to acknowledge what was written before.</p>
+                @if(!$myUser->school->posts()->where('type','school')->get()->isEmpty())
+                    @foreach($myUser->school->posts()->where('type','student')->get() as $post)
+                        <div class="post student-feed-post">
+                            <div class="post-top post-section">
+                                <img class="post-img" src="{{$post->user->avatar}}" alt=""/>
+                                <div class="post-top-right">
+                                    <h4 class="post-name">{{$post->user->first_name.' '.$post->user->last_name}}</h4>
+                                    <p class="post-time">2 hours ago</p>
                                 </div>
                             </div>
-                            <div class="post-comment">
-                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="post-comment-right">
-                                    <h4 class="post-comment-name">Amber's Sister</h4>
-                                    <p class="post-comment-message">I concur with that statement, this comment is just
-                                        here to acknowledge what was written before.</p>
-                                </div>
+                            <div class="post-mid post-section">
+                                <p class="post-message">{{$post->body}}</p>
                             </div>
-                        </div>
-
-                        <div class="post-new-comment">
-                            <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                            <form>
-                                <input type="text">
-                                <button type="submit"></button>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>  <!-- einde post -->
-
-                <div class="post student-feed-post">
-                    <div class="post-top post-section">
-                        <img class="post-img" src="/img/profile_pic_default.jpg" alt=""/>
-                        <div class="post-top-right">
-                            <h4 class="post-name">Amber Heard</h4>
-                            <p class="post-time">2 hours ago</p>
-                        </div>
-                    </div>
-                    <div class="post-mid post-section">
-                        <p class="post-message">This is a post message, which was typed as an example of what a post
-                            message might look like, you know. Yeah boiii.</p>
-                    </div>
-                    <div class="post-bottom post-section">
-                        <a href="" class="show-hide-post-comments">show comments</a>
-                    </div>
-                    <div class="post-comment-section post-section">
-
-                        <div class="post-comments">
-                            <div class="post-comment">
-                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="post-comment-right">
-                                    <h4 class="post-comment-name">Amber's Sister</h4>
-                                    <p class="post-comment-message">I concur with that statement, this comment is just
-                                        here to acknowledge what was written before.</p>
-                                </div>
+                            <div class="post-bottom post-section">
+                                <a href="" class="show-hide-post-comments">show comments</a>
                             </div>
-                            <div class="post-comment">
-                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="post-comment-right">
-                                    <h4 class="post-comment-name">Amber's Sister</h4>
-                                    <p class="post-comment-message">I concur with that statement, this comment is just
-                                        here to acknowledge what was written before.</p>
+                            <div class="post-comment-section post-section">
+
+                                <div class="post-comments">
+                                    @if(!$post->comments->isEmpty())
+                                        @foreach($post->comments as $comment)
+                                            <div class="post-comment">
+                                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
+                                                <div class="post-comment-right">
+                                                    <h4 class="post-comment-name">{{$comment->user->first_name.' '.$comment->user->last_name}}</h4>
+                                                    <p class="post-comment-message">{{$comment->body}}</p>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    @endif
                                 </div>
+
+                                <div class="post-new-comment">
+                                    <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
+                                    <form>
+                                        <input type="text" class="comment-student-feed">
+                                        <button type="submit" class="commit-comment-student-feed"></button>
+                                    </form>
+                                </div>
+
                             </div>
-                        </div>
+                        </div>  <!-- einde post -->
+                    @endforeach
+                @endif
 
-                        <div class="post-new-comment">
-                            <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                            <form>
-                                <input type="text">
-                                <button type="submit"></button>
-                            </form>
-                        </div>
-
-                    </div>
-                </div>  <!-- einde post -->
 
             </div>  <!-- einde student feed section -->
 
@@ -308,38 +164,20 @@
 
                 <h2>member list</h2>
 
-                <div class="item item-member item-list col-xs-12">
-                    <a class="item-content">
-                        <img class="member-avatar" src="/img/profile_pic_default.jpg">
-                        <div class="member-right">
-                            <div class="member-name">
-                                <p class="member-name">Amber Heard</p>
-                            </div>
+                @if(!$myUser->school->users->isEmpty())
+                    @foreach($myUser->school->users as $user)
+                        <div class="item item-member item-list col-xs-12">
+                            <a class="item-content" href="{{URL::action('ProfileController@show', $user)}}">
+                                <img class="member-avatar" src="{{url($user->avatar)}}">
+                                <div class="member-right">
+                                    <div class="member-name">
+                                        <p class="member-name">{{$user->first_name.' '.$user->last_name}}</p>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-
-                <div class="item item-member item-list col-xs-12">
-                    <a class="item-content">
-                        <img class="member-avatar" src="/img/profile_pic_default.jpg">
-                        <div class="member-right">
-                            <div class="member-name">
-                                <p class="member-name">Amber Heard</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="item item-member item-list col-xs-12">
-                    <a class="item-content">
-                        <img class="member-avatar" src="/img/profile_pic_default.jpg">
-                        <div class="member-right">
-                            <div class="member-name">
-                                <p class="member-name">Amber Heard</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                    @endforeach
+                @endif
 
             </div>
 
