@@ -10,7 +10,7 @@
         <div class="school_page_content">
 
             <div class="upper_section">
-                <h2 class="school_name">Thomas More Mechelen Campus Kruidtuin</h2>
+                <h2 class="school_name">{{$myUser->school->name}}</h2>
             </div>
 
             <div class="school-list-toggle">

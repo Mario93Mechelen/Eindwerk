@@ -98,6 +98,11 @@ class User extends Authenticatable
         }
     }
 
+    public function school()
+    {
+        return $this->hasOne('App\School','id','school_id');
+    }
+
     public function isBlocked($myId)
     {
         if(BlockedUser::where('block_sender',$myId)->where('block_receiver',$this->id)->first()){

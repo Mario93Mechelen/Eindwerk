@@ -7,6 +7,8 @@ use App\Crossing;
 use App\Friend;
 use App\Photo;
 use App\Profile;
+use App\School;
+use App\SchoolUser;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\User;
@@ -182,6 +184,18 @@ class ProfileController extends Controller
         $user->study = $study;
         $user->home_school = $school_home;
         $user->abroad_school  = $school_abroad;
+        if($school_abroad != ''){
+            if(!School::where('name',$school_abroad)->first()) {
+                $school = new School();
+                $school->name = $school_abroad;
+                $school->save();
+                $user->school_id = $school->id;
+            }else{
+                $id = School::where('name',$school_abroad)->first()->id;
+                $user->school_id = $id;
+
+            }
+        }
         $user->gender = $gender;
         $user->birthday = $birthdate;
         $user->save();
