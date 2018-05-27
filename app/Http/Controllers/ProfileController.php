@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\BlockedUser;
+use App\Comment;
 use App\Crossing;
 use App\Friend;
 use App\Photo;
+use App\Post;
 use App\Profile;
 use App\School;
 use App\SchoolUser;
@@ -334,5 +336,38 @@ class ProfileController extends Controller
 
     public function school() {
         return view('school.school');
+    }
+
+    public function postComment(Request $request)
+    {
+        $id = $request->postID;
+        $text = $request->comment;
+        $comment = new Comment();
+        $comment->body = $text;
+        $comment->user_id = Auth::user()->id;
+        $comment->post_id = $id;
+        $comment->save();
+        return redirect()->back();
+    }
+
+    public function addPost(Request $request)
+    {
+        $id = intval($request->id);
+        $type = $request->type;
+        $body = $request->body;
+        $post = new Post();
+        if($type=='student'){
+            $post->body = $body;
+            $post->user_id = Auth::user()->id;
+            $post->school_id = $id;
+            $post->type = 'student';
+        }else{
+            $post->body = $body;
+            $post->user_id = $id;
+            $post->school_id = $id;
+            $post->type = 'school';
+        }
+        $post->save();
+        return response()->json(['code' => 200]);
     }
 }

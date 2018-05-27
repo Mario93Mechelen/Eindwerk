@@ -64,8 +64,9 @@
 
                                 <div class="post-new-comment">
                                         <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                        <form>
-                                            <input type="text"  class="commit-comment-student-feed">
+                                        <form action="{{URL::action('ProfileController@postComment')}}" method="post">
+                                            <input type="text" name="comment" class="commit-comment-student-feed">
+                                            <input type="hidden" name="postID" value="{{$post->id}}">
                                             <button type="submit" class="commit-comment-school-feed"></button>
                                         </form>
                                 </div>
@@ -83,25 +84,21 @@
 
                 <div class="button-wrapper new-post-button-wrapper">
                     <a href="#" class="button">
-                        <img class="new-post-img" src="/img/profile_pic_default.jpg" alt=""/>
-                        <input placeholder="create new post">
+                        <img class="new-post-img" src="{{url($myUser->avatar)}}" alt=""/>
+                        <input placeholder="create new post" id="post-body">
                     </a>
 
                     <div class="new-post-bottom">
-                        <div class="add-pictures">
-                            <a class="new-post-add-picture" href="">+ Add picture</a>
-                            <div class="img-in-post-wrapper">
-                                <img class="img-in-post" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="change-image delete-image" data-photo=""><i class="fas fa-times"></i></div>
+                            <div class="image-uploadzone-wrapper">
+                                <div class="image-uploadzone">
+                                    <form id="addphotos" class="dropzone" action="{{URL::action('PhotoController@store', ['type' => 'post', 'id' => $myUser->school->id])}}" method="post">
+                                        {{ csrf_field() }}
+                                        <div class="dropzone-previews"></div>
+                                    </form>
+                                </div>
                             </div>
-                            <div class="img-in-post-wrapper">
-                                <img class="img-in-post" src="/img/profile_pic_default.jpg" alt=""/>
-                                <div class="change-image delete-image" data-photo=""><i class="fas fa-times"></i></div>
-                            </div>
-
-                        </div>
                         <div class="buttons">
-                            <a class="send preferred" href="">send</a>
+                            <a class="send add-post preferred" href="">send</a>
                             <a class="cancel not-preferred" href="">cancel</a>
                         </div>
                     </div>
@@ -142,8 +139,9 @@
 
                                 <div class="post-new-comment">
                                     <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
-                                    <form>
-                                        <input type="text" class="comment-student-feed">
+                                    <form action="{{URL::action('ProfileController@postComment')}}" method="post">
+                                        <input type="text" name="comment" class="comment-student-feed">
+                                        <input type="hidden" name="postID" value="{{$post->id}}">
                                         <button type="submit" class="commit-comment-student-feed"></button>
                                     </form>
                                 </div>
@@ -192,7 +190,51 @@
 @endsection
 
 @section('scripts')
+    <script src="/js/dropzone.min.js" type="text/javascript"></script>
+    <script>
+        Dropzone.options.addphotos = {
+            paramName: 'photo',
+            maxFilesize: 3, //3MB
+            acceptedFiles: '.jpg, .jpeg, .png, .bmp, .gif',
+            autoProcessQueue:false,
+            init: function () {
+                this.on("complete", function (file) {
+                    if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
+                        location.window.reload();
+                    }
+                });
+            },
+        }
+        $('.commit-comment-student-feed').on('click', function(){
+           var comment = $('.comment-student-feed').val();
+        });
 
+        $('.add-post').on('click', function(){
+            var body = $('#post-body').val();
+            $.ajaxSetup({
 
+                headers: {
+
+                    'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                }
+
+            });
+            $.ajax({
+                method:"POST",
+                url:"{{URL::action('ProfileController@addPost')}}",
+                data:{
+                    'body': body,
+                    'id' : '{{$myUser->school->id}}',
+                    'type' : 'student'
+                }
+            }).done(function(response){
+                if(response.code==200) {
+
+                    Dropzone.processQueue();
+                }
+            });
+        })
+    </script>
 
 @endsection

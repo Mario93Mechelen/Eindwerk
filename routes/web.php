@@ -73,6 +73,10 @@ Route::group(['middleware' => 'auth'], function()
     Route::post('/getConversation','ConversationController@getConversation');
     Route::post('/updateSeenStatus', 'ConversationController@updateSeenStatus');
 
+    //feeds
+    Route::post('/postcomment', 'ProfileController@postComment');
+    Route::post('/addPost', 'ProfileController@addPost');
+
     //blocked
     Route::post('/blockUser', 'ProfileController@blockUser');
     Route::post('/deleteBlockedUser', 'ProfileController@deleteBlockedUser');

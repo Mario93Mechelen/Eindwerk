@@ -19,7 +19,6 @@ class CreatePostsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('school_id')->unsigned()->index();
             $table->foreign('school_id')->references('id')->on('schools')->onDelete('cascade');
-            $table->string('title');
             $table->text('body');
             $table->enum('type',['school','student']);
             $table->timestamps();
