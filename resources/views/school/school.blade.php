@@ -63,8 +63,9 @@
                                 </div>
 
                                 <div class="post-new-comment">
-                                        <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
+                                        <img class="post-new-comment-img" src="{{$myUser->avatar}}" alt=""/>
                                         <form action="{{URL::action('ProfileController@postComment')}}" method="post">
+                                            {{csrf_field()}}
                                             <input type="text" name="comment" class="commit-comment-student-feed">
                                             <input type="hidden" name="postID" value="{{$post->id}}">
                                             <button type="submit" class="commit-comment-school-feed"></button>
@@ -127,7 +128,7 @@
                                     @if(!$post->comments->isEmpty())
                                         @foreach($post->comments as $comment)
                                             <div class="post-comment">
-                                                <img class="post-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
+                                                <img class="post-comment-img" src="{{$comment->user->avatar}}" alt=""/>
                                                 <div class="post-comment-right">
                                                     <h4 class="post-comment-name">{{$comment->user->first_name.' '.$comment->user->last_name}}</h4>
                                                     <p class="post-comment-message">{{$comment->body}}</p>
@@ -138,8 +139,9 @@
                                 </div>
 
                                 <div class="post-new-comment">
-                                    <img class="post-new-comment-img" src="/img/profile_pic_default.jpg" alt=""/>
+                                    <img class="post-new-comment-img" src="{{$myUser->avatar}}" alt=""/>
                                     <form action="{{URL::action('ProfileController@postComment')}}" method="post">
+                                        {{csrf_field()}}
                                         <input type="text" name="comment" class="comment-student-feed">
                                         <input type="hidden" name="postID" value="{{$post->id}}">
                                         <button type="submit" class="commit-comment-student-feed"></button>
