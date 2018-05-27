@@ -368,6 +368,6 @@ class ProfileController extends Controller
             $post->type = 'school';
         }
         $post->save();
-        return response()->json(['code' => 200]);
+        return response()->json(['code' => 200,'id' => $post->id]);
     }
 }

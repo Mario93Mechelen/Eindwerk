@@ -105,8 +105,8 @@
 
 
                 </div>
-                @if(!$myUser->school->posts()->where('type','school')->get()->isEmpty())
-                    @foreach($myUser->school->posts()->where('type','student')->get() as $post)
+                @if(!$myUser->school->posts()->where('type','student')->get()->isEmpty())
+                    @foreach($myUser->school->posts()->where('type','student')->orderBy('created_at','desc')->get() as $post)
                         <div class="post student-feed-post">
                             <div class="post-top post-section">
                                 <img class="post-img" src="{{$post->user->avatar}}" alt=""/>
@@ -198,6 +198,33 @@
             acceptedFiles: '.jpg, .jpeg, .png, .bmp, .gif',
             autoProcessQueue:false,
             init: function () {
+                mydropzone = this;
+                $('.add-post').on('click', function(){
+                    var body = $('#post-body').val();
+                    $.ajaxSetup({
+
+                        headers: {
+
+                            'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                        }
+
+                    });
+                    $.ajax({
+                        method:"POST",
+                        url:"{{URL::action('ProfileController@addPost')}}",
+                        data:{
+                            'body': body,
+                            'id' : '{{$myUser->school->id}}',
+                            'type' : 'student'
+                        }
+                    }).done(function(response){
+                        if(response.code==200) {
+                            $('#addphotos').attr('action','{{URL::action('PhotoController@store', ['type' => 'post', 'id' => \App\Post::where('user_id',$myUser->id)->orderBy('created_at','desc')->first()->id])}}')
+                            mydropzone.processQueue();
+                        }
+                    });
+                })
                 this.on("complete", function (file) {
                     if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
                         location.window.reload();
@@ -209,32 +236,7 @@
            var comment = $('.comment-student-feed').val();
         });
 
-        $('.add-post').on('click', function(){
-            var body = $('#post-body').val();
-            $.ajaxSetup({
 
-                headers: {
-
-                    'X-CSRF-TOKEN': "{{csrf_token()}}",
-
-                }
-
-            });
-            $.ajax({
-                method:"POST",
-                url:"{{URL::action('ProfileController@addPost')}}",
-                data:{
-                    'body': body,
-                    'id' : '{{$myUser->school->id}}',
-                    'type' : 'student'
-                }
-            }).done(function(response){
-                if(response.code==200) {
-
-                    Dropzone.processQueue();
-                }
-            });
-        })
     </script>
 
 @endsection

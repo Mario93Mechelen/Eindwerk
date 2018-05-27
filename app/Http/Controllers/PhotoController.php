@@ -6,6 +6,7 @@ use App\Photo;
 use App\Post;
 use App\Profile;
 use Image;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class PhotoController extends Controller
@@ -59,7 +60,6 @@ class PhotoController extends Controller
           $bind = Profile::class;
         }elseif($type=='post'){
             $bind = Post::class;
-            $id = Post::orderBy('upload_time', 'desc')->first()->id;
         };
 
         $photo = new Photo();
