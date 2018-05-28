@@ -335,6 +335,12 @@ class ProfileController extends Controller
     }
 
     public function school() {
+        $post = Post::where('body','new post by '.Auth::user()->id)->first();
+        foreach($post->photos as $photo){
+            \Storage::disk('public')->delete($photo->path);
+            $photo->delete();
+        };
+        $post->delete();
         return view('school.school');
     }
 
@@ -355,7 +361,7 @@ class ProfileController extends Controller
         $id = intval($request->id);
         $type = $request->type;
         $body = $request->body;
-        $post = new Post();
+        $post = Post::where('body','new post by '.Auth::user()->id)->first();
         if($type=='student'){
             $post->body = $body;
             $post->user_id = Auth::user()->id;

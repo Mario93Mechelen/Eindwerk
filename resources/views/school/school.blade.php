@@ -92,7 +92,7 @@
                     <div class="new-post-bottom">
                             <div class="image-uploadzone-wrapper">
                                 <div class="image-uploadzone">
-                                    <form id="addphotos" class="dropzone" action="{{URL::action('PhotoController@store', ['type' => 'post', 'id' => $myUser->school->id])}}" method="post">
+                                    <form id="addphotos" class="dropzone" action="{{URL::action('PhotoController@store', ['type' => 'post', 'id' => (\App\Post::where('user_id',$myUser->id)->orderBy('created_at','desc')->first()->id+1)])}}" method="post">
                                         {{ csrf_field() }}
                                         <div class="dropzone-previews"></div>
                                     </form>
@@ -198,46 +198,40 @@
             paramName: 'photo',
             maxFilesize: 3, //3MB
             acceptedFiles: '.jpg, .jpeg, .png, .bmp, .gif',
-            autoProcessQueue:false,
-            init: function () {
-                mydropzone = this;
-                $('.add-post').on('click', function(){
-                    var body = $('#post-body').val();
-                    $.ajaxSetup({
-
-                        headers: {
-
-                            'X-CSRF-TOKEN': "{{csrf_token()}}",
-
-                        }
-
-                    });
-                    $.ajax({
-                        method:"POST",
-                        url:"{{URL::action('ProfileController@addPost')}}",
-                        data:{
-                            'body': body,
-                            'id' : '{{$myUser->school->id}}',
-                            'type' : 'student'
-                        }
-                    }).done(function(response){
-                        if(response.code==200) {
-                            $('#addphotos').attr('action','{{URL::action('PhotoController@store', ['type' => 'post', 'id' => \App\Post::where('user_id',$myUser->id)->orderBy('created_at','desc')->first()->id])}}')
-                            mydropzone.processQueue();
-                        }
-                    });
-                })
-                this.on("complete", function (file) {
-                    if (this.getUploadingFiles().length === 0 && this.getQueuedFiles().length === 0) {
-                        location.window.reload();
-                    }
-                });
+            error: function(file, response) {
+                var message = response.errors.addphotos;
+                console.log(response);
             },
         }
         $('.commit-comment-student-feed').on('click', function(){
            var comment = $('.comment-student-feed').val();
         });
+        $('.add-post').on('click', function() {
+            var body = $('#post-body').val();
+            $.ajaxSetup({
 
+                headers: {
+
+                    'X-CSRF-TOKEN': "{{csrf_token()}}",
+
+                }
+
+            });
+            $.ajax({
+                method: "POST",
+                url: "{{URL::action('ProfileController@addPost')}}",
+                data: {
+                    'body': body,
+                    'id': '{{$myUser->school->id}}',
+                    'type': 'student'
+                }
+            }).done(function (response) {
+                if (response.code == 200) {
+                    console.log('this was posted');
+                    window.location.reload();
+                }
+            });
+        });
 
     </script>
 

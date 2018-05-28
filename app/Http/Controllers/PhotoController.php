@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Photo;
 use App\Post;
 use App\Profile;
+use Illuminate\Support\Facades\Auth;
 use Image;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -60,6 +61,17 @@ class PhotoController extends Controller
           $bind = Profile::class;
         }elseif($type=='post'){
             $bind = Post::class;
+            if(!Post::where('body','new post by '.Auth::user()->id)->first()) {
+                $post = new Post();
+                $post->body = 'new post by ' . Auth::user()->id;
+                $post->user_id = Auth::user()->id;
+                $post->school_id = Auth::user()->school->id;
+                $post->type = 'student';
+                $post->save();
+                $id = $post->id;
+            }else{
+                $id = Post::where('body','new post by '.Auth::user()->id)->first()->id;
+            }
         };
 
         $photo = new Photo();
