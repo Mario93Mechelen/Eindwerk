@@ -178,6 +178,22 @@ school page styling
             font-weight: normal;
             color: $dark-color;
           }
+
+          .post-photos {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            margin-left: -15px;
+            margin-right: -15px;
+
+            .userphoto {
+              width: 125px;
+              height: 125px;
+              padding: 15px;
+              border-radius: 25px;
+            }
+          }
         }
 
         .post-bottom {
@@ -590,6 +606,15 @@ school page styling
 
             .post-message {
 
+            }
+
+            .post-photos {
+
+              .userphoto {
+                width: 175px;
+                height: 175px;
+                border-radius: 25px;
+              }
             }
           }
 

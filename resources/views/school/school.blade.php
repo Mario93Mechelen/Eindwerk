@@ -118,14 +118,14 @@
                             </div>
                             <div class="post-mid post-section">
                                 <p class="post-message">{{$post->body}}</p>
+                                @if($post->photos)
+                                    <div class="post-photos photo-section">
+                                        @foreach($post->photos as $photo)
+                                            <img class='userphoto' src="{{url($photo->path)}}" alt="{{$photo->path}}">
+                                        @endforeach
+                                    </div>
+                                @endif
                             </div>
-                            @if($post->photos)
-                            <div class="post-photos photo-section">
-                                @foreach($post->photos as $photo)
-                                    <img class='userphoto' src="{{url($photo->path)}}" alt="{{$photo->path}}">
-                                @endforeach
-                            </div>
-                            @endif
                             <div class="post-bottom post-section">
                                 <a href="" class="show-hide-post-comments">show comments</a>
                             </div>
