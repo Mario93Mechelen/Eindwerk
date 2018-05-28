@@ -24,7 +24,7 @@ class User extends Authenticatable
         'gender',
         'birthday',
         'school_id',
-        
+
     ];
 
     /**
