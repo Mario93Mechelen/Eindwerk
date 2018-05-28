@@ -73,14 +73,18 @@ class LoginController extends Controller
     {
         if(User::where('email', $request->email)->first()){
             $user = User::where('email', $request->email)->first();
-            if(Hash::check($request->password,$user->password)){
-                Auth::login($user, true);
-                return redirect('/');
+            if($user->email_confirmed) {
+                if (Hash::check($request->password, $user->password)) {
+                    Auth::login($user, true);
+                    return redirect('/');
+                } else {
+                    return Redirect::back()->withErrors(['incorrect password']);
+                }
             }else{
-                return Redirect::back()->withErrors(['incorrect password lol']);
+                return Redirect::back()->withErrors(['please respond to our confirmation mail']);
             }
         }else{
-            return Redirect::back()->withErrors(['incorrect email lol']);
+            return Redirect::back()->withErrors(['incorrect email']);
         }
     }
 
@@ -120,6 +124,12 @@ class LoginController extends Controller
     }
     public function confirmemail($token)
     {
-        dd($token);
+        if(User::where('token',$token)->first()){
+            $user = User::where('token',$token)->first();
+            $user->email_confirmed = 1;
+            $user->save();
+            Auth::login($user);
+            return redirect('/');
+        }
     }
 }
