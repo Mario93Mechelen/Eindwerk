@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Mail\ConfirmationMail;
+use Illuminate\Support\Facades\Mail;
 use App\Setting;
 use App\User;
 use App\Profile;
@@ -79,7 +81,7 @@ class RegisterController extends Controller
             $user->password = Hash::make($request->password);
             $user->first_name = $request->firstname;
             $user->last_name = $request->lastname;
-            $user->token = $request->_token;
+            $user->token = str_random(16);
             $user->avatar = "/img/Default_pictures_Man.png";
             $user->save();
             $setting = new Setting();
@@ -88,8 +90,13 @@ class RegisterController extends Controller
             $profile = new Profile();
             $profile->user_id = $user->id;
             $profile->save();
-            Auth::login($user, true);
-            return redirect('/');
+            $objDemo = new \stdClass();
+            $objDemo->receiver = $user->first_name;
+            $objDemo->token = $user->token;
+            $objDemo->sender = 'Semestr Team';
+
+            Mail::to($user->email)->send(new ConfirmationMail($objDemo));
+            return redirect('/login')->with(['message'=>'we have sent you a confirmation mail']);
         }
     }
 
