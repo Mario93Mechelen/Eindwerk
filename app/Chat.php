@@ -19,10 +19,10 @@ class Chat extends Model
         $chatTime = $this->created_at;
         $now = Carbon::now();
         $diff = $now->diffInMinutes($chatTime);
-        $timeText = $diff.' m ago';
+        $timeText = $diff.'m ago';
         if($diff >= 60){
             $diff = $now->diffInHours($chatTime);
-            $timeText = $diff.' h ago';
+            $timeText = $diff.'h ago';
             if($diff >= 24){
                 $diff = $now->diffInDays($chatTime);
                 $timeText = $diff.' days ago';

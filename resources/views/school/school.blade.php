@@ -237,10 +237,22 @@
             }).done(function (response) {
                 if (response.code == 200) {
                     console.log('this was posted');
+                    sessionStorage.reloadAfterPageLoad = true;
                     window.location.reload();
                 }
             });
         });
+        if ( sessionStorage.reloadAfterPageLoad ) {
+            $('.see-student-feed').addClass("active");
+            $(".see-school-info").removeClass("active");
+            $(".school-info-section").toggle();
+            $(".student-feed-section").toggle();
+            $(".school_introtext").toggle();
+            if(window.innerWidth < 768) {
+                $(".members-button-wrapper").toggle();
+            };
+            sessionStorage.reloadAfterPageLoad = false;
+        }
 
     </script>
 
