@@ -92,7 +92,7 @@
                     <div class="new-post-bottom">
                             <div class="image-uploadzone-wrapper">
                                 <div class="image-uploadzone">
-                                    <form id="addphotos" class="dropzone" action="{{URL::action('PhotoController@store', ['type' => 'post', 'id' => (\App\Post::where('user_id',$myUser->id)->orderBy('created_at','desc')->first()->id+1)])}}" method="post">
+                                    <form id="addphotos" class="dropzone" action="{{URL::action('PhotoController@store', ['type' => 'post', 'id' => 0])}}" method="post">
                                         {{ csrf_field() }}
                                         <div class="dropzone-previews"></div>
                                     </form>
