@@ -310,7 +310,7 @@
                 }
             }).done(function(response){
                 if(response.code==200) {
-                    $('.hide-chat').show();
+                    $('.hide-chat').css("display", "flex");
                     if(response.existence == 'no'){
                         console.log('new convo was created');
                         $('.chat_to_detail').removeClass('chat-active');
