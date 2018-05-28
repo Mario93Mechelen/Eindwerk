@@ -16,6 +16,8 @@ class ConfirmationMail extends Mailable
      *
      * @return void
      */
+    public $demo;
+
     public function __construct($demo)
     {
         $this->demo = $demo;
@@ -29,7 +31,6 @@ class ConfirmationMail extends Mailable
     public function build()
     {
         return $this->from('semestr@team.com')
-            ->view('mails.confirmation')
-            ->text('mails.demo_plain');
+            ->view('mails.confirm');
     }
 }

@@ -118,4 +118,8 @@ class LoginController extends Controller
             return redirect('/');
         }
     }
+    public function confirmemail($token)
+    {
+        dd($token);
+    }
 }

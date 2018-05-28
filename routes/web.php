@@ -21,7 +21,7 @@ Route::get('/logout', 'Auth\LoginController@logout');
 //signup
 Route::get('/signup', 'Auth\RegisterController@index');
 Route::post('/signup', 'Auth\RegisterController@register');
-Route::get('/signup/confirm/{token}', 'Auth\RegisterController@confirm');
+Route::get('/signup/confirm/{token}', 'Auth\LoginController@confirmemail');
 
 Route::get('/vue', 'SpaController@index');
 
