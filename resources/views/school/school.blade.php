@@ -13,6 +13,8 @@
                 <h2 class="school_name">{{$myUser->school ? $myUser->school->name : 'please fill in school_abroad at your profile'}}</h2>
             </div>
 
+            @if($myUser->school)
+
             <div class="school-list-toggle">
                 <ul>
                     <li class="see-school-info active">school info</li>
@@ -37,7 +39,7 @@
                                 <img class="post-img" src="/img/profile_pic_default.jpg" alt=""/>
                                 <div class="post-top-right">
                                     <h4 class="post-name">{{$myUser->school->name}}</h4>
-                                    <p class="post-time">2 hours ago</p>
+                                    <p class="post-time">{{$post->calculateTimeElapsed()}}</p>
                                 </div>
                             </div>
                             <div class="post-mid post-section">
@@ -113,7 +115,7 @@
                                 <img class="post-img" src="{{$post->user->avatar}}" alt=""/>
                                 <div class="post-top-right">
                                     <h4 class="post-name">{{$post->user->first_name.' '.$post->user->last_name}}</h4>
-                                    <p class="post-time">2 hours ago</p>
+                                    <p class="post-time">{{$post->calculateTimeElapsed()}}</p>
                                 </div>
                             </div>
                             <div class="post-mid post-section">
@@ -162,7 +164,7 @@
 
 
             </div>  <!-- einde student feed section -->
-
+        @endif
         </div>  <!-- einde school page content -->
 
         <div class="member-list" id="member-list">
