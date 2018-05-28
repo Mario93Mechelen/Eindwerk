@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Simple Transactional Email</title>
+    <title>Confirm your email</title>
     <style>
         @media only screen and (max-width: 620px) {
             table[class=body] h1 {
@@ -98,7 +98,7 @@
                                 <tr>
                                     <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
                                         <p style="font-family: sans-serif; font-size: 22px; font-weight: normal; margin: 0; Margin-bottom: 15px;">Hi {{ $demo->receiver }}</p>
-                                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">We're happy to welcome you to the <strong>Semestr</strong> community</p>
+                                        <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">We're happy to welcome you to the <strong>{{$demo->sender}}</strong> community</p>
                                         <p style="font-family: sans-serif; font-size: 14px; font-weight: normal; margin: 0; Margin-bottom: 15px;">The last step in activating your account is validating your email address by pressing 'validate my email' below</p>
                                         <table border="0" cellpadding="0" cellspacing="0" class="btn btn-primary" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; box-sizing: border-box;">
                                             <tbody>
@@ -129,12 +129,12 @@
                     <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                         <tr>
                             <td class="content-block" style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
-                                <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">You are receiving this email following your registration on Semestr<br> this email was sent to useremail, <a href="#" style="text-decoration: underline">click here if you want to unsubscribe</a></span>
+                                <span class="apple-link" style="color: #999999; font-size: 12px; text-align: center;">You are receiving this email following your registration on {{$demo->sender}}<br> this email was sent to {{$demo->receiver}}, <a href="#" style="text-decoration: underline">click here if you want to unsubscribe</a></span>
                             </td>
                         </tr>
                         <tr>
                             <td class="content-block powered-by" style="font-family: sans-serif; vertical-align: top; padding-bottom: 10px; padding-top: 10px; font-size: 12px; color: #999999; text-align: center;">
-                                Powered by <a href="http://htmlemail.io" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">Semestr</a>
+                                Powered by <a href="http://htmlemail.io" style="color: #999999; font-size: 12px; text-align: center; text-decoration: none;">{{$demo->sender}}</a>
                             </td>
                         </tr>
                     </table>

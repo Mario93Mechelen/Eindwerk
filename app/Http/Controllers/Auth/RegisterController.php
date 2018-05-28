@@ -77,26 +77,41 @@ class RegisterController extends Controller
         if($request->password != $request->password_repeat){
             return redirect()->back()->with('status','passwords do not match');
         }else{
-            $user->email = $request->email;
-            $user->password = Hash::make($request->password);
-            $user->first_name = $request->firstname;
-            $user->last_name = $request->lastname;
-            $user->token = str_random(16);
-            $user->avatar = "/img/Default_pictures_Man.png";
-            $user->save();
-            $setting = new Setting();
-            $setting->user_id = $user->id;
-            $setting->save();
-            $profile = new Profile();
-            $profile->user_id = $user->id;
-            $profile->save();
-            $objDemo = new \stdClass();
-            $objDemo->receiver = $user->first_name;
-            $objDemo->token = $user->token;
-            $objDemo->sender = 'Semestr Team';
+            if(!User::where('email',$request->email)->first()) {
+                $user->email = $request->email;
+                $user->password = Hash::make($request->password);
+                $user->first_name = $request->firstname;
+                $user->last_name = $request->lastname;
+                $user->token = str_random(16);
+                $user->avatar = "/img/Default_pictures_Man.png";
+                $user->save();
+                $setting = new Setting();
+                $setting->user_id = $user->id;
+                $setting->save();
+                $profile = new Profile();
+                $profile->user_id = $user->id;
+                $profile->save();
+                $objDemo = new \stdClass();
+                $objDemo->receiver = $user->first_name;
+                $objDemo->token = $user->token;
+                $objDemo->sender = 'Semestr';
 
-            Mail::to($user->email)->send(new ConfirmationMail($objDemo));
-            return redirect('/login')->with(['message'=>'we have sent you a confirmation mail']);
+                Mail::to($user->email)->send(new ConfirmationMail($objDemo));
+            }else{
+                $user = User::where('email',$request->email)->first();
+                $objDemo = new \stdClass();
+                $objDemo->receiver = $user->first_name;
+                $objDemo->token = $user->token;
+                $objDemo->sender = 'Semestr';
+
+                Mail::to($user->email)->send(new ConfirmationMail($objDemo));
+                if(!$user->email_confirmed) {
+                    return redirect('/login')->withErrors(['seems like the account exists, we have sent you a new email to confirm your email']);
+                }else{
+                    return redirect('/login')->withErrors(['this account already exists, please use our login form']);
+                }
+            }
+            return redirect('/login')->withErrors(['we have sent you a confirmation mail']);
         }
     }
 
