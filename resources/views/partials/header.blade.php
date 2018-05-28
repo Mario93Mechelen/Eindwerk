@@ -13,42 +13,6 @@
                     </a>
                 </li>
 
-                <!--<div class="dropdown-menu" id="dropdown-menu-chat" style="display:none">
-                    <a class="dropdown-item dropdown-item-chat" href="#">
-                        <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
-                        <div class="chat-right">
-                            <div class="chat-nametime">
-                            <p class="chat-name">Amber Heard</p>
-                            <p class="chat-time">2h ago</p>
-                        </div>
-                        <p class="chat-last-message-start">How are you doing</p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item dropdown-item-chat" href="#">
-                        <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
-                        <div class="chat-right">
-                            <div class="chat-nametime">
-                                <p class="chat-name">Amber Heard</p>
-                                <p class="chat-time">2h ago</p>
-                            </div>
-                            <p class="chat-last-message-start">How are you doing</p>
-                        </div>
-                    </a>
-                    <a class="dropdown-item dropdown-item-chat" href="#">
-                        <img class="chat-avatar" src='{{ asset('img/profile_pic_default.jpg') }}'>
-                        <div class="chat-right">
-                            <div class="chat-nametime">
-                                <p class="chat-name">Amber Heard</p>
-                                <p class="chat-time">2h ago</p>
-                            </div>
-                            <p class="chat-last-message-start">How are you doing</p>
-                        </div>
-                    </a>
-
-                    <a class="dropdown-item all-chats-link" href="{{URL::action('ConversationController@index')}}">go to all chats</a>
-
-                </div>-->
-
                 <li class="nav_profile" id="nav_profile">
                     <a href="#">
                         <p>{{$myUser->first_name}}</p><div class="profile_pic" style="background-image: url({{$myUser->avatar}})"></div>

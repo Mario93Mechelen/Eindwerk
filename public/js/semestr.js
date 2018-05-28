@@ -644,6 +644,14 @@ $(document).ready(function() {
 });
 
 
+/* header make dropdown as wide as profile item (if wider than 768px) */
+$(document).ready(function() {
+    if ($(window).width() > 768) {
+        var newWidth = $("#nav_profile").width() + 44;
+        $("#dropdown-menu-profile").css({'width': (newWidth + 'px')});
+    }
+});
+
 
 function changeDistance(distance){
     $.ajaxSetup({
