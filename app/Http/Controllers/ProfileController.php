@@ -334,13 +334,16 @@ class ProfileController extends Controller
         return view('home.settings');
     }
 
-    public function school() {
-        $post = Post::where('body','new post by '.Auth::user()->id)->first();
-        foreach($post->photos as $photo){
-            \Storage::disk('public')->delete($photo->path);
-            $photo->delete();
-        };
+    public function school()
+    {
+        $post = Post::where('body', 'new post by ' . Auth::user()->id)->first();
+        if ($post){
+            foreach ($post->photos as $photo) {
+                \Storage::disk('public')->delete($photo->path);
+                $photo->delete();
+            };
         $post->delete();
+        }
         return view('school.school');
     }
 
