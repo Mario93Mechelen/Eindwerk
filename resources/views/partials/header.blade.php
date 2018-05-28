@@ -60,7 +60,7 @@
 
                 <div class="dropdown-menu" id="dropdown-menu-profile" style="display:none">
                     <a class="dropdown-item dropdown-item-profile" href="{{URL::action('ProfileController@show',$myUser)}}">my profile</a>
-                    <a class="dropdown-item dropdown-item-profile" href="{{URL::action('FriendController@index')}}">friends</a>
+                    <a class="dropdown-item dropdown-item-profile" href="{{URL::action('FriendController@index')}}">friends<div class="indicator-friends2" ></div></a>
                     <a class="dropdown-item dropdown-item-profile" href="{{URL::action('ProfileController@settings')}}">settings</a>
                     <a class="dropdown-item dropdown-item-profile" href="{{URL::action('Auth\LoginController@logout')}}">logout</a>
                 </div>

@@ -8882,6 +8882,18 @@ header #dropdown-menu-profile a:last-of-type {
   border: 1px solid #ffffff;
 }
 
+.indicator-friends2 {
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  z-index: 500;
+  background-color: #800000;
+  border-radius: 25px;
+  top: 45px;
+  right: 15px;
+  border: 1px solid #ffffff;
+}
+
 @media (min-width: 768px) {
   header .dropdown-menu {
     display: -webkit-box;
