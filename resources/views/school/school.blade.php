@@ -94,7 +94,7 @@
                     <div class="new-post-bottom">
                             <div class="image-uploadzone-wrapper">
                                 <div class="image-uploadzone">
-                                    <form id="addphotos" class="dropzone" action="{{URL::action('PhotoController@store', ['type' => 'post', 'id' => (\App\Post::where('user_id',$myUser->id)->orderBy('created_at','desc')->first()->id+1)])}}" method="post">
+                                    <form id="addphotos" class="dropzone" action="{{URL::action('PhotoController@store', ['type' => 'post', 'id' => 0])}}" method="post">
                                         {{ csrf_field() }}
                                         <div class="dropzone-previews"></div>
                                     </form>
@@ -120,14 +120,14 @@
                             </div>
                             <div class="post-mid post-section">
                                 <p class="post-message">{{$post->body}}</p>
+                                @if($post->photos)
+                                    <div class="post-photos photo-section">
+                                        @foreach($post->photos as $photo)
+                                            <img class='userphoto' src="{{url($photo->path)}}" alt="{{$photo->path}}">
+                                        @endforeach
+                                    </div>
+                                @endif
                             </div>
-                            @if($post->photos)
-                            <div class="post-photos photo-section">
-                                @foreach($post->photos as $photo)
-                                    <img class='userphoto' src="{{url($photo->path)}}" alt="{{$photo->path}}">
-                                @endforeach
-                            </div>
-                            @endif
                             <div class="post-bottom post-section">
                                 <a href="" class="show-hide-post-comments">show comments</a>
                             </div>
