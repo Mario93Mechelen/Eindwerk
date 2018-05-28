@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('abroad_school')->nullable();
             $table->string('home')->nullable();
             $table->string('study')->nullable();
+            $table->boolean('email_confirmed')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

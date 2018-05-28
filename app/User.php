@@ -22,7 +22,9 @@ class User extends Authenticatable
         'password',
         'token',
         'gender',
-        'birthday'
+        'birthday',
+        'school_id',
+        
     ];
 
     /**
