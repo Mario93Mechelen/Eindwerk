@@ -329,6 +329,7 @@
                             $('.chat-list *[data-id="' + response.conversation_id + '"]').parent().remove();
                             $('#chat_overview').prepend(composedDiv);
                             $('.chat-list *[data-id="' + response.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
+                            $('.chat-list *[data-id="' + response.conversation_id + '"]').addClass('chat-active');
                             getChats(response.conversation_id[0]);
                         }else{
                             $('.active-chat-item-indicator').addClass('hidden');
