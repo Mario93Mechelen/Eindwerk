@@ -29,7 +29,7 @@
                     </div>
                     <div class="form-group">
                         <label for="email">email</label>
-                        <input type="email" class="form-control" id="email_register" name="email" placeholder="email">
+                        <input type="email" class="form-control" required id="email_register" name="email" placeholder="email">
                     </div>
                         @if($errors->any())
                             <h4 class="error1">{{$errors->first()}}</h4>
