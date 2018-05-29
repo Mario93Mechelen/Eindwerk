@@ -84,7 +84,7 @@ class PhotoController extends Controller
     public function deletePhoto(Request $request)
     {
         $id = $request->id;
-        Photo::find($id)->destroy();
+        Photo::find($id)->delete();
         return response()->json(['code' => 200]);
     }
 
