@@ -60,7 +60,7 @@
                     $('.chat-list *[data-id="' + data.data.conversation_id + '"]').find('.chat-last-message-start').html(data.data.chat);
                     //#800000
                     $('.chat-list *[data-id="' + data.data.conversation_id + '"]').find('.chat-name').css('color','#800000');
-                    $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")+100}, 500);
+                    $(".messages_container").animate({scrollTop: $('.messages_container').prop("scrollHeight")+100}, 500);
                     console.log(data);
                 } else {
                     console.log('chat is closed');
@@ -80,7 +80,7 @@
                         $('.chat_to_detail').on('click', function (e) {
                             e.preventDefault();
                             getChats($(this).data('id'));
-                            $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")+100}, 500);
+                            $(".messages_container").animate({scrollTop: $('.messages_container').prop("scrollHeight")+100}, 500);
                         })
                     } else {
                         $('.active-chat-item-indicator').addClass('hidden');
@@ -89,7 +89,7 @@
                         $('.chat_to_detail').on('click', function (e) {
                             e.preventDefault();
                             getChats($(this).data('id'));
-                            $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")+100}, 500);
+                            $(".messages_container").animate({scrollTop: $('.messages_container').prop("scrollHeight")+100}, 500);
                         })
                     }
                 }
