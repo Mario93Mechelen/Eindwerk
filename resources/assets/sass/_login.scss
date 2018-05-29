@@ -46,7 +46,7 @@ LOGIN STYLING
     padding-top: 10px;
     padding-bottom: 10px;
     font-size: 24px;
-    border-radius: 10px;
+    border-radius: $border-radius-extra;
   }
 
   #email_login {
@@ -72,7 +72,7 @@ LOGIN STYLING
    background-color: $primary-color;
    font-weight: bold;
    font-size: 24px;
-   border-radius: 10px;
+   border-radius: $border-radius-extra;
  }
 
   .fb-login-intro {

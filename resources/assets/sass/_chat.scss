@@ -56,8 +56,8 @@ Chat page styling
 
         .searchBox {
           border: 0;
-          border-radius: 5px;
-          box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
+          border-radius: $border-radius-normal;
+          box-shadow: $box-shadow;
           background-color: $white;
           width: 100%;
         }
@@ -66,8 +66,8 @@ Chat page styling
           padding: 0.8rem;
           color: $nav_unselected;
           background-color: $white;
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
+          border-top-left-radius: $border-radius-normal;
+          border-bottom-left-radius: $border-radius-normal;
         }
 
 
@@ -89,8 +89,8 @@ Chat page styling
 
           .item-content {
             display: flex;
-            border-radius: 5px;
-            box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+            border-radius: $border-radius-normal;
+            box-shadow: $box-shadow;
             margin-bottom: 15px;
             background-color: $white;
 
@@ -178,12 +178,12 @@ Chat page styling
         }
 
         .message {
-          border-radius: 5px;
+          border-radius: $border-radius-normal;
           padding: 15px;
           font-size: 16px;
           line-height: 1.2;
           font-weight: normal;
-          box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+          box-shadow: $box-shadow;
           display: inline-block;
           max-width: 70%;
         }
@@ -197,7 +197,7 @@ Chat page styling
           img {
             width: 30px;
             height: 30px;
-            border-radius: 5px;
+            border-radius: $border-radius-normal;
           }
 
           .message-in {
@@ -231,8 +231,8 @@ Chat page styling
           font-size: 18px;
           color: $dark-color;
           border: 0;
-          border-radius: 5px;
-          box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
+          border-radius: $border-radius-normal;
+          box-shadow: $box-shadow;
           background-color: $white;
           padding: 15px;
         }
@@ -251,9 +251,9 @@ Chat page styling
           height: 40px;
           padding: 10px;
           box-sizing: border-box;
-          border-radius: 5px;
+          border-radius: $border-radius-normal;
           border: 0px solid transparent;
-          box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
+          box-shadow: $box-shadow;
           margin-left: 15px;
           display: none;
         }
@@ -302,7 +302,7 @@ Chat page styling
       width: calc(100% - 30px);
       height: calc(100% - 200px);
       max-width: 960px;
-      border-radius: 5px;
+      border-radius: $border-radius-normal;
       flex-wrap: wrap;
       align-items: stretch;
       align-content: flex-start;
@@ -342,7 +342,7 @@ Chat page styling
               padding-bottom: 7.5px;
 
               .chat-avatar {
-                border-radius: 5px;
+                border-radius: $border-radius-normal;
               }
 
               .chat-right {
