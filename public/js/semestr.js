@@ -760,7 +760,7 @@ function getChatsById(id){
             if(response.conversation.length>0) {
                 for(var i=0;i<response.conversation.length;i++) {
                     if (response.myId != response.conversation[i].sender.id) {
-                        var newdiv = '<div class="conversation-message-in"><img src="' + response.conversation[i].avatar + '" alt=""><p class="message message-in">' + response.conversation[i].text + '</p></div>';
+                        var newdiv = '<div class="conversation-message-in"><img src="' + response.conversation[i].sender.avatar + '" alt=""><p class="message message-in">' + response.conversation[i].text + '</p></div>';
                         $('.messages_container').append(newdiv);
                     } else {
                         var newdiv = '<div class="conversation-message-out"><p class="message message-out">' + response.conversation[i].text + '</p></div>';
