@@ -53,7 +53,7 @@
         var channel = pusher.subscribe('chat'+'{{$myUser->id}}');
         channel.bind('new-chat', function(data) {
             if($('.chat-wrapper').is(':visible')) {
-                if ($('*[data-id="' + data.data.conversation_id + '"]').hasClass('chat-active')) {
+                if ($('.chat-list *[data-id="' + data.data.conversation_id + '"]').hasClass('chat-active')) {
                     console.log('chat is open');
                     var newdiv = '<div class="conversation-message-in"><img src="' + data.data.sender.avatar + '" alt=""><p class="message message-in">' + data.data.chat + '</p></div>';
                     $(newdiv).appendTo('.messages_container').hide().fadeIn(1000);
@@ -61,15 +61,15 @@
                     console.log(data);
                 } else {
                     console.log('chat is closed');
-                    if ($('*[data-id="' + data.data.conversation_id + '"]').length) {
+                    if ($('.chat-list *[data-id="' + data.data.conversation_id + '"]').length) {
                         $('.active-chat-item-indicator').addClass('hidden');
                         var div = $('*[data-id="' + data.data.conversation_id + '"]').parent().html();
                         var composedDiv = '<div class="item item-list col-xs-12">' + div + '</div>';
-                        $('*[data-id="' + data.data.conversation_id + '"]').parent().remove();
+                        $('.chat-list *[data-id="' + data.data.conversation_id + '"]').parent().remove();
                         $('#chat_overview').prepend(composedDiv);
-                        $('*[data-id="' + data.data.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
-                        $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-time').html('just now');
-                        $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-last-message-start').html(data.data.chat);
+                        $('.chat-list *[data-id="' + data.data.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
+                        $('.chat-list *[data-id="' + data.data.conversation_id + '"]').find('.chat-time').html('just now');
+                        $('.chat-list *[data-id="' + data.data.conversation_id + '"]').find('.chat-last-message-start').html(data.data.chat);
                         $('.chat_to_detail').on('click', function (e) {
                             e.preventDefault();
                             getChats(data.data.conversation_id);
@@ -87,15 +87,17 @@
                 }
             }else{
                 $('.new-message-indicator').removeClass('hidden');
-                if ($('*[data-id="' + data.data.conversation_id + '"]').length) {
+                if ($('.chat-list *[data-id="' + data.data.conversation_id + '"]').length) {
                     $('.active-chat-item-indicator').addClass('hidden');
-                    var div = $('*[data-id="' + data.data.conversation_id + '"]').parent().html();
+                    $('.chat_to_detail').removeClass('chat-active');
+                    var div = $('.chat-list *[data-id="' + data.data.conversation_id + '"]').parent().html();
                     var composedDiv = '<div class="item item-list col-xs-12">' + div + '</div>';
-                    $('*[data-id="' + data.data.conversation_id + '"]').parent().remove();
+                    $('.chat-list *[data-id="' + data.data.conversation_id + '"]').parent().remove();
                     $('#chat_overview').prepend(composedDiv);
-                    $('*[data-id="' + data.data.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
-                    $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-time').html('just now');
-                    $('*[data-id="' + data.data.conversation_id + '"]').find('.chat-last-message-start').html(data.data.chat);
+                    $('.chat-list *[data-id="' + data.data.conversation_id + '"]').addClass('chat-active');
+                    $('.chat-list *[data-id="' + data.data.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
+                    $('.chat-list *[data-id="' + data.data.conversation_id + '"]').find('.chat-time').html('just now');
+                    $('.chat-list *[data-id="' + data.data.conversation_id + '"]').find('.chat-last-message-start').html(data.data.chat);
                     $('.chat_to_detail').on('click', function (e) {
                         e.preventDefault();
                         getChats(data.data.conversation_id);
