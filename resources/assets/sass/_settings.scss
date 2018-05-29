@@ -76,10 +76,6 @@ Settings page styling
           display: flex;
           justify-content: space-between;
 
-          p {
-
-          }
-
           a {
             color: $primary-color;
           }
@@ -305,10 +301,7 @@ Settings page styling
               transform: rotate(45deg);
             }
           }
-
-
         }
-
       }
     }
 
@@ -328,10 +321,6 @@ Settings page styling
           padding: 10px;
           display: flex;
           justify-content: space-between;
-
-          p {
-
-          }
 
           a {
             color: $primary-color;
@@ -417,7 +406,6 @@ Settings page styling
         font-weight: bold;
         font-size: 18px;
         text-align: center;
-
 
         a {
           width: 50%;

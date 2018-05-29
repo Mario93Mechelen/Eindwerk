@@ -6,14 +6,11 @@ Crossings page styling
 
 .crossings_page {
 
-
-
   .content_title {
     display: none;
   }
 
   .crossings-indicator-wrapper {
-
     width: calc(100% - 30px);
     margin: 0px 15px;
   }
@@ -100,12 +97,6 @@ Crossings page styling
     }
   }
 }
-
-@media(min-width: 960px) {
-
-}
-
-
 
 @media(min-width: 990px) {
   .crossings_page {

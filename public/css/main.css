@@ -9389,9 +9389,7 @@ Around me page styling
 
 ::-webkit-scrollbar {
   width: 0px;
-  /* remove scrollbar space */
   background: transparent;
-  /* optional: just make scrollbar invisible */
 }
 
 .aroundme_page {
@@ -9473,7 +9471,6 @@ Around me page styling
 @media (min-width: 990px) {
   #aroundme_overview {
     width: 990px;
-    /* margin: 0 auto 30px auto; */
   }
 
   .gridlist-container {
@@ -9484,7 +9481,6 @@ Around me page styling
 
   .aroundme_page .aroundme_no_users {
     color: #002245;
-    /* padding-left: 0px; */
   }
 }
 
@@ -11302,8 +11298,6 @@ Chat page styling
     height: calc(100% - 70px);
   }
 
-  /* testknoppen */
-
   .chat_to_detail,
   .chat_to_list {
     display: none;
@@ -11819,7 +11813,7 @@ school page styling
   top: -55px;
   right: -32px;
   font-size: 12px;
-  background-color: rgba(0, 72, 217, 0.5);
+  background-color: rgba(0, 72, 217, 0.3);
   color: white;
   width: 20px;
   height: 20px;

@@ -387,7 +387,7 @@ school page styling
                 top: -55px;
                 right: -32px;
                 font-size: 12px;
-                background-color: rgba($primary-color, 0.5);
+                background-color: rgba($primary-color, 0.3);
                 color: white;
                 width: 20px;
                 height: 20px;
@@ -538,27 +538,6 @@ school page styling
         }
       }
 
-      .school-list-toggle {
-        ul {
-
-          li {
-
-          }
-
-          li.active {
-
-          }
-
-          li:first-of-type {
-
-          }
-
-          li:last-of-type {
-
-          }
-        }
-      }
-
       .school_introtext {
         text-align: left;
         padding-left: 0px;
@@ -566,48 +545,13 @@ school page styling
 
       .members-button-wrapper {
         display: none;
-
-        .button {
-
-          .icon {
-          }
-
-          .member-icon {}
-
-          p {
-
-          }
-        }
       }
 
       .school-info-section, .student-feed-section {
 
         .post {
 
-          .post-top {
-
-            .post-img {
-
-            }
-
-            .post-top-right {
-
-
-              .post-name {
-
-              }
-
-              .post-time {
-
-              }
-            }
-          }
-
           .post-mid {
-
-            .post-message {
-
-            }
 
             .post-photos {
 
@@ -618,136 +562,10 @@ school page styling
               }
             }
           }
-
-          .post-bottom {
-
-            a {
-
-            }
-
-            a:hover,
-            a:focus {
-
-            }
-          }
-
-          .post-comment-section {
-
-            .post-comments {
-
-            }
-
-            .post-comment {
-
-
-              .post-comment-img {
-
-              }
-
-              .post-comment-right {
-
-
-                .post-comment-name {
-
-                }
-
-                .post-comment-message {
-
-                }
-              }
-            }
-
-            .post-new-comment {
-
-
-              .post-new-comment-img {
-              }
-
-              form {
-
-
-                input {
-
-                }
-
-                button {
-
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .student-feed-section {
-
-        .new-post-button-wrapper {
-
-          .button {
-
-            .new-post-img {
-
-            }
-
-            input,
-            input:focus {
-
-            }
-
-            input::placeholder {
-
-            }
-          }
-
-          .new-post-bottom {
-
-            .add-pictures {
-
-
-              a:link,
-              a:visited,
-              a:hover,
-              a:active,
-              a:focus {
-
-              }
-
-              .img-in-post-wrapper {
-
-                .img-in-post {
-                }
-
-                .delete-image {
-                }
-              }
-            }
-          }
-
-
-          .buttons {
-
-            a {
-            }
-
-            a.preferred {
-            }
-
-            a.not-preferred {
-            }
-
-            a:first-of-type {
-            }
-
-            a:last-of-type {
-            }
-
-            a:hover,
-            a:focus {
-            }
-          }
         }
       }
     }
+
     .member-list {
       display: block;
       float: right;
@@ -760,21 +578,6 @@ school page styling
 
         h2 {
           color: $dark-color;
-        }
-
-        .item-member {
-
-          .item-content,
-          .item-content:hover
-          .item-content:focus {
-
-            .member-avatar {
-
-            }
-
-            .member-right {
-            }
-          }
         }
       }
     }

@@ -5,7 +5,6 @@ HEADER STYLING
  */
 
 header {
-
   background-color: $dark-color;
   padding: 15px;
   font-size: 22px;
@@ -22,9 +21,7 @@ header {
 
   nav {
 
-
     .nav_right {
-
 
       .nav_chat {
         display: inline-block;
@@ -96,9 +93,7 @@ header {
       }
     }
   }
-
 }
-
 
 @media(max-width: 350px) {
 
@@ -143,7 +138,6 @@ header {
     border-bottom-right-radius: $border-radius-normal;
 
     nav {
-
 
       .nav_right {
         display: block;
@@ -242,15 +236,6 @@ header {
               padding-left: 15px;
             }
           }
-        }
-
-        .nav_aroundme {
-        }
-
-        .nav_crossings {
-        }
-
-        .nav_groups {
         }
       }
     }

@@ -6,7 +6,6 @@ profile page styling
 
 
 .profile_page {
-
   background-color: $offwhite;
 
   .cover_image{
@@ -40,7 +39,6 @@ profile page styling
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
   }
 
   .change-cover_image {
@@ -275,10 +273,6 @@ profile page styling
       a:hover {
         background-color: $primary-color;
         color: $white;
-      }
-
-      a:first-of-type {
-
       }
     }
 
@@ -632,9 +626,8 @@ profile page styling
               p {
 
               }
-              }
             }
-
+          }
         }
       }
 
@@ -685,17 +678,6 @@ profile page styling
             width: 80px;
             height: 80px;
           }
-
-          div:first-of-type {
-            a > img {
-            }
-
-          }
-
-          div:last-of-type {
-            a > img {
-            }
-          }
         }
       }
 
@@ -709,42 +691,11 @@ profile page styling
           width: calc(33.333% - 10px);
           box-sizing: border-box;
           margin-right: 15px;
-
-          .subsection_title {
-
-          }
-
-          .aboutme_item {
-
-            .item_label  {
-
-            }
-
-            input, select {
-
-            }
-          }
-
-          .aboutme_item:last-of-type {
-
-          }
-
-          .social_item {
-
-            .item_label {
-
-            }
-
-            i {
-
-            }
-          }
         }
 
         .aboutme_subsection:last-of-type {
           margin-right: 0px;
         }
-
       }
     }
   }
