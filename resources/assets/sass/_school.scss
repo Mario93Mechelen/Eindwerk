@@ -253,7 +253,7 @@ school page styling
           }
 
           .post-new-comment {
-            background-color: $nav_unselected;
+            background-color: rgba($nav_unselected, 0.5);
             padding: 15px;
             display: flex;
             border-bottom-right-radius: $border-radius-extra;

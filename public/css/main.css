@@ -11639,7 +11639,7 @@ school page styling
 
 .school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment,
 .school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment {
-  background-color: #aaaaaa;
+  background-color: rgba(170, 170, 170, 0.5);
   padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
