@@ -118,7 +118,7 @@
 
                 <h2 class="section_title">photos</h2>
                 <div class="photo-uploads hidden">
-                    <a href="{{$user->setting->instagram ? '/getPhotos/instagram' : '#'}}" class="button button-instagram-photos {{$user->setting->instagram ? 'instagram-photos' : null}}">Get instagram photos</a>
+                    <a href="{{$user->setting->instagram ? '/getPhotos/instagram' : '#'}}" class="button button-instagram-photos {{$user->setting->instagram ? 'instagram-photos' : null}} {{$user->setting->instagram ? null : 'disabled'}}">Get instagram photos</a>
                     <a href="#" class="button button-upload-photos dropzone-photos">Upload photos</a>
                 </div>
                 <div class="photo_collection">

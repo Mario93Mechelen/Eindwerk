@@ -9818,7 +9818,7 @@ Around me page styling
 
 profile page styling
 
- */
+*/
 
 .profile_page {
   background-color: #f4f5f7;
@@ -10143,6 +10143,14 @@ profile page styling
 .profile_page .profile_page_content .photo-uploads a:hover {
   background-color: #0048d9;
   color: #ffffff;
+}
+
+.profile_page .profile_page_content .photo-uploads a:link.disabled,
+.profile_page .profile_page_content .photo-uploads a:visited.disabled,
+.profile_page .profile_page_content .photo-uploads a:hover.disabled,
+.profile_page .profile_page_content .photo-uploads a:active.disabled,
+.profile_page .profile_page_content .photo-uploads a:focus.disabled {
+  display: none;
 }
 
 .profile_page .profile_page_content .image-uploadzone {

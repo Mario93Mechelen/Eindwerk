@@ -2,7 +2,7 @@
 
 profile page styling
 
- */
+*/
 
 
 .profile_page {
@@ -273,6 +273,14 @@ profile page styling
       a:hover {
         background-color: $primary-color;
         color: $white;
+      }
+
+      a:link.disabled,
+      a:visited.disabled,
+      a:hover.disabled,
+      a:active.disabled,
+      a:focus.disabled {
+        display: none;
       }
     }
 
