@@ -320,15 +320,15 @@
                     }else {
 
                         console.log('fetching existing convo');
-                        if($('*[data-id="' + response.conversation_id + '"]').length) {
+                        if($('.chat-list *[data-id="' + response.conversation_id + '"]').length) {
                             console.log('the conversation is in this container');
                             $('.chat_to_detail').removeClass('chat-active');
                             $('.active-chat-item-indicator').addClass('hidden');
-                            var div = $('*[data-id="' + response.conversation_id + '"]').parent().html();
+                            var div = $('.chat-list *[data-id="' + response.conversation_id + '"]').parent().html();
                             var composedDiv = '<div class="item item-list col-xs-12">' + div + '</div>';
-                            $('*[data-id="' + response.conversation_id + '"]').parent().remove();
+                            $('.chat-list *[data-id="' + response.conversation_id + '"]').parent().remove();
                             $('#chat_overview').prepend(composedDiv);
-                            $('*[data-id="' + response.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
+                            $('.chat-list *[data-id="' + response.conversation_id + '"]').find('.active-chat-item-indicator').removeClass('hidden');
                             getChats(response.conversation_id[0]);
                         }else{
                             $('.active-chat-item-indicator').addClass('hidden');
