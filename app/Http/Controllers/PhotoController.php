@@ -7,6 +7,7 @@ use App\Post;
 use App\Profile;
 use Illuminate\Support\Facades\Auth;
 use Image;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
