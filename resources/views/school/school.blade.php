@@ -203,6 +203,7 @@
 @endsection
 
 @section('scripts')
+    @if($myUser->school)
     <script src="/js/dropzone.min.js" type="text/javascript"></script>
     <script>
         Dropzone.options.addphotos = {
@@ -257,5 +258,6 @@
         }
 
     </script>
+    @endif
 
 @endsection
