@@ -206,20 +206,20 @@ class ProfileController extends Controller
 
     public function sendFriendRequest(Request $request)
     {
-        $friendSent = Friend::where('friend_sender', Auth::user()->id)->where('friend_receiver',$request->id)->where('request_type','sent')->first();
+        $friendSent = Friend::where('friend_sender', Auth::user()->id)->where('friend_receiver',$request->id)->where('request_type','pending')->first();
         $friend = Friend::where('friend_sender', Auth::user()->id)->where('friend_receiver',$request->id)->where('request_type','friends')->first();
         if(!$friend && !$friendSent) {
             $id = $request->id;
             $friend = new Friend();
             $friend->friend_sender = Auth::user()->id;
             $friend->friend_receiver = $id;
-            $friend->request_type = 'sent';
+            $friend->request_type = 'pending';
             $friend->save();
             $id = $request->id;
             $friend = new Friend();
             $friend->friend_sender = $id;
             $friend->friend_receiver = Auth::user()->id;
-            $friend->request_type = 'pending';
+            $friend->request_type = 'sent';
             $friend->save();
             $buttonText = 'request sent';
 
@@ -230,8 +230,8 @@ class ProfileController extends Controller
                 Friend::where('friend_sender', $request->id)->where('friend_receiver',Auth::user()->id)->where('request_type','friends')->delete();
             };
             if($friendSent){
-                Friend::where('friend_sender', Auth::user()->id)->where('friend_receiver',$request->id)->where('request_type','sent')->delete();
-                Friend::where('friend_sender', $request->id)->where('friend_receiver',Auth::user()->id)->where('request_type','pending')->delete();
+                Friend::where('friend_sender', Auth::user()->id)->where('friend_receiver',$request->id)->where('request_type','pending')->delete();
+                Friend::where('friend_sender', $request->id)->where('friend_receiver',Auth::user()->id)->where('request_type','sent')->delete();
             };
             $buttonText = 'add friend';
         };

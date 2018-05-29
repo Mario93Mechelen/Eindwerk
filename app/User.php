@@ -58,7 +58,7 @@ class User extends Authenticatable
 
     public function friendRequestIsSent($myId,$userId)
     {
-        return Friend::where('friend_sender',$myId)->where('friend_receiver',$userId)->where('request_type','sent')->first();
+        return Friend::where('friend_sender',$myId)->where('friend_receiver',$userId)->where('request_type','pending')->first();
     }
 
     public function friendRequestIsAccepted($myId, $userId)

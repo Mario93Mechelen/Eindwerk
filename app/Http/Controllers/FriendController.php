@@ -15,7 +15,7 @@ class FriendController extends Controller
      */
     public function index()
     {
-        $friend_requests = Auth::user()->friends()->where('request_type','pending')->get();
+        $friend_requests = Auth::user()->friends()->where('request_type','sent')->get();
         $friends = Auth::user()->friends()->where('request_type','friends')->get();
         return view('crossings.friends',compact('friend_requests','friends'));
     }

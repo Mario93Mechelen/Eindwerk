@@ -119,6 +119,7 @@
             if(data.data.request == "sent"){
                 console.log(data);
                 $('.indicator-friends').removeClass('hidden');
+                $('.indicator-friends2').removeClass('hidden');
             }
         });
         function getChats(id){
