@@ -128,7 +128,7 @@ class LoginController extends Controller
             $user = User::where('token',$token)->first();
             $user->email_confirmed = 1;
             $user->save();
-            Auth::login($user);
+            Auth::login($user,true);
             return redirect('/');
         }
     }

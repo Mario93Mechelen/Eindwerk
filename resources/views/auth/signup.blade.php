@@ -36,7 +36,7 @@
                         @endif
                      <button class="btn btn-primary to-step-2">next</button>
                 </div>
-                <div class="step2">
+                <div class="step2" style="display:none">
                     <div class="form-group">
                         <label for="password">password</label>
                         <input type="password" class="form-control" id="password_register" name="password" placeholder="password">
@@ -61,16 +61,15 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $('.step2').hide();
         $('.to-step-2').on('click', function(e){
             e.preventDefault();
             if($('#email_register').val() != "" && $('#email_register').val().indexOf('@')>0 && $('#email_register').val().indexOf('.')>0 && $('#email_register').val().indexOf('@')< $('#email_register').val().indexOf('.')) {
 
-                    $('.step1').fadeOut('slow');
-                    $('.step2').fadeIn('slow');
+                    $('.step1').css('display','none');
+                    $('.step2').removeAttr('style');
 
             }else{
-                $('.error1').html('please consider a valid email adress lol');
+                $('.error1').html('please consider a valid email adress');
             }
         })
     </script>
