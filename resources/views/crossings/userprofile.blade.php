@@ -118,7 +118,7 @@
 
                 <h2 class="section_title">photos</h2>
                 <div class="photo-uploads hidden">
-                    <a href="{{$user->setting->instagram ? '/getPhotos/instagram' : '#'}}" class="button button-instagram-photos {{$user->setting->instagram ? 'instagram-photos' : null}}" {{$user->setting->instagram ? null : 'disabled'}}>Get instagram photos</a>
+                    <a {{$user->setting->instagram ? 'href="/getPhotos/instagram"' : null}} class="button button-instagram-photos" {{$user->setting->instagram ? 'style="color:lightgrey"' : null}} {{$user->setting->instagram ? null : 'disabled'}}>Get instagram photos</a>
                     <a href="#" class="button button-upload-photos dropzone-photos">Upload photos</a>
                 </div>
                 <div class="photo_collection">
@@ -214,7 +214,7 @@
 
                         <!-- facebook -->
                         <div class="aboutme_item social_item {{$user->setting->facebook ? 'connected' : 'disconnected'}}">
-                            <a target="_blank" href="{{$user->setting->facebook ? $user->setting->facebook : '#'}}">
+                            <a target="_blank" {{$user->setting->facebook ? 'href="'.$user->setting->facebook.'"' : null}} {{$user->setting->instagram ? 'style="color:lightgrey"' : null}} {{$user->setting->instagram ? null : 'disabled'}}>
                                 <i class="fab fa-facebook"></i>
                                 <p class="item_label">facebook</p>
                             </a>
@@ -223,7 +223,7 @@
 
                         <!-- twitter -->
                         <div class="aboutme_item social_item {{$user->setting->twitter ? 'connected' : 'disconnected'}}">
-                            <a target="_blank" href="{{$user->setting->twitter ? $user->setting->twitter : '#'}}">
+                            <a target="_blank" {{$user->setting->twitter ? 'href="'.$user->setting->twitter.'"' : null}} {{$user->setting->instagram ? 'style="color:lightgrey"' : null}} {{$user->setting->instagram ? null : 'disabled'}}>
                                 <i class="fab fa-twitter"></i>
                                 <p class="item_label">twitter</p>
                             </a>
@@ -232,7 +232,7 @@
 
                         <!-- instagram -->
                         <div class="aboutme_item social_item {{$user->setting->instagram ? 'connected' : 'disconnected'}}">
-                            <a target="_blank" href="{{$user->setting->instagram ? $user->setting->instagram : '#'}}">
+                            <a target="_blank" {{$user->setting->instagram ? 'href="'.$user->setting->instagram.'"' : null}} {{$user->setting->instagram ? 'style="color:lightgrey"' : null}} {{$user->setting->instagram ? null : 'disabled'}}>
                                 <i class="fab fa-instagram"></i>
                                 <p class="item_label">instagram</p>
                             </a>

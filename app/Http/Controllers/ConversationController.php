@@ -138,7 +138,11 @@ class ConversationController extends Controller
         $chat->sender_id = Auth::user()->id;
         $chat->save();
 
-        $receiver = User::find($receiver_id);
+        $seenChats = Chat::where('receiver_id',Auth::user()->id)->where('conversation_id',$conversation_id)->where('seen',0)->get();
+        foreach($seenChats as $s){
+            $s->seen = 1;
+            $s->save();
+        };
 
         $this->makeEventObject()->trigger('chat'.$receiver_id,'new-chat',['data' => ['chat' => $message, 'sender' => Auth::user(), 'conversation_id' => $conversation_id]]);
 

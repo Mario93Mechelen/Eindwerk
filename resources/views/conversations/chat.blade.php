@@ -121,7 +121,7 @@
 
                 <div class="conversation-message-in">
                     <img src="{{url('/img/Semestr_logo2_gray.png')}}" alt="">
-                    <p class="message message-in">Hey, it seems like you didn't make friends yet? Don't worry, we got you covered here at Semestr. There's plenty of fish in the see, ahum, we mean students in the library off course ;)
+                    <p class="message message-in">Hey, it seems like you didn't make friends yet? Don't worry, we got you covered here at Semestr. There's plenty of fish in the sea, ahum, we mean students in the library off course ;)
                     </p>
                 </div>
             </div>
