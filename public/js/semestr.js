@@ -717,8 +717,6 @@ $(document).ready(function(){
    if($('.chat-active').length){
        var id = $('.chat-active').data('id');
        getChatsById(id);
-
-       $(".messages_container").animate({scrollTop: $('.messages_container').prop("scrollHeight")+100}, 500);
    }
 });
 
@@ -735,8 +733,6 @@ $(document).ready(function(){
         console.log(id);
         getChatsById(id);
         updateSeenStatus($(this).data('id'));
-
-        $(".messages_container").animate({scrollTop: $('.messages_container').prop("scrollHeight")}, 500);
     })
 });
 
@@ -763,20 +759,16 @@ function getChatsById(id){
             $('.conversation-message-out').remove();
             if(response.conversation.length>0) {
                 for(var i=0;i<response.conversation.length;i++) {
-                    var src='';
-                    if(response.conversation[i].sender.avatar.includes('http')){
-                        src=response.conversation[i].sender.avatar;
-                    }else{
-                        src='/'+response.conversation[i].sender.avatar;
-                    };
                     if (response.myId != response.conversation[i].sender.id) {
-                        var newdiv = '<div class="conversation-message-in"><img src="' + src + '" alt=""><p class="message message-in">' + response.conversation[i].text + '</p></div>';
+                        var newdiv = '<div class="conversation-message-in"><img src="' + response.conversation[i].avatar + '" alt=""><p class="message message-in">' + response.conversation[i].text + '</p></div>';
                         $('.messages_container').append(newdiv);
                     } else {
                         var newdiv = '<div class="conversation-message-out"><p class="message message-out">' + response.conversation[i].text + '</p></div>';
                         $('.messages_container').append(newdiv);
                     };
                 }
+
+                $(".messages_container").animate({scrollTop: $('.messages_container').prop("scrollHeight")+120}, 500);
             }
         }
     });
@@ -822,6 +814,7 @@ $(document).ready(function(){
                     var conversation_id = $('.chat-active').data('id');
                     updateSeenStatus(conversation_id);
                     saveChat(input,receiver_id,conversation_id);
+                    $('.chat-name').css('color','black');
                     this.setText("");
                 }
             },
@@ -868,7 +861,7 @@ $(document).ready(function(){
                 console.log('message sent');
                 var newdiv = '<div class="conversation-message-out"><p class="message message-out">' + input + '</p></div>';
                 $('.messages_container').append(newdiv);
-                $('.messages_container').scrollTop($('.messages_container')[0].scrollHeight);
+                $(".messages_container").animate({scrollTop: $('.messages_container').prop("scrollHeight")+120}, 500);
             }
         })
     };
