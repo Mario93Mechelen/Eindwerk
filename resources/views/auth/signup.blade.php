@@ -63,7 +63,7 @@
     <script>
         $('.to-step-2').on('click', function(e){
             e.preventDefault();
-            if($('#email_register').val() != "" && $('#email_register').val().indexOf('@')>0 && $('#email_register').val().indexOf('.')>0 && $('#email_register').val().indexOf('@')< $('#email_register').val().indexOf('.')) {
+            if($('#email_register').val() != "" && $('#email_register').val().indexOf('@')>0 && $('#email_register').val().indexOf('.')>0 ) {
 
                     $('.step1').css('display','none');
                     $('.step2').removeAttr('style');

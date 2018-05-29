@@ -173,6 +173,7 @@
 
                 <h2>member list</h2>
 
+                @if($myUser->school)
                 @if(!$myUser->school->users->isEmpty())
                     @foreach($myUser->school->users as $user)
                         <div class="item item-member item-list col-xs-12">
@@ -186,6 +187,7 @@
                             </a>
                         </div>
                     @endforeach
+                @endif
                 @endif
 
             </div>
