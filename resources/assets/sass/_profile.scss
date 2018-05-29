@@ -6,7 +6,6 @@ profile page styling
 
 
 .profile_page {
-
   background-color: $offwhite;
 
   .cover_image{
@@ -40,7 +39,6 @@ profile page styling
     justify-content: center;
     align-items: center;
     cursor: pointer;
-
   }
 
   .change-cover_image {
@@ -79,8 +77,8 @@ profile page styling
         width: 150px;
         height: 150px;
         margin:0 auto;
-        border-radius: 5px;
-        box-shadow: 0px 5px 10px 0px rgba(170,170,170,1);
+        border-radius: $border-radius-normal;
+        box-shadow: $box-shadow;
       }
 
       .user_name {
@@ -121,8 +119,8 @@ profile page styling
             display: flex;
             align-items: center;
             background-color: $white;
-            border-radius: 5px;
-            box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+            border-radius: $border-radius-normal;
+            box-shadow: $box-shadow;
             margin-top: 15px;
             margin-bottom: 15px;
             position: relative;
@@ -138,8 +136,8 @@ profile page styling
               height: 40px;
               padding: 10px;
               box-sizing: border-box;
-              border-top-left-radius: 5px;
-              border-bottom-left-radius: 5px;
+              border-top-left-radius: $border-radius-normal;
+              border-bottom-left-radius: $border-radius-normal;
             }
 
             .add-friend-icon {background-image: url('/img/add_friend.png');}
@@ -260,12 +258,12 @@ profile page styling
         text-decoration: none;
         padding: 15px;
         margin-bottom: 10px;
-        border-radius: 5px;
+        border-radius: $border-radius-normal;
         background-color: $white;
         font-size: 18px;
         font-weight: bold;
         color: $primary-color;
-        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        box-shadow: $box-shadow;
         transition: all 0.3s ease-in-out;
         display: block;
         width: 100%;
@@ -275,10 +273,6 @@ profile page styling
       a:hover {
         background-color: $primary-color;
         color: $white;
-      }
-
-      a:first-of-type {
-
       }
     }
 
@@ -299,12 +293,12 @@ profile page styling
         text-decoration: none;
         padding: 15px;
         margin-top: 10px;
-        border-radius: 5px;
+        border-radius: $border-radius-normal;
         background-color: $white;
         font-size: 18px;
         font-weight: bold;
         color: $primary-color;
-        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        box-shadow: $box-shadow;
         transition: all 0.3s ease-in-out;
         display: block;
         width: 50%;
@@ -323,7 +317,7 @@ profile page styling
 
       .photo_collection {
         padding-top: 15px;
-        border-radius: 5px;
+        border-radius: $border-radius-normal;
         display: flex;
 
         div > a > img {
@@ -333,16 +327,16 @@ profile page styling
 
         div:first-of-type {
           a > img {
-            border-top-left-radius: 5px;
-            border-bottom-left-radius: 5px;
+            border-top-left-radius: $border-radius-normal;
+            border-bottom-left-radius: $border-radius-normal;
           }
 
         }
 
         div:last-of-type {
           a > img {
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
+            border-top-right-radius: $border-radius-normal;
+            border-bottom-right-radius: $border-radius-normal;
           }
         }
       }
@@ -354,8 +348,8 @@ profile page styling
       .aboutme_subsection {
         margin-top: 15px;
         background-color: $white;
-        border-radius: 10px;
-        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        border-radius: $border-radius-extra;
+        box-shadow: $box-shadow;
         font-weight: bold;
         color: $dark-color;
         font-size: 16px;
@@ -430,7 +424,7 @@ profile page styling
 
         li {
           border: 1px solid $primary-color;
-          border-radius: 5px;
+          border-radius: $border-radius-normal;
           color: $primary-color;
           padding: 8px;
           margin: 8px;
@@ -478,7 +472,7 @@ profile page styling
       width: calc(100% - 30px);
       max-width: 320px;
       margin: 0 auto;
-      border-radius: 5px;
+      border-radius: $border-radius-normal;
       background-color: $white;
 
       h4 {
@@ -522,11 +516,11 @@ profile page styling
         }
 
         a:first-of-type {
-          border-bottom-left-radius: 5px;
+          border-bottom-left-radius: $border-radius-normal;
         }
 
         a:last-of-type {
-          border-bottom-right-radius: 5px;
+          border-bottom-right-radius: $border-radius-normal;
         }
 
         a:hover,
@@ -632,9 +626,8 @@ profile page styling
               p {
 
               }
-              }
             }
-
+          }
         }
       }
 
@@ -655,12 +648,12 @@ profile page styling
           text-decoration: none;
           padding: 15px;
           margin-bottom: 10px;
-          border-radius: 5px;
+          border-radius: $border-radius-normal;
           background-color: $white;
           font-size: 18px;
           font-weight: bold;
           color: $primary-color;
-          box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+          box-shadow: $box-shadow;
           transition: all 0.3s ease-in-out;
           display: block;
           width: 50%;
@@ -685,17 +678,6 @@ profile page styling
             width: 80px;
             height: 80px;
           }
-
-          div:first-of-type {
-            a > img {
-            }
-
-          }
-
-          div:last-of-type {
-            a > img {
-            }
-          }
         }
       }
 
@@ -709,42 +691,11 @@ profile page styling
           width: calc(33.333% - 10px);
           box-sizing: border-box;
           margin-right: 15px;
-
-          .subsection_title {
-
-          }
-
-          .aboutme_item {
-
-            .item_label  {
-
-            }
-
-            input, select {
-
-            }
-          }
-
-          .aboutme_item:last-of-type {
-
-          }
-
-          .social_item {
-
-            .item_label {
-
-            }
-
-            i {
-
-            }
-          }
         }
 
         .aboutme_subsection:last-of-type {
           margin-right: 0px;
         }
-
       }
     }
   }

@@ -8508,7 +8508,7 @@ table {
 body {
   font-family: Metropolis, Arial, sans-serif;
   font-size: 14px;
-  color: #000000;
+  color: #002245;
   background-color: #f4f5f7;
 }
 
@@ -8751,78 +8751,6 @@ header nav .nav_left .nav_groups {
 
 /*  dropdowns  */
 
-header {
-  /*
-  #dropdown-menu-chat {
-    width: calc(100% - 30px);
-    position: absolute;
-    left: 15px;
-    top: 47px;
-
-    a {
-      display: flex;
-      flex-direction: row;
-      padding: 10px;
-      border-bottom: 1px solid $nav_unselected;
-
-      .chat-avatar{
-        width: 30px;
-        height: 30px;
-        border-radius: 5px;
-      }
-
-      .chat-right {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-left: 10px;
-        width: 100%;
-
-        .chat-nametime {
-          display: flex;
-          flex-direction: row;
-          justify-content: space-between;
-
-          .chat-name {
-            color: $dark-color;
-            font-weight: bold;
-            font-size: 14px;
-          }
-
-          .chat-time {
-            color: $nav_unselected;
-            font-size: 12px;
-          }
-        }
-
-        .chat-last-message-start {
-          color: $nav_selected;
-          font-size: 12px;
-          font-weight: normal;
-        }
-      }
-    }
-
-    .all-chats-link {
-      color: $dark-color;
-      font-weight: bold;
-      font-size: 18px;
-      padding-bottom: 8px;
-    }
-
-    .all-chats-link:before {
-      position: absolute;
-      font-family: 'FontAwesome';
-      top: 158px;
-      right: 20px;
-      content: "\f105";
-      font-size: 24px;
-      color: $primary-color;
-    }
-  }
-*/
-}
-
 header .dropdown-menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9054,8 +8982,8 @@ header #dropdown-menu-profile a:last-of-type {
   border: 0;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
-          box-shadow: 0px 5px 10px 0px #aaaaaa;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
   background-color: #ffffff;
   width: calc(100% - 50px);
 }
@@ -9090,8 +9018,8 @@ header #dropdown-menu-profile a:last-of-type {
   background-position: 50% 50%;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
-  -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
-          box-shadow: 0px 5px 10px 0px #aaaaaa;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
   text-align: left;
 }
 
@@ -9236,8 +9164,8 @@ header #dropdown-menu-profile a:last-of-type {
   .map-top .search-bar .searchBox {
     border: 0;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
-            box-shadow: 0px 5px 10px 0px #aaaaaa;
+    -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+            box-shadow: 0px 5px 15px 0px #aaaaaa;
     -webkit-box-flex: 2;
         -ms-flex: 2;
             flex: 2;
@@ -9266,8 +9194,8 @@ header #dropdown-menu-profile a:last-of-type {
     background-position: 5% 50%, 95% 55%;
     margin-left: 20px;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
-            box-shadow: 0px 5px 10px 0px #aaaaaa;
+    -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+            box-shadow: 0px 5px 15px 0px #aaaaaa;
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -9461,9 +9389,7 @@ Around me page styling
 
 ::-webkit-scrollbar {
   width: 0px;
-  /* remove scrollbar space */
   background: transparent;
-  /* optional: just make scrollbar invisible */
 }
 
 .aroundme_page {
@@ -9545,7 +9471,6 @@ Around me page styling
 @media (min-width: 990px) {
   #aroundme_overview {
     width: 990px;
-    /* margin: 0 auto 30px auto; */
   }
 
   .gridlist-container {
@@ -9556,7 +9481,6 @@ Around me page styling
 
   .aroundme_page .aroundme_no_users {
     color: #002245;
-    /* padding-left: 0px; */
   }
 }
 
@@ -9987,8 +9911,8 @@ profile page styling
   height: 150px;
   margin: 0 auto;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
-          box-shadow: 0px 5px 10px 0px #aaaaaa;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
 }
 
 .profile_page .profile_page_content .upper_section .user_name {
@@ -10997,8 +10921,8 @@ Chat page styling
 .chat-wrapper .chat-total .chat-list .search-bar .searchBox {
   border: 0;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
-          box-shadow: 0px 5px 10px 0px #aaaaaa;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
   background-color: #ffffff;
   width: 100%;
 }
@@ -11216,8 +11140,8 @@ Chat page styling
   color: #002245;
   border: 0;
   border-radius: 5px;
-  -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
-          box-shadow: 0px 5px 10px 0px #aaaaaa;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
   background-color: #ffffff;
   padding: 15px;
 }
@@ -11251,8 +11175,8 @@ Chat page styling
           box-sizing: border-box;
   border-radius: 5px;
   border: 0px solid transparent;
-  -webkit-box-shadow: 0px 5px 10px 0px #aaaaaa;
-          box-shadow: 0px 5px 10px 0px #aaaaaa;
+  -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
+          box-shadow: 0px 5px 15px 0px #aaaaaa;
   margin-left: 15px;
   display: none;
 }
@@ -11373,8 +11297,6 @@ Chat page styling
             flex: 0 0 60%;
     height: calc(100% - 70px);
   }
-
-  /* testknoppen */
 
   .chat_to_detail,
   .chat_to_list {
@@ -11711,7 +11633,7 @@ school page styling
 
 .school_page .school_page_content .school-info-section .post .post-comment-section .post-new-comment,
 .school_page .school_page_content .student-feed-section .post .post-comment-section .post-new-comment {
-  background-color: #aaaaaa;
+  background-color: rgba(170, 170, 170, 0.5);
   padding: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -11891,7 +11813,7 @@ school page styling
   top: -55px;
   right: -32px;
   font-size: 12px;
-  background-color: rgba(0, 72, 217, 0.5);
+  background-color: rgba(0, 72, 217, 0.3);
   color: white;
   width: 20px;
   height: 20px;

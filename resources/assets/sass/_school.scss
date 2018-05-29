@@ -40,8 +40,8 @@ school page styling
       ul {
         display: flex;
         width: 100%;
-        border-radius: 5px;
-        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        border-radius: $border-radius-normal;
+        box-shadow: $box-shadow;
         cursor: pointer;
 
         li {
@@ -60,13 +60,13 @@ school page styling
         }
 
         li:first-of-type {
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
+          border-top-left-radius: $border-radius-normal;
+          border-bottom-left-radius: $border-radius-normal;
         }
 
         li:last-of-type {
-          border-top-right-radius: 5px;
-          border-bottom-right-radius: 5px;
+          border-top-right-radius: $border-radius-normal;
+          border-bottom-right-radius: $border-radius-normal;
         }
       }
     }
@@ -91,8 +91,8 @@ school page styling
         display: flex;
         align-items: center;
         background-color: $white;
-        border-radius: 5px;
-        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        border-radius: $border-radius-normal;
+        box-shadow: $box-shadow;
         margin-top: 0px;
         margin-bottom: 60px;
         position: relative;
@@ -109,8 +109,8 @@ school page styling
           height: 40px;
           padding: 10px;
           box-sizing: border-box;
-          border-top-left-radius: 5px;
-          border-bottom-left-radius: 5px;
+          border-top-left-radius: $border-radius-normal;
+          border-bottom-left-radius: $border-radius-normal;
         }
 
         .member-icon {background-image: url('/img/memberlist.png');}
@@ -132,8 +132,8 @@ school page styling
         margin-top: 15px;
         margin-bottom: 30px;
         background-color: $white;
-        border-radius: 10px;
-        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        border-radius: $border-radius-extra;
+        box-shadow: $box-shadow;
         font-weight: bold;
         color: $dark-color;
         font-size: 16px;
@@ -146,7 +146,7 @@ school page styling
             height: 50px;
             margin: 15px;
             box-sizing: border-box;
-            border-radius: 5px;
+            border-radius: $border-radius-normal;
           }
 
           .post-top-right {
@@ -227,7 +227,7 @@ school page styling
               width: 30px;
               height: 30px;
               margin: 15px;
-              border-radius: 5px;
+              border-radius: $border-radius-normal;
             }
 
             .post-comment-right {
@@ -253,16 +253,16 @@ school page styling
           }
 
           .post-new-comment {
-            background-color: $nav_unselected;
+            background-color: rgba($nav_unselected, 0.5);
             padding: 15px;
             display: flex;
-            border-bottom-right-radius: 10px;
-            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: $border-radius-extra;
+            border-bottom-left-radius: $border-radius-extra;
 
             .post-new-comment-img {
               width: 30px;
               height: 30px;
-              border-radius: 5px;
+              border-radius: $border-radius-normal;
             }
 
             form {
@@ -277,8 +277,8 @@ school page styling
                 flex-grow: 1;
                 width: 100%;
                 height: 30px;
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px;
+                border-top-left-radius: $border-radius-normal;
+                border-bottom-left-radius: $border-radius-normal;
                 padding-left: 10px;
               }
 
@@ -294,8 +294,8 @@ school page styling
                 height: 30px;
                 padding: 0px;
                 box-sizing: border-box;
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px;
+                border-top-right-radius: $border-radius-normal;
+                border-bottom-right-radius: $border-radius-normal;
               }
             }
           }
@@ -312,7 +312,7 @@ school page styling
         display: flex;
         flex-direction: column;
         margin: 30px 0px;
-        box-shadow: 0px 5px 15px 0px rgba(170, 170, 170, 1);
+        box-shadow: $box-shadow;
         position: relative;
         z-index: 7000000;
 
@@ -322,7 +322,7 @@ school page styling
           display: flex;
           align-items: center;
           background-color: $white;
-          border-radius: 5px;
+          border-radius: $border-radius-normal;
 
           text-decoration: none;
           cursor: pointer;
@@ -333,7 +333,7 @@ school page styling
           .new-post-img {
             width: 30px;
             height: 30px;
-            border-radius: 5px;
+            border-radius: $border-radius-normal;
             margin: 10px;
           }
 
@@ -378,7 +378,7 @@ school page styling
               .img-in-post {
                 width: 50px;
                 height: 50px;
-                border-radius: 5px;
+                border-radius: $border-radius-normal;
                 margin: 5px;
               }
 
@@ -387,7 +387,7 @@ school page styling
                 top: -55px;
                 right: -32px;
                 font-size: 12px;
-                background-color: rgba($primary-color, 0.5);
+                background-color: rgba($primary-color, 0.3);
                 color: white;
                 width: 20px;
                 height: 20px;
@@ -426,11 +426,11 @@ school page styling
           }
 
           a:first-of-type {
-            border-bottom-left-radius: 5px;
+            border-bottom-left-radius: $border-radius-normal;
           }
 
           a:last-of-type {
-            border-bottom-right-radius: 5px;
+            border-bottom-right-radius: $border-radius-normal;
           }
 
           a:hover,
@@ -538,27 +538,6 @@ school page styling
         }
       }
 
-      .school-list-toggle {
-        ul {
-
-          li {
-
-          }
-
-          li.active {
-
-          }
-
-          li:first-of-type {
-
-          }
-
-          li:last-of-type {
-
-          }
-        }
-      }
-
       .school_introtext {
         text-align: left;
         padding-left: 0px;
@@ -566,48 +545,13 @@ school page styling
 
       .members-button-wrapper {
         display: none;
-
-        .button {
-
-          .icon {
-          }
-
-          .member-icon {}
-
-          p {
-
-          }
-        }
       }
 
       .school-info-section, .student-feed-section {
 
         .post {
 
-          .post-top {
-
-            .post-img {
-
-            }
-
-            .post-top-right {
-
-
-              .post-name {
-
-              }
-
-              .post-time {
-
-              }
-            }
-          }
-
           .post-mid {
-
-            .post-message {
-
-            }
 
             .post-photos {
 
@@ -618,136 +562,10 @@ school page styling
               }
             }
           }
-
-          .post-bottom {
-
-            a {
-
-            }
-
-            a:hover,
-            a:focus {
-
-            }
-          }
-
-          .post-comment-section {
-
-            .post-comments {
-
-            }
-
-            .post-comment {
-
-
-              .post-comment-img {
-
-              }
-
-              .post-comment-right {
-
-
-                .post-comment-name {
-
-                }
-
-                .post-comment-message {
-
-                }
-              }
-            }
-
-            .post-new-comment {
-
-
-              .post-new-comment-img {
-              }
-
-              form {
-
-
-                input {
-
-                }
-
-                button {
-
-                }
-              }
-            }
-          }
-        }
-      }
-
-      .student-feed-section {
-
-        .new-post-button-wrapper {
-
-          .button {
-
-            .new-post-img {
-
-            }
-
-            input,
-            input:focus {
-
-            }
-
-            input::placeholder {
-
-            }
-          }
-
-          .new-post-bottom {
-
-            .add-pictures {
-
-
-              a:link,
-              a:visited,
-              a:hover,
-              a:active,
-              a:focus {
-
-              }
-
-              .img-in-post-wrapper {
-
-                .img-in-post {
-                }
-
-                .delete-image {
-                }
-              }
-            }
-          }
-
-
-          .buttons {
-
-            a {
-            }
-
-            a.preferred {
-            }
-
-            a.not-preferred {
-            }
-
-            a:first-of-type {
-            }
-
-            a:last-of-type {
-            }
-
-            a:hover,
-            a:focus {
-            }
-          }
         }
       }
     }
+
     .member-list {
       display: block;
       float: right;
@@ -760,21 +578,6 @@ school page styling
 
         h2 {
           color: $dark-color;
-        }
-
-        .item-member {
-
-          .item-content,
-          .item-content:hover
-          .item-content:focus {
-
-            .member-avatar {
-
-            }
-
-            .member-right {
-            }
-          }
         }
       }
     }
