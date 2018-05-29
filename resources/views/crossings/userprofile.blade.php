@@ -334,7 +334,7 @@
                             $('.chat_to_detail').on('click', function (e) {
                                 e.preventDefault();
                                 getChats($(this).data('id'));
-                                $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
+                                $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")+100}, 500);
                             })
                         }else{
                             $('.active-chat-item-indicator').addClass('hidden');
