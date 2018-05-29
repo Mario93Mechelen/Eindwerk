@@ -6,6 +6,11 @@
 }
 
 @font-face {
+  font-family: MetropolisHeavy;
+  src: url("/fonts/Metropolis-Bold.otf");
+}
+
+@font-face {
   font-family: "FontAwesome";
   font-weight: normal;
   font-style: normal;
@@ -9661,10 +9666,10 @@ Around me page styling
   }
 
   .aroundme_page .content_title {
+    font-family: MetropolisHeavy;
     display: block;
     font-size: 32px;
     color: #002245;
-    font-weight: bold;
     max-width: 960px;
     margin: 0 auto;
     padding-bottom: 20px;
@@ -10170,8 +10175,8 @@ profile page styling
 }
 
 .profile_page .profile_page_content .section_title {
+  font-family: MetropolisHeavy;
   font-size: 28px;
-  font-weight: bold;
   color: #002245;
   padding-bottom: 15px;
 }
@@ -10600,6 +10605,10 @@ profile page styling
     position: static;
   }
 
+  .profile_page .profile_page_content .section_title {
+    font-size: 32px;
+  }
+
   .profile_page .profile_page_content .photo-uploads {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -10746,10 +10755,10 @@ Crossings page styling
   }
 
   .crossings_page .content_title {
+    font-family: MetropolisHeavy;
     display: block;
     font-size: 32px;
     color: #002245;
-    font-weight: bold;
     max-width: 960px;
     margin: 0 auto;
     padding-bottom: 20px;
@@ -11315,9 +11324,9 @@ Chat page styling
   }
 
   .chat-wrapper .chat-total .chat-total-title .content_title {
+    font-family: MetropolisHeavy;
     font-size: 32px;
     color: #002245;
-    font-weight: bold;
     max-width: 960px;
     padding-top: 20px;
     padding-left: 15px;
@@ -11412,9 +11421,9 @@ school page styling
 }
 
 .school_page .school_page_content .upper_section .school_name {
+  font-family: MetropolisHeavy;
   color: #002245;
   font-size: 28px;
-  font-weight: bold;
   padding: 30px 15px;
   text-align: center;
 }
@@ -12040,6 +12049,7 @@ school page styling
   .school_page .school_page_content .upper_section .school_name {
     text-align: left;
     padding-left: 0px;
+    font-size: 32px;
   }
 
   .school_page .school_page_content .school_introtext {
@@ -12095,8 +12105,8 @@ Settings page styling
 }
 
 .settings_page .settings_page_content .section_title {
+  font-family: MetropolisHeavy;
   font-size: 28px;
-  font-weight: bold;
   color: #002245;
   padding-bottom: 15px;
 }
@@ -12556,5 +12566,11 @@ Settings page styling
 .settings_page .pop-up .pop-up-inner .buttons a:hover,
 .settings_page .pop-up .pop-up-inner .buttons a:focus {
   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  .settings_page .settings_page_content .section_title {
+    font-size: 32px;
+  }
 }
 

@@ -237,8 +237,8 @@ profile page styling
     }
 
     .section_title {
+      font-family: MetropolisHeavy;
       font-size: 28px;
-      font-weight: bold;
       color: $dark-color;
       padding-bottom: 15px;
     }
@@ -636,6 +636,10 @@ profile page styling
             }
 
         }
+      }
+
+      .section_title {
+        font-size: 32px;
       }
 
       .photo-uploads {
