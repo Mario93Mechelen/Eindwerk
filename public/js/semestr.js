@@ -736,7 +736,7 @@ $(document).ready(function(){
         getChatsById(id);
         updateSeenStatus($(this).data('id'));
 
-        $(".messages_container").animate({scrollTop: $('.chats-view').prop("scrollHeight")}, 500);
+        $(".messages_container").animate({scrollTop: $('.messages_container').prop("scrollHeight")}, 500);
     })
 });
 
