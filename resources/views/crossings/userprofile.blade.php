@@ -658,7 +658,7 @@
 
             })
         </script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&libraries=places" async defer></script>
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmUI9YUBTI-gDW2mmBUpSx9DR3PiaSfns&libraries=places&language=en" async defer></script>
     @endif
 
 
