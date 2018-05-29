@@ -8649,7 +8649,7 @@ header nav .nav_left .nav_groups {
     background-image: url("/img/triangle_down.png");
     background-size: 8px 6px;
     background-repeat: no-repeat;
-    background-position: 95% 55%;
+    background-position: right 10px top 26px;
   }
 
   header nav .nav_right .nav_chat a {
@@ -8688,7 +8688,7 @@ header nav .nav_left .nav_groups {
     background-image: url(/img/triangle_down.png);
     background-size: 8px 6px;
     background-repeat: no-repeat;
-    background-position: 85% 55%;
+    background-position: right 10px top 26px;
   }
 
   header nav .nav_right .nav_profile a {
