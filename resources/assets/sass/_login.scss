@@ -40,7 +40,7 @@ LOGIN STYLING
     display: block;
     max-width: 200px;
     padding-top: 60px;
-    padding-bottom: 80px;
+    padding-bottom: 60px;
     margin: 0 auto;
     height: auto;
   }
@@ -56,9 +56,9 @@ LOGIN STYLING
   }
 
   input {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 24px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 18px;
     border-radius: $border-radius-extra;
   }
 
@@ -78,13 +78,13 @@ LOGIN STYLING
 
  .btn-primary {
    width: 100%;
-   padding-top: 10px;
-   padding-bottom: 10px;
-   margin-top: 25px;
-   margin-bottom: 25px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   margin-top: 15px;
+   margin-bottom: 15px;
    background-color: $primary-color;
    font-weight: bold;
-   font-size: 24px;
+   font-size: 18px;
    border-radius: $border-radius-extra;
  }
 
@@ -92,7 +92,7 @@ LOGIN STYLING
     color: $white;
     overflow: hidden;
     text-align: center;
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .fb-login-intro:before,
@@ -117,7 +117,7 @@ LOGIN STYLING
   .login-to-signup {
     color: $white;
     position: relative;
-    top: -15px;
+    top: 0px;
     text-align: center;
 
     a {
