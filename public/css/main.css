@@ -8601,6 +8601,7 @@ header nav .nav_left .nav_groups {
 @media (max-width: 350px) {
   .nav_left_wrapper {
     width: calc(100vw - 30px);
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav_left_wrapper:hover {

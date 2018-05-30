@@ -99,6 +99,7 @@ header {
 
   .nav_left_wrapper {
     width: calc(100vw - 30px);
+    -webkit-overflow-scrolling: touch;
   }
 
   .nav_left_wrapper:hover {
