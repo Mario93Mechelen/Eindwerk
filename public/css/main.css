@@ -8718,7 +8718,8 @@ header nav .nav_left .nav_groups {
   }
 
   header nav .nav_left {
-    width: 500px;
+    min-width: 500px;
+    width: auto;
   }
 
   header nav .nav_left .nav_semestr {

@@ -215,7 +215,8 @@ header {
       }
 
       .nav_left {
-        width: 500px;
+        min-width: 500px;
+        width: auto;
 
         .nav_semestr {
           display: inline-block;
