@@ -64,6 +64,8 @@
       background-position: 50% 50%;
       border-top-right-radius: $border-radius-normal;
       border-bottom-right-radius: $border-radius-normal;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
       box-shadow: $box-shadow;
       text-align: left;
     }
@@ -222,7 +224,6 @@
         color: white;
         padding-left: 40px;
         padding-right: 30px;
-        border-radius: 0;
         background-image: url('/img/Filter.png'), url('/img/triangle_down.png');
         background-size: 12px 12px, 8px 6px;
         background-repeat: no-repeat, no-repeat;

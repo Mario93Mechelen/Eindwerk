@@ -9019,6 +9019,8 @@ header #dropdown-menu-profile a:last-of-type {
   background-position: 50% 50%;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
   -webkit-box-shadow: 0px 5px 15px 0px #aaaaaa;
           box-shadow: 0px 5px 15px 0px #aaaaaa;
   text-align: left;
@@ -9188,7 +9190,6 @@ header #dropdown-menu-profile a:last-of-type {
     color: white;
     padding-left: 40px;
     padding-right: 30px;
-    border-radius: 0;
     background-image: url("/img/Filter.png"), url("/img/triangle_down.png");
     background-size: 12px 12px, 8px 6px;
     background-repeat: no-repeat, no-repeat;
