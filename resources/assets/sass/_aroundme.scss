@@ -152,7 +152,7 @@ Around me page styling
 
     .caption {
 
-      background-color: rgba($white, 0.5);
+      background-color: rgba($white, 0.8);
       border-radius: $border-radius-normal;
       position: relative;
       top: -50px;
@@ -166,7 +166,7 @@ Around me page styling
         font-size: 12px;
       }
       .list-item-distance {
-        color: $nav_unselected;
+        color: $nav_selected;
         font-size: 10px;
       }
       .list-item-intro {

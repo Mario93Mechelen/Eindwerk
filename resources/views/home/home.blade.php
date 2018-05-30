@@ -68,6 +68,18 @@
                             us?</p>
                      @endif
 
+                    <div class="item item-home item-list col-xs-12 col-md-6">
+                        <a href="">
+                            <div class="item-content">
+                                <img class="list-item-img" src="/img/profile_pic_default.jpg" alt=""/>
+                                <div class="caption">
+                                    <h4 class="list-item-name list-item-name-home">Amber Heard</h4>
+                                    <p class="list-item-distance">2km away</p>
+                                    <p class="list-item-intro">introtekst komt hier</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
 
                 </div>
             </div>
