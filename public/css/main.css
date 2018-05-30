@@ -9232,10 +9232,25 @@ LOGIN STYLING
   background-size: cover;
   background-position: bottom;
   background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login_page_wrapper:after {
+  content: "";
+  display: block;
+  background-attachment: fixed;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 34, 69, 0.7);
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 .login_page {
-  background-color: rgba(0, 34, 69, 0.7);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
