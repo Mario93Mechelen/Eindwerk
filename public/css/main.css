@@ -8598,6 +8598,10 @@ header nav .nav_left .nav_groups {
   display: inline-block;
 }
 
+header nav .nav_left li .active {
+  color: #ffffff;
+}
+
 @media (max-width: 350px) {
   .nav_left_wrapper {
     width: calc(100vw - 30px);

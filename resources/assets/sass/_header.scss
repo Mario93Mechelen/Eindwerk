@@ -91,6 +91,13 @@ header {
       .nav_groups {
         display: inline-block;
       }
+
+      li {
+        .active {
+          color: $white;
+        }
+      }
+
     }
   }
 }

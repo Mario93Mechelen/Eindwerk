@@ -35,9 +35,9 @@
                 <ul class="nav_left">
                     <li class="nav_semestr"><a href="{{URL::action('HomeController@index')}}"><img src='{{ asset('img/Semestr_logo2_gray.png')
                     }}'><p>Semestr</p></a></li>
-                    <li class="nav_aroundme"><a href="{{URL::action('HomeController@index')}}">around me</a></li>
-                    <li class="nav_crossings"><a href="{{URL::action('ProfileController@index')}}">crossings</a></li>
-                    <li class="nav_groups"><a href="{{URL::action('ProfileController@school')}}">school</a></li>
+                    <li class="nav_aroundme"><a href="{{URL::action('HomeController@index')}}" class="nav_aroundme_link">around me</a></li>
+                    <li class="nav_crossings"><a href="{{URL::action('ProfileController@index')}}" class="nav_crossings_link">crossings</a></li>
+                    <li class="nav_groups"><a href="{{URL::action('ProfileController@school')}}" class="nav_groups_link">school</a></li>
                 </ul>
             </div>
         </nav>

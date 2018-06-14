@@ -147,6 +147,26 @@
         }
     })
 </script>
+
+<script>
+
+    /* hightlighting the active navigation menu item */
+    $(document).ready(function() {
+
+        var path = window.location.pathname;
+
+        if (path == "/") {
+            $(".nav_aroundme_link").addClass("active");
+        } else if (path == "/crossings") {
+            $(".nav_crossings_link").addClass("active");
+        } else if (path == "/school") {
+            $(".nav_groups_link").addClass("active");
+        }
+
+    });
+
+</script>
+
 @yield('scripts')
 
 </body>
