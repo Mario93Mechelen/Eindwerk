@@ -195,6 +195,24 @@
         }
       }
 
+      .disabled {
+        h6 {
+          color: $nav_unselected;
+        }
+
+        .checkbox-container {
+          input {
+            cursor: default;
+            pointer-events: none;
+          }
+
+          .checkmark {
+            border: 1px solid $nav_unselected;
+            cursor: default;
+          }
+        }
+      }
+
       .searchButtonOptionInterests {
         padding: 15px;
 

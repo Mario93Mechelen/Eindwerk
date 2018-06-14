@@ -9172,6 +9172,20 @@ header #dropdown-menu-profile a:last-of-type {
   transform: rotate(45deg);
 }
 
+.map-top .search-bar .searchButtonOptions .disabled h6 {
+  color: #aaaaaa;
+}
+
+.map-top .search-bar .searchButtonOptions .disabled .checkbox-container input {
+  cursor: default;
+  pointer-events: none;
+}
+
+.map-top .search-bar .searchButtonOptions .disabled .checkbox-container .checkmark {
+  border: 1px solid #aaaaaa;
+  cursor: default;
+}
+
 .map-top .search-bar .searchButtonOptions .searchButtonOptionInterests {
   padding: 15px;
 }

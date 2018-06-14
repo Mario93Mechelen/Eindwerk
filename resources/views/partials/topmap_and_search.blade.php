@@ -30,15 +30,15 @@
                 <div class="searchButtonOptionSchoolHome">
                     <h6>only students from school at home</h6>
                     <div class="checkbox-container">
-                        <input type="checkbox" class="filter_school" id="filter_school_home">
+                        <input type="checkbox" class="filter_school" id="filter_school_home" checked>
                         <span class="checkmark"></span>
                     </div>
                 </div>
 
-                <div class="searchButtonOptionSchoolAbroad">
+                <div class="searchButtonOptionSchoolAbroad disabled">
                     <h6>only students from school abroad</h6>
                     <div class="checkbox-container">
-                        <input type="checkbox" class="filter_school" id="filter_school_abroad" checked>
+                        <input type="checkbox" class="filter_school" id="filter_school_abroad">
                         <span class="checkmark"></span>
                     </div>
                 </div>
