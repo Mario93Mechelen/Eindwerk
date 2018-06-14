@@ -250,13 +250,20 @@
                 <h2 class="section_title">interests</h2>
 
                 <ul class="interests">
-                    <li class="interest-item selected">chinese food</li>
-                    <li class="interest-item ">tennis</li>
-                    <li class="interest-item selected">beer</li>
-                    <li class="interest-item ">foreign languages</li>
-                    <li class="interest-item selected">movies</li>
-                    <li class="interest-item ">dance music</li>
-                    <li class="interest-item ">video games</li>
+                    <li class="interest-item">architecture</li>
+                    <li class="interest-item selected">art</li>
+                    <li class="interest-item">cooking</li>
+                    <li class="interest-item">dancing</li>
+                    <li class="interest-item">history</li>
+                    <li class="interest-item">literature</li>
+                    <li class="interest-item">martial arts</li>
+                    <li class="interest-item">movies</li>
+                    <li class="interest-item selected">music</li>
+                    <li class="interest-item">photography</li>
+                    <li class="interest-item">politics</li>
+                    <li class="interest-item">sports</li>
+                    <li class="interest-item">television</li>
+                    <li class="interest-item selected">theater</li>
                 </ul>
 
             </div>  <!-- einde interests section -->
