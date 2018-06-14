@@ -26,6 +26,24 @@
                     </div>
                     <div id="selectedRadius">{{($myUser->setting->distance == 'km') ? '100 km' : '60 miles'}}</div>
                 </div>
+
+                <div class="searchButtonOptionSchoolHome">
+                    <h6>only students from school at home</h6>
+                    <div class="checkbox-container">
+                        <input type="checkbox" class="filter_school" id="filter_school_home">
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+
+                <div class="searchButtonOptionSchoolAbroad">
+                    <h6>only students from school abroad</h6>
+                    <div class="checkbox-container">
+                        <input type="checkbox" class="filter_school" id="filter_school_abroad" checked>
+                        <span class="checkmark"></span>
+                    </div>
+                </div>
+
+                <!--
                 <div class="searchButtonOptionInterests">
                     <h6>interests</h6>
                     <ul>
@@ -38,6 +56,7 @@
                         <li class="interest-item">video games</li>
                     </ul>
                 </div>
+                -->
             </div>
 
         </div>
