@@ -553,6 +553,55 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function(){
+    $('.filter_school').on('change', function(){
+        var type='';
+        if($('#filter_school_home').is(':checked') && $('#filter_school_abroud').is(':checked')){
+            type="both";
+        }else if($('#filter_school_home').is(':checked') && !$('#filter_school_abroud').is(':checked')){
+            type="home";
+        }else{
+            type="abroad";
+        }
+        getStudents(type);
+    });
+});
+
+function getStudents(type){
+    console.log(type);
+    $.ajaxSetup({
+
+        headers: {
+
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+        }
+
+    });
+    $.ajax({
+        method:"POST",
+        url:"/filterStudents",
+        data:{
+            'type': type,
+        }
+    }).done(function(response){
+        if(response.code==200) {
+            $('.item-home').each(function(){
+                $(this).remove();
+            });
+            for(i=0;i<response.distance.length;i++){
+                if($('#list').hasClass('toggle-active')){
+                    $('#aroundme_overview').append('<div class="item item-home item-list col-xs-12 col-md-6"><a href="/users/'+response.distance[i]['user']['id']+'"><div class="item-content"><img class="list-item-img" src="' + response.distance[i]['user']['avatar'] + '" alt=""/><div class="caption"><h4 class="list-item-name list-item-name-home">' + response.distance[i]['user']['first_name'] + ' ' + response.distance[i]['user']['last_name'] + '</h4><p class="list-item-distance">' + response.distance[i]['kms'] + ' km away</p><p class="list-item-intro">'+((response.distance[i]['user']['intro'] == null) ?  '' : response.distance[i]['user']['intro'] )+'</p></div></div></a></div>')
+                    console.log(response.distance[i]['user'])
+                }else{
+                    $('#aroundme_overview').append('<div class="item item-home item-grid col-xs-6 col-md-3"><a href="/users/'+response.distance[i]['user']['id']+'"><div class="item-content"><img class="list-item-img" src="' + response.distance[i]['user']['avatar'] + '" alt=""/><div class="caption"><h4 class="list-item-name list-item-name-home">' + response.distance[i]['user']['first_name'] + ' ' + response.distance[i]['user']['last_name'] + '</h4><p class="list-item-distance">' + response.distance[i]['kms'] + ' km away</p><p class="list-item-intro">'+((response.distance[i]['user']['intro'] == null) ?  '' : response.distance[i]['user']['intro'] )+'</p></div></div></a></div>')
+
+                }
+            }
+        }
+    });
+}
+
 /* later nog te bekijken, door absolute positioning van de searchButtonOptions div, pakt het click event daar niet op */
 /*
 $(document).mouseup(function (e){
@@ -572,7 +621,6 @@ $(document).mouseup(function (e){
 <!-- interest item selection -->
 $(document).ready(function() {
     $(".interest-item.my-interests").click(function() {
-        console.log('ur penis is gay');
         $(this).toggleClass("selected");
         var id = $(this).data('interest');
         updateMyInterests(id);

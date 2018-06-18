@@ -60,6 +60,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::post('/photos/store/{type}/{id}', 'PhotoController@store');
     Route::post('/photo/delete', 'PhotoController@deletePhoto');
     Route::post('/updateInterests', 'ProfileController@updateInterests');
+    Route::post('/filterStudents','ProfileController@filterStudents');
 
     //friends
     Route::get('/friends','FriendController@index');
