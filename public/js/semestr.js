@@ -556,11 +556,11 @@ $(document).ready(function() {
 $(document).ready(function(){
     $('.filter_school').on('change', function(){
         var type='';
-        if($('#filter_school_home').is(':checked') && $('#filter_school_abroud').is(':checked')){
+        if($('#filter_school_home').is(':checked') && $('#filter_school_abroad').is(':checked')){
             type="both";
-        }else if($('#filter_school_home').is(':checked') && !$('#filter_school_abroud').is(':checked')){
+        }else if($('#filter_school_home').is(':checked') && !$('#filter_school_abroad').is(':checked')){
             type="home";
-        }else if(!$('#filter_school_home').is(':checked') && $('#filter_school_abroud').is(':checked')){
+        }else if(!$('#filter_school_home').is(':checked') && $('#filter_school_abroad').is(':checked')){
             type="abroad";
         }
         getStudents(type);
