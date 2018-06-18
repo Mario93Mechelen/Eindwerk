@@ -556,6 +556,27 @@ $(document).ready(function() {
 $(document).ready(function(){
     $('.filter_school').on('change', function(){
         var type='';
+        var rate = $("#radiusSlider").val();
+        var distance = 0;
+        if(rate == 1){
+            distance = 0.1;
+        }else if(rate == 2){
+            distance = 0.25;
+        }else if(rate == 3){
+            distance = 0.5;
+        }else if(rate == 4){
+            distance = 1;
+        }else if(rate == 5){
+            distance = 2;
+        }else if(rate == 6){
+            distance = 3;
+        }else if(rate == 7){
+            distance = 4;
+        }else if(rate == 8){
+            distance = 5;
+        }else if (rate == 9){
+            distance = 100;
+        };
         if($('#filter_school_home').is(':checked') && $('#filter_school_abroad').is(':checked')){
             type="both";
         }else if($('#filter_school_home').is(':checked') && !$('#filter_school_abroad').is(':checked')){
@@ -565,7 +586,7 @@ $(document).ready(function(){
         }else{
             type= null;
         }
-        getStudents(type);
+        getStudents(type,distance);
     });
 });
 
@@ -585,6 +606,7 @@ function getStudents(type){
         url:"/filterStudents",
         data:{
             'type': type,
+            'distance' : distance
         }
     }).done(function(response){
         if(response.code==200) {
