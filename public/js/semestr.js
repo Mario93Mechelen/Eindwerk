@@ -562,6 +562,8 @@ $(document).ready(function(){
             type="home";
         }else if(!$('#filter_school_home').is(':checked') && $('#filter_school_abroad').is(':checked')){
             type="abroad";
+        }else{
+            type= null;
         }
         getStudents(type);
     });
