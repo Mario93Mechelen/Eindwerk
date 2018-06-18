@@ -560,7 +560,7 @@ $(document).ready(function(){
             type="both";
         }else if($('#filter_school_home').is(':checked') && !$('#filter_school_abroud').is(':checked')){
             type="home";
-        }else{
+        }else if(!$('#filter_school_home').is(':checked') && $('#filter_school_abroud').is(':checked')){
             type="abroad";
         }
         getStudents(type);
