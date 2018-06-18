@@ -571,10 +571,36 @@ $(document).mouseup(function (e){
 
 <!-- interest item selection -->
 $(document).ready(function() {
-    $(".interest-item").click(function() {
+    $(".interest-item.my-interests").click(function() {
+        console.log('ur penis is gay');
         $(this).toggleClass("selected");
+        var id = $(this).data('interest');
+        updateMyInterests(id);
     });
 });
+
+function updateMyInterests(id){
+    $.ajaxSetup({
+
+        headers: {
+
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+
+        }
+
+    });
+    $.ajax({
+        method:"POST",
+        url:"/updateInterests",
+        data:{
+            'id':id
+        }
+    }).done(function(response){
+        if(response.code==200) {
+            console.log('interests updated');
+        }
+    });
+};
 
 <!-- toggle crossings map and button on profile page -->
 $(document).ready(function() {

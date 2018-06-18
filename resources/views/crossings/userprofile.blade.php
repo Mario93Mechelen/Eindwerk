@@ -250,20 +250,9 @@
                 <h2 class="section_title">interests</h2>
 
                 <ul class="interests">
-                    <li class="interest-item">architecture</li>
-                    <li class="interest-item selected">art</li>
-                    <li class="interest-item">cooking</li>
-                    <li class="interest-item">dancing</li>
-                    <li class="interest-item">history</li>
-                    <li class="interest-item">literature</li>
-                    <li class="interest-item">martial arts</li>
-                    <li class="interest-item">movies</li>
-                    <li class="interest-item selected">music</li>
-                    <li class="interest-item">photography</li>
-                    <li class="interest-item">politics</li>
-                    <li class="interest-item">sports</li>
-                    <li class="interest-item">television</li>
-                    <li class="interest-item selected">theater</li>
+                    @foreach(App\Interest::get() as $interest)
+                        <li class="interest-item {{$user->id == $myUser->id ? 'my-interests' : null}} {{$user->interests()->where('interests.id',$interest->id)->first() ? 'selected' : null}}" data-interest="{{$interest->id}}">{{$interest->name}}</li>
+                    @endforeach
                 </ul>
 
             </div>  <!-- einde interests section -->

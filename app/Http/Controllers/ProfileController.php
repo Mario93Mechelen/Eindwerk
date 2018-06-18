@@ -76,6 +76,17 @@ class ProfileController extends Controller
         //
     }
 
+    public function updateInterests(Request $request)
+    {
+        $id = $request->id;
+        if(Auth::user()->interests()->where('interests.id',$id)->first()){
+            Auth::user()->interests()->detach($id);
+        }else{
+            Auth::user()->interests()->attach($id);
+        }
+        return response()->json(['code'=>200]);
+    }
+
     public function getInstagramPhotos(Request $request)
     {
         if(count(Auth::user()->profile->photos)<10) {

@@ -113,4 +113,9 @@ class User extends Authenticatable
             return false;
         }
     }
+
+    public function interests()
+    {
+        return $this->belongsToMany('App\Interest','interest_user');
+    }
 }

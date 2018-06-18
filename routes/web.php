@@ -59,6 +59,7 @@ Route::group(['middleware' => 'auth'], function()
     Route::get('/getPhotos/instagram','ProfileController@getInstagramPhotos');
     Route::post('/photos/store/{type}/{id}', 'PhotoController@store');
     Route::post('/photo/delete', 'PhotoController@deletePhoto');
+    Route::post('/updateInterests', 'ProfileController@updateInterests');
 
     //friends
     Route::get('/friends','FriendController@index');
