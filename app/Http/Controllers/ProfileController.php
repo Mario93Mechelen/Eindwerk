@@ -85,11 +85,11 @@ class ProfileController extends Controller
         if($type == null) {
             $locations = Location::where('user_id', '!=', $user->id)->get();
         }elseif($type=='both'){
-            $locations = Location::where('user_id', '!=', $user->id)->where('school_home',$user->school_home)->where('school_abroad',$user->school_abroad)->get();
+            $locations = Location::where('user_id', '!=', $user->id)->where('home_school',$user->home_school)->where('abroad_school',$user->abroad_school)->get();
         }elseif($type == 'home'){
-            $locations = Location::where('user_id', '!=', $user->id)->where('school_home',$user->school_home)->get();
+            $locations = Location::where('user_id', '!=', $user->id)->where('home_school',$user->home_school)->get();
         }elseif($type== 'abroad'){
-            $locations = Location::where('user_id', '!=', $user->id)->where('school_abroad',$user->school_abroad)->get();
+            $locations = Location::where('user_id', '!=', $user->id)->where('abroad_school',$user->abroad_school)->get();
         }
         $reqdistance = floatval($request->distance);
         if(Auth::user()->setting->distance == 'km'){
