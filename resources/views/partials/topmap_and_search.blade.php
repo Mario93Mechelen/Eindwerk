@@ -35,7 +35,7 @@
                     </div>
                 </div>
 
-                <div class="searchButtonOptionSchoolAbroad disabled">
+                <div class="searchButtonOptionSchoolAbroad">
                     <h6>only students from school abroad</h6>
                     <div class="checkbox-container">
                         <input type="checkbox" class="filter_school" id="filter_school_abroad">

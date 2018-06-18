@@ -11,6 +11,7 @@ use App\Post;
 use App\Profile;
 use App\School;
 use App\SchoolUser;
+use App\Location;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use App\User;
