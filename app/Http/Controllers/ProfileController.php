@@ -82,15 +82,7 @@ class ProfileController extends Controller
         $type = $request->type;
         $user = Auth::user();
         $location = Location::where('user_id',$user->id)->first();
-        if($type == null) {
-            $locations = Location::where('user_id', '!=', $user->id)->get();
-        }elseif($type=='both'){
-            $locations = Location::where('user_id', '!=', $user->id)->where('home_school',$user->home_school)->where('abroad_school',$user->abroad_school)->get();
-        }elseif($type == 'home'){
-            $locations = Location::where('user_id', '!=', $user->id)->where('home_school',$user->home_school)->get();
-        }elseif($type== 'abroad'){
-            $locations = Location::where('user_id', '!=', $user->id)->where('abroad_school',$user->abroad_school)->get();
-        }
+        $locations = Location::where('user_id', '!=', $user->id)->get();
         $reqdistance = floatval($request->distance);
         if(Auth::user()->setting->distance == 'km'){
             $reqdistance = $reqdistance/1.609344;
@@ -99,30 +91,119 @@ class ProfileController extends Controller
             $i = 0;
             $distance = [];
             foreach ($locations as $l) {
-                if(!$l->user->isBlocked(Auth::user()->id) && !$l->user->blockedBy(Auth::user()->id)) {
-                    $lon1 = $location->longitude;
-                    $lat1 = $location->latitude;
-                    $lon2 = $l->longitude;
-                    $lat2 = $l->latitude;
-                    $theta = $lon1 - $lon2;
-                    $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
-                    $dist = acos($dist);
-                    $dist = rad2deg($dist);
-                    $miles = $dist * 60 * 1.1515;
+                if($type == 'both'){
+                    if($l->user()->where('home_school',$user->home_school)->where('abroad_school',$user->abroad_school)->first()){
+                        if(!$l->user->isBlocked(Auth::user()->id) && !$l->user->blockedBy(Auth::user()->id)) {
+                            $lon1 = $location->longitude;
+                            $lat1 = $location->latitude;
+                            $lon2 = $l->longitude;
+                            $lat2 = $l->latitude;
+                            $theta = $lon1 - $lon2;
+                            $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+                            $dist = acos($dist);
+                            $dist = rad2deg($dist);
+                            $miles = $dist * 60 * 1.1515;
 
-                    $kms = ($miles * 1.609344);
+                            $kms = ($miles * 1.609344);
 
-                    if (Auth::user()->setting == 'mile') {
-                        $kms = number_format((float)$miles, 2, ',', '');
-                        $distance[$i] = ['user' => $l->user, 'kms' => $miles];
-                    } else {
-                        $kms = number_format((float)$kms, 2, ',', '');
-                        $distance[$i] = ['user' => $l->user, 'kms' => $kms];
-                    };
-                    if ((float)$kms <= (float)$reqdistance) {
+                            if (Auth::user()->setting == 'mile') {
+                                $kms = number_format((float)$miles, 2, ',', '');
+                                $distance[$i] = ['user' => $l->user, 'kms' => $miles];
+                            } else {
+                                $kms = number_format((float)$kms, 2, ',', '');
+                                $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                            };
+                            if ((float)$kms <= (float)$reqdistance) {
 
-                        $distance[$i] = ['user' => $l->user, 'kms' => $kms];
-                        $i++;
+                                $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                                $i++;
+                            }
+                        }
+                    }
+                }elseif($type == 'home'){
+                    if($l->user()->where('home_school',$user->home_school)->first()){
+                        if(!$l->user->isBlocked(Auth::user()->id) && !$l->user->blockedBy(Auth::user()->id)) {
+                            $lon1 = $location->longitude;
+                            $lat1 = $location->latitude;
+                            $lon2 = $l->longitude;
+                            $lat2 = $l->latitude;
+                            $theta = $lon1 - $lon2;
+                            $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+                            $dist = acos($dist);
+                            $dist = rad2deg($dist);
+                            $miles = $dist * 60 * 1.1515;
+
+                            $kms = ($miles * 1.609344);
+
+                            if (Auth::user()->setting == 'mile') {
+                                $kms = number_format((float)$miles, 2, ',', '');
+                                $distance[$i] = ['user' => $l->user, 'kms' => $miles];
+                            } else {
+                                $kms = number_format((float)$kms, 2, ',', '');
+                                $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                            };
+                            if ((float)$kms <= (float)$reqdistance) {
+
+                                $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                                $i++;
+                            }
+                        }
+                    }
+                }elseif($type == 'abroad'){
+                    if($l->user()->where('abroad_school',$user->abroad_school)->first()){
+                        if(!$l->user->isBlocked(Auth::user()->id) && !$l->user->blockedBy(Auth::user()->id)) {
+                            $lon1 = $location->longitude;
+                            $lat1 = $location->latitude;
+                            $lon2 = $l->longitude;
+                            $lat2 = $l->latitude;
+                            $theta = $lon1 - $lon2;
+                            $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+                            $dist = acos($dist);
+                            $dist = rad2deg($dist);
+                            $miles = $dist * 60 * 1.1515;
+
+                            $kms = ($miles * 1.609344);
+
+                            if (Auth::user()->setting == 'mile') {
+                                $kms = number_format((float)$miles, 2, ',', '');
+                                $distance[$i] = ['user' => $l->user, 'kms' => $miles];
+                            } else {
+                                $kms = number_format((float)$kms, 2, ',', '');
+                                $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                            };
+                            if ((float)$kms <= (float)$reqdistance) {
+
+                                $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                                $i++;
+                            }
+                        }
+                    }
+                }elseif($type == null){
+                    if(!$l->user->isBlocked(Auth::user()->id) && !$l->user->blockedBy(Auth::user()->id)) {
+                        $lon1 = $location->longitude;
+                        $lat1 = $location->latitude;
+                        $lon2 = $l->longitude;
+                        $lat2 = $l->latitude;
+                        $theta = $lon1 - $lon2;
+                        $dist = sin(deg2rad($lat1)) * sin(deg2rad($lat2)) + cos(deg2rad($lat1)) * cos(deg2rad($lat2)) * cos(deg2rad($theta));
+                        $dist = acos($dist);
+                        $dist = rad2deg($dist);
+                        $miles = $dist * 60 * 1.1515;
+
+                        $kms = ($miles * 1.609344);
+
+                        if (Auth::user()->setting == 'mile') {
+                            $kms = number_format((float)$miles, 2, ',', '');
+                            $distance[$i] = ['user' => $l->user, 'kms' => $miles];
+                        } else {
+                            $kms = number_format((float)$kms, 2, ',', '');
+                            $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                        };
+                        if ((float)$kms <= (float)$reqdistance) {
+
+                            $distance[$i] = ['user' => $l->user, 'kms' => $kms];
+                            $i++;
+                        }
                     }
                 }
             };
