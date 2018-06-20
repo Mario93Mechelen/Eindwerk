@@ -95,6 +95,7 @@ header {
       li {
         .active {
           color: $white;
+          display: inline;
         }
       }
 
@@ -102,10 +103,25 @@ header {
   }
 }
 
-@media(max-width: 350px) {
+@media(max-width: 700px) {
+
+  header{
+    padding-bottom: 0;
+
+  }
+
+  .nav_left{
+    overflow: auto;
+    display: flex;
+  }
 
   .nav_left_wrapper {
-    width: calc(100vw - 30px);
+    &::-webkit-scrollbar {
+      display:none;
+    }
+    white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
     -webkit-overflow-scrolling: touch;
   }
 
